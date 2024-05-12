@@ -8,6 +8,11 @@ import * as API from 'terminal/resources/index';
 
 export interface ClientOptions {
   /**
+   * Defaults to process.env['TERMINAL_BEARER_TOKEN'].
+   */
+  bearerToken?: string | undefined;
+
+  /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
    *
    * Defaults to process.env['TERMINAL_BASE_URL'].
@@ -66,12 +71,15 @@ export interface ClientOptions {
 
 /** API Client for interfacing with the Terminal API. */
 export class Terminal extends Core.APIClient {
+  bearerToken: string;
+
   private _options: ClientOptions;
 
   /**
    * API Client for interfacing with the Terminal API.
    *
-   * @param {string} [opts.baseURL=process.env['TERMINAL_BASE_URL'] ?? https://localhost:8080/test-api] - Override the default base URL for the API.
+   * @param {string | undefined} [opts.bearerToken=process.env['TERMINAL_BEARER_TOKEN'] ?? undefined]
+   * @param {string} [opts.baseURL=process.env['TERMINAL_BASE_URL'] ?? https://openapi.terminal.shop/] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {number} [opts.httpAgent] - An HTTP agent used to manage HTTP(s) connections.
    * @param {Core.Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -79,10 +87,21 @@ export class Terminal extends Core.APIClient {
    * @param {Core.Headers} opts.defaultHeaders - Default headers to include with every request to the API.
    * @param {Core.DefaultQuery} opts.defaultQuery - Default query parameters to include with every request to the API.
    */
-  constructor({ baseURL = Core.readEnv('TERMINAL_BASE_URL'), ...opts }: ClientOptions = {}) {
+  constructor({
+    baseURL = Core.readEnv('TERMINAL_BASE_URL'),
+    bearerToken = Core.readEnv('TERMINAL_BEARER_TOKEN'),
+    ...opts
+  }: ClientOptions = {}) {
+    if (bearerToken === undefined) {
+      throw new Errors.TerminalError(
+        "The TERMINAL_BEARER_TOKEN environment variable is missing or empty; either provide it, or instantiate the Terminal client with an bearerToken option, like new Terminal({ bearerToken: 'My Bearer Token' }).",
+      );
+    }
+
     const options: ClientOptions = {
+      bearerToken,
       ...opts,
-      baseURL: baseURL || `https://localhost:8080/test-api`,
+      baseURL: baseURL || `https://openapi.terminal.shop/`,
     };
 
     super({
@@ -93,6 +112,8 @@ export class Terminal extends Core.APIClient {
       fetch: options.fetch,
     });
     this._options = options;
+
+    this.bearerToken = bearerToken;
   }
 
   product: API.Product = new API.Product(this);
@@ -107,6 +128,10 @@ export class Terminal extends Core.APIClient {
       ...super.defaultHeaders(opts),
       ...this._options.defaultHeaders,
     };
+  }
+
+  protected override authHeaders(opts: Core.FinalRequestOptions): Core.Headers {
+    return { Authorization: `Bearer ${this.bearerToken}` };
   }
 
   static Terminal = this;
@@ -152,7 +177,7 @@ export namespace Terminal {
   export import RequestOptions = Core.RequestOptions;
 
   export import Product = API.Product;
-  export import ProductListResponse = API.ProductListResponse;
+  export import ProductRetrieveResponse = API.ProductRetrieveResponse;
 
   export import UserResource = API.UserResource;
   export import User = API.User;
