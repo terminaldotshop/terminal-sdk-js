@@ -3,7 +3,10 @@
 import Terminal from 'terminal';
 import { Response } from 'node-fetch';
 
-const terminal = new Terminal({ baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010' });
+const terminal = new Terminal({
+  bearerToken: 'My Bearer Token',
+  baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
+});
 
 describe('resource user', () => {
   test('retrieve', async () => {

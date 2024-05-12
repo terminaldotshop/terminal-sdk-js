@@ -28,9 +28,9 @@ import Terminal from 'terminal';
 const terminal = new Terminal();
 
 async function main() {
-  const userRetrieveResponse = await terminal.user.retrieve('REPLACE_ME');
+  const productRetrieveResponse = await terminal.product.retrieve();
 
-  console.log(userRetrieveResponse.result);
+  console.log(productRetrieveResponse.result);
 }
 
 main();
@@ -47,7 +47,7 @@ import Terminal from 'terminal';
 const terminal = new Terminal();
 
 async function main() {
-  const userRetrieveResponse: Terminal.UserRetrieveResponse = await terminal.user.retrieve('REPLACE_ME');
+  const productRetrieveResponse: Terminal.ProductRetrieveResponse = await terminal.product.retrieve();
 }
 
 main();
@@ -64,7 +64,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const userRetrieveResponse = await terminal.user.retrieve('REPLACE_ME').catch(async (err) => {
+  const productRetrieveResponse = await terminal.product.retrieve().catch(async (err) => {
     if (err instanceof Terminal.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -107,7 +107,7 @@ const terminal = new Terminal({
 });
 
 // Or, configure per-request:
-await terminal.user.retrieve('REPLACE_ME', {
+await terminal.product.retrieve({
   maxRetries: 5,
 });
 ```
@@ -124,7 +124,7 @@ const terminal = new Terminal({
 });
 
 // Override per-request:
-await terminal.user.retrieve('REPLACE_ME', {
+await terminal.product.retrieve({
   timeout: 5 * 1000,
 });
 ```
@@ -145,15 +145,13 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const terminal = new Terminal();
 
-const response = await terminal.user.retrieve('REPLACE_ME').asResponse();
+const response = await terminal.product.retrieve().asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: userRetrieveResponse, response: raw } = await terminal.user
-  .retrieve('REPLACE_ME')
-  .withResponse();
+const { data: productRetrieveResponse, response: raw } = await terminal.product.retrieve().withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(userRetrieveResponse.result);
+console.log(productRetrieveResponse.result);
 ```
 
 ### Making custom/undocumented requests
@@ -257,7 +255,7 @@ const terminal = new Terminal({
 });
 
 // Override per-request:
-await terminal.user.retrieve('REPLACE_ME', {
+await terminal.product.retrieve({
   httpAgent: new http.Agent({ keepAlive: false }),
 });
 ```
