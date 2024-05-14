@@ -165,6 +165,23 @@ describe('instantiate client', () => {
       const client = new Terminal({ bearerToken: 'My Bearer Token' });
       expect(client.baseURL).toEqual('https://openapi.terminal.shop/');
     });
+
+    test('env variable with environment', () => {
+      process.env['TERMINAL_BASE_URL'] = 'https://example.com/from_env';
+
+      expect(
+        () => new Terminal({ bearerToken: 'My Bearer Token', environment: 'production' }),
+      ).toThrowErrorMatchingInlineSnapshot(
+        `"Ambiguous URL; The \`baseURL\` option (or TERMINAL_BASE_URL env var) and the \`environment\` option are given. If you want to use the environment you must pass baseURL: null"`,
+      );
+
+      const client = new Terminal({
+        bearerToken: 'My Bearer Token',
+        baseURL: null,
+        environment: 'production',
+      });
+      expect(client.baseURL).toEqual('https://openapi.terminal.shop/');
+    });
   });
 
   test('maxRetries option is correctly set', () => {

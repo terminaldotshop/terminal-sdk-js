@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'terminal/core';
-import { APIResource } from 'terminal/resource';
-import * as ProductAPI from 'terminal/resources/product';
+import * as Core from '../core';
+import { APIResource } from '../resource';
+import * as ProductAPI from './product';
 
 export class Product extends APIResource {
   retrieve(options?: Core.RequestOptions): Core.APIPromise<ProductRetrieveResponse> {
@@ -31,9 +31,7 @@ export namespace ProductRetrieveResponse {
 
       name: string;
 
-      price: number;
-
-      productID: string;
+      price: string;
     }
   }
 }
