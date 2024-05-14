@@ -2,11 +2,11 @@
 
 Types:
 
-- <code><a href="./src/resources/product.ts">ProductRetrieveResponse</a></code>
+- <code><a href="./src/resources/product.ts">ProductListResponse</a></code>
 
 Methods:
 
-- <code title="get /product">client.product.<a href="./src/resources/product.ts">retrieve</a>() -> ProductRetrieveResponse</code>
+- <code title="get /product">client.product.<a href="./src/resources/product.ts">list</a>() -> ProductListResponse</code>
 
 # User
 

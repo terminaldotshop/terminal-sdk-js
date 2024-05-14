@@ -9,8 +9,8 @@ const terminal = new Terminal({
 });
 
 describe('resource product', () => {
-  test('retrieve', async () => {
-    const responsePromise = terminal.product.retrieve();
+  test('list', async () => {
+    const responsePromise = terminal.product.list();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -20,9 +20,9 @@ describe('resource product', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('retrieve: request options instead of params are passed correctly', async () => {
+  test('list: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(terminal.product.retrieve({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(terminal.product.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Terminal.NotFoundError,
     );
   });
