@@ -13,3 +13,8 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/user.ts">User</a></code>
+- <code><a href="./src/resources/user.ts">UserRetrieveResponse</a></code>
+
+Methods:
+
+- <code title="get /user/{id}">client.user.<a href="./src/resources/user.ts">retrieve</a>(id) -> UserRetrieveResponse</code>

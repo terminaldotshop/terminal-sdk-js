@@ -204,6 +204,7 @@ export namespace Terminal {
 
   export import UserResource = API.UserResource;
   export import User = API.User;
+  export import UserRetrieveResponse = API.UserRetrieveResponse;
 }
 
 export default Terminal;
