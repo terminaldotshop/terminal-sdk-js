@@ -1,5 +1,5 @@
 {
-  "name": "terminal",
+  "name": "@terminal/sdk",
   "version": "0.0.1-alpha.0",
   "description": "The official TypeScript library for the Terminal API",
   "author": "Terminal <dev-feedback@terminal.com>",
@@ -61,8 +61,8 @@
     "./shims/web.mjs"
   ],
   "imports": {
-    "terminal": ".",
-    "terminal/*": "./src/*"
+    "@terminal/sdk": ".",
+    "@terminal/sdk/*": "./src/*"
   },
   "exports": {
     "./_shims/auto/*": {

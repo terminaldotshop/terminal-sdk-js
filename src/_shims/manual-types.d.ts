@@ -4,8 +4,8 @@
 /**
  * Types will get added to this namespace when you import one of the following:
  *
- *   import 'terminal/shims/node'
- *   import 'terminal/shims/web'
+ *   import '@terminal/sdk/shims/node'
+ *   import '@terminal/sdk/shims/web'
  *
  * Importing more than one will cause type and runtime errors.
  */

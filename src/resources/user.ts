@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import * as UserAPI from './user';
+import { APIResource } from '@terminal/sdk/resource';
+import * as UserAPI from '@terminal/sdk/resources/user';
 
 export class UserResource extends APIResource {}
 

@@ -55,12 +55,12 @@ cd terminal-node
 # With yarn
 yarn link
 cd ../my-package
-yarn link terminal
+yarn link @terminal/sdk
 
 # With pnpm
 pnpm link --global
 cd ../my-package
-pnpm link -—global terminal
+pnpm link -—global @terminal/sdk
 ```
 
 ## Running tests
