@@ -5,16 +5,16 @@ import { APIResource } from '../resource';
 import * as ProductAPI from './product';
 
 export class Product extends APIResource {
-  retrieve(options?: Core.RequestOptions): Core.APIPromise<ProductRetrieveResponse> {
+  list(options?: Core.RequestOptions): Core.APIPromise<ProductListResponse> {
     return this._client.get('/product', options);
   }
 }
 
-export interface ProductRetrieveResponse {
-  result: Array<ProductRetrieveResponse.Result>;
+export interface ProductListResponse {
+  result: Array<ProductListResponse.Result>;
 }
 
-export namespace ProductRetrieveResponse {
+export namespace ProductListResponse {
   export interface Result {
     id: string;
 
@@ -37,5 +37,5 @@ export namespace ProductRetrieveResponse {
 }
 
 export namespace Product {
-  export import ProductRetrieveResponse = ProductAPI.ProductRetrieveResponse;
+  export import ProductListResponse = ProductAPI.ProductListResponse;
 }

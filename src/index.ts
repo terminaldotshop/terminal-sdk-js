@@ -200,7 +200,7 @@ export namespace Terminal {
   export import RequestOptions = Core.RequestOptions;
 
   export import Product = API.Product;
-  export import ProductRetrieveResponse = API.ProductRetrieveResponse;
+  export import ProductListResponse = API.ProductListResponse;
 
   export import UserResource = API.UserResource;
   export import User = API.User;
