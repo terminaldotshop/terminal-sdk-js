@@ -25,7 +25,9 @@ The full API of this library can be found in [api.md](api.md).
 ```js
 import Terminal from 'terminal';
 
-const terminal = new Terminal();
+const terminal = new Terminal({
+  environment: 'dev', // defaults to 'production'
+});
 
 async function main() {
   const productRetrieveResponse = await terminal.product.retrieve();
@@ -44,7 +46,9 @@ This library includes TypeScript definitions for all request params and response
 ```ts
 import Terminal from 'terminal';
 
-const terminal = new Terminal();
+const terminal = new Terminal({
+  environment: 'dev', // defaults to 'production'
+});
 
 async function main() {
   const productRetrieveResponse: Terminal.ProductRetrieveResponse = await terminal.product.retrieve();
@@ -214,7 +218,7 @@ import Terminal from 'terminal';
 ```
 
 To do the inverse, add `import "terminal/shims/node"` (which does import polyfills).
-This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/stainless-sdks/tree/main/src/_shims#readme)).
+This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/stainless-sdks/terminal-node/tree/main/src/_shims#readme)).
 
 ### Logging and middleware
 
