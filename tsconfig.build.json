@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "terminal/*": ["dist/src/*"],
-      "terminal": ["dist/src/index.ts"],
+      "@terminal/sdk/*": ["dist/src/*"],
+      "@terminal/sdk": ["dist/src/index.ts"],
     },
     "noEmit": false,
     "declaration": true,

@@ -1,4 +1,4 @@
-import { APIClient } from 'terminal/core';
+import { APIClient } from '@terminal/sdk/core';
 
 const { stringifyQuery } = APIClient.prototype as any;
 

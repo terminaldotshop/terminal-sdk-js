@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from '../core';
-import { APIResource } from '../resource';
-import * as ProductAPI from './product';
+import * as Core from '@terminal/sdk/core';
+import { APIResource } from '@terminal/sdk/resource';
+import * as ProductAPI from '@terminal/sdk/resources/product';
 
 export class Product extends APIResource {
   list(options?: Core.RequestOptions): Core.APIPromise<ProductListResponse> {
