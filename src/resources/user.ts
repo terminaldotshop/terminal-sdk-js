@@ -16,6 +16,8 @@ export interface User {
   email: string | null;
 
   fingerprint: string | null;
+
+  stripeCustomerID: string;
 }
 
 export interface UserMeResponse {
