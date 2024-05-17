@@ -2,4 +2,4 @@
 
 export { CartListResponse, CartSetItemResponse, CartSetItemParams, Cart } from './cart';
 export { ProductListResponse, Product } from './product';
-export { User, UserMeResponse, UserResource } from './user';
+export { UserMeResponse, User } from './user';
