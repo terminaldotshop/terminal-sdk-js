@@ -12,7 +12,6 @@ Methods:
 
 Types:
 
-- <code><a href="./src/resources/user.ts">User</a></code>
 - <code><a href="./src/resources/user.ts">UserMeResponse</a></code>
 
 Methods:

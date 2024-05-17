@@ -140,7 +140,7 @@ export class Terminal extends Core.APIClient {
   }
 
   product: API.Product = new API.Product(this);
-  user: API.UserResource = new API.UserResource(this);
+  user: API.User = new API.User(this);
   cart: API.Cart = new API.Cart(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
@@ -203,7 +203,6 @@ export namespace Terminal {
   export import Product = API.Product;
   export import ProductListResponse = API.ProductListResponse;
 
-  export import UserResource = API.UserResource;
   export import User = API.User;
   export import UserMeResponse = API.UserMeResponse;
 
