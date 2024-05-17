@@ -31,7 +31,7 @@ export namespace ProductListResponse {
 
       name: string;
 
-      price: string;
+      price: number;
     }
   }
 }

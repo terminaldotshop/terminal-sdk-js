@@ -26,7 +26,7 @@ export namespace CartListResponse {
 
     quantity: number;
 
-    subtotal: string;
+    subtotal: number;
   }
 }
 
@@ -42,7 +42,7 @@ export namespace CartSetItemResponse {
 
     quantity: number;
 
-    subtotal: string;
+    subtotal: number;
   }
 }
 
