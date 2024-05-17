@@ -15,18 +15,28 @@ export class Cart extends APIResource {
 }
 
 export interface CartListResponse {
-  result: Array<CartListResponse.Result>;
+  result: CartListResponse.Result;
 }
 
 export namespace CartListResponse {
   export interface Result {
-    id: string;
-
-    productVariantID: string;
-
-    quantity: number;
+    items: Array<Result.Item>;
 
     subtotal: number;
+
+    shippingID?: string;
+  }
+
+  export namespace Result {
+    export interface Item {
+      id: string;
+
+      productVariantID: string;
+
+      quantity: number;
+
+      subtotal: number;
+    }
   }
 }
 
