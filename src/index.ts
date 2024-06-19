@@ -141,6 +141,7 @@ export class Terminal extends Core.APIClient {
 
   product: API.Product = new API.Product(this);
   user: API.User = new API.User(this);
+  card: API.Card = new API.Card(this);
   cart: API.Cart = new API.Cart(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
@@ -205,6 +206,9 @@ export namespace Terminal {
 
   export import User = API.User;
   export import UserMeResponse = API.UserMeResponse;
+
+  export import Card = API.Card;
+  export import CardListResponse = API.CardListResponse;
 
   export import Cart = API.Cart;
   export import CartListResponse = API.CartListResponse;
