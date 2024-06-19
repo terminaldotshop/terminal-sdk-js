@@ -208,7 +208,6 @@ export namespace Terminal {
   export import UserMeResponse = API.UserMeResponse;
 
   export import Card = API.Card;
-  export import CardListResponse = API.CardListResponse;
 
   export import Cart = API.Cart;
   export import CartListResponse = API.CartListResponse;
