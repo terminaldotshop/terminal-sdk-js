@@ -1,6 +1,6 @@
 # Terminal Node API Library
 
-[![NPM version](https://img.shields.io/npm/v/@terminal/sdk.svg)](https://npmjs.org/package/@terminal/sdk)
+[![NPM version](https://img.shields.io/npm/v/@terminal/sdk.svg)](https://npmjs.org/package/@terminal/sdk) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@terminal/sdk)
 
 This library provides convenient access to the Terminal REST API from server-side TypeScript or JavaScript.
 
