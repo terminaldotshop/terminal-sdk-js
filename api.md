@@ -32,6 +32,16 @@ Methods:
 - <code title="get /user/shipping">client.user.shipping.<a href="./src/resources/user/shipping.ts">list</a>() -> ShippingListResponse</code>
 - <code title="delete /user/shipping/{id}">client.user.shipping.<a href="./src/resources/user/shipping.ts">delete</a>(id, { ...params }) -> ShippingDeleteResponse</code>
 
+# Card
+
+Types:
+
+- <code><a href="./src/resources/card.ts">CardListResponse</a></code>
+
+Methods:
+
+- <code title="get /card">client.card.<a href="./src/resources/card.ts">list</a>() -> CardListResponse</code>
+
 # Cart
 
 Types:
