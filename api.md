@@ -34,14 +34,6 @@ Methods:
 
 # Card
 
-Types:
-
-- <code><a href="./src/resources/card.ts">CardListResponse</a></code>
-
-Methods:
-
-- <code title="get /card">client.card.<a href="./src/resources/card.ts">list</a>() -> CardListResponse</code>
-
 # Cart
 
 Types:
