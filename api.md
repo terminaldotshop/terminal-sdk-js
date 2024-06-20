@@ -12,6 +12,7 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/user/user.ts">User</a></code>
 - <code><a href="./src/resources/user/user.ts">UserMeResponse</a></code>
 
 Methods:
@@ -30,9 +31,7 @@ Methods:
 
 - <code title="post /user/shipping">client.user.shipping.<a href="./src/resources/user/shipping.ts">create</a>({ ...params }) -> ShippingCreateResponse</code>
 - <code title="get /user/shipping">client.user.shipping.<a href="./src/resources/user/shipping.ts">list</a>() -> ShippingListResponse</code>
-- <code title="delete /user/shipping/{id}">client.user.shipping.<a href="./src/resources/user/shipping.ts">delete</a>(id, { ...params }) -> ShippingDeleteResponse</code>
-
-# Card
+- <code title="delete /user/shipping/{id}">client.user.shipping.<a href="./src/resources/user/shipping.ts">delete</a>(id) -> ShippingDeleteResponse</code>
 
 # Cart
 

@@ -24,6 +24,8 @@ export namespace CartListResponse {
 
     subtotal: number;
 
+    cardID?: string;
+
     shippingID?: string;
   }
 

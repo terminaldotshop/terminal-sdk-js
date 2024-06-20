@@ -13,12 +13,8 @@ export class Shipping extends APIResource {
     return this._client.get('/user/shipping', options);
   }
 
-  delete(
-    id: string,
-    body: ShippingDeleteParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<ShippingDeleteResponse> {
-    return this._client.delete(`/user/shipping/${id}`, { body, ...options });
+  delete(id: string, options?: Core.RequestOptions): Core.APIPromise<ShippingDeleteResponse> {
+    return this._client.delete(`/user/shipping/${id}`, options);
   }
 }
 
@@ -128,26 +124,9 @@ export interface ShippingCreateParams {
   street2?: string;
 }
 
-export interface ShippingDeleteParams {
-  city: string;
-
-  country: string;
-
-  name: string;
-
-  province: string;
-
-  street1: string;
-
-  zip: string;
-
-  street2?: string;
-}
-
 export namespace Shipping {
   export import ShippingCreateResponse = ShippingAPI.ShippingCreateResponse;
   export import ShippingListResponse = ShippingAPI.ShippingListResponse;
   export import ShippingDeleteResponse = ShippingAPI.ShippingDeleteResponse;
   export import ShippingCreateParams = ShippingAPI.ShippingCreateParams;
-  export import ShippingDeleteParams = ShippingAPI.ShippingDeleteParams;
 }
