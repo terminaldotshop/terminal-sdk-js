@@ -3,6 +3,11 @@
 Types:
 
 - <code><a href="./src/resources/shared.ts">Address</a></code>
+- <code><a href="./src/resources/shared.ts">Card</a></code>
+- <code><a href="./src/resources/shared.ts">Cart</a></code>
+- <code><a href="./src/resources/shared.ts">Product</a></code>
+- <code><a href="./src/resources/shared.ts">ProductVariant</a></code>
+- <code><a href="./src/resources/shared.ts">User</a></code>
 
 # Product
 
@@ -18,7 +23,6 @@ Methods:
 
 Types:
 
-- <code><a href="./src/resources/user/user.ts">User</a></code>
 - <code><a href="./src/resources/user/user.ts">UserMeResponse</a></code>
 
 Methods:
@@ -43,7 +47,6 @@ Methods:
 
 Types:
 
-- <code><a href="./src/resources/card.ts">Card</a></code>
 - <code><a href="./src/resources/card.ts">CardListResponse</a></code>
 
 Methods:
@@ -54,7 +57,6 @@ Methods:
 
 Types:
 
-- <code><a href="./src/resources/cart.ts">Cart</a></code>
 - <code><a href="./src/resources/cart.ts">CartListResponse</a></code>
 - <code><a href="./src/resources/cart.ts">CartSetCardResponse</a></code>
 - <code><a href="./src/resources/cart.ts">CartSetItemResponse</a></code>

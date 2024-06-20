@@ -3,8 +3,9 @@
 import * as Core from '@terminal/sdk/core';
 import { APIResource } from '@terminal/sdk/resource';
 import * as CartAPI from '@terminal/sdk/resources/cart';
+import * as Shared from '@terminal/sdk/resources/shared';
 
-export class CartResource extends APIResource {
+export class Cart extends APIResource {
   list(options?: Core.RequestOptions): Core.APIPromise<CartListResponse> {
     return this._client.get('/cart', options);
   }
@@ -25,30 +26,8 @@ export class CartResource extends APIResource {
   }
 }
 
-export interface Cart {
-  items: Array<Cart.Item>;
-
-  subtotal: number;
-
-  cardID?: string;
-
-  shippingID?: string;
-}
-
-export namespace Cart {
-  export interface Item {
-    id: string;
-
-    productVariantID: string;
-
-    quantity: number;
-
-    subtotal: number;
-  }
-}
-
 export interface CartListResponse {
-  result: Cart;
+  result: Shared.Cart;
 }
 
 export interface CartSetCardResponse {
@@ -89,8 +68,7 @@ export interface CartSetShippingParams {
   shippingID: string;
 }
 
-export namespace CartResource {
-  export import Cart = CartAPI.Cart;
+export namespace Cart {
   export import CartListResponse = CartAPI.CartListResponse;
   export import CartSetCardResponse = CartAPI.CartSetCardResponse;
   export import CartSetItemResponse = CartAPI.CartSetItemResponse;

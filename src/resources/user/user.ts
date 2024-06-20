@@ -3,9 +3,10 @@
 import * as Core from '@terminal/sdk/core';
 import { APIResource } from '@terminal/sdk/resource';
 import * as UserAPI from '@terminal/sdk/resources/user/user';
+import * as Shared from '@terminal/sdk/resources/shared';
 import * as ShippingAPI from '@terminal/sdk/resources/user/shipping';
 
-export class UserResource extends APIResource {
+export class User extends APIResource {
   shipping: ShippingAPI.Shipping = new ShippingAPI.Shipping(this._client);
 
   me(options?: Core.RequestOptions): Core.APIPromise<UserMeResponse> {
@@ -13,22 +14,11 @@ export class UserResource extends APIResource {
   }
 }
 
-export interface User {
-  id: string;
-
-  email: string | null;
-
-  fingerprint: string | null;
-
-  stripeCustomerID: string;
-}
-
 export interface UserMeResponse {
-  result: User;
+  result: Shared.User;
 }
 
-export namespace UserResource {
-  export import User = UserAPI.User;
+export namespace User {
   export import UserMeResponse = UserAPI.UserMeResponse;
   export import Shipping = ShippingAPI.Shipping;
   export import ShippingCreateResponse = ShippingAPI.ShippingCreateResponse;
