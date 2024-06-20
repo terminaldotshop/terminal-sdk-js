@@ -57,15 +57,8 @@ describe('resource shipping', () => {
     );
   });
 
-  test('delete: only required params', async () => {
-    const responsePromise = terminal.user.shipping.delete('string', {
-      city: 'string',
-      country: 'string',
-      name: 'string',
-      province: 'string',
-      street1: 'string',
-      zip: 'string',
-    });
+  test('delete', async () => {
+    const responsePromise = terminal.user.shipping.delete('string');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -75,15 +68,10 @@ describe('resource shipping', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('delete: required and optional params', async () => {
-    const response = await terminal.user.shipping.delete('string', {
-      city: 'string',
-      country: 'string',
-      name: 'string',
-      province: 'string',
-      street1: 'string',
-      zip: 'string',
-      street2: 'string',
-    });
+  test('delete: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      terminal.user.shipping.delete('string', { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Terminal.NotFoundError);
   });
 });
