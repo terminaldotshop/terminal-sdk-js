@@ -1,3 +1,9 @@
+# Shared
+
+Types:
+
+- <code><a href="./src/resources/shared.ts">Address</a></code>
+
 # Product
 
 Types:
@@ -33,14 +39,30 @@ Methods:
 - <code title="get /user/shipping">client.user.shipping.<a href="./src/resources/user/shipping.ts">list</a>() -> ShippingListResponse</code>
 - <code title="delete /user/shipping/{id}">client.user.shipping.<a href="./src/resources/user/shipping.ts">delete</a>(id) -> ShippingDeleteResponse</code>
 
+# Card
+
+Types:
+
+- <code><a href="./src/resources/card.ts">Card</a></code>
+- <code><a href="./src/resources/card.ts">CardListResponse</a></code>
+
+Methods:
+
+- <code title="get /card">client.card.<a href="./src/resources/card.ts">list</a>() -> CardListResponse</code>
+
 # Cart
 
 Types:
 
+- <code><a href="./src/resources/cart.ts">Cart</a></code>
 - <code><a href="./src/resources/cart.ts">CartListResponse</a></code>
+- <code><a href="./src/resources/cart.ts">CartSetCardResponse</a></code>
 - <code><a href="./src/resources/cart.ts">CartSetItemResponse</a></code>
+- <code><a href="./src/resources/cart.ts">CartSetShippingResponse</a></code>
 
 Methods:
 
 - <code title="get /cart">client.cart.<a href="./src/resources/cart.ts">list</a>() -> CartListResponse</code>
-- <code title="put /cart">client.cart.<a href="./src/resources/cart.ts">setItem</a>({ ...params }) -> CartSetItemResponse</code>
+- <code title="put /cart/card">client.cart.<a href="./src/resources/cart.ts">setCard</a>({ ...params }) -> CartSetCardResponse</code>
+- <code title="put /cart/item">client.cart.<a href="./src/resources/cart.ts">setItem</a>({ ...params }) -> CartSetItemResponse</code>
+- <code title="put /cart/shipping">client.cart.<a href="./src/resources/cart.ts">setShipping</a>({ ...params }) -> CartSetShippingResponse</code>
