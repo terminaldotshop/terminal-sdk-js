@@ -5,7 +5,6 @@ export {
   ShippingListResponse,
   ShippingDeleteResponse,
   ShippingCreateParams,
-  ShippingDeleteParams,
   Shipping,
 } from './shipping';
-export { UserMeResponse, User } from './user';
+export { User, UserMeResponse, UserResource } from './user';
