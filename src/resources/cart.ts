@@ -4,42 +4,55 @@ import * as Core from '@terminal/sdk/core';
 import { APIResource } from '@terminal/sdk/resource';
 import * as CartAPI from '@terminal/sdk/resources/cart';
 
-export class Cart extends APIResource {
+export class CartResource extends APIResource {
   list(options?: Core.RequestOptions): Core.APIPromise<CartListResponse> {
     return this._client.get('/cart', options);
   }
 
+  setCard(body: CartSetCardParams, options?: Core.RequestOptions): Core.APIPromise<CartSetCardResponse> {
+    return this._client.put('/cart/card', { body, ...options });
+  }
+
   setItem(body: CartSetItemParams, options?: Core.RequestOptions): Core.APIPromise<CartSetItemResponse> {
-    return this._client.put('/cart', { body, ...options });
+    return this._client.put('/cart/item', { body, ...options });
+  }
+
+  setShipping(
+    body: CartSetShippingParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<CartSetShippingResponse> {
+    return this._client.put('/cart/shipping', { body, ...options });
+  }
+}
+
+export interface Cart {
+  items: Array<Cart.Item>;
+
+  subtotal: number;
+
+  cardID?: string;
+
+  shippingID?: string;
+}
+
+export namespace Cart {
+  export interface Item {
+    id: string;
+
+    productVariantID: string;
+
+    quantity: number;
+
+    subtotal: number;
   }
 }
 
 export interface CartListResponse {
-  result: CartListResponse.Result;
+  result: Cart;
 }
 
-export namespace CartListResponse {
-  export interface Result {
-    items: Array<Result.Item>;
-
-    subtotal: number;
-
-    cardID?: string;
-
-    shippingID?: string;
-  }
-
-  export namespace Result {
-    export interface Item {
-      id: string;
-
-      productVariantID: string;
-
-      quantity: number;
-
-      subtotal: number;
-    }
-  }
+export interface CartSetCardResponse {
+  result: 'ok';
 }
 
 export interface CartSetItemResponse {
@@ -58,14 +71,31 @@ export namespace CartSetItemResponse {
   }
 }
 
+export interface CartSetShippingResponse {
+  result: 'ok';
+}
+
+export interface CartSetCardParams {
+  cardID: string;
+}
+
 export interface CartSetItemParams {
   productVariantID: string;
 
   quantity: number;
 }
 
-export namespace Cart {
+export interface CartSetShippingParams {
+  shippingID: string;
+}
+
+export namespace CartResource {
+  export import Cart = CartAPI.Cart;
   export import CartListResponse = CartAPI.CartListResponse;
+  export import CartSetCardResponse = CartAPI.CartSetCardResponse;
   export import CartSetItemResponse = CartAPI.CartSetItemResponse;
+  export import CartSetShippingResponse = CartAPI.CartSetShippingResponse;
+  export import CartSetCardParams = CartAPI.CartSetCardParams;
   export import CartSetItemParams = CartAPI.CartSetItemParams;
+  export import CartSetShippingParams = CartAPI.CartSetShippingParams;
 }

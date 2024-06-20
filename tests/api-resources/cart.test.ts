@@ -27,6 +27,21 @@ describe('resource cart', () => {
     );
   });
 
+  test('setCard: only required params', async () => {
+    const responsePromise = terminal.cart.setCard({ cardID: 'string' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('setCard: required and optional params', async () => {
+    const response = await terminal.cart.setCard({ cardID: 'string' });
+  });
+
   test('setItem: only required params', async () => {
     const responsePromise = terminal.cart.setItem({ productVariantID: 'string', quantity: 0 });
     const rawResponse = await responsePromise.asResponse();
@@ -40,5 +55,20 @@ describe('resource cart', () => {
 
   test('setItem: required and optional params', async () => {
     const response = await terminal.cart.setItem({ productVariantID: 'string', quantity: 0 });
+  });
+
+  test('setShipping: only required params', async () => {
+    const responsePromise = terminal.cart.setShipping({ shippingID: 'string' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('setShipping: required and optional params', async () => {
+    const response = await terminal.cart.setShipping({ shippingID: 'string' });
   });
 });
