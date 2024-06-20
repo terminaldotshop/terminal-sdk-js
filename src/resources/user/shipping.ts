@@ -3,6 +3,7 @@
 import * as Core from '@terminal/sdk/core';
 import { APIResource } from '@terminal/sdk/resource';
 import * as ShippingAPI from '@terminal/sdk/resources/user/shipping';
+import * as Shared from '@terminal/sdk/resources/shared';
 
 export class Shipping extends APIResource {
   create(body: ShippingCreateParams, options?: Core.RequestOptions): Core.APIPromise<ShippingCreateResponse> {
@@ -26,25 +27,7 @@ export namespace ShippingCreateResponse {
   export interface Result {
     id: string;
 
-    address: Result.Address;
-  }
-
-  export namespace Result {
-    export interface Address {
-      city: string;
-
-      country: string;
-
-      name: string;
-
-      province: string;
-
-      street1: string;
-
-      zip: string;
-
-      street2?: string;
-    }
+    address: Shared.Address;
   }
 }
 
@@ -56,25 +39,7 @@ export namespace ShippingListResponse {
   export interface Result {
     id: string;
 
-    address: Result.Address;
-  }
-
-  export namespace Result {
-    export interface Address {
-      city: string;
-
-      country: string;
-
-      name: string;
-
-      province: string;
-
-      street1: string;
-
-      zip: string;
-
-      street2?: string;
-    }
+    address: Shared.Address;
   }
 }
 
@@ -86,25 +51,7 @@ export namespace ShippingDeleteResponse {
   export interface Result {
     id: string;
 
-    address: Result.Address;
-  }
-
-  export namespace Result {
-    export interface Address {
-      city: string;
-
-      country: string;
-
-      name: string;
-
-      province: string;
-
-      street1: string;
-
-      zip: string;
-
-      street2?: string;
-    }
+    address: Shared.Address;
   }
 }
 
