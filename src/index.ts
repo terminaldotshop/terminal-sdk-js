@@ -140,9 +140,9 @@ export class Terminal extends Core.APIClient {
   }
 
   product: API.Product = new API.Product(this);
-  user: API.UserResource = new API.UserResource(this);
-  card: API.CardResource = new API.CardResource(this);
-  cart: API.CartResource = new API.CartResource(this);
+  user: API.User = new API.User(this);
+  card: API.Card = new API.Card(this);
+  cart: API.Cart = new API.Cart(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
@@ -204,15 +204,12 @@ export namespace Terminal {
   export import Product = API.Product;
   export import ProductListResponse = API.ProductListResponse;
 
-  export import UserResource = API.UserResource;
   export import User = API.User;
   export import UserMeResponse = API.UserMeResponse;
 
-  export import CardResource = API.CardResource;
   export import Card = API.Card;
   export import CardListResponse = API.CardListResponse;
 
-  export import CartResource = API.CartResource;
   export import Cart = API.Cart;
   export import CartListResponse = API.CartListResponse;
   export import CartSetCardResponse = API.CartSetCardResponse;
@@ -223,6 +220,11 @@ export namespace Terminal {
   export import CartSetShippingParams = API.CartSetShippingParams;
 
   export import Address = API.Address;
+  export import Card = API.Card;
+  export import Cart = API.Cart;
+  export import Product = API.Product;
+  export import ProductVariant = API.ProductVariant;
+  export import User = API.User;
 }
 
 export default Terminal;

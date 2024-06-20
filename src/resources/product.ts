@@ -3,6 +3,7 @@
 import * as Core from '@terminal/sdk/core';
 import { APIResource } from '@terminal/sdk/resource';
 import * as ProductAPI from '@terminal/sdk/resources/product';
+import * as Shared from '@terminal/sdk/resources/shared';
 
 export class Product extends APIResource {
   list(options?: Core.RequestOptions): Core.APIPromise<ProductListResponse> {
@@ -11,29 +12,7 @@ export class Product extends APIResource {
 }
 
 export interface ProductListResponse {
-  result: Array<ProductListResponse.Result>;
-}
-
-export namespace ProductListResponse {
-  export interface Result {
-    id: string;
-
-    description: string;
-
-    name: string;
-
-    variants: Array<Result.Variant>;
-  }
-
-  export namespace Result {
-    export interface Variant {
-      id: string;
-
-      name: string;
-
-      price: number;
-    }
-  }
+  result: Array<Shared.Product>;
 }
 
 export namespace Product {
