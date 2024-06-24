@@ -35,31 +35,7 @@ export interface CartSetCardResponse {
 }
 
 export interface CartSetItemResponse {
-  result: CartSetItemResponse.Result;
-}
-
-export namespace CartSetItemResponse {
-  export interface Result {
-    items: Array<Result.Item>;
-
-    subtotal: number;
-
-    cardID?: string;
-
-    shippingID?: string;
-  }
-
-  export namespace Result {
-    export interface Item {
-      id: string;
-
-      productVariantID: string;
-
-      quantity: number;
-
-      subtotal: number;
-    }
-  }
+  result: Shared.Cart;
 }
 
 export interface CartSetShippingResponse {
