@@ -211,7 +211,9 @@ export namespace Terminal {
   export import UserMeResponse = API.UserMeResponse;
 
   export import Card = API.Card;
+  export import CardCreateResponse = API.CardCreateResponse;
   export import CardListResponse = API.CardListResponse;
+  export import CardCreateParams = API.CardCreateParams;
 
   export import Cart = API.Cart;
   export import CartListResponse = API.CartListResponse;
