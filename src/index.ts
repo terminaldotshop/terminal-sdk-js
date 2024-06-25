@@ -1,9 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from './core';
 import * as Errors from './error';
-import { type Agent } from './_shims/index';
 import * as Uploads from './uploads';
+import { type Agent } from './_shims/index';
+import * as Core from '@terminal/sdk/core';
 import * as API from '@terminal/sdk/resources/index';
 
 const environments = {
@@ -84,7 +84,9 @@ export interface ClientOptions {
   defaultQuery?: Core.DefaultQuery;
 }
 
-/** API Client for interfacing with the Terminal API. */
+/**
+ * API Client for interfacing with the Terminal API.
+ */
 export class Terminal extends Core.APIClient {
   bearerToken: string;
 
@@ -134,6 +136,7 @@ export class Terminal extends Core.APIClient {
       maxRetries: options.maxRetries,
       fetch: options.fetch,
     });
+
     this._options = options;
 
     this.bearerToken = bearerToken;
@@ -212,6 +215,12 @@ export namespace Terminal {
 
   export import Cart = API.Cart;
   export import CartListResponse = API.CartListResponse;
+  export import CartSetCardResponse = API.CartSetCardResponse;
+  export import CartSetItemResponse = API.CartSetItemResponse;
+  export import CartSetShippingResponse = API.CartSetShippingResponse;
+  export import CartSetCardParams = API.CartSetCardParams;
+  export import CartSetItemParams = API.CartSetItemParams;
+  export import CartSetShippingParams = API.CartSetShippingParams;
 
   export import Address = API.Address;
   export import Card = API.Card;
