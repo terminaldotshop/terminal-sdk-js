@@ -47,10 +47,12 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/card.ts">CardCreateResponse</a></code>
 - <code><a href="./src/resources/card.ts">CardListResponse</a></code>
 
 Methods:
 
+- <code title="post /card">client.card.<a href="./src/resources/card.ts">create</a>({ ...params }) -> CardCreateResponse</code>
 - <code title="get /card">client.card.<a href="./src/resources/card.ts">list</a>() -> CardListResponse</code>
 
 # Cart

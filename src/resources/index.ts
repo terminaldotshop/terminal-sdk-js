@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 export * from './shared';
-export { CardListResponse, Card } from './card';
+export { CardCreateResponse, CardListResponse, CardCreateParams, Card } from './card';
 export {
   CartListResponse,
   CartSetCardResponse,
