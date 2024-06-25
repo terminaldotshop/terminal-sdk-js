@@ -9,21 +9,6 @@ const terminal = new Terminal({
 });
 
 describe('resource card', () => {
-  test('create: only required params', async () => {
-    const responsePromise = terminal.card.create({ token: 'string' });
-    const rawResponse = await responsePromise.asResponse();
-    expect(rawResponse).toBeInstanceOf(Response);
-    const response = await responsePromise;
-    expect(response).not.toBeInstanceOf(Response);
-    const dataAndResponse = await responsePromise.withResponse();
-    expect(dataAndResponse.data).toBe(response);
-    expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  test('create: required and optional params', async () => {
-    const response = await terminal.card.create({ token: 'string' });
-  });
-
   test('list', async () => {
     const responsePromise = terminal.card.list();
     const rawResponse = await responsePromise.asResponse();
