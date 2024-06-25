@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from '@terminal/sdk/core';
 import { APIResource } from '@terminal/sdk/resource';
+import * as Core from '@terminal/sdk/core';
 import * as CardAPI from '@terminal/sdk/resources/card';
 import * as Shared from '@terminal/sdk/resources/shared';
 
