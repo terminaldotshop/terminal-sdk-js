@@ -211,18 +211,10 @@ export namespace Terminal {
   export import UserMeResponse = API.UserMeResponse;
 
   export import Card = API.Card;
-  export import CardCreateResponse = API.CardCreateResponse;
   export import CardListResponse = API.CardListResponse;
-  export import CardCreateParams = API.CardCreateParams;
 
   export import Cart = API.Cart;
   export import CartListResponse = API.CartListResponse;
-  export import CartSetCardResponse = API.CartSetCardResponse;
-  export import CartSetItemResponse = API.CartSetItemResponse;
-  export import CartSetShippingResponse = API.CartSetShippingResponse;
-  export import CartSetCardParams = API.CartSetCardParams;
-  export import CartSetItemParams = API.CartSetItemParams;
-  export import CartSetShippingParams = API.CartSetShippingParams;
 
   export import Address = API.Address;
   export import Card = API.Card;
