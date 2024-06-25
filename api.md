@@ -58,13 +58,7 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/cart.ts">CartListResponse</a></code>
-- <code><a href="./src/resources/cart.ts">CartSetCardResponse</a></code>
-- <code><a href="./src/resources/cart.ts">CartSetItemResponse</a></code>
-- <code><a href="./src/resources/cart.ts">CartSetShippingResponse</a></code>
 
 Methods:
 
 - <code title="get /cart">client.cart.<a href="./src/resources/cart.ts">list</a>() -> CartListResponse</code>
-- <code title="put /cart/card">client.cart.<a href="./src/resources/cart.ts">setCard</a>({ ...params }) -> CartSetCardResponse</code>
-- <code title="put /cart/item">client.cart.<a href="./src/resources/cart.ts">setItem</a>({ ...params }) -> CartSetItemResponse</code>
-- <code title="put /cart/shipping">client.cart.<a href="./src/resources/cart.ts">setShipping</a>({ ...params }) -> CartSetShippingResponse</code>
