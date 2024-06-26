@@ -35,6 +35,8 @@ export namespace Card {
 }
 
 export interface Cart {
+  amount: Cart.Amount;
+
   items: Array<Cart.Item>;
 
   subtotal: number;
@@ -45,6 +47,12 @@ export interface Cart {
 }
 
 export namespace Cart {
+  export interface Amount {
+    shipping: number;
+
+    subtotal: number;
+  }
+
   export interface Item {
     id: string;
 
