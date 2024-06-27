@@ -229,7 +229,6 @@ export namespace Terminal {
   export import Cart = API.Cart;
   export import Product = API.Product;
   export import ProductVariant = API.ProductVariant;
-  export import Shipping = API.Shipping;
   export import User = API.User;
 }
 
