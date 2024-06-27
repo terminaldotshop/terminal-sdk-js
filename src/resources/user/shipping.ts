@@ -20,15 +20,39 @@ export class Shipping extends APIResource {
 }
 
 export interface ShippingCreateResponse {
-  result: Array<Shared.Shipping>;
+  result: Array<ShippingCreateResponse.Result>;
+}
+
+export namespace ShippingCreateResponse {
+  export interface Result {
+    id: string;
+
+    address: Shared.Address;
+  }
 }
 
 export interface ShippingListResponse {
-  result: Array<Shared.Shipping>;
+  result: Array<ShippingListResponse.Result>;
+}
+
+export namespace ShippingListResponse {
+  export interface Result {
+    id: string;
+
+    address: Shared.Address;
+  }
 }
 
 export interface ShippingDeleteResponse {
-  result: Array<Shared.Shipping>;
+  result: Array<ShippingDeleteResponse.Result>;
+}
+
+export namespace ShippingDeleteResponse {
+  export interface Result {
+    id: string;
+
+    address: Shared.Address;
+  }
 }
 
 export interface ShippingCreateParams {
