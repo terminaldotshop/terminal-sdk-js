@@ -12,6 +12,6 @@ export {
   CartSetShippingParams,
   Cart,
 } from './cart';
-export { OrderCreateResponse, OrderGetResponse, Order } from './order';
+export { Order } from './order';
 export { ProductListResponse, Product } from './product';
-export { UserUpdateResponse, UserMeResponse, UserUpdateParams, User } from './user/user';
+export { UserMeResponse, User } from './user/user';
