@@ -9,6 +9,21 @@ const terminal = new Terminal({
 });
 
 describe('resource user', () => {
+  test('update: only required params', async () => {
+    const responsePromise = terminal.user.update({ id: 'string' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('update: required and optional params', async () => {
+    const response = await terminal.user.update({ id: 'string', email: 'string', name: 'string' });
+  });
+
   test('me', async () => {
     const responsePromise = terminal.user.me();
     const rawResponse = await responsePromise.asResponse();
