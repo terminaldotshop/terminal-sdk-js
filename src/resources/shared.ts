@@ -82,12 +82,20 @@ export interface ProductVariant {
   price: number;
 }
 
+export interface Shipping {
+  id: string;
+
+  address: Address;
+}
+
 export interface User {
   id: string;
 
   email: string | null;
 
   fingerprint: string | null;
+
+  name: string | null;
 
   stripeCustomerID: string;
 }
