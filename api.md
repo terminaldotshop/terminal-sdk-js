@@ -24,10 +24,12 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/user/user.ts">UserUpdateResponse</a></code>
 - <code><a href="./src/resources/user/user.ts">UserMeResponse</a></code>
 
 Methods:
 
+- <code title="put /user/me">client.user.<a href="./src/resources/user/user.ts">update</a>({ ...params }) -> UserUpdateResponse</code>
 - <code title="get /user/me">client.user.<a href="./src/resources/user/user.ts">me</a>() -> UserMeResponse</code>
 
 ## Shipping

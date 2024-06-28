@@ -95,5 +95,7 @@ export interface User {
 
   fingerprint: string | null;
 
+  name: string | null;
+
   stripeCustomerID: string;
 }
