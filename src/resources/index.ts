@@ -13,4 +13,4 @@ export {
   Cart,
 } from './cart';
 export { ProductListResponse, Product } from './product';
-export { UserUpdateResponse, UserMeResponse, UserUpdateParams, User } from './user/user';
+export { UserMeResponse, User } from './user/user';
