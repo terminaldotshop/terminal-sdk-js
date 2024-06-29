@@ -12,7 +12,7 @@ describe('resource shipping', () => {
   test('create: only required params', async () => {
     const responsePromise = terminal.user.shipping.create({
       city: 'string',
-      country: 'string',
+      country: 'xx',
       name: 'string',
       province: 'string',
       street1: 'string',
@@ -30,7 +30,7 @@ describe('resource shipping', () => {
   test('create: required and optional params', async () => {
     const response = await terminal.user.shipping.create({
       city: 'string',
-      country: 'string',
+      country: 'xx',
       name: 'string',
       province: 'string',
       street1: 'string',

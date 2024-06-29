@@ -5,6 +5,7 @@ Types:
 - <code><a href="./src/resources/shared.ts">Address</a></code>
 - <code><a href="./src/resources/shared.ts">Card</a></code>
 - <code><a href="./src/resources/shared.ts">Cart</a></code>
+- <code><a href="./src/resources/shared.ts">Order</a></code>
 - <code><a href="./src/resources/shared.ts">Product</a></code>
 - <code><a href="./src/resources/shared.ts">ProductVariant</a></code>
 - <code><a href="./src/resources/shared.ts">Shipping</a></code>
@@ -24,10 +25,12 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/user/user.ts">UserUpdateResponse</a></code>
 - <code><a href="./src/resources/user/user.ts">UserMeResponse</a></code>
 
 Methods:
 
+- <code title="put /user/me">client.user.<a href="./src/resources/user/user.ts">update</a>({ ...params }) -> UserUpdateResponse</code>
 - <code title="get /user/me">client.user.<a href="./src/resources/user/user.ts">me</a>() -> UserMeResponse</code>
 
 ## Shipping
@@ -73,3 +76,13 @@ Methods:
 - <code title="put /cart/shipping">client.cart.<a href="./src/resources/cart.ts">setShipping</a>({ ...params }) -> CartSetShippingResponse</code>
 
 # Order
+
+Types:
+
+- <code><a href="./src/resources/order.ts">OrderCreateResponse</a></code>
+- <code><a href="./src/resources/order.ts">OrderGetResponse</a></code>
+
+Methods:
+
+- <code title="post /order">client.order.<a href="./src/resources/order.ts">create</a>() -> OrderCreateResponse</code>
+- <code title="get /order/{id}">client.order.<a href="./src/resources/order.ts">get</a>(id) -> OrderGetResponse</code>
