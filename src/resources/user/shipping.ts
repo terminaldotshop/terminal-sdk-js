@@ -28,7 +28,7 @@ export interface ShippingListResponse {
 }
 
 export interface ShippingDeleteResponse {
-  result: 'ok';
+  result: Array<Shared.Shipping>;
 }
 
 export interface ShippingCreateParams {
