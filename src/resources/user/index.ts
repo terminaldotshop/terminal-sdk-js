@@ -7,4 +7,4 @@ export {
   ShippingCreateParams,
   Shipping,
 } from './shipping';
-export { UserMeResponse, User } from './user';
+export { UserUpdateResponse, UserMeResponse, UserUpdateParams, User } from './user';
