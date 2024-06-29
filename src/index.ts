@@ -209,7 +209,9 @@ export namespace Terminal {
   export import ProductListResponse = API.ProductListResponse;
 
   export import User = API.User;
+  export import UserUpdateResponse = API.UserUpdateResponse;
   export import UserMeResponse = API.UserMeResponse;
+  export import UserUpdateParams = API.UserUpdateParams;
 
   export import Card = API.Card;
   export import CardCreateResponse = API.CardCreateResponse;
@@ -226,10 +228,13 @@ export namespace Terminal {
   export import CartSetShippingParams = API.CartSetShippingParams;
 
   export import Order = API.Order;
+  export import OrderCreateResponse = API.OrderCreateResponse;
+  export import OrderGetResponse = API.OrderGetResponse;
 
   export import Address = API.Address;
   export import Card = API.Card;
   export import Cart = API.Cart;
+  export import Order = API.Order;
   export import Product = API.Product;
   export import ProductVariant = API.ProductVariant;
   export import Shipping = API.Shipping;

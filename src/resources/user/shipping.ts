@@ -20,7 +20,7 @@ export class Shipping extends APIResource {
 }
 
 export interface ShippingCreateResponse {
-  result: Array<Shared.Shipping>;
+  result: string;
 }
 
 export interface ShippingListResponse {
