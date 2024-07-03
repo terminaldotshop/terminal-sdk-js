@@ -126,6 +126,8 @@ export interface Product {
   name: string;
 
   variants: Array<ProductVariant>;
+
+  order?: number;
 }
 
 export interface ProductVariant {
