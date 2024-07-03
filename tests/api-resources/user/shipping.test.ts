@@ -35,6 +35,7 @@ describe('resource shipping', () => {
       province: 'string',
       street1: 'string',
       zip: 'string',
+      phone: 'string',
       street2: 'string',
     });
   });
