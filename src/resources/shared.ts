@@ -13,6 +13,8 @@ export interface Address {
 
   zip: string;
 
+  phone?: string;
+
   street2?: string;
 }
 
@@ -43,14 +45,16 @@ export interface Cart {
 
   cardID?: string;
 
+  shipping?: Cart.Shipping;
+
   shippingID?: string;
 }
 
 export namespace Cart {
   export interface Amount {
-    shipping: number;
-
     subtotal: number;
+
+    shipping?: number;
   }
 
   export interface Item {
@@ -61,6 +65,12 @@ export namespace Cart {
     quantity: number;
 
     subtotal: number;
+  }
+
+  export interface Shipping {
+    service?: string;
+
+    timeframe?: string;
   }
 }
 
@@ -107,6 +117,8 @@ export namespace Order {
     street1: string;
 
     zip: string;
+
+    phone?: string;
 
     street2?: string;
   }
