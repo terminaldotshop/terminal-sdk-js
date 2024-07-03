@@ -44,8 +44,6 @@ export interface ShippingCreateParams {
 
   zip: string;
 
-  phone?: string;
-
   street2?: string;
 }
 
