@@ -13,8 +13,6 @@ export interface Address {
 
   zip: string;
 
-  phone?: string;
-
   street2?: string;
 }
 
@@ -50,9 +48,9 @@ export interface Cart {
 
 export namespace Cart {
   export interface Amount {
-    subtotal: number;
+    shipping: number;
 
-    shipping?: number;
+    subtotal: number;
   }
 
   export interface Item {
@@ -109,8 +107,6 @@ export namespace Order {
     street1: string;
 
     zip: string;
-
-    phone?: string;
 
     street2?: string;
   }
