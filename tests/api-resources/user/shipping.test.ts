@@ -14,7 +14,6 @@ describe('resource shipping', () => {
       city: 'string',
       country: 'xx',
       name: 'string',
-      province: 'string',
       street1: 'string',
       zip: 'string',
     });
@@ -32,9 +31,10 @@ describe('resource shipping', () => {
       city: 'string',
       country: 'xx',
       name: 'string',
-      province: 'string',
       street1: 'string',
       zip: 'string',
+      phone: 'string',
+      province: 'string',
       street2: 'string',
     });
   });
