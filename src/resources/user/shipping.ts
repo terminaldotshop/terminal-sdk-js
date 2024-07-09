@@ -38,11 +38,13 @@ export interface ShippingCreateParams {
 
   name: string;
 
-  province: string;
-
   street1: string;
 
   zip: string;
+
+  phone?: string;
+
+  province?: string;
 
   street2?: string;
 }
