@@ -28,7 +28,7 @@ describe('resource cart', () => {
   });
 
   test('setCard: only required params', async () => {
-    const responsePromise = terminal.cart.setCard({ cardID: 'string' });
+    const responsePromise = terminal.cart.setCard({ cardID: 'cardID' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -39,11 +39,11 @@ describe('resource cart', () => {
   });
 
   test('setCard: required and optional params', async () => {
-    const response = await terminal.cart.setCard({ cardID: 'string' });
+    const response = await terminal.cart.setCard({ cardID: 'cardID' });
   });
 
   test('setItem: only required params', async () => {
-    const responsePromise = terminal.cart.setItem({ productVariantID: 'string', quantity: 0 });
+    const responsePromise = terminal.cart.setItem({ productVariantID: 'productVariantID', quantity: 0 });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -54,11 +54,11 @@ describe('resource cart', () => {
   });
 
   test('setItem: required and optional params', async () => {
-    const response = await terminal.cart.setItem({ productVariantID: 'string', quantity: 0 });
+    const response = await terminal.cart.setItem({ productVariantID: 'productVariantID', quantity: 0 });
   });
 
   test('setShipping: only required params', async () => {
-    const responsePromise = terminal.cart.setShipping({ shippingID: 'string' });
+    const responsePromise = terminal.cart.setShipping({ shippingID: 'shippingID' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -69,6 +69,6 @@ describe('resource cart', () => {
   });
 
   test('setShipping: required and optional params', async () => {
-    const response = await terminal.cart.setShipping({ shippingID: 'string' });
+    const response = await terminal.cart.setShipping({ shippingID: 'shippingID' });
   });
 });
