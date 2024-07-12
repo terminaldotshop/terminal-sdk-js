@@ -10,7 +10,7 @@ const terminal = new Terminal({
 
 describe('resource user', () => {
   test('update: only required params', async () => {
-    const responsePromise = terminal.user.update({ id: 'string' });
+    const responsePromise = terminal.user.update({ id: 'id' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -21,7 +21,7 @@ describe('resource user', () => {
   });
 
   test('update: required and optional params', async () => {
-    const response = await terminal.user.update({ id: 'string', email: 'string', name: 'string' });
+    const response = await terminal.user.update({ id: 'id', email: 'email', name: 'name' });
   });
 
   test('me', async () => {

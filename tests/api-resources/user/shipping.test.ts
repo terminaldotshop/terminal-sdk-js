@@ -11,11 +11,11 @@ const terminal = new Terminal({
 describe('resource shipping', () => {
   test('create: only required params', async () => {
     const responsePromise = terminal.user.shipping.create({
-      city: 'string',
-      country: 'xx',
-      name: 'string',
-      street1: 'string',
-      zip: 'string',
+      city: 'city',
+      country: 'country',
+      name: 'name',
+      street1: 'street1',
+      zip: 'zip',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -28,14 +28,14 @@ describe('resource shipping', () => {
 
   test('create: required and optional params', async () => {
     const response = await terminal.user.shipping.create({
-      city: 'string',
-      country: 'xx',
-      name: 'string',
-      street1: 'string',
-      zip: 'string',
-      phone: 'string',
-      province: 'string',
-      street2: 'string',
+      city: 'city',
+      country: 'country',
+      name: 'name',
+      street1: 'street1',
+      zip: 'zip',
+      phone: 'phone',
+      province: 'province',
+      street2: 'street2',
     });
   });
 
@@ -58,7 +58,7 @@ describe('resource shipping', () => {
   });
 
   test('delete', async () => {
-    const responsePromise = terminal.user.shipping.delete('string');
+    const responsePromise = terminal.user.shipping.delete('id');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -70,8 +70,8 @@ describe('resource shipping', () => {
 
   test('delete: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(
-      terminal.user.shipping.delete('string', { path: '/_stainless_unknown_path' }),
-    ).rejects.toThrow(Terminal.NotFoundError);
+    await expect(terminal.user.shipping.delete('id', { path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Terminal.NotFoundError,
+    );
   });
 });
