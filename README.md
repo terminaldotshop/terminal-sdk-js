@@ -22,7 +22,7 @@ The full API of this library can be found in [api.md](api.md).
 ```js
 import Terminal from '@terminal/sdk';
 
-const terminal = new Terminal({
+const client = new Terminal({
   environment: 'dev', // defaults to 'production'
 });
 
@@ -43,7 +43,7 @@ This library includes TypeScript definitions for all request params and response
 ```ts
 import Terminal from '@terminal/sdk';
 
-const terminal = new Terminal({
+const client = new Terminal({
   environment: 'dev', // defaults to 'production'
 });
 
@@ -103,7 +103,7 @@ You can use the `maxRetries` option to configure or disable this:
 <!-- prettier-ignore -->
 ```js
 // Configure the default for all requests:
-const terminal = new Terminal({
+const client = new Terminal({
   maxRetries: 0, // default is 2
 });
 
@@ -120,7 +120,7 @@ Requests time out after 1 minute by default. You can configure this with a `time
 <!-- prettier-ignore -->
 ```ts
 // Configure the default for all requests:
-const terminal = new Terminal({
+const client = new Terminal({
   timeout: 20 * 1000, // 20 seconds (default is 1 minute)
 });
 
@@ -144,7 +144,7 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 
 <!-- prettier-ignore -->
 ```ts
-const terminal = new Terminal();
+const client = new Terminal();
 
 const response = await terminal.product.list().asResponse();
 console.log(response.headers.get('X-My-Header'));
@@ -251,7 +251,7 @@ import http from 'http';
 import { HttpsProxyAgent } from 'https-proxy-agent';
 
 // Configure the default for all requests:
-const terminal = new Terminal({
+const client = new Terminal({
   httpAgent: new HttpsProxyAgent(process.env.PROXY_URL),
 });
 
