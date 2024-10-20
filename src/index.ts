@@ -3,8 +3,8 @@
 import * as Errors from './error';
 import * as Uploads from './uploads';
 import { type Agent } from './_shims/index';
-import * as Core from '@terminal/sdk/core';
-import * as API from '@terminal/sdk/resources/index';
+import * as Core from './core';
+import * as API from './resources/index';
 
 const environments = {
   production: 'https://openapi.terminal.shop/',
@@ -164,6 +164,7 @@ export class Terminal extends Core.APIClient {
   }
 
   static Terminal = this;
+  static DEFAULT_TIMEOUT = 60000; // 1 minute
 
   static TerminalError = Errors.TerminalError;
   static APIError = Errors.APIError;

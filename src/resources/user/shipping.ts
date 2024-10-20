@@ -1,9 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '@terminal/sdk/resource';
-import * as Core from '@terminal/sdk/core';
-import * as ShippingAPI from '@terminal/sdk/resources/user/shipping';
-import * as Shared from '@terminal/sdk/resources/shared';
+import { APIResource } from '../../resource';
+import * as Core from '../../core';
+import * as ShippingAPI from './shipping';
+import * as Shared from '../shared';
 
 export class Shipping extends APIResource {
   create(body: ShippingCreateParams, options?: Core.RequestOptions): Core.APIPromise<ShippingCreateResponse> {

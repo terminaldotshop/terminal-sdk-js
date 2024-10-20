@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '@terminal/sdk/resource';
-import * as Core from '@terminal/sdk/core';
-import * as UserAPI from '@terminal/sdk/resources/user/user';
-import * as Shared from '@terminal/sdk/resources/shared';
-import * as ShippingAPI from '@terminal/sdk/resources/user/shipping';
+import { APIResource } from '../../resource';
+import * as Core from '../../core';
+import * as UserAPI from './user';
+import * as Shared from '../shared';
+import * as ShippingAPI from './shipping';
 
 export class User extends APIResource {
   shipping: ShippingAPI.Shipping = new ShippingAPI.Shipping(this._client);
