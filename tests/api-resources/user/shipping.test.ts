@@ -3,14 +3,14 @@
 import Terminal from '@terminal/sdk';
 import { Response } from 'node-fetch';
 
-const terminal = new Terminal({
+const client = new Terminal({
   bearerToken: 'My Bearer Token',
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
 describe('resource shipping', () => {
   test('create: only required params', async () => {
-    const responsePromise = terminal.user.shipping.create({
+    const responsePromise = client.user.shipping.create({
       city: 'city',
       country: 'country',
       name: 'name',
@@ -27,7 +27,7 @@ describe('resource shipping', () => {
   });
 
   test('create: required and optional params', async () => {
-    const response = await terminal.user.shipping.create({
+    const response = await client.user.shipping.create({
       city: 'city',
       country: 'country',
       name: 'name',
@@ -40,7 +40,7 @@ describe('resource shipping', () => {
   });
 
   test('list', async () => {
-    const responsePromise = terminal.user.shipping.list();
+    const responsePromise = client.user.shipping.list();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -52,13 +52,13 @@ describe('resource shipping', () => {
 
   test('list: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(terminal.user.shipping.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.user.shipping.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Terminal.NotFoundError,
     );
   });
 
   test('delete', async () => {
-    const responsePromise = terminal.user.shipping.delete('id');
+    const responsePromise = client.user.shipping.delete('id');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -70,7 +70,7 @@ describe('resource shipping', () => {
 
   test('delete: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(terminal.user.shipping.delete('id', { path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.user.shipping.delete('id', { path: '/_stainless_unknown_path' })).rejects.toThrow(
       Terminal.NotFoundError,
     );
   });

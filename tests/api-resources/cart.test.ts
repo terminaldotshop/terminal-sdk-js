@@ -3,14 +3,14 @@
 import Terminal from '@terminal/sdk';
 import { Response } from 'node-fetch';
 
-const terminal = new Terminal({
+const client = new Terminal({
   bearerToken: 'My Bearer Token',
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
 describe('resource cart', () => {
   test('list', async () => {
-    const responsePromise = terminal.cart.list();
+    const responsePromise = client.cart.list();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -22,13 +22,13 @@ describe('resource cart', () => {
 
   test('list: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(terminal.cart.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.cart.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Terminal.NotFoundError,
     );
   });
 
   test('setCard: only required params', async () => {
-    const responsePromise = terminal.cart.setCard({ cardID: 'cardID' });
+    const responsePromise = client.cart.setCard({ cardID: 'cardID' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -39,11 +39,11 @@ describe('resource cart', () => {
   });
 
   test('setCard: required and optional params', async () => {
-    const response = await terminal.cart.setCard({ cardID: 'cardID' });
+    const response = await client.cart.setCard({ cardID: 'cardID' });
   });
 
   test('setItem: only required params', async () => {
-    const responsePromise = terminal.cart.setItem({ productVariantID: 'productVariantID', quantity: 0 });
+    const responsePromise = client.cart.setItem({ productVariantID: 'productVariantID', quantity: 0 });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -54,11 +54,11 @@ describe('resource cart', () => {
   });
 
   test('setItem: required and optional params', async () => {
-    const response = await terminal.cart.setItem({ productVariantID: 'productVariantID', quantity: 0 });
+    const response = await client.cart.setItem({ productVariantID: 'productVariantID', quantity: 0 });
   });
 
   test('setShipping: only required params', async () => {
-    const responsePromise = terminal.cart.setShipping({ shippingID: 'shippingID' });
+    const responsePromise = client.cart.setShipping({ shippingID: 'shippingID' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -69,6 +69,6 @@ describe('resource cart', () => {
   });
 
   test('setShipping: required and optional params', async () => {
-    const response = await terminal.cart.setShipping({ shippingID: 'shippingID' });
+    const response = await client.cart.setShipping({ shippingID: 'shippingID' });
   });
 });

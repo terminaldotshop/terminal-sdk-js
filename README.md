@@ -27,9 +27,9 @@ const client = new Terminal({
 });
 
 async function main() {
-  const productListResponse = await terminal.product.list();
+  const product = await client.product.list();
 
-  console.log(productListResponse.result);
+  console.log(product.result);
 }
 
 main();
@@ -48,7 +48,7 @@ const client = new Terminal({
 });
 
 async function main() {
-  const productListResponse: Terminal.ProductListResponse = await terminal.product.list();
+  const product: Terminal.ProductListResponse = await client.product.list();
 }
 
 main();
@@ -65,7 +65,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const productListResponse = await terminal.product.list().catch(async (err) => {
+  const product = await client.product.list().catch(async (err) => {
     if (err instanceof Terminal.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -108,7 +108,7 @@ const client = new Terminal({
 });
 
 // Or, configure per-request:
-await terminal.product.list({
+await client.product.list({
   maxRetries: 5,
 });
 ```
@@ -125,7 +125,7 @@ const client = new Terminal({
 });
 
 // Override per-request:
-await terminal.product.list({
+await client.product.list({
   timeout: 5 * 1000,
 });
 ```
@@ -146,13 +146,13 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const client = new Terminal();
 
-const response = await terminal.product.list().asResponse();
+const response = await client.product.list().asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: productListResponse, response: raw } = await terminal.product.list().withResponse();
+const { data: product, response: raw } = await client.product.list().withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(productListResponse.result);
+console.log(product.result);
 ```
 
 ### Making custom/undocumented requests
@@ -256,7 +256,7 @@ const client = new Terminal({
 });
 
 // Override per-request:
-await terminal.product.list({
+await client.product.list({
   httpAgent: new http.Agent({ keepAlive: false }),
 });
 ```
@@ -282,3 +282,7 @@ The following runtimes are supported:
 Note that React Native is not supported at this time.
 
 If you are interested in other runtime environments, please open or upvote an issue on GitHub.
+
+## Contributing
+
+See [the contributing documentation](./CONTRIBUTING.md).
