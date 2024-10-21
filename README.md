@@ -1,21 +1,18 @@
 # Terminal Node API Library
 
-[![NPM version](https://img.shields.io/npm/v/@terminal/sdk.svg)](https://npmjs.org/package/@terminal/sdk)
+[![NPM version](https://img.shields.io/npm/v/@terminal/sdk.svg)](https://npmjs.org/package/@terminal/sdk) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@terminal/sdk)
 
 This library provides convenient access to the Terminal REST API from server-side TypeScript or JavaScript.
 
-The REST API documentation can be found [on docs.terminal.com](https://docs.terminal.com). The full API of this library can be found in [api.md](api.md).
+The REST API documentation can be found on [docs.terminal.com](https://docs.terminal.com). The full API of this library can be found in [api.md](api.md).
 
 It is generated with [Stainless](https://www.stainlessapi.com/).
 
 ## Installation
 
 ```sh
-npm install git+ssh://git@github.com:stainless-sdks/terminal-node.git
+npm install @terminal/sdk
 ```
-
-> [!NOTE]
-> Once this package is [published to npm](https://app.stainlessapi.com/docs/guides/publish), this will become: `npm install @terminal/sdk`
 
 ## Usage
 
@@ -25,14 +22,14 @@ The full API of this library can be found in [api.md](api.md).
 ```js
 import Terminal from '@terminal/sdk';
 
-const terminal = new Terminal({
+const client = new Terminal({
   environment: 'dev', // defaults to 'production'
 });
 
 async function main() {
-  const productListResponse = await terminal.product.list();
+  const product = await client.product.list();
 
-  console.log(productListResponse.result);
+  console.log(product.result);
 }
 
 main();
@@ -46,12 +43,12 @@ This library includes TypeScript definitions for all request params and response
 ```ts
 import Terminal from '@terminal/sdk';
 
-const terminal = new Terminal({
+const client = new Terminal({
   environment: 'dev', // defaults to 'production'
 });
 
 async function main() {
-  const productListResponse: Terminal.ProductListResponse = await terminal.product.list();
+  const product: Terminal.ProductListResponse = await client.product.list();
 }
 
 main();
@@ -68,7 +65,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const productListResponse = await terminal.product.list().catch(async (err) => {
+  const product = await client.product.list().catch(async (err) => {
     if (err instanceof Terminal.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -106,12 +103,12 @@ You can use the `maxRetries` option to configure or disable this:
 <!-- prettier-ignore -->
 ```js
 // Configure the default for all requests:
-const terminal = new Terminal({
+const client = new Terminal({
   maxRetries: 0, // default is 2
 });
 
 // Or, configure per-request:
-await terminal.product.list({
+await client.product.list({
   maxRetries: 5,
 });
 ```
@@ -123,12 +120,12 @@ Requests time out after 1 minute by default. You can configure this with a `time
 <!-- prettier-ignore -->
 ```ts
 // Configure the default for all requests:
-const terminal = new Terminal({
+const client = new Terminal({
   timeout: 20 * 1000, // 20 seconds (default is 1 minute)
 });
 
 // Override per-request:
-await terminal.product.list({
+await client.product.list({
   timeout: 5 * 1000,
 });
 ```
@@ -147,15 +144,15 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 
 <!-- prettier-ignore -->
 ```ts
-const terminal = new Terminal();
+const client = new Terminal();
 
-const response = await terminal.product.list().asResponse();
+const response = await client.product.list().asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: productListResponse, response: raw } = await terminal.product.list().withResponse();
+const { data: product, response: raw } = await client.product.list().withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(productListResponse.result);
+console.log(product.result);
 ```
 
 ### Making custom/undocumented requests
@@ -218,7 +215,7 @@ import Terminal from '@terminal/sdk';
 ```
 
 To do the inverse, add `import "@terminal/sdk/shims/node"` (which does import polyfills).
-This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/stainless-sdks/terminal-node/tree/main/src/_shims#readme)).
+This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/terminaldotshop/terminal-sdk-js/tree/main/src/_shims#readme)).
 
 ### Logging and middleware
 
@@ -254,12 +251,12 @@ import http from 'http';
 import { HttpsProxyAgent } from 'https-proxy-agent';
 
 // Configure the default for all requests:
-const terminal = new Terminal({
+const client = new Terminal({
   httpAgent: new HttpsProxyAgent(process.env.PROXY_URL),
 });
 
 // Override per-request:
-await terminal.product.list({
+await client.product.list({
   httpAgent: new http.Agent({ keepAlive: false }),
 });
 ```
@@ -274,7 +271,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/terminal-node/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/terminaldotshop/terminal-sdk-js/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 
@@ -282,14 +279,10 @@ TypeScript >= 4.5 is supported.
 
 The following runtimes are supported:
 
-- Node.js 18 LTS or later ([non-EOL](https://endoflife.date/nodejs)) versions.
-- Deno v1.28.0 or higher, using `import Terminal from "npm:@terminal/sdk"`.
-- Bun 1.0 or later.
-- Cloudflare Workers.
-- Vercel Edge Runtime.
-- Jest 28 or greater with the `"node"` environment (`"jsdom"` is not supported at this time).
-- Nitro v2.6 or greater.
-
 Note that React Native is not supported at this time.
 
 If you are interested in other runtime environments, please open or upvote an issue on GitHub.
+
+## Contributing
+
+See [the contributing documentation](./CONTRIBUTING.md).

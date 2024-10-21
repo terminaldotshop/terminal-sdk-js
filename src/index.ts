@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from './core';
 import * as Errors from './error';
-import { type Agent } from './_shims/index';
 import * as Uploads from './uploads';
-import * as API from '@terminal/sdk/resources/index';
+import { type Agent } from './_shims/index';
+import * as Core from './core';
+import * as API from './resources/index';
 
 const environments = {
   production: 'https://openapi.terminal.shop/',
@@ -84,7 +84,9 @@ export interface ClientOptions {
   defaultQuery?: Core.DefaultQuery;
 }
 
-/** API Client for interfacing with the Terminal API. */
+/**
+ * API Client for interfacing with the Terminal API.
+ */
 export class Terminal extends Core.APIClient {
   bearerToken: string;
 
@@ -134,13 +136,17 @@ export class Terminal extends Core.APIClient {
       maxRetries: options.maxRetries,
       fetch: options.fetch,
     });
+
     this._options = options;
 
     this.bearerToken = bearerToken;
   }
 
   product: API.Product = new API.Product(this);
-  user: API.UserResource = new API.UserResource(this);
+  user: API.User = new API.User(this);
+  card: API.Card = new API.Card(this);
+  cart: API.Cart = new API.Cart(this);
+  order: API.Order = new API.Order(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
@@ -158,6 +164,7 @@ export class Terminal extends Core.APIClient {
   }
 
   static Terminal = this;
+  static DEFAULT_TIMEOUT = 60000; // 1 minute
 
   static TerminalError = Errors.TerminalError;
   static APIError = Errors.APIError;
@@ -202,7 +209,36 @@ export namespace Terminal {
   export import Product = API.Product;
   export import ProductListResponse = API.ProductListResponse;
 
-  export import UserResource = API.UserResource;
+  export import User = API.User;
+  export import UserUpdateResponse = API.UserUpdateResponse;
+  export import UserMeResponse = API.UserMeResponse;
+  export import UserUpdateParams = API.UserUpdateParams;
+
+  export import Card = API.Card;
+  export import CardCreateResponse = API.CardCreateResponse;
+  export import CardListResponse = API.CardListResponse;
+  export import CardCreateParams = API.CardCreateParams;
+
+  export import Cart = API.Cart;
+  export import CartListResponse = API.CartListResponse;
+  export import CartSetCardResponse = API.CartSetCardResponse;
+  export import CartSetItemResponse = API.CartSetItemResponse;
+  export import CartSetShippingResponse = API.CartSetShippingResponse;
+  export import CartSetCardParams = API.CartSetCardParams;
+  export import CartSetItemParams = API.CartSetItemParams;
+  export import CartSetShippingParams = API.CartSetShippingParams;
+
+  export import Order = API.Order;
+  export import OrderCreateResponse = API.OrderCreateResponse;
+  export import OrderGetResponse = API.OrderGetResponse;
+
+  export import Address = API.Address;
+  export import Card = API.Card;
+  export import Cart = API.Cart;
+  export import Order = API.Order;
+  export import Product = API.Product;
+  export import ProductVariant = API.ProductVariant;
+  export import Shipping = API.Shipping;
   export import User = API.User;
 }
 
