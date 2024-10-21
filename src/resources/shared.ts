@@ -140,8 +140,6 @@ export interface Product {
   variants: Array<ProductVariant>;
 
   order?: number;
-
-  subscription?: 'allowed' | 'required';
 }
 
 export interface ProductVariant {
