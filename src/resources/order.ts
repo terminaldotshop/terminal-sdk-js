@@ -24,6 +24,6 @@ export interface OrderGetResponse {
 }
 
 export namespace Order {
-  export type OrderCreateResponse = OrderAPI.OrderCreateResponse;
-  export type OrderGetResponse = OrderAPI.OrderGetResponse;
+  export import OrderCreateResponse = OrderAPI.OrderCreateResponse;
+  export import OrderGetResponse = OrderAPI.OrderGetResponse;
 }

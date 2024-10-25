@@ -28,7 +28,7 @@ export interface CardCreateParams {
 }
 
 export namespace Card {
-  export type CardCreateResponse = CardAPI.CardCreateResponse;
-  export type CardListResponse = CardAPI.CardListResponse;
-  export type CardCreateParams = CardAPI.CardCreateParams;
+  export import CardCreateResponse = CardAPI.CardCreateResponse;
+  export import CardListResponse = CardAPI.CardListResponse;
+  export import CardCreateParams = CardAPI.CardCreateParams;
 }
