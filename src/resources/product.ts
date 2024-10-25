@@ -16,5 +16,5 @@ export interface ProductListResponse {
 }
 
 export namespace Product {
-  export type ProductListResponse = ProductAPI.ProductListResponse;
+  export import ProductListResponse = ProductAPI.ProductListResponse;
 }

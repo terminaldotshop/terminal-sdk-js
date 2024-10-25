@@ -57,11 +57,11 @@ export interface CartSetShippingParams {
 }
 
 export namespace Cart {
-  export type CartListResponse = CartAPI.CartListResponse;
-  export type CartSetCardResponse = CartAPI.CartSetCardResponse;
-  export type CartSetItemResponse = CartAPI.CartSetItemResponse;
-  export type CartSetShippingResponse = CartAPI.CartSetShippingResponse;
-  export type CartSetCardParams = CartAPI.CartSetCardParams;
-  export type CartSetItemParams = CartAPI.CartSetItemParams;
-  export type CartSetShippingParams = CartAPI.CartSetShippingParams;
+  export import CartListResponse = CartAPI.CartListResponse;
+  export import CartSetCardResponse = CartAPI.CartSetCardResponse;
+  export import CartSetItemResponse = CartAPI.CartSetItemResponse;
+  export import CartSetShippingResponse = CartAPI.CartSetShippingResponse;
+  export import CartSetCardParams = CartAPI.CartSetCardParams;
+  export import CartSetItemParams = CartAPI.CartSetItemParams;
+  export import CartSetShippingParams = CartAPI.CartSetShippingParams;
 }
