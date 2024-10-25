@@ -204,42 +204,42 @@ export import toFile = Uploads.toFile;
 export import fileFromPath = Uploads.fileFromPath;
 
 export namespace Terminal {
-  export import RequestOptions = Core.RequestOptions;
+  export type RequestOptions = Core.RequestOptions;
 
   export import Product = API.Product;
-  export import ProductListResponse = API.ProductListResponse;
+  export type ProductListResponse = API.ProductListResponse;
 
   export import User = API.User;
-  export import UserUpdateResponse = API.UserUpdateResponse;
-  export import UserMeResponse = API.UserMeResponse;
-  export import UserUpdateParams = API.UserUpdateParams;
+  export type UserUpdateResponse = API.UserUpdateResponse;
+  export type UserMeResponse = API.UserMeResponse;
+  export type UserUpdateParams = API.UserUpdateParams;
 
   export import Card = API.Card;
-  export import CardCreateResponse = API.CardCreateResponse;
-  export import CardListResponse = API.CardListResponse;
-  export import CardCreateParams = API.CardCreateParams;
+  export type CardCreateResponse = API.CardCreateResponse;
+  export type CardListResponse = API.CardListResponse;
+  export type CardCreateParams = API.CardCreateParams;
 
   export import Cart = API.Cart;
-  export import CartListResponse = API.CartListResponse;
-  export import CartSetCardResponse = API.CartSetCardResponse;
-  export import CartSetItemResponse = API.CartSetItemResponse;
-  export import CartSetShippingResponse = API.CartSetShippingResponse;
-  export import CartSetCardParams = API.CartSetCardParams;
-  export import CartSetItemParams = API.CartSetItemParams;
-  export import CartSetShippingParams = API.CartSetShippingParams;
+  export type CartListResponse = API.CartListResponse;
+  export type CartSetCardResponse = API.CartSetCardResponse;
+  export type CartSetItemResponse = API.CartSetItemResponse;
+  export type CartSetShippingResponse = API.CartSetShippingResponse;
+  export type CartSetCardParams = API.CartSetCardParams;
+  export type CartSetItemParams = API.CartSetItemParams;
+  export type CartSetShippingParams = API.CartSetShippingParams;
 
   export import Order = API.Order;
-  export import OrderCreateResponse = API.OrderCreateResponse;
-  export import OrderGetResponse = API.OrderGetResponse;
+  export type OrderCreateResponse = API.OrderCreateResponse;
+  export type OrderGetResponse = API.OrderGetResponse;
 
-  export import Address = API.Address;
-  export import Card = API.Card;
-  export import Cart = API.Cart;
-  export import Order = API.Order;
-  export import Product = API.Product;
-  export import ProductVariant = API.ProductVariant;
-  export import Shipping = API.Shipping;
-  export import User = API.User;
+  export type Address = API.Address;
+  export type Card = API.Card;
+  export type Cart = API.Cart;
+  export type Order = API.Order;
+  export type Product = API.Product;
+  export type ProductVariant = API.ProductVariant;
+  export type Shipping = API.Shipping;
+  export type User = API.User;
 }
 
 export default Terminal;
