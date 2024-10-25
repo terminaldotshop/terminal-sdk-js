@@ -50,8 +50,8 @@ export interface ShippingCreateParams {
 }
 
 export namespace Shipping {
-  export import ShippingCreateResponse = ShippingAPI.ShippingCreateResponse;
-  export import ShippingListResponse = ShippingAPI.ShippingListResponse;
-  export import ShippingDeleteResponse = ShippingAPI.ShippingDeleteResponse;
-  export import ShippingCreateParams = ShippingAPI.ShippingCreateParams;
+  export type ShippingCreateResponse = ShippingAPI.ShippingCreateResponse;
+  export type ShippingListResponse = ShippingAPI.ShippingListResponse;
+  export type ShippingDeleteResponse = ShippingAPI.ShippingDeleteResponse;
+  export type ShippingCreateParams = ShippingAPI.ShippingCreateParams;
 }
