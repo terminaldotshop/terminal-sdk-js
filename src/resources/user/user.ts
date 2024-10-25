@@ -35,12 +35,12 @@ export interface UserUpdateParams {
 }
 
 export namespace User {
-  export import UserUpdateResponse = UserAPI.UserUpdateResponse;
-  export import UserMeResponse = UserAPI.UserMeResponse;
-  export import UserUpdateParams = UserAPI.UserUpdateParams;
+  export type UserUpdateResponse = UserAPI.UserUpdateResponse;
+  export type UserMeResponse = UserAPI.UserMeResponse;
+  export type UserUpdateParams = UserAPI.UserUpdateParams;
   export import Shipping = ShippingAPI.Shipping;
-  export import ShippingCreateResponse = ShippingAPI.ShippingCreateResponse;
-  export import ShippingListResponse = ShippingAPI.ShippingListResponse;
-  export import ShippingDeleteResponse = ShippingAPI.ShippingDeleteResponse;
-  export import ShippingCreateParams = ShippingAPI.ShippingCreateParams;
+  export type ShippingCreateResponse = ShippingAPI.ShippingCreateResponse;
+  export type ShippingListResponse = ShippingAPI.ShippingListResponse;
+  export type ShippingDeleteResponse = ShippingAPI.ShippingDeleteResponse;
+  export type ShippingCreateParams = ShippingAPI.ShippingCreateParams;
 }
