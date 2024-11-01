@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as CartAPI from './cart';
 import * as Shared from './shared';
 
 export class Cart extends APIResource {
@@ -56,12 +55,14 @@ export interface CartSetShippingParams {
   shippingID: string;
 }
 
-export namespace Cart {
-  export import CartListResponse = CartAPI.CartListResponse;
-  export import CartSetCardResponse = CartAPI.CartSetCardResponse;
-  export import CartSetItemResponse = CartAPI.CartSetItemResponse;
-  export import CartSetShippingResponse = CartAPI.CartSetShippingResponse;
-  export import CartSetCardParams = CartAPI.CartSetCardParams;
-  export import CartSetItemParams = CartAPI.CartSetItemParams;
-  export import CartSetShippingParams = CartAPI.CartSetShippingParams;
+export declare namespace Cart {
+  export {
+    type CartListResponse as CartListResponse,
+    type CartSetCardResponse as CartSetCardResponse,
+    type CartSetItemResponse as CartSetItemResponse,
+    type CartSetShippingResponse as CartSetShippingResponse,
+    type CartSetCardParams as CartSetCardParams,
+    type CartSetItemParams as CartSetItemParams,
+    type CartSetShippingParams as CartSetShippingParams,
+  };
 }
