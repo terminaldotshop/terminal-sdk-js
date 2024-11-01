@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as CardAPI from './card';
 import * as Shared from './shared';
 
 export class Card extends APIResource {
@@ -27,8 +26,10 @@ export interface CardCreateParams {
   token: string;
 }
 
-export namespace Card {
-  export import CardCreateResponse = CardAPI.CardCreateResponse;
-  export import CardListResponse = CardAPI.CardListResponse;
-  export import CardCreateParams = CardAPI.CardCreateParams;
+export declare namespace Card {
+  export {
+    type CardCreateResponse as CardCreateResponse,
+    type CardListResponse as CardListResponse,
+    type CardCreateParams as CardCreateParams,
+  };
 }

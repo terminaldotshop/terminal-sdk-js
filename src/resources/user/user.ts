@@ -2,9 +2,15 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as UserAPI from './user';
 import * as Shared from '../shared';
 import * as ShippingAPI from './shipping';
+import {
+  Shipping,
+  ShippingCreateParams,
+  ShippingCreateResponse,
+  ShippingDeleteResponse,
+  ShippingListResponse,
+} from './shipping';
 
 export class User extends APIResource {
   shipping: ShippingAPI.Shipping = new ShippingAPI.Shipping(this._client);
@@ -34,13 +40,20 @@ export interface UserUpdateParams {
   name?: string | null;
 }
 
-export namespace User {
-  export import UserUpdateResponse = UserAPI.UserUpdateResponse;
-  export import UserMeResponse = UserAPI.UserMeResponse;
-  export import UserUpdateParams = UserAPI.UserUpdateParams;
-  export import Shipping = ShippingAPI.Shipping;
-  export import ShippingCreateResponse = ShippingAPI.ShippingCreateResponse;
-  export import ShippingListResponse = ShippingAPI.ShippingListResponse;
-  export import ShippingDeleteResponse = ShippingAPI.ShippingDeleteResponse;
-  export import ShippingCreateParams = ShippingAPI.ShippingCreateParams;
+User.Shipping = Shipping;
+
+export declare namespace User {
+  export {
+    type UserUpdateResponse as UserUpdateResponse,
+    type UserMeResponse as UserMeResponse,
+    type UserUpdateParams as UserUpdateParams,
+  };
+
+  export {
+    Shipping as Shipping,
+    type ShippingCreateResponse as ShippingCreateResponse,
+    type ShippingListResponse as ShippingListResponse,
+    type ShippingDeleteResponse as ShippingDeleteResponse,
+    type ShippingCreateParams as ShippingCreateParams,
+  };
 }

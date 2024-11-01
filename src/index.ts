@@ -1,10 +1,24 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Errors from './error';
-import * as Uploads from './uploads';
 import { type Agent } from './_shims/index';
 import * as Core from './core';
+import * as Errors from './error';
+import * as Uploads from './uploads';
 import * as API from './resources/index';
+import { Card, CardCreateParams, CardCreateResponse, CardListResponse } from './resources/card';
+import {
+  Cart,
+  CartListResponse,
+  CartSetCardParams,
+  CartSetCardResponse,
+  CartSetItemParams,
+  CartSetItemResponse,
+  CartSetShippingParams,
+  CartSetShippingResponse,
+} from './resources/cart';
+import { Order, OrderCreateResponse, OrderGetResponse } from './resources/order';
+import { Product, ProductListResponse } from './resources/product';
+import { User, UserMeResponse, UserUpdateParams, UserUpdateResponse } from './resources/user/user';
 
 const environments = {
   production: 'https://openapi.terminal.shop/',
@@ -184,62 +198,73 @@ export class Terminal extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-export const {
-  TerminalError,
-  APIError,
-  APIConnectionError,
-  APIConnectionTimeoutError,
-  APIUserAbortError,
-  NotFoundError,
-  ConflictError,
-  RateLimitError,
-  BadRequestError,
-  AuthenticationError,
-  InternalServerError,
-  PermissionDeniedError,
-  UnprocessableEntityError,
-} = Errors;
+export const TerminalError = Errors.TerminalError;
+export const APIError = Errors.APIError;
+export const APIConnectionError = Errors.APIConnectionError;
+export const APIConnectionTimeoutError = Errors.APIConnectionTimeoutError;
+export const APIUserAbortError = Errors.APIUserAbortError;
+export const NotFoundError = Errors.NotFoundError;
+export const ConflictError = Errors.ConflictError;
+export const RateLimitError = Errors.RateLimitError;
+export const BadRequestError = Errors.BadRequestError;
+export const AuthenticationError = Errors.AuthenticationError;
+export const InternalServerError = Errors.InternalServerError;
+export const PermissionDeniedError = Errors.PermissionDeniedError;
+export const UnprocessableEntityError = Errors.UnprocessableEntityError;
 
 export import toFile = Uploads.toFile;
 export import fileFromPath = Uploads.fileFromPath;
 
-export namespace Terminal {
-  export import RequestOptions = Core.RequestOptions;
+Terminal.Product = Product;
+Terminal.User = User;
+Terminal.Card = Card;
+Terminal.Cart = Cart;
+Terminal.Order = Order;
 
-  export import Product = API.Product;
-  export import ProductListResponse = API.ProductListResponse;
+export declare namespace Terminal {
+  export type RequestOptions = Core.RequestOptions;
 
-  export import User = API.User;
-  export import UserUpdateResponse = API.UserUpdateResponse;
-  export import UserMeResponse = API.UserMeResponse;
-  export import UserUpdateParams = API.UserUpdateParams;
+  export { Product as Product, type ProductListResponse as ProductListResponse };
 
-  export import Card = API.Card;
-  export import CardCreateResponse = API.CardCreateResponse;
-  export import CardListResponse = API.CardListResponse;
-  export import CardCreateParams = API.CardCreateParams;
+  export {
+    User as User,
+    type UserUpdateResponse as UserUpdateResponse,
+    type UserMeResponse as UserMeResponse,
+    type UserUpdateParams as UserUpdateParams,
+  };
 
-  export import Cart = API.Cart;
-  export import CartListResponse = API.CartListResponse;
-  export import CartSetCardResponse = API.CartSetCardResponse;
-  export import CartSetItemResponse = API.CartSetItemResponse;
-  export import CartSetShippingResponse = API.CartSetShippingResponse;
-  export import CartSetCardParams = API.CartSetCardParams;
-  export import CartSetItemParams = API.CartSetItemParams;
-  export import CartSetShippingParams = API.CartSetShippingParams;
+  export {
+    Card as Card,
+    type CardCreateResponse as CardCreateResponse,
+    type CardListResponse as CardListResponse,
+    type CardCreateParams as CardCreateParams,
+  };
 
-  export import Order = API.Order;
-  export import OrderCreateResponse = API.OrderCreateResponse;
-  export import OrderGetResponse = API.OrderGetResponse;
+  export {
+    Cart as Cart,
+    type CartListResponse as CartListResponse,
+    type CartSetCardResponse as CartSetCardResponse,
+    type CartSetItemResponse as CartSetItemResponse,
+    type CartSetShippingResponse as CartSetShippingResponse,
+    type CartSetCardParams as CartSetCardParams,
+    type CartSetItemParams as CartSetItemParams,
+    type CartSetShippingParams as CartSetShippingParams,
+  };
 
-  export import Address = API.Address;
-  export import Card = API.Card;
-  export import Cart = API.Cart;
-  export import Order = API.Order;
-  export import Product = API.Product;
-  export import ProductVariant = API.ProductVariant;
-  export import Shipping = API.Shipping;
-  export import User = API.User;
+  export {
+    Order as Order,
+    type OrderCreateResponse as OrderCreateResponse,
+    type OrderGetResponse as OrderGetResponse,
+  };
+
+  export type Address = API.Address;
+  export type Card = API.Card;
+  export type Cart = API.Cart;
+  export type Order = API.Order;
+  export type Product = API.Product;
+  export type ProductVariant = API.ProductVariant;
+  export type Shipping = API.Shipping;
+  export type User = API.User;
 }
 
 export default Terminal;

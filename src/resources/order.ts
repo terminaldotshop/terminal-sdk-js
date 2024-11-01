@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as OrderAPI from './order';
 import * as Shared from './shared';
 
 export class Order extends APIResource {
@@ -23,7 +22,6 @@ export interface OrderGetResponse {
   result: Shared.Order;
 }
 
-export namespace Order {
-  export import OrderCreateResponse = OrderAPI.OrderCreateResponse;
-  export import OrderGetResponse = OrderAPI.OrderGetResponse;
+export declare namespace Order {
+  export { type OrderCreateResponse as OrderCreateResponse, type OrderGetResponse as OrderGetResponse };
 }
