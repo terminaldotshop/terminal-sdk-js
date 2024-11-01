@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 export {
-  ShippingCreateResponse,
-  ShippingListResponse,
-  ShippingDeleteResponse,
-  ShippingCreateParams,
   Shipping,
+  type ShippingCreateResponse,
+  type ShippingListResponse,
+  type ShippingDeleteResponse,
+  type ShippingCreateParams,
 } from './shipping';
-export { UserUpdateResponse, UserMeResponse, UserUpdateParams, User } from './user';
+export { User, type UserUpdateResponse, type UserMeResponse, type UserUpdateParams } from './user';

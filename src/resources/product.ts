@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as ProductAPI from './product';
 import * as Shared from './shared';
 
 export class Product extends APIResource {
@@ -15,6 +14,6 @@ export interface ProductListResponse {
   result: Array<Shared.Product>;
 }
 
-export namespace Product {
-  export import ProductListResponse = ProductAPI.ProductListResponse;
+export declare namespace Product {
+  export { type ProductListResponse as ProductListResponse };
 }

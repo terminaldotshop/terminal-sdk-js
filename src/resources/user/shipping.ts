@@ -2,7 +2,6 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as ShippingAPI from './shipping';
 import * as Shared from '../shared';
 
 export class Shipping extends APIResource {
@@ -49,9 +48,11 @@ export interface ShippingCreateParams {
   street2?: string;
 }
 
-export namespace Shipping {
-  export import ShippingCreateResponse = ShippingAPI.ShippingCreateResponse;
-  export import ShippingListResponse = ShippingAPI.ShippingListResponse;
-  export import ShippingDeleteResponse = ShippingAPI.ShippingDeleteResponse;
-  export import ShippingCreateParams = ShippingAPI.ShippingCreateParams;
+export declare namespace Shipping {
+  export {
+    type ShippingCreateResponse as ShippingCreateResponse,
+    type ShippingListResponse as ShippingListResponse,
+    type ShippingDeleteResponse as ShippingDeleteResponse,
+    type ShippingCreateParams as ShippingCreateParams,
+  };
 }
