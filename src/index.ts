@@ -25,7 +25,6 @@ const environments = {
   dev: 'https://openapi.dev.terminal.shop/',
 };
 type Environment = keyof typeof environments;
-
 export interface ClientOptions {
   /**
    * Defaults to process.env['TERMINAL_BEARER_TOKEN'].
@@ -198,31 +197,11 @@ export class Terminal extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-export {
-  TerminalError,
-  APIError,
-  APIConnectionError,
-  APIConnectionTimeoutError,
-  APIUserAbortError,
-  NotFoundError,
-  ConflictError,
-  RateLimitError,
-  BadRequestError,
-  AuthenticationError,
-  InternalServerError,
-  PermissionDeniedError,
-  UnprocessableEntityError,
-} from './error';
-
-export import toFile = Uploads.toFile;
-export import fileFromPath = Uploads.fileFromPath;
-
 Terminal.Product = Product;
 Terminal.User = User;
 Terminal.Card = Card;
 Terminal.Cart = Cart;
 Terminal.Order = Order;
-
 export declare namespace Terminal {
   export type RequestOptions = Core.RequestOptions;
 
@@ -268,5 +247,22 @@ export declare namespace Terminal {
   export type Shipping = API.Shipping;
   export type User = API.User;
 }
+
+export { toFile, fileFromPath } from '@terminal/sdk/uploads';
+export {
+  TerminalError,
+  APIError,
+  APIConnectionError,
+  APIConnectionTimeoutError,
+  APIUserAbortError,
+  NotFoundError,
+  ConflictError,
+  RateLimitError,
+  BadRequestError,
+  AuthenticationError,
+  InternalServerError,
+  PermissionDeniedError,
+  UnprocessableEntityError,
+} from '@terminal/sdk/error';
 
 export default Terminal;
