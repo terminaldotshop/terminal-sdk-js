@@ -14,4 +14,10 @@ export {
 } from './cart';
 export { Order, type OrderCreateResponse, type OrderGetResponse } from './order';
 export { Product, type ProductListResponse } from './product';
+export {
+  Subscription,
+  type SubscriptionCreateResponse,
+  type SubscriptionListResponse,
+  type SubscriptionCreateParams,
+} from './subscription';
 export { User, type UserUpdateResponse, type UserMeResponse, type UserUpdateParams } from './user/user';
