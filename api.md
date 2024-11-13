@@ -9,6 +9,7 @@ Types:
 - <code><a href="./src/resources/shared.ts">Product</a></code>
 - <code><a href="./src/resources/shared.ts">ProductVariant</a></code>
 - <code><a href="./src/resources/shared.ts">Shipping</a></code>
+- <code><a href="./src/resources/shared.ts">Subscription</a></code>
 - <code><a href="./src/resources/shared.ts">User</a></code>
 
 # Product
@@ -86,3 +87,15 @@ Methods:
 
 - <code title="post /order">client.order.<a href="./src/resources/order.ts">create</a>() -> OrderCreateResponse</code>
 - <code title="get /order/{id}">client.order.<a href="./src/resources/order.ts">get</a>(id) -> OrderGetResponse</code>
+
+# Subscription
+
+Types:
+
+- <code><a href="./src/resources/subscription.ts">SubscriptionCreateResponse</a></code>
+- <code><a href="./src/resources/subscription.ts">SubscriptionListResponse</a></code>
+
+Methods:
+
+- <code title="put /subscription">client.subscription.<a href="./src/resources/subscription.ts">create</a>({ ...params }) -> SubscriptionCreateResponse</code>
+- <code title="get /subscription">client.subscription.<a href="./src/resources/subscription.ts">list</a>() -> SubscriptionListResponse</code>
