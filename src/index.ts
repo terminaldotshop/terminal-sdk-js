@@ -18,6 +18,12 @@ import {
 } from './resources/cart';
 import { Order, OrderCreateResponse, OrderGetResponse } from './resources/order';
 import { Product, ProductListResponse } from './resources/product';
+import {
+  Subscription,
+  SubscriptionCreateParams,
+  SubscriptionCreateResponse,
+  SubscriptionListResponse,
+} from './resources/subscription';
 import { User, UserMeResponse, UserUpdateParams, UserUpdateResponse } from './resources/user/user';
 
 const environments = {
@@ -160,6 +166,7 @@ export class Terminal extends Core.APIClient {
   card: API.Card = new API.Card(this);
   cart: API.Cart = new API.Cart(this);
   order: API.Order = new API.Order(this);
+  subscription: API.Subscription = new API.Subscription(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
@@ -202,6 +209,7 @@ Terminal.User = User;
 Terminal.Card = Card;
 Terminal.Cart = Cart;
 Terminal.Order = Order;
+Terminal.Subscription = Subscription;
 export declare namespace Terminal {
   export type RequestOptions = Core.RequestOptions;
 
@@ -238,6 +246,13 @@ export declare namespace Terminal {
     type OrderGetResponse as OrderGetResponse,
   };
 
+  export {
+    Subscription as Subscription,
+    type SubscriptionCreateResponse as SubscriptionCreateResponse,
+    type SubscriptionListResponse as SubscriptionListResponse,
+    type SubscriptionCreateParams as SubscriptionCreateParams,
+  };
+
   export type Address = API.Address;
   export type Card = API.Card;
   export type Cart = API.Cart;
@@ -245,6 +260,7 @@ export declare namespace Terminal {
   export type Product = API.Product;
   export type ProductVariant = API.ProductVariant;
   export type Shipping = API.Shipping;
+  export type Subscription = API.Subscription;
   export type User = API.User;
 }
 

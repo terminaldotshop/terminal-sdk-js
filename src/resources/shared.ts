@@ -158,6 +158,20 @@ export interface Shipping {
   address: Address;
 }
 
+export interface Subscription {
+  id: string;
+
+  cardID: string;
+
+  frequency: 'fixed' | 'daily' | 'weekly' | 'monthly' | 'yearly';
+
+  productVariantID: string;
+
+  quantity: number;
+
+  shippingID: string;
+}
+
 export interface User {
   id: string;
 
