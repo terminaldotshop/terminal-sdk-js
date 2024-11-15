@@ -264,7 +264,7 @@ export declare namespace Terminal {
   export type User = API.User;
 }
 
-export { toFile, fileFromPath } from '@terminal/sdk/uploads';
+export { toFile, fileFromPath } from './uploads';
 export {
   TerminalError,
   APIError,
@@ -279,6 +279,6 @@ export {
   InternalServerError,
   PermissionDeniedError,
   UnprocessableEntityError,
-} from '@terminal/sdk/error';
+} from './error';
 
 export default Terminal;
