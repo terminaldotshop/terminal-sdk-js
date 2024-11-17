@@ -22,6 +22,7 @@ import {
   Subscription,
   SubscriptionCreateParams,
   SubscriptionCreateResponse,
+  SubscriptionDeleteResponse,
   SubscriptionListResponse,
 } from './resources/subscription';
 import { User, UserMeResponse, UserUpdateParams, UserUpdateResponse } from './resources/user/user';
@@ -250,6 +251,7 @@ export declare namespace Terminal {
     Subscription as Subscription,
     type SubscriptionCreateResponse as SubscriptionCreateResponse,
     type SubscriptionListResponse as SubscriptionListResponse,
+    type SubscriptionDeleteResponse as SubscriptionDeleteResponse,
     type SubscriptionCreateParams as SubscriptionCreateParams,
   };
 
