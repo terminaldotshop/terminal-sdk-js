@@ -15,10 +15,6 @@ export class Subscription extends APIResource {
   list(options?: Core.RequestOptions): Core.APIPromise<SubscriptionListResponse> {
     return this._client.get('/subscription', options);
   }
-
-  delete(id: string, options?: Core.RequestOptions): Core.APIPromise<SubscriptionDeleteResponse> {
-    return this._client.delete(`/subscription/${id}`, options);
-  }
 }
 
 export interface SubscriptionCreateResponse {
@@ -27,10 +23,6 @@ export interface SubscriptionCreateResponse {
 
 export interface SubscriptionListResponse {
   result: Array<Shared.Subscription>;
-}
-
-export interface SubscriptionDeleteResponse {
-  result: 'ok';
 }
 
 export interface SubscriptionCreateParams {
@@ -49,7 +41,6 @@ export declare namespace Subscription {
   export {
     type SubscriptionCreateResponse as SubscriptionCreateResponse,
     type SubscriptionListResponse as SubscriptionListResponse,
-    type SubscriptionDeleteResponse as SubscriptionDeleteResponse,
     type SubscriptionCreateParams as SubscriptionCreateParams,
   };
 }
