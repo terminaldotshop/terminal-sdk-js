@@ -16,13 +16,12 @@ import {
   CartSetShippingParams,
   CartSetShippingResponse,
 } from './resources/cart';
-import { Order, OrderCreateResponse, OrderGetResponse, OrderListResponse } from './resources/order';
+import { Order, OrderCreateResponse, OrderGetResponse } from './resources/order';
 import { Product, ProductListResponse } from './resources/product';
 import {
   Subscription,
   SubscriptionCreateParams,
   SubscriptionCreateResponse,
-  SubscriptionDeleteResponse,
   SubscriptionListResponse,
 } from './resources/subscription';
 import { User, UserMeResponse, UserUpdateParams, UserUpdateResponse } from './resources/user/user';
@@ -244,7 +243,6 @@ export declare namespace Terminal {
   export {
     Order as Order,
     type OrderCreateResponse as OrderCreateResponse,
-    type OrderListResponse as OrderListResponse,
     type OrderGetResponse as OrderGetResponse,
   };
 
@@ -252,7 +250,6 @@ export declare namespace Terminal {
     Subscription as Subscription,
     type SubscriptionCreateResponse as SubscriptionCreateResponse,
     type SubscriptionListResponse as SubscriptionListResponse,
-    type SubscriptionDeleteResponse as SubscriptionDeleteResponse,
     type SubscriptionCreateParams as SubscriptionCreateParams,
   };
 
