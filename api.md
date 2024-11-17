@@ -81,13 +81,11 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/order.ts">OrderCreateResponse</a></code>
-- <code><a href="./src/resources/order.ts">OrderListResponse</a></code>
 - <code><a href="./src/resources/order.ts">OrderGetResponse</a></code>
 
 Methods:
 
 - <code title="post /order">client.order.<a href="./src/resources/order.ts">create</a>() -> OrderCreateResponse</code>
-- <code title="get /order">client.order.<a href="./src/resources/order.ts">list</a>() -> OrderListResponse</code>
 - <code title="get /order/{id}">client.order.<a href="./src/resources/order.ts">get</a>(id) -> OrderGetResponse</code>
 
 # Subscription
@@ -96,10 +94,8 @@ Types:
 
 - <code><a href="./src/resources/subscription.ts">SubscriptionCreateResponse</a></code>
 - <code><a href="./src/resources/subscription.ts">SubscriptionListResponse</a></code>
-- <code><a href="./src/resources/subscription.ts">SubscriptionDeleteResponse</a></code>
 
 Methods:
 
 - <code title="put /subscription">client.subscription.<a href="./src/resources/subscription.ts">create</a>({ ...params }) -> SubscriptionCreateResponse</code>
 - <code title="get /subscription">client.subscription.<a href="./src/resources/subscription.ts">list</a>() -> SubscriptionListResponse</code>
-- <code title="delete /subscription/{id}">client.subscription.<a href="./src/resources/subscription.ts">delete</a>(id) -> SubscriptionDeleteResponse</code>
