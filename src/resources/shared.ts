@@ -84,6 +84,8 @@ export interface Order {
   shipping: Order.Shipping;
 
   tracking: Order.Tracking;
+
+  index?: number;
 }
 
 export namespace Order {
@@ -125,6 +127,8 @@ export namespace Order {
 
   export interface Tracking {
     number?: string;
+
+    service?: string;
 
     url?: string;
   }
