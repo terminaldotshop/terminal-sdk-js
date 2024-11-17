@@ -12,6 +12,10 @@ export class Card extends APIResource {
   list(options?: Core.RequestOptions): Core.APIPromise<CardListResponse> {
     return this._client.get('/card', options);
   }
+
+  delete(id: string, options?: Core.RequestOptions): Core.APIPromise<CardDeleteResponse> {
+    return this._client.delete(`/card/${id}`, options);
+  }
 }
 
 export interface CardCreateResponse {
@@ -22,6 +26,10 @@ export interface CardListResponse {
   result: Array<Shared.Card>;
 }
 
+export interface CardDeleteResponse {
+  result: 'ok';
+}
+
 export interface CardCreateParams {
   token: string;
 }
@@ -30,6 +38,7 @@ export declare namespace Card {
   export {
     type CardCreateResponse as CardCreateResponse,
     type CardListResponse as CardListResponse,
+    type CardDeleteResponse as CardDeleteResponse,
     type CardCreateParams as CardCreateParams,
   };
 }
