@@ -19,6 +19,10 @@ export class User extends APIResource {
     return this._client.put('/user/me', { body, ...options });
   }
 
+  init(options?: Core.RequestOptions): Core.APIPromise<UserInitResponse> {
+    return this._client.get('/user/init', options);
+  }
+
   me(options?: Core.RequestOptions): Core.APIPromise<UserMeResponse> {
     return this._client.get('/user/me', options);
   }
@@ -26,6 +30,28 @@ export class User extends APIResource {
 
 export interface UserUpdateResponse {
   result: Shared.User;
+}
+
+export interface UserInitResponse {
+  result: UserInitResponse.Result;
+}
+
+export namespace UserInitResponse {
+  export interface Result {
+    addresses: Array<Shared.Shipping>;
+
+    cards: Array<Shared.Card>;
+
+    cart: Shared.Cart;
+
+    orders: Array<Shared.Order>;
+
+    products: Array<Shared.Product>;
+
+    subscriptions: Array<Shared.Subscription>;
+
+    user: Shared.User;
+  }
 }
 
 export interface UserMeResponse {
@@ -45,6 +71,7 @@ User.Shipping = Shipping;
 export declare namespace User {
   export {
     type UserUpdateResponse as UserUpdateResponse,
+    type UserInitResponse as UserInitResponse,
     type UserMeResponse as UserMeResponse,
     type UserUpdateParams as UserUpdateParams,
   };
