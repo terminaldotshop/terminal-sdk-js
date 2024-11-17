@@ -5,7 +5,13 @@ import * as Core from './core';
 import * as Errors from './error';
 import * as Uploads from './uploads';
 import * as API from './resources/index';
-import { Card, CardCreateParams, CardCreateResponse, CardListResponse } from './resources/card';
+import {
+  Card,
+  CardCreateParams,
+  CardCreateResponse,
+  CardDeleteResponse,
+  CardListResponse,
+} from './resources/card';
 import {
   Cart,
   CartListResponse,
@@ -227,6 +233,7 @@ export declare namespace Terminal {
     Card as Card,
     type CardCreateResponse as CardCreateResponse,
     type CardListResponse as CardListResponse,
+    type CardDeleteResponse as CardDeleteResponse,
     type CardCreateParams as CardCreateParams,
   };
 
