@@ -7,4 +7,10 @@ export {
   type ShippingDeleteResponse,
   type ShippingCreateParams,
 } from './shipping';
-export { User, type UserUpdateResponse, type UserMeResponse, type UserUpdateParams } from './user';
+export {
+  User,
+  type UserUpdateResponse,
+  type UserInitResponse,
+  type UserMeResponse,
+  type UserUpdateParams,
+} from './user';

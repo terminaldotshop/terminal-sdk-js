@@ -31,7 +31,13 @@ import {
   SubscriptionDeleteResponse,
   SubscriptionListResponse,
 } from './resources/subscription';
-import { User, UserMeResponse, UserUpdateParams, UserUpdateResponse } from './resources/user/user';
+import {
+  User,
+  UserInitResponse,
+  UserMeResponse,
+  UserUpdateParams,
+  UserUpdateResponse,
+} from './resources/user/user';
 
 const environments = {
   production: 'https://openapi.terminal.shop/',
@@ -225,6 +231,7 @@ export declare namespace Terminal {
   export {
     User as User,
     type UserUpdateResponse as UserUpdateResponse,
+    type UserInitResponse as UserInitResponse,
     type UserMeResponse as UserMeResponse,
     type UserUpdateParams as UserUpdateParams,
   };
