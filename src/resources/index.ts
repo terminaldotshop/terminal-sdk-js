@@ -18,6 +18,7 @@ export {
   Subscription,
   type SubscriptionCreateResponse,
   type SubscriptionListResponse,
+  type SubscriptionDeleteResponse,
   type SubscriptionCreateParams,
 } from './subscription';
 export { User, type UserUpdateResponse, type UserMeResponse, type UserUpdateParams } from './user/user';
