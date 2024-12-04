@@ -146,8 +146,6 @@ export interface Product {
   order?: number;
 
   subscription?: 'allowed' | 'required';
-
-  tags?: Record<string, string>;
 }
 
 export interface ProductVariant {
