@@ -106,3 +106,13 @@ Methods:
 - <code title="put /subscription">client.subscription.<a href="./src/resources/subscription.ts">create</a>({ ...params }) -> SubscriptionCreateResponse</code>
 - <code title="get /subscription">client.subscription.<a href="./src/resources/subscription.ts">list</a>() -> SubscriptionListResponse</code>
 - <code title="delete /subscription/{id}">client.subscription.<a href="./src/resources/subscription.ts">delete</a>(id) -> SubscriptionDeleteResponse</code>
+
+# Email
+
+Types:
+
+- <code><a href="./src/resources/email.ts">EmailCreateResponse</a></code>
+
+Methods:
+
+- <code title="post /email/subscription">client.email.<a href="./src/resources/email.ts">create</a>({ ...params }) -> EmailCreateResponse</code>
