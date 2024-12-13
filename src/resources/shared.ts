@@ -107,7 +107,7 @@ export interface Cart {
   items: Array<Cart.Item>;
 
   /**
-   * The subtotal of all items in the current user's cart.
+   * The subtotal of all items in the current user's cart, in cents (USD).
    */
   subtotal: number;
 
