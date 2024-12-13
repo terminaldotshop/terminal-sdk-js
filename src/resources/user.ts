@@ -22,6 +22,14 @@ export class User extends APIResource {
   }
 
   /**
+   * Get initial app data, including user, products, cart, addresses, cards,
+   * subscriptions, and orders.
+   */
+  init(options?: Core.RequestOptions): Core.APIPromise<UserInitResponse> {
+    return this._client.get('/user/init', options);
+  }
+
+  /**
    * Get the current user.
    */
   me(options?: Core.RequestOptions): Core.APIPromise<UserMeResponse> {
@@ -34,6 +42,40 @@ export interface UserUpdateResponse {
    * A Terminal shop user. (We have users, btw.)
    */
   data: Shared.User;
+}
+
+export interface UserInitResponse {
+  /**
+   * Initial app data.
+   */
+  data: UserInitResponse.Data;
+}
+
+export namespace UserInitResponse {
+  /**
+   * Initial app data.
+   */
+  export interface Data {
+    addresses: Array<Shared.Address>;
+
+    cards: Array<Shared.Card>;
+
+    /**
+     * The current Terminal shop user's cart.
+     */
+    cart: Shared.Cart;
+
+    orders: Array<Shared.Order>;
+
+    products: Array<Shared.Product>;
+
+    subscriptions: Array<Shared.Subscription>;
+
+    /**
+     * A Terminal shop user. (We have users, btw.)
+     */
+    user: Shared.User;
+  }
 }
 
 export interface UserMeResponse {
@@ -58,6 +100,7 @@ export interface UserUpdateParams {
 export declare namespace User {
   export {
     type UserUpdateResponse as UserUpdateResponse,
+    type UserInitResponse as UserInitResponse,
     type UserMeResponse as UserMeResponse,
     type UserUpdateParams as UserUpdateParams,
   };
