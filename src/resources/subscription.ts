@@ -5,6 +5,9 @@ import * as Core from '../core';
 import * as Shared from './shared';
 
 export class Subscription extends APIResource {
+  /**
+   * Create a subscription for the current user.
+   */
   create(
     body: SubscriptionCreateParams,
     options?: Core.RequestOptions,
@@ -12,36 +15,65 @@ export class Subscription extends APIResource {
     return this._client.put('/subscription', { body, ...options });
   }
 
+  /**
+   * List the subscriptions associated with the current user.
+   */
   list(options?: Core.RequestOptions): Core.APIPromise<SubscriptionListResponse> {
     return this._client.get('/subscription', options);
   }
 
+  /**
+   * Cancel a subscription for the current user.
+   */
   delete(id: string, options?: Core.RequestOptions): Core.APIPromise<SubscriptionDeleteResponse> {
     return this._client.delete(`/subscription/${id}`, options);
   }
 }
 
 export interface SubscriptionCreateResponse {
-  result: boolean;
+  data: 'ok';
 }
 
 export interface SubscriptionListResponse {
-  result: Array<Shared.Subscription>;
+  /**
+   * List of subscriptions.
+   */
+  data: Array<Shared.Subscription>;
 }
 
 export interface SubscriptionDeleteResponse {
-  result: 'ok';
+  data: 'ok';
 }
 
 export interface SubscriptionCreateParams {
+  /**
+   * Unique object identifier. The format and length of IDs may change over time.
+   */
+  id: string;
+
+  /**
+   * ID of the card used for the subscription.
+   */
   cardID: string;
 
+  /**
+   * Frequency of the subscription.
+   */
   frequency: 'fixed' | 'daily' | 'weekly' | 'monthly' | 'yearly';
 
+  /**
+   * ID of the product variant being subscribed to.
+   */
   productVariantID: string;
 
+  /**
+   * Quantity of the subscription.
+   */
   quantity: number;
 
+  /**
+   * ID of the shipping address used for the subscription.
+   */
   shippingID: string;
 }
 

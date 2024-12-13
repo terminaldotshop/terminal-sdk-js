@@ -11,11 +11,12 @@ const client = new Terminal({
 describe('resource subscription', () => {
   test('create: only required params', async () => {
     const responsePromise = client.subscription.create({
-      cardID: 'cardID',
+      id: 'sub_XXXXXXXXXXXXXXXXXXXXXXXXX',
+      cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX',
       frequency: 'fixed',
-      productVariantID: 'productVariantID',
-      quantity: 0,
-      shippingID: 'shippingID',
+      productVariantID: 'var_XXXXXXXXXXXXXXXXXXXXXXXXX',
+      quantity: 1,
+      shippingID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -28,11 +29,12 @@ describe('resource subscription', () => {
 
   test('create: required and optional params', async () => {
     const response = await client.subscription.create({
-      cardID: 'cardID',
+      id: 'sub_XXXXXXXXXXXXXXXXXXXXXXXXX',
+      cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX',
       frequency: 'fixed',
-      productVariantID: 'productVariantID',
-      quantity: 0,
-      shippingID: 'shippingID',
+      productVariantID: 'var_XXXXXXXXXXXXXXXXXXXXXXXXX',
+      quantity: 1,
+      shippingID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX',
     });
   });
 
@@ -55,7 +57,7 @@ describe('resource subscription', () => {
   });
 
   test('delete', async () => {
-    const responsePromise = client.subscription.delete('id');
+    const responsePromise = client.subscription.delete('sub_XXXXXXXXXXXXXXXXXXXXXXXXX');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -67,8 +69,8 @@ describe('resource subscription', () => {
 
   test('delete: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.subscription.delete('id', { path: '/_stainless_unknown_path' })).rejects.toThrow(
-      Terminal.NotFoundError,
-    );
+    await expect(
+      client.subscription.delete('sub_XXXXXXXXXXXXXXXXXXXXXXXXX', { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Terminal.NotFoundError);
   });
 });

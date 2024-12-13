@@ -9,8 +9,8 @@ const client = new Terminal({
 });
 
 describe('resource user', () => {
-  test('update: only required params', async () => {
-    const responsePromise = client.user.update({ id: 'id' });
+  test('update', async () => {
+    const responsePromise = client.user.update();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -20,8 +20,21 @@ describe('resource user', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('update: required and optional params', async () => {
-    const response = await client.user.update({ id: 'id', email: 'email', name: 'name' });
+  test('update: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(client.user.update({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Terminal.NotFoundError,
+    );
+  });
+
+  test('update: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.user.update(
+        { email: 'john@example.com', name: 'John Doe' },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(Terminal.NotFoundError);
   });
 
   test('init', async () => {
