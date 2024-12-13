@@ -52,6 +52,11 @@ export interface SubscriptionCreateParams {
   id: string;
 
   /**
+   * ID of the shipping address used for the subscription.
+   */
+  addressID: string;
+
+  /**
    * ID of the card used for the subscription.
    */
   cardID: string;
@@ -70,11 +75,6 @@ export interface SubscriptionCreateParams {
    * Quantity of the subscription.
    */
   quantity: number;
-
-  /**
-   * ID of the shipping address used for the subscription.
-   */
-  shippingID: string;
 }
 
 export declare namespace Subscription {
