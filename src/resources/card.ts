@@ -5,32 +5,51 @@ import * as Core from '../core';
 import * as Shared from './shared';
 
 export class Card extends APIResource {
+  /**
+   * Attach a credit card (tokenized via Stripe) to the current user.
+   */
   create(body: CardCreateParams, options?: Core.RequestOptions): Core.APIPromise<CardCreateResponse> {
     return this._client.post('/card', { body, ...options });
   }
 
+  /**
+   * List the credit cards associated with the current user.
+   */
   list(options?: Core.RequestOptions): Core.APIPromise<CardListResponse> {
     return this._client.get('/card', options);
   }
 
+  /**
+   * Delete a credit card associated with the current user.
+   */
   delete(id: string, options?: Core.RequestOptions): Core.APIPromise<CardDeleteResponse> {
     return this._client.delete(`/card/${id}`, options);
   }
 }
 
 export interface CardCreateResponse {
-  result: string;
+  /**
+   * ID of the card.
+   */
+  data: string;
 }
 
 export interface CardListResponse {
-  result: Array<Shared.Card>;
+  /**
+   * List of cards associated with the user.
+   */
+  data: Array<Shared.Card>;
 }
 
 export interface CardDeleteResponse {
-  result: 'ok';
+  data: 'ok';
 }
 
 export interface CardCreateParams {
+  /**
+   * Stripe card token. Learn how to
+   * [create one here](https://docs.stripe.com/api/tokens/create_card).
+   */
   token: string;
 }
 

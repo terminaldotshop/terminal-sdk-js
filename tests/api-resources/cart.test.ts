@@ -28,7 +28,7 @@ describe('resource cart', () => {
   });
 
   test('setCard: only required params', async () => {
-    const responsePromise = client.cart.setCard({ cardID: 'cardID' });
+    const responsePromise = client.cart.setCard({ cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -39,11 +39,14 @@ describe('resource cart', () => {
   });
 
   test('setCard: required and optional params', async () => {
-    const response = await client.cart.setCard({ cardID: 'cardID' });
+    const response = await client.cart.setCard({ cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX' });
   });
 
   test('setItem: only required params', async () => {
-    const responsePromise = client.cart.setItem({ productVariantID: 'productVariantID', quantity: 0 });
+    const responsePromise = client.cart.setItem({
+      productVariantID: 'var_XXXXXXXXXXXXXXXXXXXXXXXXX',
+      quantity: 2,
+    });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -54,11 +57,14 @@ describe('resource cart', () => {
   });
 
   test('setItem: required and optional params', async () => {
-    const response = await client.cart.setItem({ productVariantID: 'productVariantID', quantity: 0 });
+    const response = await client.cart.setItem({
+      productVariantID: 'var_XXXXXXXXXXXXXXXXXXXXXXXXX',
+      quantity: 2,
+    });
   });
 
   test('setShipping: only required params', async () => {
-    const responsePromise = client.cart.setShipping({ shippingID: 'shippingID' });
+    const responsePromise = client.cart.setShipping({ shippingID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -69,6 +75,6 @@ describe('resource cart', () => {
   });
 
   test('setShipping: required and optional params', async () => {
-    const response = await client.cart.setShipping({ shippingID: 'shippingID' });
+    const response = await client.cart.setShipping({ shippingID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX' });
   });
 });

@@ -11,11 +11,11 @@ const client = new Terminal({
 describe('resource shipping', () => {
   test('create: only required params', async () => {
     const responsePromise = client.user.shipping.create({
-      city: 'city',
-      country: 'country',
-      name: 'name',
-      street1: 'street1',
-      zip: 'zip',
+      city: 'Anytown',
+      country: 'US',
+      name: 'John Doe',
+      street1: '123 Main St',
+      zip: '12345',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -28,14 +28,14 @@ describe('resource shipping', () => {
 
   test('create: required and optional params', async () => {
     const response = await client.user.shipping.create({
-      city: 'city',
-      country: 'country',
-      name: 'name',
-      street1: 'street1',
-      zip: 'zip',
-      phone: 'phone',
-      province: 'province',
-      street2: 'street2',
+      city: 'Anytown',
+      country: 'US',
+      name: 'John Doe',
+      street1: '123 Main St',
+      zip: '12345',
+      phone: '5555555555',
+      province: 'CA',
+      street2: 'Apt 1',
     });
   });
 
@@ -58,7 +58,7 @@ describe('resource shipping', () => {
   });
 
   test('delete', async () => {
-    const responsePromise = client.user.shipping.delete('id');
+    const responsePromise = client.user.shipping.delete('shp_XXXXXXXXXXXXXXXXXXXXXXXXX');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -70,8 +70,8 @@ describe('resource shipping', () => {
 
   test('delete: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.user.shipping.delete('id', { path: '/_stainless_unknown_path' })).rejects.toThrow(
-      Terminal.NotFoundError,
-    );
+    await expect(
+      client.user.shipping.delete('shp_XXXXXXXXXXXXXXXXXXXXXXXXX', { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Terminal.NotFoundError);
   });
 });

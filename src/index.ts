@@ -40,8 +40,8 @@ import {
 } from './resources/user/user';
 
 const environments = {
-  production: 'https://openapi.terminal.shop/',
-  dev: 'https://openapi.dev.terminal.shop/',
+  production: 'https://api.terminal.shop/',
+  dev: 'https://api.dev.terminal.shop/',
 };
 type Environment = keyof typeof environments;
 export interface ClientOptions {
@@ -54,8 +54,8 @@ export interface ClientOptions {
    * Specifies the environment to use for the API.
    *
    * Each environment maps to a different base URL:
-   * - `production` corresponds to `https://openapi.terminal.shop/`
-   * - `dev` corresponds to `https://openapi.dev.terminal.shop/`
+   * - `production` corresponds to `https://api.terminal.shop/`
+   * - `dev` corresponds to `https://api.dev.terminal.shop/`
    */
   environment?: Environment;
 
@@ -129,7 +129,7 @@ export class Terminal extends Core.APIClient {
    *
    * @param {string | undefined} [opts.bearerToken=process.env['TERMINAL_BEARER_TOKEN'] ?? undefined]
    * @param {Environment} [opts.environment=production] - Specifies the environment URL to use for the API.
-   * @param {string} [opts.baseURL=process.env['TERMINAL_BASE_URL'] ?? https://openapi.terminal.shop/] - Override the default base URL for the API.
+   * @param {string} [opts.baseURL=process.env['TERMINAL_BASE_URL'] ?? https://api.terminal.shop/] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {number} [opts.httpAgent] - An HTTP agent used to manage HTTP(s) connections.
    * @param {Core.Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -190,10 +190,6 @@ export class Terminal extends Core.APIClient {
       ...super.defaultHeaders(opts),
       ...this._options.defaultHeaders,
     };
-  }
-
-  protected override authHeaders(opts: Core.FinalRequestOptions): Core.Headers {
-    return { Authorization: `Bearer ${this.bearerToken}` };
   }
 
   static Terminal = this;
@@ -276,7 +272,6 @@ export declare namespace Terminal {
   export type Order = API.Order;
   export type Product = API.Product;
   export type ProductVariant = API.ProductVariant;
-  export type Shipping = API.Shipping;
   export type Subscription = API.Subscription;
   export type User = API.User;
 }
