@@ -46,7 +46,7 @@ describe('resource order', () => {
   });
 
   test('get', async () => {
-    const responsePromise = client.order.get('id');
+    const responsePromise = client.order.get('ord_XXXXXXXXXXXXXXXXXXXXXXXXX');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -58,8 +58,8 @@ describe('resource order', () => {
 
   test('get: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.order.get('id', { path: '/_stainless_unknown_path' })).rejects.toThrow(
-      Terminal.NotFoundError,
-    );
+    await expect(
+      client.order.get('ord_XXXXXXXXXXXXXXXXXXXXXXXXX', { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Terminal.NotFoundError);
   });
 });

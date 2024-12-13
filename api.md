@@ -8,7 +8,6 @@ Types:
 - <code><a href="./src/resources/shared.ts">Order</a></code>
 - <code><a href="./src/resources/shared.ts">Product</a></code>
 - <code><a href="./src/resources/shared.ts">ProductVariant</a></code>
-- <code><a href="./src/resources/shared.ts">Shipping</a></code>
 - <code><a href="./src/resources/shared.ts">Subscription</a></code>
 - <code><a href="./src/resources/shared.ts">User</a></code>
 

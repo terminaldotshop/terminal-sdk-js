@@ -10,7 +10,7 @@ const client = new Terminal({
 
 describe('resource card', () => {
   test('create: only required params', async () => {
-    const responsePromise = client.card.create({ token: 'token' });
+    const responsePromise = client.card.create({ token: 'tok_1N3T00LkdIwHu7ixt44h1F8k' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -21,7 +21,7 @@ describe('resource card', () => {
   });
 
   test('create: required and optional params', async () => {
-    const response = await client.card.create({ token: 'token' });
+    const response = await client.card.create({ token: 'tok_1N3T00LkdIwHu7ixt44h1F8k' });
   });
 
   test('list', async () => {
@@ -43,7 +43,7 @@ describe('resource card', () => {
   });
 
   test('delete', async () => {
-    const responsePromise = client.card.delete('id');
+    const responsePromise = client.card.delete('crd_XXXXXXXXXXXXXXXXXXXXXXXXX');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -55,8 +55,8 @@ describe('resource card', () => {
 
   test('delete: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.card.delete('id', { path: '/_stainless_unknown_path' })).rejects.toThrow(
-      Terminal.NotFoundError,
-    );
+    await expect(
+      client.card.delete('crd_XXXXXXXXXXXXXXXXXXXXXXXXX', { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Terminal.NotFoundError);
   });
 });
