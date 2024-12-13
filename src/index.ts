@@ -6,6 +6,13 @@ import * as Errors from './error';
 import * as Uploads from './uploads';
 import * as API from './resources/index';
 import {
+  Address,
+  AddressCreateParams,
+  AddressCreateResponse,
+  AddressDeleteResponse,
+  AddressListResponse,
+} from './resources/address';
+import {
   Card,
   CardCreateParams,
   CardCreateResponse,
@@ -15,12 +22,12 @@ import {
 import {
   Cart,
   CartListResponse,
+  CartSetAddressParams,
+  CartSetAddressResponse,
   CartSetCardParams,
   CartSetCardResponse,
   CartSetItemParams,
   CartSetItemResponse,
-  CartSetShippingParams,
-  CartSetShippingResponse,
 } from './resources/cart';
 import { Order, OrderCreateResponse, OrderGetResponse, OrderListResponse } from './resources/order';
 import { Product, ProductListResponse } from './resources/product';
@@ -37,7 +44,7 @@ import {
   UserMeResponse,
   UserUpdateParams,
   UserUpdateResponse,
-} from './resources/user/user';
+} from './resources/user';
 
 const environments = {
   production: 'https://api.terminal.shop/',
@@ -176,6 +183,7 @@ export class Terminal extends Core.APIClient {
 
   product: API.Product = new API.Product(this);
   user: API.User = new API.User(this);
+  address: API.Address = new API.Address(this);
   card: API.Card = new API.Card(this);
   cart: API.Cart = new API.Cart(this);
   order: API.Order = new API.Order(this);
@@ -215,6 +223,7 @@ export class Terminal extends Core.APIClient {
 
 Terminal.Product = Product;
 Terminal.User = User;
+Terminal.Address = Address;
 Terminal.Card = Card;
 Terminal.Cart = Cart;
 Terminal.Order = Order;
@@ -233,6 +242,14 @@ export declare namespace Terminal {
   };
 
   export {
+    Address as Address,
+    type AddressCreateResponse as AddressCreateResponse,
+    type AddressListResponse as AddressListResponse,
+    type AddressDeleteResponse as AddressDeleteResponse,
+    type AddressCreateParams as AddressCreateParams,
+  };
+
+  export {
     Card as Card,
     type CardCreateResponse as CardCreateResponse,
     type CardListResponse as CardListResponse,
@@ -243,12 +260,12 @@ export declare namespace Terminal {
   export {
     Cart as Cart,
     type CartListResponse as CartListResponse,
+    type CartSetAddressResponse as CartSetAddressResponse,
     type CartSetCardResponse as CartSetCardResponse,
     type CartSetItemResponse as CartSetItemResponse,
-    type CartSetShippingResponse as CartSetShippingResponse,
+    type CartSetAddressParams as CartSetAddressParams,
     type CartSetCardParams as CartSetCardParams,
     type CartSetItemParams as CartSetItemParams,
-    type CartSetShippingParams as CartSetShippingParams,
   };
 
   export {

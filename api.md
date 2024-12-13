@@ -25,29 +25,29 @@ Methods:
 
 Types:
 
-- <code><a href="./src/resources/user/user.ts">UserUpdateResponse</a></code>
-- <code><a href="./src/resources/user/user.ts">UserInitResponse</a></code>
-- <code><a href="./src/resources/user/user.ts">UserMeResponse</a></code>
+- <code><a href="./src/resources/user.ts">UserUpdateResponse</a></code>
+- <code><a href="./src/resources/user.ts">UserInitResponse</a></code>
+- <code><a href="./src/resources/user.ts">UserMeResponse</a></code>
 
 Methods:
 
-- <code title="put /user/me">client.user.<a href="./src/resources/user/user.ts">update</a>({ ...params }) -> UserUpdateResponse</code>
-- <code title="get /user/init">client.user.<a href="./src/resources/user/user.ts">init</a>() -> UserInitResponse</code>
-- <code title="get /user/me">client.user.<a href="./src/resources/user/user.ts">me</a>() -> UserMeResponse</code>
+- <code title="put /user/me">client.user.<a href="./src/resources/user.ts">update</a>({ ...params }) -> UserUpdateResponse</code>
+- <code title="get /user/init">client.user.<a href="./src/resources/user.ts">init</a>() -> UserInitResponse</code>
+- <code title="get /user/me">client.user.<a href="./src/resources/user.ts">me</a>() -> UserMeResponse</code>
 
-## Shipping
+# Address
 
 Types:
 
-- <code><a href="./src/resources/user/shipping.ts">ShippingCreateResponse</a></code>
-- <code><a href="./src/resources/user/shipping.ts">ShippingListResponse</a></code>
-- <code><a href="./src/resources/user/shipping.ts">ShippingDeleteResponse</a></code>
+- <code><a href="./src/resources/address.ts">AddressCreateResponse</a></code>
+- <code><a href="./src/resources/address.ts">AddressListResponse</a></code>
+- <code><a href="./src/resources/address.ts">AddressDeleteResponse</a></code>
 
 Methods:
 
-- <code title="post /user/shipping">client.user.shipping.<a href="./src/resources/user/shipping.ts">create</a>({ ...params }) -> ShippingCreateResponse</code>
-- <code title="get /user/shipping">client.user.shipping.<a href="./src/resources/user/shipping.ts">list</a>() -> ShippingListResponse</code>
-- <code title="delete /user/shipping/{id}">client.user.shipping.<a href="./src/resources/user/shipping.ts">delete</a>(id) -> ShippingDeleteResponse</code>
+- <code title="post /address">client.address.<a href="./src/resources/address.ts">create</a>({ ...params }) -> AddressCreateResponse</code>
+- <code title="get /address">client.address.<a href="./src/resources/address.ts">list</a>() -> AddressListResponse</code>
+- <code title="delete /address/{id}">client.address.<a href="./src/resources/address.ts">delete</a>(id) -> AddressDeleteResponse</code>
 
 # Card
 
@@ -68,16 +68,16 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/cart.ts">CartListResponse</a></code>
+- <code><a href="./src/resources/cart.ts">CartSetAddressResponse</a></code>
 - <code><a href="./src/resources/cart.ts">CartSetCardResponse</a></code>
 - <code><a href="./src/resources/cart.ts">CartSetItemResponse</a></code>
-- <code><a href="./src/resources/cart.ts">CartSetShippingResponse</a></code>
 
 Methods:
 
 - <code title="get /cart">client.cart.<a href="./src/resources/cart.ts">list</a>() -> CartListResponse</code>
+- <code title="put /cart/address">client.cart.<a href="./src/resources/cart.ts">setAddress</a>({ ...params }) -> CartSetAddressResponse</code>
 - <code title="put /cart/card">client.cart.<a href="./src/resources/cart.ts">setCard</a>({ ...params }) -> CartSetCardResponse</code>
 - <code title="put /cart/item">client.cart.<a href="./src/resources/cart.ts">setItem</a>({ ...params }) -> CartSetItemResponse</code>
-- <code title="put /cart/shipping">client.cart.<a href="./src/resources/cart.ts">setShipping</a>({ ...params }) -> CartSetShippingResponse</code>
 
 # Order
 
