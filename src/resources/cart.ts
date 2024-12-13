@@ -13,6 +13,16 @@ export class Cart extends APIResource {
   }
 
   /**
+   * Set the shipping address for the current user's cart.
+   */
+  setAddress(
+    body: CartSetAddressParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<CartSetAddressResponse> {
+    return this._client.put('/cart/address', { body, ...options });
+  }
+
+  /**
    * Set the credit card for the current user's cart.
    */
   setCard(body: CartSetCardParams, options?: Core.RequestOptions): Core.APIPromise<CartSetCardResponse> {
@@ -25,16 +35,6 @@ export class Cart extends APIResource {
   setItem(body: CartSetItemParams, options?: Core.RequestOptions): Core.APIPromise<CartSetItemResponse> {
     return this._client.put('/cart/item', { body, ...options });
   }
-
-  /**
-   * Set the shipping address for the current user's cart.
-   */
-  setShipping(
-    body: CartSetShippingParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<CartSetShippingResponse> {
-    return this._client.put('/cart/shipping', { body, ...options });
-  }
 }
 
 export interface CartListResponse {
@@ -42,6 +42,10 @@ export interface CartListResponse {
    * The current Terminal shop user's cart.
    */
   data: Shared.Cart;
+}
+
+export interface CartSetAddressResponse {
+  data: 'ok';
 }
 
 export interface CartSetCardResponse {
@@ -55,8 +59,11 @@ export interface CartSetItemResponse {
   data: Shared.Cart;
 }
 
-export interface CartSetShippingResponse {
-  data: 'ok';
+export interface CartSetAddressParams {
+  /**
+   * ID of the shipping address to set for the current user's cart.
+   */
+  addressID: string;
 }
 
 export interface CartSetCardParams {
@@ -78,21 +85,14 @@ export interface CartSetItemParams {
   quantity: number;
 }
 
-export interface CartSetShippingParams {
-  /**
-   * ID of the shipping address to set for the current user's cart.
-   */
-  shippingID: string;
-}
-
 export declare namespace Cart {
   export {
     type CartListResponse as CartListResponse,
+    type CartSetAddressResponse as CartSetAddressResponse,
     type CartSetCardResponse as CartSetCardResponse,
     type CartSetItemResponse as CartSetItemResponse,
-    type CartSetShippingResponse as CartSetShippingResponse,
+    type CartSetAddressParams as CartSetAddressParams,
     type CartSetCardParams as CartSetCardParams,
     type CartSetItemParams as CartSetItemParams,
-    type CartSetShippingParams as CartSetShippingParams,
   };
 }

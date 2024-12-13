@@ -1,21 +1,11 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../resource';
-import { isRequestOptions } from '../../core';
-import * as Core from '../../core';
-import * as Shared from '../shared';
-import * as ShippingAPI from './shipping';
-import {
-  Shipping,
-  ShippingCreateParams,
-  ShippingCreateResponse,
-  ShippingDeleteResponse,
-  ShippingListResponse,
-} from './shipping';
+import { APIResource } from '../resource';
+import { isRequestOptions } from '../core';
+import * as Core from '../core';
+import * as Shared from './shared';
 
 export class User extends APIResource {
-  shipping: ShippingAPI.Shipping = new ShippingAPI.Shipping(this._client);
-
   /**
    * Update the current user.
    */
@@ -66,7 +56,7 @@ export namespace UserInitResponse {
    * Initial app data.
    */
   export interface Data {
-    addresses: Array<Data.Address>;
+    addresses: Array<Shared.Address>;
 
     cards: Array<Shared.Card>;
 
@@ -85,23 +75,6 @@ export namespace UserInitResponse {
      * A Terminal shop user. (We have users, btw.)
      */
     user: Shared.User;
-  }
-
-  export namespace Data {
-    /**
-     * Shipping address associated with a Terminal shop user.
-     */
-    export interface Address {
-      /**
-       * Unique object identifier. The format and length of IDs may change over time.
-       */
-      id: string;
-
-      /**
-       * A physical address for shipping that sweet, sweet coffee to people's doorstep.
-       */
-      address: Shared.Address;
-    }
   }
 }
 
@@ -124,21 +97,11 @@ export interface UserUpdateParams {
   name?: string | null;
 }
 
-User.Shipping = Shipping;
-
 export declare namespace User {
   export {
     type UserUpdateResponse as UserUpdateResponse,
     type UserInitResponse as UserInitResponse,
     type UserMeResponse as UserMeResponse,
     type UserUpdateParams as UserUpdateParams,
-  };
-
-  export {
-    Shipping as Shipping,
-    type ShippingCreateResponse as ShippingCreateResponse,
-    type ShippingListResponse as ShippingListResponse,
-    type ShippingDeleteResponse as ShippingDeleteResponse,
-    type ShippingCreateParams as ShippingCreateParams,
   };
 }

@@ -12,11 +12,11 @@ describe('resource subscription', () => {
   test('create: only required params', async () => {
     const responsePromise = client.subscription.create({
       id: 'sub_XXXXXXXXXXXXXXXXXXXXXXXXX',
+      addressID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX',
       cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX',
       frequency: 'fixed',
       productVariantID: 'var_XXXXXXXXXXXXXXXXXXXXXXXXX',
       quantity: 1,
-      shippingID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -30,11 +30,11 @@ describe('resource subscription', () => {
   test('create: required and optional params', async () => {
     const response = await client.subscription.create({
       id: 'sub_XXXXXXXXXXXXXXXXXXXXXXXXX',
+      addressID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX',
       cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX',
       frequency: 'fixed',
       productVariantID: 'var_XXXXXXXXXXXXXXXXXXXXXXXXX',
       quantity: 1,
-      shippingID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX',
     });
   });
 

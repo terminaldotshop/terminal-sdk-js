@@ -27,6 +27,21 @@ describe('resource cart', () => {
     );
   });
 
+  test('setAddress: only required params', async () => {
+    const responsePromise = client.cart.setAddress({ addressID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('setAddress: required and optional params', async () => {
+    const response = await client.cart.setAddress({ addressID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX' });
+  });
+
   test('setCard: only required params', async () => {
     const responsePromise = client.cart.setCard({ cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX' });
     const rawResponse = await responsePromise.asResponse();
@@ -61,20 +76,5 @@ describe('resource cart', () => {
       productVariantID: 'var_XXXXXXXXXXXXXXXXXXXXXXXXX',
       quantity: 2,
     });
-  });
-
-  test('setShipping: only required params', async () => {
-    const responsePromise = client.cart.setShipping({ shippingID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX' });
-    const rawResponse = await responsePromise.asResponse();
-    expect(rawResponse).toBeInstanceOf(Response);
-    const response = await responsePromise;
-    expect(response).not.toBeInstanceOf(Response);
-    const dataAndResponse = await responsePromise.withResponse();
-    expect(dataAndResponse.data).toBe(response);
-    expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  test('setShipping: required and optional params', async () => {
-    const response = await client.cart.setShipping({ shippingID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX' });
   });
 });
