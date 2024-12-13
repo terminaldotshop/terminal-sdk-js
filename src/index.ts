@@ -29,6 +29,7 @@ import {
   CartSetItemParams,
   CartSetItemResponse,
 } from './resources/cart';
+import { Email, EmailCreateParams, EmailCreateResponse } from './resources/email';
 import { Order, OrderCreateResponse, OrderGetResponse, OrderListResponse } from './resources/order';
 import { Product, ProductListResponse } from './resources/product';
 import {
@@ -188,6 +189,7 @@ export class Terminal extends Core.APIClient {
   cart: API.Cart = new API.Cart(this);
   order: API.Order = new API.Order(this);
   subscription: API.Subscription = new API.Subscription(this);
+  email: API.Email = new API.Email(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
@@ -232,6 +234,7 @@ Terminal.Card = Card;
 Terminal.Cart = Cart;
 Terminal.Order = Order;
 Terminal.Subscription = Subscription;
+Terminal.Email = Email;
 export declare namespace Terminal {
   export type RequestOptions = Core.RequestOptions;
 
@@ -285,6 +288,12 @@ export declare namespace Terminal {
     type SubscriptionListResponse as SubscriptionListResponse,
     type SubscriptionDeleteResponse as SubscriptionDeleteResponse,
     type SubscriptionCreateParams as SubscriptionCreateParams,
+  };
+
+  export {
+    Email as Email,
+    type EmailCreateResponse as EmailCreateResponse,
+    type EmailCreateParams as EmailCreateParams,
   };
 
   export type Address = API.Address;

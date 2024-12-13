@@ -25,6 +25,7 @@ export {
   type CartSetCardParams,
   type CartSetItemParams,
 } from './cart';
+export { Email, type EmailCreateResponse, type EmailCreateParams } from './email';
 export { Order, type OrderCreateResponse, type OrderListResponse, type OrderGetResponse } from './order';
 export { Product, type ProductListResponse } from './product';
 export {
