@@ -23,8 +23,8 @@ The full API of this library can be found in [api.md](api.md).
 import Terminal from '@terminal/sdk';
 
 const client = new Terminal({
+  bearerToken: process.env['TERMINAL_BEARER_TOKEN'], // This is the default and can be omitted
   environment: 'dev', // defaults to 'production'
-  bearerToken: 'My Bearer Token',
 });
 
 async function main() {
@@ -45,8 +45,8 @@ This library includes TypeScript definitions for all request params and response
 import Terminal from '@terminal/sdk';
 
 const client = new Terminal({
+  bearerToken: process.env['TERMINAL_BEARER_TOKEN'], // This is the default and can be omitted
   environment: 'dev', // defaults to 'production'
-  bearerToken: 'My Bearer Token',
 });
 
 async function main() {
@@ -107,7 +107,6 @@ You can use the `maxRetries` option to configure or disable this:
 // Configure the default for all requests:
 const client = new Terminal({
   maxRetries: 0, // default is 2
-  bearerToken: 'My Bearer Token',
 });
 
 // Or, configure per-request:
@@ -125,7 +124,6 @@ Requests time out after 1 minute by default. You can configure this with a `time
 // Configure the default for all requests:
 const client = new Terminal({
   timeout: 20 * 1000, // 20 seconds (default is 1 minute)
-  bearerToken: 'My Bearer Token',
 });
 
 // Override per-request:
@@ -257,7 +255,6 @@ import { HttpsProxyAgent } from 'https-proxy-agent';
 // Configure the default for all requests:
 const client = new Terminal({
   httpAgent: new HttpsProxyAgent(process.env.PROXY_URL),
-  bearerToken: 'My Bearer Token',
 });
 
 // Override per-request:
