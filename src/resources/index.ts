@@ -2,6 +2,13 @@
 
 export * from './shared';
 export {
+  Address,
+  type AddressCreateResponse,
+  type AddressListResponse,
+  type AddressDeleteResponse,
+  type AddressCreateParams,
+} from './address';
+export {
   Card,
   type CardCreateResponse,
   type CardListResponse,
@@ -11,12 +18,12 @@ export {
 export {
   Cart,
   type CartListResponse,
+  type CartSetAddressResponse,
   type CartSetCardResponse,
   type CartSetItemResponse,
-  type CartSetShippingResponse,
+  type CartSetAddressParams,
   type CartSetCardParams,
   type CartSetItemParams,
-  type CartSetShippingParams,
 } from './cart';
 export { Order, type OrderCreateResponse, type OrderListResponse, type OrderGetResponse } from './order';
 export { Product, type ProductListResponse } from './product';
@@ -33,4 +40,4 @@ export {
   type UserInitResponse,
   type UserMeResponse,
   type UserUpdateParams,
-} from './user/user';
+} from './user';

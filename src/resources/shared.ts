@@ -1,9 +1,14 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 /**
- * A physical address for shipping that sweet, sweet coffee to people's doorstep.
+ * Physical address associated with a Terminal shop user.
  */
 export interface Address {
+  /**
+   * Unique object identifier. The format and length of IDs may change over time.
+   */
+  id: string;
+
   /**
    * City of the address.
    */
@@ -107,6 +112,11 @@ export interface Cart {
   subtotal: number;
 
   /**
+   * ID of the shipping address selected on the current user's cart.
+   */
+  addressID?: string;
+
+  /**
    * ID of the card selected on the current user's cart.
    */
   cardID?: string;
@@ -115,11 +125,6 @@ export interface Cart {
    * Shipping information for the current user's cart.
    */
   shipping?: Cart.Shipping;
-
-  /**
-   * ID of the shipping address selected on the current user's cart.
-   */
-  shippingID?: string;
 }
 
 export namespace Cart {
@@ -199,9 +204,9 @@ export interface Order {
   items: Array<Order.Item>;
 
   /**
-   * A physical address for shipping that sweet, sweet coffee to people's doorstep.
+   * Shipping address of the order.
    */
-  shipping: Address;
+  shipping: Order.Shipping;
 
   /**
    * Tracking information of the order.
@@ -255,6 +260,51 @@ export namespace Order {
      * ID of the product variant of the item in the order.
      */
     productVariantID?: string;
+  }
+
+  /**
+   * Shipping address of the order.
+   */
+  export interface Shipping {
+    /**
+     * City of the address.
+     */
+    city: string;
+
+    /**
+     * ISO 3166-1 alpha-2 country code of the address.
+     */
+    country: string;
+
+    /**
+     * The recipient's name.
+     */
+    name: string;
+
+    /**
+     * Street of the address.
+     */
+    street1: string;
+
+    /**
+     * Zip code of the address.
+     */
+    zip: string;
+
+    /**
+     * Phone number of the recipient.
+     */
+    phone?: string;
+
+    /**
+     * Province or state of the address.
+     */
+    province?: string;
+
+    /**
+     * Apartment, suite, etc. of the address.
+     */
+    street2?: string;
   }
 
   /**
@@ -348,6 +398,11 @@ export interface Subscription {
   id: string;
 
   /**
+   * ID of the shipping address used for the subscription.
+   */
+  addressID: string;
+
+  /**
    * ID of the card used for the subscription.
    */
   cardID: string;
@@ -366,11 +421,6 @@ export interface Subscription {
    * Quantity of the subscription.
    */
   quantity: number;
-
-  /**
-   * ID of the shipping address used for the subscription.
-   */
-  shippingID: string;
 }
 
 /**
