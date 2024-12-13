@@ -38,13 +38,7 @@ import {
   SubscriptionDeleteResponse,
   SubscriptionListResponse,
 } from './resources/subscription';
-import {
-  User,
-  UserInitResponse,
-  UserMeResponse,
-  UserUpdateParams,
-  UserUpdateResponse,
-} from './resources/user';
+import { User, UserMeResponse, UserUpdateParams, UserUpdateResponse } from './resources/user';
 
 const environments = {
   production: 'https://api.terminal.shop/',
@@ -240,7 +234,6 @@ export declare namespace Terminal {
   export {
     User as User,
     type UserUpdateResponse as UserUpdateResponse,
-    type UserInitResponse as UserInitResponse,
     type UserMeResponse as UserMeResponse,
     type UserUpdateParams as UserUpdateParams,
   };
