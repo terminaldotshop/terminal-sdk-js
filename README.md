@@ -4,7 +4,7 @@
 
 This library provides convenient access to the Terminal REST API from server-side TypeScript or JavaScript.
 
-The REST API documentation can be found on [docs.terminal.com](https://docs.terminal.com). The full API of this library can be found in [api.md](api.md).
+The REST API documentation can be found on [terminal.shop](https://terminal.shop/docs). The full API of this library can be found in [api.md](api.md).
 
 It is generated with [Stainless](https://www.stainlessapi.com/).
 
@@ -24,12 +24,13 @@ import Terminal from '@terminal/sdk';
 
 const client = new Terminal({
   environment: 'dev', // defaults to 'production'
+  bearerToken: 'My Bearer Token',
 });
 
 async function main() {
   const product = await client.product.list();
 
-  console.log(product.result);
+  console.log(product.data);
 }
 
 main();
@@ -45,6 +46,7 @@ import Terminal from '@terminal/sdk';
 
 const client = new Terminal({
   environment: 'dev', // defaults to 'production'
+  bearerToken: 'My Bearer Token',
 });
 
 async function main() {
@@ -105,6 +107,7 @@ You can use the `maxRetries` option to configure or disable this:
 // Configure the default for all requests:
 const client = new Terminal({
   maxRetries: 0, // default is 2
+  bearerToken: 'My Bearer Token',
 });
 
 // Or, configure per-request:
@@ -122,6 +125,7 @@ Requests time out after 1 minute by default. You can configure this with a `time
 // Configure the default for all requests:
 const client = new Terminal({
   timeout: 20 * 1000, // 20 seconds (default is 1 minute)
+  bearerToken: 'My Bearer Token',
 });
 
 // Override per-request:
@@ -152,7 +156,7 @@ console.log(response.statusText); // access the underlying Response object
 
 const { data: product, response: raw } = await client.product.list().withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(product.result);
+console.log(product.data);
 ```
 
 ### Making custom/undocumented requests
@@ -253,6 +257,7 @@ import { HttpsProxyAgent } from 'https-proxy-agent';
 // Configure the default for all requests:
 const client = new Terminal({
   httpAgent: new HttpsProxyAgent(process.env.PROXY_URL),
+  bearerToken: 'My Bearer Token',
 });
 
 // Override per-request:

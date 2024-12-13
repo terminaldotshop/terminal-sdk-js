@@ -5,13 +5,19 @@ import * as Core from '../core';
 import * as Shared from './shared';
 
 export class Product extends APIResource {
+  /**
+   * List all products for sale in the Terminal shop.
+   */
   list(options?: Core.RequestOptions): Core.APIPromise<ProductListResponse> {
     return this._client.get('/product', options);
   }
 }
 
 export interface ProductListResponse {
-  result: Array<Shared.Product>;
+  /**
+   * A list of products.
+   */
+  data: Array<Shared.Product>;
 }
 
 export declare namespace Product {
