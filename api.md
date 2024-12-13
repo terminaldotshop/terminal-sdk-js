@@ -26,13 +26,11 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/user.ts">UserUpdateResponse</a></code>
-- <code><a href="./src/resources/user.ts">UserInitResponse</a></code>
 - <code><a href="./src/resources/user.ts">UserMeResponse</a></code>
 
 Methods:
 
 - <code title="put /user/me">client.user.<a href="./src/resources/user.ts">update</a>({ ...params }) -> UserUpdateResponse</code>
-- <code title="get /user/init">client.user.<a href="./src/resources/user.ts">init</a>() -> UserInitResponse</code>
 - <code title="get /user/me">client.user.<a href="./src/resources/user.ts">me</a>() -> UserMeResponse</code>
 
 # Address
