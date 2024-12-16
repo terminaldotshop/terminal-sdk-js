@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Terminal from '@terminal/sdk';
-import { APIUserAbortError } from '@terminal/sdk';
-import { Headers } from '@terminal/sdk/core';
+import Terminal from '@terminaldotshop/sdk';
+import { APIUserAbortError } from '@terminaldotshop/sdk';
+import { Headers } from '@terminaldotshop/sdk/core';
 import defaultFetch, { Response, type RequestInit, type RequestInfo } from 'node-fetch';
 
 describe('instantiate client', () => {

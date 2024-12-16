@@ -9,9 +9,9 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "@terminal/sdk/_shims/auto/*": ["src/_shims/auto/*-node"],
-      "@terminal/sdk/*": ["src/*"],
-      "@terminal/sdk": ["src/index.ts"]
+      "@terminaldotshop/sdk/_shims/auto/*": ["src/_shims/auto/*-node"],
+      "@terminaldotshop/sdk/*": ["src/*"],
+      "@terminaldotshop/sdk": ["src/index.ts"]
     },
     "noEmit": true,
 
