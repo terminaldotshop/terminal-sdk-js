@@ -55,12 +55,12 @@ $ cd terminal-sdk-js
 # With yarn
 $ yarn link
 $ cd ../my-package
-$ yarn link @terminal/sdk
+$ yarn link @terminaldotshop/sdk
 
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global @terminal/sdk
+$ pnpm link -—global @terminaldotshop/sdk
 ```
 
 ## Running tests

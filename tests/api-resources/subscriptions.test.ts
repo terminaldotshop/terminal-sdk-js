@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Terminal from '@terminal/sdk';
+import Terminal from '@terminaldotshop/sdk';
 import { Response } from 'node-fetch';
 
 const client = new Terminal({
