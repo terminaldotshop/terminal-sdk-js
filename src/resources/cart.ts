@@ -2,12 +2,20 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
+import * as OrderAPI from './order';
 
 export class CartResource extends APIResource {
   /**
+   * Convert the current user's cart to an order.
+   */
+  convert(options?: Core.RequestOptions): Core.APIPromise<CartConvertResponse> {
+    return this._client.post('/cart/convert', options);
+  }
+
+  /**
    * Get the current user's cart.
    */
-  list(options?: Core.RequestOptions): Core.APIPromise<CartListResponse> {
+  get(options?: Core.RequestOptions): Core.APIPromise<CartGetResponse> {
     return this._client.get('/cart', options);
   }
 
@@ -128,7 +136,14 @@ export namespace Cart {
   }
 }
 
-export interface CartListResponse {
+export interface CartConvertResponse {
+  /**
+   * An order from the Terminal shop.
+   */
+  data: OrderAPI.Order;
+}
+
+export interface CartGetResponse {
   /**
    * The current Terminal shop user's cart.
    */
@@ -179,7 +194,8 @@ export interface CartSetItemParams {
 export declare namespace CartResource {
   export {
     type Cart as Cart,
-    type CartListResponse as CartListResponse,
+    type CartConvertResponse as CartConvertResponse,
+    type CartGetResponse as CartGetResponse,
     type CartSetAddressResponse as CartSetAddressResponse,
     type CartSetCardResponse as CartSetCardResponse,
     type CartSetItemResponse as CartSetItemResponse,
