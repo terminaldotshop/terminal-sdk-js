@@ -109,3 +109,13 @@ Types:
 Methods:
 
 - <code title="post /email">client.email.<a href="./src/resources/email.ts">create</a>({ ...params }) -> EmailCreateResponse</code>
+
+# View
+
+Types:
+
+- <code><a href="./src/resources/view.ts">ViewInitResponse</a></code>
+
+Methods:
+
+- <code title="get /view/init">client.view.<a href="./src/resources/view.ts">init</a>() -> ViewInitResponse</code>
