@@ -8,9 +8,9 @@ const client = new Terminal({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource address', () => {
+describe('resource addresses', () => {
   test('create: only required params', async () => {
-    const responsePromise = client.address.create({
+    const responsePromise = client.addresses.create({
       city: 'Anytown',
       country: 'US',
       name: 'John Doe',
@@ -27,7 +27,7 @@ describe('resource address', () => {
   });
 
   test('create: required and optional params', async () => {
-    const response = await client.address.create({
+    const response = await client.addresses.create({
       city: 'Anytown',
       country: 'US',
       name: 'John Doe',
@@ -40,7 +40,7 @@ describe('resource address', () => {
   });
 
   test('list', async () => {
-    const responsePromise = client.address.list();
+    const responsePromise = client.addresses.list();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -52,13 +52,13 @@ describe('resource address', () => {
 
   test('list: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.address.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.addresses.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Terminal.NotFoundError,
     );
   });
 
   test('delete', async () => {
-    const responsePromise = client.address.delete('shp_XXXXXXXXXXXXXXXXXXXXXXXXX');
+    const responsePromise = client.addresses.delete('shp_XXXXXXXXXXXXXXXXXXXXXXXXX');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -71,7 +71,7 @@ describe('resource address', () => {
   test('delete: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.address.delete('shp_XXXXXXXXXXXXXXXXXXXXXXXXX', { path: '/_stainless_unknown_path' }),
+      client.addresses.delete('shp_XXXXXXXXXXXXXXXXXXXXXXXXX', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Terminal.NotFoundError);
   });
 });

@@ -8,9 +8,9 @@ const client = new Terminal({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource email', () => {
+describe('resource emails', () => {
   test('create: only required params', async () => {
-    const responsePromise = client.email.create({ email: 'john@example.com' });
+    const responsePromise = client.emails.create({ email: 'john@example.com' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -21,6 +21,6 @@ describe('resource email', () => {
   });
 
   test('create: required and optional params', async () => {
-    const response = await client.email.create({ email: 'john@example.com' });
+    const response = await client.emails.create({ email: 'john@example.com' });
   });
 });

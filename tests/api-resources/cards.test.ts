@@ -8,9 +8,9 @@ const client = new Terminal({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource order', () => {
-  test('create', async () => {
-    const responsePromise = client.order.create();
+describe('resource cards', () => {
+  test('create: only required params', async () => {
+    const responsePromise = client.cards.create({ token: 'tok_1N3T00LkdIwHu7ixt44h1F8k' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -20,15 +20,12 @@ describe('resource order', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('create: request options instead of params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.order.create({ path: '/_stainless_unknown_path' })).rejects.toThrow(
-      Terminal.NotFoundError,
-    );
+  test('create: required and optional params', async () => {
+    const response = await client.cards.create({ token: 'tok_1N3T00LkdIwHu7ixt44h1F8k' });
   });
 
   test('list', async () => {
-    const responsePromise = client.order.list();
+    const responsePromise = client.cards.list();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -40,13 +37,13 @@ describe('resource order', () => {
 
   test('list: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.order.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.cards.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Terminal.NotFoundError,
     );
   });
 
-  test('get', async () => {
-    const responsePromise = client.order.get('ord_XXXXXXXXXXXXXXXXXXXXXXXXX');
+  test('delete', async () => {
+    const responsePromise = client.cards.delete('crd_XXXXXXXXXXXXXXXXXXXXXXXXX');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -56,10 +53,10 @@ describe('resource order', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('get: request options instead of params are passed correctly', async () => {
+  test('delete: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.order.get('ord_XXXXXXXXXXXXXXXXXXXXXXXXX', { path: '/_stainless_unknown_path' }),
+      client.cards.delete('crd_XXXXXXXXXXXXXXXXXXXXXXXXX', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Terminal.NotFoundError);
   });
 });

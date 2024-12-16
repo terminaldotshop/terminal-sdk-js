@@ -2,9 +2,8 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as Shared from './shared';
 
-export class Cart extends APIResource {
+export class CartResource extends APIResource {
   /**
    * Get the current user's cart.
    */
@@ -37,11 +36,103 @@ export class Cart extends APIResource {
   }
 }
 
+/**
+ * The current Terminal shop user's cart.
+ */
+export interface Cart {
+  /**
+   * The subtotal and shipping amounts for the current user's cart.
+   */
+  amount: Cart.Amount;
+
+  /**
+   * An array of items in the current user's cart.
+   */
+  items: Array<Cart.Item>;
+
+  /**
+   * The subtotal of all items in the current user's cart, in cents (USD).
+   */
+  subtotal: number;
+
+  /**
+   * ID of the shipping address selected on the current user's cart.
+   */
+  addressID?: string;
+
+  /**
+   * ID of the card selected on the current user's cart.
+   */
+  cardID?: string;
+
+  /**
+   * Shipping information for the current user's cart.
+   */
+  shipping?: Cart.Shipping;
+}
+
+export namespace Cart {
+  /**
+   * The subtotal and shipping amounts for the current user's cart.
+   */
+  export interface Amount {
+    /**
+     * Subtotal of the current user's cart, in cents (USD).
+     */
+    subtotal: number;
+
+    /**
+     * Shipping amount of the current user's cart, in cents (USD).
+     */
+    shipping?: number;
+  }
+
+  /**
+   * An item in the current Terminal shop user's cart.
+   */
+  export interface Item {
+    /**
+     * Unique object identifier. The format and length of IDs may change over time.
+     */
+    id: string;
+
+    /**
+     * ID of the product variant for this item in the current user's cart.
+     */
+    productVariantID: string;
+
+    /**
+     * Quantity of the item in the current user's cart.
+     */
+    quantity: number;
+
+    /**
+     * Subtotal of the item in the current user's cart, in cents (USD).
+     */
+    subtotal: number;
+  }
+
+  /**
+   * Shipping information for the current user's cart.
+   */
+  export interface Shipping {
+    /**
+     * Shipping service name.
+     */
+    service?: string;
+
+    /**
+     * Shipping timeframe provided by the shipping carrier.
+     */
+    timeframe?: string;
+  }
+}
+
 export interface CartListResponse {
   /**
    * The current Terminal shop user's cart.
    */
-  data: Shared.Cart;
+  data: Cart;
 }
 
 export interface CartSetAddressResponse {
@@ -56,7 +147,7 @@ export interface CartSetItemResponse {
   /**
    * The current Terminal shop user's cart.
    */
-  data: Shared.Cart;
+  data: Cart;
 }
 
 export interface CartSetAddressParams {
@@ -85,8 +176,9 @@ export interface CartSetItemParams {
   quantity: number;
 }
 
-export declare namespace Cart {
+export declare namespace CartResource {
   export {
+    type Cart as Cart,
     type CartListResponse as CartListResponse,
     type CartSetAddressResponse as CartSetAddressResponse,
     type CartSetCardResponse as CartSetCardResponse,
