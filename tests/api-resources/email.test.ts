@@ -8,9 +8,9 @@ const client = new Terminal({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource products', () => {
-  test('list', async () => {
-    const responsePromise = client.products.list();
+describe('resource email', () => {
+  test('create: only required params', async () => {
+    const responsePromise = client.email.create({ email: 'john@example.com' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -20,10 +20,7 @@ describe('resource products', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('list: request options instead of params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.products.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
-      Terminal.NotFoundError,
-    );
+  test('create: required and optional params', async () => {
+    const response = await client.email.create({ email: 'john@example.com' });
   });
 });

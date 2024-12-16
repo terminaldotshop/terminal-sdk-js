@@ -3,12 +3,12 @@
 import { APIResource } from '../resource';
 import * as Core from '../core';
 
-export class Products extends APIResource {
+export class ProductResource extends APIResource {
   /**
    * List all products for sale in the Terminal shop.
    */
   list(options?: Core.RequestOptions): Core.APIPromise<ProductListResponse> {
-    return this._client.get('/products', options);
+    return this._client.get('/product', options);
   }
 }
 
@@ -79,7 +79,7 @@ export interface ProductListResponse {
   data: Array<Product>;
 }
 
-export declare namespace Products {
+export declare namespace ProductResource {
   export {
     type Product as Product,
     type ProductVariant as ProductVariant,
