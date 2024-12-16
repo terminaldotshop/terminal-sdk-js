@@ -28,7 +28,7 @@ const client = new Terminal({
 });
 
 async function main() {
-  const product = await client.products.list();
+  const product = await client.product.list();
 
   console.log(product.data);
 }
@@ -50,7 +50,7 @@ const client = new Terminal({
 });
 
 async function main() {
-  const product: Terminal.ProductListResponse = await client.products.list();
+  const product: Terminal.ProductListResponse = await client.product.list();
 }
 
 main();
@@ -67,7 +67,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const product = await client.products.list().catch(async (err) => {
+  const product = await client.product.list().catch(async (err) => {
     if (err instanceof Terminal.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -110,7 +110,7 @@ const client = new Terminal({
 });
 
 // Or, configure per-request:
-await client.products.list({
+await client.product.list({
   maxRetries: 5,
 });
 ```
@@ -127,7 +127,7 @@ const client = new Terminal({
 });
 
 // Override per-request:
-await client.products.list({
+await client.product.list({
   timeout: 5 * 1000,
 });
 ```
@@ -148,11 +148,11 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const client = new Terminal();
 
-const response = await client.products.list().asResponse();
+const response = await client.product.list().asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: product, response: raw } = await client.products.list().withResponse();
+const { data: product, response: raw } = await client.product.list().withResponse();
 console.log(raw.headers.get('X-My-Header'));
 console.log(product.data);
 ```
@@ -258,7 +258,7 @@ const client = new Terminal({
 });
 
 // Override per-request:
-await client.products.list({
+await client.product.list({
   httpAgent: new http.Agent({ keepAlive: false }),
 });
 ```

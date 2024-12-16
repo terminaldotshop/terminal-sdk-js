@@ -9,8 +9,8 @@ const client = new Terminal({
 });
 
 describe('resource cart', () => {
-  test('list', async () => {
-    const responsePromise = client.cart.list();
+  test('convert', async () => {
+    const responsePromise = client.cart.convert();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -20,9 +20,27 @@ describe('resource cart', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('list: request options instead of params are passed correctly', async () => {
+  test('convert: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.cart.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.cart.convert({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Terminal.NotFoundError,
+    );
+  });
+
+  test('get', async () => {
+    const responsePromise = client.cart.get();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('get: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(client.cart.get({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Terminal.NotFoundError,
     );
   });

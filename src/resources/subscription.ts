@@ -3,7 +3,7 @@
 import { APIResource } from '../resource';
 import * as Core from '../core';
 
-export class Subscriptions extends APIResource {
+export class SubscriptionResource extends APIResource {
   /**
    * Create a subscription for the current user.
    */
@@ -11,21 +11,21 @@ export class Subscriptions extends APIResource {
     body: SubscriptionCreateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<SubscriptionCreateResponse> {
-    return this._client.put('/subscriptions', { body, ...options });
+    return this._client.put('/subscription', { body, ...options });
   }
 
   /**
    * List the subscriptions associated with the current user.
    */
   list(options?: Core.RequestOptions): Core.APIPromise<SubscriptionListResponse> {
-    return this._client.get('/subscriptions', options);
+    return this._client.get('/subscription', options);
   }
 
   /**
    * Cancel a subscription for the current user.
    */
   delete(id: string, options?: Core.RequestOptions): Core.APIPromise<SubscriptionDeleteResponse> {
-    return this._client.delete(`/subscriptions/${id}`, options);
+    return this._client.delete(`/subscription/${id}`, options);
   }
 }
 
@@ -111,7 +111,7 @@ export interface SubscriptionCreateParams {
   quantity: number;
 }
 
-export declare namespace Subscriptions {
+export declare namespace SubscriptionResource {
   export {
     type Subscription as Subscription,
     type SubscriptionCreateResponse as SubscriptionCreateResponse,
