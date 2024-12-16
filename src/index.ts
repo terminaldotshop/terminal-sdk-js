@@ -11,19 +11,20 @@ import {
   AddressCreateResponse,
   AddressDeleteResponse,
   AddressListResponse,
-  Addresses,
-} from './resources/addresses';
+  AddressResource,
+} from './resources/address';
 import {
   Card,
   CardCreateParams,
   CardCreateResponse,
   CardDeleteResponse,
   CardListResponse,
-  Cards,
-} from './resources/cards';
+  CardResource,
+} from './resources/card';
 import {
   Cart,
-  CartListResponse,
+  CartConvertResponse,
+  CartGetResponse,
   CartResource,
   CartSetAddressParams,
   CartSetAddressResponse,
@@ -32,25 +33,24 @@ import {
   CartSetItemParams,
   CartSetItemResponse,
 } from './resources/cart';
-import { EmailCreateParams, EmailCreateResponse, Emails } from './resources/emails';
-import { Order, OrderCreateResponse, OrderGetResponse, OrderListResponse, Orders } from './resources/orders';
-import { Product, ProductListResponse, ProductVariant, Products } from './resources/products';
+import { Email, EmailCreateParams, EmailCreateResponse } from './resources/email';
+import { Order, OrderGetResponse, OrderListResponse, OrderResource } from './resources/order';
+import { Product, ProductListResponse, ProductResource, ProductVariant } from './resources/product';
+import {
+  Profile,
+  ProfileMeResponse,
+  ProfileResource,
+  ProfileUpdateParams,
+  ProfileUpdateResponse,
+} from './resources/profile';
 import {
   Subscription,
   SubscriptionCreateParams,
   SubscriptionCreateResponse,
   SubscriptionDeleteResponse,
   SubscriptionListResponse,
-  Subscriptions,
-} from './resources/subscriptions';
-import {
-  User,
-  UserInitResponse,
-  UserMeResponse,
-  UserUpdateParams,
-  UserUpdateResponse,
-  Users,
-} from './resources/users';
+  SubscriptionResource,
+} from './resources/subscription';
 
 const environments = {
   production: 'https://api.terminal.shop/',
@@ -187,14 +187,14 @@ export class Terminal extends Core.APIClient {
     this.bearerToken = bearerToken;
   }
 
-  products: API.Products = new API.Products(this);
-  users: API.Users = new API.Users(this);
-  addresses: API.Addresses = new API.Addresses(this);
-  cards: API.Cards = new API.Cards(this);
+  product: API.ProductResource = new API.ProductResource(this);
+  profile: API.ProfileResource = new API.ProfileResource(this);
+  address: API.AddressResource = new API.AddressResource(this);
+  card: API.CardResource = new API.CardResource(this);
   cart: API.CartResource = new API.CartResource(this);
-  orders: API.Orders = new API.Orders(this);
-  subscriptions: API.Subscriptions = new API.Subscriptions(this);
-  emails: API.Emails = new API.Emails(this);
+  order: API.OrderResource = new API.OrderResource(this);
+  subscription: API.SubscriptionResource = new API.SubscriptionResource(this);
+  email: API.Email = new API.Email(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
@@ -232,35 +232,34 @@ export class Terminal extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-Terminal.Products = Products;
-Terminal.Users = Users;
-Terminal.Addresses = Addresses;
-Terminal.Cards = Cards;
+Terminal.ProductResource = ProductResource;
+Terminal.ProfileResource = ProfileResource;
+Terminal.AddressResource = AddressResource;
+Terminal.CardResource = CardResource;
 Terminal.CartResource = CartResource;
-Terminal.Orders = Orders;
-Terminal.Subscriptions = Subscriptions;
-Terminal.Emails = Emails;
+Terminal.OrderResource = OrderResource;
+Terminal.SubscriptionResource = SubscriptionResource;
+Terminal.Email = Email;
 export declare namespace Terminal {
   export type RequestOptions = Core.RequestOptions;
 
   export {
-    Products as Products,
+    ProductResource as ProductResource,
     type Product as Product,
     type ProductVariant as ProductVariant,
     type ProductListResponse as ProductListResponse,
   };
 
   export {
-    Users as Users,
-    type User as User,
-    type UserUpdateResponse as UserUpdateResponse,
-    type UserInitResponse as UserInitResponse,
-    type UserMeResponse as UserMeResponse,
-    type UserUpdateParams as UserUpdateParams,
+    ProfileResource as ProfileResource,
+    type Profile as Profile,
+    type ProfileUpdateResponse as ProfileUpdateResponse,
+    type ProfileMeResponse as ProfileMeResponse,
+    type ProfileUpdateParams as ProfileUpdateParams,
   };
 
   export {
-    Addresses as Addresses,
+    AddressResource as AddressResource,
     type Address as Address,
     type AddressCreateResponse as AddressCreateResponse,
     type AddressListResponse as AddressListResponse,
@@ -269,7 +268,7 @@ export declare namespace Terminal {
   };
 
   export {
-    Cards as Cards,
+    CardResource as CardResource,
     type Card as Card,
     type CardCreateResponse as CardCreateResponse,
     type CardListResponse as CardListResponse,
@@ -280,7 +279,8 @@ export declare namespace Terminal {
   export {
     CartResource as CartResource,
     type Cart as Cart,
-    type CartListResponse as CartListResponse,
+    type CartConvertResponse as CartConvertResponse,
+    type CartGetResponse as CartGetResponse,
     type CartSetAddressResponse as CartSetAddressResponse,
     type CartSetCardResponse as CartSetCardResponse,
     type CartSetItemResponse as CartSetItemResponse,
@@ -290,15 +290,14 @@ export declare namespace Terminal {
   };
 
   export {
-    Orders as Orders,
+    OrderResource as OrderResource,
     type Order as Order,
-    type OrderCreateResponse as OrderCreateResponse,
     type OrderListResponse as OrderListResponse,
     type OrderGetResponse as OrderGetResponse,
   };
 
   export {
-    Subscriptions as Subscriptions,
+    SubscriptionResource as SubscriptionResource,
     type Subscription as Subscription,
     type SubscriptionCreateResponse as SubscriptionCreateResponse,
     type SubscriptionListResponse as SubscriptionListResponse,
@@ -307,7 +306,7 @@ export declare namespace Terminal {
   };
 
   export {
-    Emails as Emails,
+    Email as Email,
     type EmailCreateResponse as EmailCreateResponse,
     type EmailCreateParams as EmailCreateParams,
   };

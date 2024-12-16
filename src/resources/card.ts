@@ -3,26 +3,26 @@
 import { APIResource } from '../resource';
 import * as Core from '../core';
 
-export class Cards extends APIResource {
+export class CardResource extends APIResource {
   /**
    * Attach a credit card (tokenized via Stripe) to the current user.
    */
   create(body: CardCreateParams, options?: Core.RequestOptions): Core.APIPromise<CardCreateResponse> {
-    return this._client.post('/cards', { body, ...options });
+    return this._client.post('/card', { body, ...options });
   }
 
   /**
    * List the credit cards associated with the current user.
    */
   list(options?: Core.RequestOptions): Core.APIPromise<CardListResponse> {
-    return this._client.get('/cards', options);
+    return this._client.get('/card', options);
   }
 
   /**
    * Delete a credit card associated with the current user.
    */
   delete(id: string, options?: Core.RequestOptions): Core.APIPromise<CardDeleteResponse> {
-    return this._client.delete(`/cards/${id}`, options);
+    return this._client.delete(`/card/${id}`, options);
   }
 }
 
@@ -94,7 +94,7 @@ export interface CardCreateParams {
   token: string;
 }
 
-export declare namespace Cards {
+export declare namespace CardResource {
   export {
     type Card as Card,
     type CardCreateResponse as CardCreateResponse,

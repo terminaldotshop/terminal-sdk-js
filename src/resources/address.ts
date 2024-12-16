@@ -3,26 +3,26 @@
 import { APIResource } from '../resource';
 import * as Core from '../core';
 
-export class Addresses extends APIResource {
+export class AddressResource extends APIResource {
   /**
    * Create and add a shipping address to the current user.
    */
   create(body: AddressCreateParams, options?: Core.RequestOptions): Core.APIPromise<AddressCreateResponse> {
-    return this._client.post('/addresses', { body, ...options });
+    return this._client.post('/address', { body, ...options });
   }
 
   /**
    * Get the shipping addresses associated with the current user.
    */
   list(options?: Core.RequestOptions): Core.APIPromise<AddressListResponse> {
-    return this._client.get('/addresses', options);
+    return this._client.get('/address', options);
   }
 
   /**
    * Delete a shipping address from the current user.
    */
   delete(id: string, options?: Core.RequestOptions): Core.APIPromise<AddressDeleteResponse> {
-    return this._client.delete(`/addresses/${id}`, options);
+    return this._client.delete(`/address/${id}`, options);
   }
 }
 
@@ -136,7 +136,7 @@ export interface AddressCreateParams {
   street2?: string;
 }
 
-export declare namespace Addresses {
+export declare namespace AddressResource {
   export {
     type Address as Address,
     type AddressCreateResponse as AddressCreateResponse,
