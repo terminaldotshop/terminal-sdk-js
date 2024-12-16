@@ -3,12 +3,12 @@
 import { APIResource } from '../resource';
 import * as Core from '../core';
 
-export class Email extends APIResource {
+export class Emails extends APIResource {
   /**
    * Subscribe to email updates from Terminal.
    */
   create(body: EmailCreateParams, options?: Core.RequestOptions): Core.APIPromise<EmailCreateResponse> {
-    return this._client.post('/email/subscription', { body, ...options });
+    return this._client.post('/emails', { body, ...options });
   }
 }
 
@@ -23,6 +23,6 @@ export interface EmailCreateParams {
   email: string;
 }
 
-export declare namespace Email {
+export declare namespace Emails {
   export { type EmailCreateResponse as EmailCreateResponse, type EmailCreateParams as EmailCreateParams };
 }
