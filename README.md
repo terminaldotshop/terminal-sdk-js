@@ -1,6 +1,6 @@
 # Terminal Node API Library
 
-[![NPM version](https://img.shields.io/npm/v/@terminal/sdk.svg)](https://npmjs.org/package/@terminal/sdk) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@terminal/sdk)
+[![NPM version](https://img.shields.io/npm/v/@terminaldotshop/sdk.svg)](https://npmjs.org/package/@terminaldotshop/sdk) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@terminaldotshop/sdk)
 
 This library provides convenient access to the Terminal REST API from server-side TypeScript or JavaScript.
 
@@ -11,7 +11,7 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 ## Installation
 
 ```sh
-npm install @terminal/sdk
+npm install @terminaldotshop/sdk
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ The full API of this library can be found in [api.md](api.md).
 
 <!-- prettier-ignore -->
 ```js
-import Terminal from '@terminal/sdk';
+import Terminal from '@terminaldotshop/sdk';
 
 const client = new Terminal({
   bearerToken: process.env['TERMINAL_BEARER_TOKEN'], // This is the default and can be omitted
@@ -42,7 +42,7 @@ This library includes TypeScript definitions for all request params and response
 
 <!-- prettier-ignore -->
 ```ts
-import Terminal from '@terminal/sdk';
+import Terminal from '@terminaldotshop/sdk';
 
 const client = new Terminal({
   bearerToken: process.env['TERMINAL_BEARER_TOKEN'], // This is the default and can be omitted
@@ -212,11 +212,11 @@ add the following import before your first import `from "Terminal"`:
 ```ts
 // Tell TypeScript and the package to use the global web fetch instead of node-fetch.
 // Note, despite the name, this does not add any polyfills, but expects them to be provided if needed.
-import '@terminal/sdk/shims/web';
-import Terminal from '@terminal/sdk';
+import '@terminaldotshop/sdk/shims/web';
+import Terminal from '@terminaldotshop/sdk';
 ```
 
-To do the inverse, add `import "@terminal/sdk/shims/node"` (which does import polyfills).
+To do the inverse, add `import "@terminaldotshop/sdk/shims/node"` (which does import polyfills).
 This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/terminaldotshop/terminal-sdk-js/tree/main/src/_shims#readme)).
 
 ### Logging and middleware
@@ -226,7 +226,7 @@ which can be used to inspect or alter the `Request` or `Response` before/after e
 
 ```ts
 import { fetch } from 'undici'; // as one example
-import Terminal from '@terminal/sdk';
+import Terminal from '@terminaldotshop/sdk';
 
 const client = new Terminal({
   fetch: async (url: RequestInfo, init?: RequestInit): Promise<Response> => {
