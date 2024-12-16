@@ -11,17 +11,20 @@ import {
   AddressCreateResponse,
   AddressDeleteResponse,
   AddressListResponse,
-} from './resources/address';
+  Addresses,
+} from './resources/addresses';
 import {
   Card,
   CardCreateParams,
   CardCreateResponse,
   CardDeleteResponse,
   CardListResponse,
-} from './resources/card';
+  Cards,
+} from './resources/cards';
 import {
   Cart,
   CartListResponse,
+  CartResource,
   CartSetAddressParams,
   CartSetAddressResponse,
   CartSetCardParams,
@@ -29,27 +32,29 @@ import {
   CartSetItemParams,
   CartSetItemResponse,
 } from './resources/cart';
-import { Email, EmailCreateParams, EmailCreateResponse } from './resources/email';
-import { Order, OrderCreateResponse, OrderGetResponse, OrderListResponse } from './resources/order';
-import { Product, ProductListResponse } from './resources/product';
+import { EmailCreateParams, EmailCreateResponse, Emails } from './resources/emails';
+import { Order, OrderCreateResponse, OrderGetResponse, OrderListResponse, Orders } from './resources/orders';
+import { Product, ProductListResponse, ProductVariant, Products } from './resources/products';
 import {
   Subscription,
   SubscriptionCreateParams,
   SubscriptionCreateResponse,
   SubscriptionDeleteResponse,
   SubscriptionListResponse,
-} from './resources/subscription';
+  Subscriptions,
+} from './resources/subscriptions';
 import {
   User,
   UserInitResponse,
   UserMeResponse,
   UserUpdateParams,
   UserUpdateResponse,
-} from './resources/user';
+  Users,
+} from './resources/users';
 
 const environments = {
   production: 'https://api.terminal.shop/',
-  dev: 'https://api.dev.terminal.shop/',
+  sandbox: 'https://sandbox.terminal.shop/',
 };
 type Environment = keyof typeof environments;
 export interface ClientOptions {
@@ -63,7 +68,7 @@ export interface ClientOptions {
    *
    * Each environment maps to a different base URL:
    * - `production` corresponds to `https://api.terminal.shop/`
-   * - `dev` corresponds to `https://api.dev.terminal.shop/`
+   * - `sandbox` corresponds to `https://sandbox.terminal.shop/`
    */
   environment?: Environment;
 
@@ -182,14 +187,14 @@ export class Terminal extends Core.APIClient {
     this.bearerToken = bearerToken;
   }
 
-  product: API.Product = new API.Product(this);
-  user: API.User = new API.User(this);
-  address: API.Address = new API.Address(this);
-  card: API.Card = new API.Card(this);
-  cart: API.Cart = new API.Cart(this);
-  order: API.Order = new API.Order(this);
-  subscription: API.Subscription = new API.Subscription(this);
-  email: API.Email = new API.Email(this);
+  products: API.Products = new API.Products(this);
+  users: API.Users = new API.Users(this);
+  addresses: API.Addresses = new API.Addresses(this);
+  cards: API.Cards = new API.Cards(this);
+  cart: API.CartResource = new API.CartResource(this);
+  orders: API.Orders = new API.Orders(this);
+  subscriptions: API.Subscriptions = new API.Subscriptions(this);
+  emails: API.Emails = new API.Emails(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
@@ -227,21 +232,27 @@ export class Terminal extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-Terminal.Product = Product;
-Terminal.User = User;
-Terminal.Address = Address;
-Terminal.Card = Card;
-Terminal.Cart = Cart;
-Terminal.Order = Order;
-Terminal.Subscription = Subscription;
-Terminal.Email = Email;
+Terminal.Products = Products;
+Terminal.Users = Users;
+Terminal.Addresses = Addresses;
+Terminal.Cards = Cards;
+Terminal.CartResource = CartResource;
+Terminal.Orders = Orders;
+Terminal.Subscriptions = Subscriptions;
+Terminal.Emails = Emails;
 export declare namespace Terminal {
   export type RequestOptions = Core.RequestOptions;
 
-  export { Product as Product, type ProductListResponse as ProductListResponse };
+  export {
+    Products as Products,
+    type Product as Product,
+    type ProductVariant as ProductVariant,
+    type ProductListResponse as ProductListResponse,
+  };
 
   export {
-    User as User,
+    Users as Users,
+    type User as User,
     type UserUpdateResponse as UserUpdateResponse,
     type UserInitResponse as UserInitResponse,
     type UserMeResponse as UserMeResponse,
@@ -249,7 +260,8 @@ export declare namespace Terminal {
   };
 
   export {
-    Address as Address,
+    Addresses as Addresses,
+    type Address as Address,
     type AddressCreateResponse as AddressCreateResponse,
     type AddressListResponse as AddressListResponse,
     type AddressDeleteResponse as AddressDeleteResponse,
@@ -257,7 +269,8 @@ export declare namespace Terminal {
   };
 
   export {
-    Card as Card,
+    Cards as Cards,
+    type Card as Card,
     type CardCreateResponse as CardCreateResponse,
     type CardListResponse as CardListResponse,
     type CardDeleteResponse as CardDeleteResponse,
@@ -265,7 +278,8 @@ export declare namespace Terminal {
   };
 
   export {
-    Cart as Cart,
+    CartResource as CartResource,
+    type Cart as Cart,
     type CartListResponse as CartListResponse,
     type CartSetAddressResponse as CartSetAddressResponse,
     type CartSetCardResponse as CartSetCardResponse,
@@ -276,14 +290,16 @@ export declare namespace Terminal {
   };
 
   export {
-    Order as Order,
+    Orders as Orders,
+    type Order as Order,
     type OrderCreateResponse as OrderCreateResponse,
     type OrderListResponse as OrderListResponse,
     type OrderGetResponse as OrderGetResponse,
   };
 
   export {
-    Subscription as Subscription,
+    Subscriptions as Subscriptions,
+    type Subscription as Subscription,
     type SubscriptionCreateResponse as SubscriptionCreateResponse,
     type SubscriptionListResponse as SubscriptionListResponse,
     type SubscriptionDeleteResponse as SubscriptionDeleteResponse,
@@ -291,19 +307,10 @@ export declare namespace Terminal {
   };
 
   export {
-    Email as Email,
+    Emails as Emails,
     type EmailCreateResponse as EmailCreateResponse,
     type EmailCreateParams as EmailCreateParams,
   };
-
-  export type Address = API.Address;
-  export type Card = API.Card;
-  export type Cart = API.Cart;
-  export type Order = API.Order;
-  export type Product = API.Product;
-  export type ProductVariant = API.ProductVariant;
-  export type Subscription = API.Subscription;
-  export type User = API.User;
 }
 
 export { toFile, fileFromPath } from './uploads';

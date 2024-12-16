@@ -1,22 +1,24 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export * from './shared';
 export {
-  Address,
+  Addresses,
+  type Address,
   type AddressCreateResponse,
   type AddressListResponse,
   type AddressDeleteResponse,
   type AddressCreateParams,
-} from './address';
+} from './addresses';
 export {
-  Card,
+  Cards,
+  type Card,
   type CardCreateResponse,
   type CardListResponse,
   type CardDeleteResponse,
   type CardCreateParams,
-} from './card';
+} from './cards';
 export {
-  Cart,
+  CartResource,
+  type Cart,
   type CartListResponse,
   type CartSetAddressResponse,
   type CartSetCardResponse,
@@ -25,20 +27,28 @@ export {
   type CartSetCardParams,
   type CartSetItemParams,
 } from './cart';
-export { Email, type EmailCreateResponse, type EmailCreateParams } from './email';
-export { Order, type OrderCreateResponse, type OrderListResponse, type OrderGetResponse } from './order';
-export { Product, type ProductListResponse } from './product';
+export { Emails, type EmailCreateResponse, type EmailCreateParams } from './emails';
 export {
-  Subscription,
+  Orders,
+  type Order,
+  type OrderCreateResponse,
+  type OrderListResponse,
+  type OrderGetResponse,
+} from './orders';
+export { Products, type Product, type ProductVariant, type ProductListResponse } from './products';
+export {
+  Subscriptions,
+  type Subscription,
   type SubscriptionCreateResponse,
   type SubscriptionListResponse,
   type SubscriptionDeleteResponse,
   type SubscriptionCreateParams,
-} from './subscription';
+} from './subscriptions';
 export {
-  User,
+  Users,
+  type User,
   type UserUpdateResponse,
   type UserInitResponse,
   type UserMeResponse,
   type UserUpdateParams,
-} from './user';
+} from './users';

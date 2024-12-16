@@ -24,11 +24,11 @@ import Terminal from '@terminal/sdk';
 
 const client = new Terminal({
   bearerToken: process.env['TERMINAL_BEARER_TOKEN'], // This is the default and can be omitted
-  environment: 'dev', // defaults to 'production'
+  environment: 'sandbox', // defaults to 'production'
 });
 
 async function main() {
-  const product = await client.product.list();
+  const product = await client.products.list();
 
   console.log(product.data);
 }
@@ -46,11 +46,11 @@ import Terminal from '@terminal/sdk';
 
 const client = new Terminal({
   bearerToken: process.env['TERMINAL_BEARER_TOKEN'], // This is the default and can be omitted
-  environment: 'dev', // defaults to 'production'
+  environment: 'sandbox', // defaults to 'production'
 });
 
 async function main() {
-  const product: Terminal.ProductListResponse = await client.product.list();
+  const product: Terminal.ProductListResponse = await client.products.list();
 }
 
 main();
@@ -67,7 +67,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const product = await client.product.list().catch(async (err) => {
+  const product = await client.products.list().catch(async (err) => {
     if (err instanceof Terminal.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -110,7 +110,7 @@ const client = new Terminal({
 });
 
 // Or, configure per-request:
-await client.product.list({
+await client.products.list({
   maxRetries: 5,
 });
 ```
@@ -127,7 +127,7 @@ const client = new Terminal({
 });
 
 // Override per-request:
-await client.product.list({
+await client.products.list({
   timeout: 5 * 1000,
 });
 ```
@@ -148,11 +148,11 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const client = new Terminal();
 
-const response = await client.product.list().asResponse();
+const response = await client.products.list().asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: product, response: raw } = await client.product.list().withResponse();
+const { data: product, response: raw } = await client.products.list().withResponse();
 console.log(raw.headers.get('X-My-Header'));
 console.log(product.data);
 ```
@@ -258,7 +258,7 @@ const client = new Terminal({
 });
 
 // Override per-request:
-await client.product.list({
+await client.products.list({
   httpAgent: new http.Agent({ keepAlive: false }),
 });
 ```

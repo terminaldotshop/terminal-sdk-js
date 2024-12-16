@@ -8,9 +8,16 @@ const client = new Terminal({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource card', () => {
+describe('resource subscriptions', () => {
   test('create: only required params', async () => {
-    const responsePromise = client.card.create({ token: 'tok_1N3T00LkdIwHu7ixt44h1F8k' });
+    const responsePromise = client.subscriptions.create({
+      id: 'sub_XXXXXXXXXXXXXXXXXXXXXXXXX',
+      addressID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX',
+      cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX',
+      frequency: 'fixed',
+      productVariantID: 'var_XXXXXXXXXXXXXXXXXXXXXXXXX',
+      quantity: 1,
+    });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -21,11 +28,18 @@ describe('resource card', () => {
   });
 
   test('create: required and optional params', async () => {
-    const response = await client.card.create({ token: 'tok_1N3T00LkdIwHu7ixt44h1F8k' });
+    const response = await client.subscriptions.create({
+      id: 'sub_XXXXXXXXXXXXXXXXXXXXXXXXX',
+      addressID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX',
+      cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX',
+      frequency: 'fixed',
+      productVariantID: 'var_XXXXXXXXXXXXXXXXXXXXXXXXX',
+      quantity: 1,
+    });
   });
 
   test('list', async () => {
-    const responsePromise = client.card.list();
+    const responsePromise = client.subscriptions.list();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -37,13 +51,13 @@ describe('resource card', () => {
 
   test('list: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.card.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.subscriptions.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Terminal.NotFoundError,
     );
   });
 
   test('delete', async () => {
-    const responsePromise = client.card.delete('crd_XXXXXXXXXXXXXXXXXXXXXXXXX');
+    const responsePromise = client.subscriptions.delete('sub_XXXXXXXXXXXXXXXXXXXXXXXXX');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -56,7 +70,7 @@ describe('resource card', () => {
   test('delete: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.card.delete('crd_XXXXXXXXXXXXXXXXXXXXXXXXX', { path: '/_stainless_unknown_path' }),
+      client.subscriptions.delete('sub_XXXXXXXXXXXXXXXXXXXXXXXXX', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Terminal.NotFoundError);
   });
 });

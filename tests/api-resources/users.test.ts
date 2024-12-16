@@ -8,9 +8,9 @@ const client = new Terminal({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource user', () => {
+describe('resource users', () => {
   test('update', async () => {
-    const responsePromise = client.user.update();
+    const responsePromise = client.users.update();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -22,7 +22,7 @@ describe('resource user', () => {
 
   test('update: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.user.update({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.users.update({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Terminal.NotFoundError,
     );
   });
@@ -30,7 +30,7 @@ describe('resource user', () => {
   test('update: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.user.update(
+      client.users.update(
         { email: 'john@example.com', name: 'John Doe' },
         { path: '/_stainless_unknown_path' },
       ),
@@ -38,7 +38,7 @@ describe('resource user', () => {
   });
 
   test('init', async () => {
-    const responsePromise = client.user.init();
+    const responsePromise = client.users.init();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -50,13 +50,13 @@ describe('resource user', () => {
 
   test('init: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.user.init({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.users.init({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Terminal.NotFoundError,
     );
   });
 
   test('me', async () => {
-    const responsePromise = client.user.me();
+    const responsePromise = client.users.me();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -68,7 +68,7 @@ describe('resource user', () => {
 
   test('me: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.user.me({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.users.me({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Terminal.NotFoundError,
     );
   });
