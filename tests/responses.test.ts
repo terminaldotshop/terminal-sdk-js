@@ -1,5 +1,5 @@
-import { createResponseHeaders } from '@terminal/sdk/core';
-import { Headers } from '@terminal/sdk/_shims/index';
+import { createResponseHeaders } from '@terminaldotshop/sdk/core';
+import { Headers } from '@terminaldotshop/sdk/_shims/index';
 
 describe('response parsing', () => {
   // TODO: test unicode characters

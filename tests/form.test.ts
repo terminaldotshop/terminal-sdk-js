@@ -1,6 +1,6 @@
-import { multipartFormRequestOptions, createForm } from '@terminal/sdk/core';
-import { Blob } from '@terminal/sdk/_shims/index';
-import { toFile } from '@terminal/sdk';
+import { multipartFormRequestOptions, createForm } from '@terminaldotshop/sdk/core';
+import { Blob } from '@terminaldotshop/sdk/_shims/index';
+import { toFile } from '@terminaldotshop/sdk';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {
