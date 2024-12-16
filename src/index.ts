@@ -51,6 +51,7 @@ import {
   SubscriptionListResponse,
   SubscriptionResource,
 } from './resources/subscription';
+import { View, ViewInitResponse } from './resources/view';
 
 const environments = {
   production: 'https://api.terminal.shop/',
@@ -195,6 +196,7 @@ export class Terminal extends Core.APIClient {
   order: API.OrderResource = new API.OrderResource(this);
   subscription: API.SubscriptionResource = new API.SubscriptionResource(this);
   email: API.Email = new API.Email(this);
+  view: API.View = new API.View(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
@@ -240,6 +242,7 @@ Terminal.CartResource = CartResource;
 Terminal.OrderResource = OrderResource;
 Terminal.SubscriptionResource = SubscriptionResource;
 Terminal.Email = Email;
+Terminal.View = View;
 export declare namespace Terminal {
   export type RequestOptions = Core.RequestOptions;
 
@@ -310,6 +313,8 @@ export declare namespace Terminal {
     type EmailCreateResponse as EmailCreateResponse,
     type EmailCreateParams as EmailCreateParams,
   };
+
+  export { View as View, type ViewInitResponse as ViewInitResponse };
 }
 
 export { toFile, fileFromPath } from './uploads';

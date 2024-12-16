@@ -46,3 +46,4 @@ export {
   type SubscriptionDeleteResponse,
   type SubscriptionCreateParams,
 } from './subscription';
+export { View, type ViewInitResponse } from './view';
