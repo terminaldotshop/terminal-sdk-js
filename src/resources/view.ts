@@ -3,12 +3,14 @@
 import { APIResource } from '../resource';
 import * as Core from '../core';
 import * as AddressAPI from './address';
+import * as AppAPI from './app';
 import * as CardAPI from './card';
 import * as CartAPI from './cart';
 import * as OrderAPI from './order';
 import * as ProductAPI from './product';
 import * as ProfileAPI from './profile';
 import * as SubscriptionAPI from './subscription';
+import * as TokenAPI from './token';
 
 export class View extends APIResource {
   /**
@@ -34,6 +36,8 @@ export namespace ViewInitResponse {
   export interface Data {
     addresses: Array<AddressAPI.Address>;
 
+    apps: Array<AppAPI.App>;
+
     cards: Array<CardAPI.Card>;
 
     /**
@@ -51,6 +55,8 @@ export namespace ViewInitResponse {
     profile: ProfileAPI.Profile;
 
     subscriptions: Array<SubscriptionAPI.Subscription>;
+
+    tokens: Array<TokenAPI.Token>;
   }
 }
 
