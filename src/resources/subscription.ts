@@ -11,7 +11,7 @@ export class SubscriptionResource extends APIResource {
     body: SubscriptionCreateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<SubscriptionCreateResponse> {
-    return this._client.put('/subscription', { body, ...options });
+    return this._client.post('/subscription', { body, ...options });
   }
 
   /**
