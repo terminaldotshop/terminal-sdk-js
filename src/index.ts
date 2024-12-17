@@ -13,7 +13,15 @@ import {
   AddressListResponse,
   AddressResource,
 } from './resources/address';
-import { App, AppDeleteResponse, AppGetResponse, AppListResponse, AppResource } from './resources/app';
+import {
+  App,
+  AppCreateParams,
+  AppCreateResponse,
+  AppDeleteResponse,
+  AppGetResponse,
+  AppListResponse,
+  AppResource,
+} from './resources/app';
 import {
   Card,
   CardCreateParams,
@@ -54,6 +62,7 @@ import {
 } from './resources/subscription';
 import {
   Token,
+  TokenCreateResponse,
   TokenDeleteResponse,
   TokenGetResponse,
   TokenListResponse,
@@ -323,6 +332,7 @@ export declare namespace Terminal {
   export {
     TokenResource as TokenResource,
     type Token as Token,
+    type TokenCreateResponse as TokenCreateResponse,
     type TokenListResponse as TokenListResponse,
     type TokenDeleteResponse as TokenDeleteResponse,
     type TokenGetResponse as TokenGetResponse,
@@ -331,9 +341,11 @@ export declare namespace Terminal {
   export {
     AppResource as AppResource,
     type App as App,
+    type AppCreateResponse as AppCreateResponse,
     type AppListResponse as AppListResponse,
     type AppDeleteResponse as AppDeleteResponse,
     type AppGetResponse as AppGetResponse,
+    type AppCreateParams as AppCreateParams,
   };
 
   export {

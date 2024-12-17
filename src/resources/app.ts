@@ -5,6 +5,13 @@ import * as Core from '../core';
 
 export class AppResource extends APIResource {
   /**
+   * Create an app.
+   */
+  create(body: AppCreateParams, options?: Core.RequestOptions): Core.APIPromise<AppCreateResponse> {
+    return this._client.post('/app', { body, ...options });
+  }
+
+  /**
    * List the current user's registered apps.
    */
   list(options?: Core.RequestOptions): Core.APIPromise<AppListResponse> {
@@ -46,6 +53,24 @@ export interface App {
   redirectURI: string;
 }
 
+export interface AppCreateResponse {
+  data: AppCreateResponse.Data;
+}
+
+export namespace AppCreateResponse {
+  export interface Data {
+    /**
+     * OAuth 2.0 client ID.
+     */
+    id: string;
+
+    /**
+     * OAuth 2.0 client secret.
+     */
+    secret: string;
+  }
+}
+
 export interface AppListResponse {
   /**
    * List of apps.
@@ -64,11 +89,30 @@ export interface AppGetResponse {
   data: App;
 }
 
+export interface AppCreateParams {
+  /**
+   * Unique object identifier. The format and length of IDs may change over time.
+   */
+  id: string;
+
+  /**
+   * Name of the app.
+   */
+  name: string;
+
+  /**
+   * Redirect URI of the app.
+   */
+  redirectURI: string;
+}
+
 export declare namespace AppResource {
   export {
     type App as App,
+    type AppCreateResponse as AppCreateResponse,
     type AppListResponse as AppListResponse,
     type AppDeleteResponse as AppDeleteResponse,
     type AppGetResponse as AppGetResponse,
+    type AppCreateParams as AppCreateParams,
   };
 }
