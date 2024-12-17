@@ -13,6 +13,7 @@ import {
   AddressListResponse,
   AddressResource,
 } from './resources/address';
+import { App, AppDeleteResponse, AppGetResponse, AppListResponse, AppResource } from './resources/app';
 import {
   Card,
   CardCreateParams,
@@ -51,6 +52,13 @@ import {
   SubscriptionListResponse,
   SubscriptionResource,
 } from './resources/subscription';
+import {
+  Token,
+  TokenDeleteResponse,
+  TokenGetResponse,
+  TokenListResponse,
+  TokenResource,
+} from './resources/token';
 import { View, ViewInitResponse } from './resources/view';
 
 const environments = {
@@ -195,6 +203,8 @@ export class Terminal extends Core.APIClient {
   cart: API.CartResource = new API.CartResource(this);
   order: API.OrderResource = new API.OrderResource(this);
   subscription: API.SubscriptionResource = new API.SubscriptionResource(this);
+  token: API.TokenResource = new API.TokenResource(this);
+  app: API.AppResource = new API.AppResource(this);
   email: API.Email = new API.Email(this);
   view: API.View = new API.View(this);
 
@@ -241,6 +251,8 @@ Terminal.CardResource = CardResource;
 Terminal.CartResource = CartResource;
 Terminal.OrderResource = OrderResource;
 Terminal.SubscriptionResource = SubscriptionResource;
+Terminal.TokenResource = TokenResource;
+Terminal.AppResource = AppResource;
 Terminal.Email = Email;
 Terminal.View = View;
 export declare namespace Terminal {
@@ -306,6 +318,22 @@ export declare namespace Terminal {
     type SubscriptionListResponse as SubscriptionListResponse,
     type SubscriptionDeleteResponse as SubscriptionDeleteResponse,
     type SubscriptionCreateParams as SubscriptionCreateParams,
+  };
+
+  export {
+    TokenResource as TokenResource,
+    type Token as Token,
+    type TokenListResponse as TokenListResponse,
+    type TokenDeleteResponse as TokenDeleteResponse,
+    type TokenGetResponse as TokenGetResponse,
+  };
+
+  export {
+    AppResource as AppResource,
+    type App as App,
+    type AppListResponse as AppListResponse,
+    type AppDeleteResponse as AppDeleteResponse,
+    type AppGetResponse as AppGetResponse,
   };
 
   export {

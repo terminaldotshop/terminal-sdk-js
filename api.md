@@ -100,6 +100,36 @@ Methods:
 - <code title="get /subscription">client.subscription.<a href="./src/resources/subscription.ts">list</a>() -> SubscriptionListResponse</code>
 - <code title="delete /subscription/{id}">client.subscription.<a href="./src/resources/subscription.ts">delete</a>(id) -> SubscriptionDeleteResponse</code>
 
+# Token
+
+Types:
+
+- <code><a href="./src/resources/token.ts">Token</a></code>
+- <code><a href="./src/resources/token.ts">TokenListResponse</a></code>
+- <code><a href="./src/resources/token.ts">TokenDeleteResponse</a></code>
+- <code><a href="./src/resources/token.ts">TokenGetResponse</a></code>
+
+Methods:
+
+- <code title="get /token">client.token.<a href="./src/resources/token.ts">list</a>() -> TokenListResponse</code>
+- <code title="delete /token/{id}">client.token.<a href="./src/resources/token.ts">delete</a>(id) -> TokenDeleteResponse</code>
+- <code title="get /token/{id}">client.token.<a href="./src/resources/token.ts">get</a>(id) -> TokenGetResponse</code>
+
+# App
+
+Types:
+
+- <code><a href="./src/resources/app.ts">App</a></code>
+- <code><a href="./src/resources/app.ts">AppListResponse</a></code>
+- <code><a href="./src/resources/app.ts">AppDeleteResponse</a></code>
+- <code><a href="./src/resources/app.ts">AppGetResponse</a></code>
+
+Methods:
+
+- <code title="get /app">client.app.<a href="./src/resources/app.ts">list</a>() -> AppListResponse</code>
+- <code title="delete /app/{id}">client.app.<a href="./src/resources/app.ts">delete</a>(id) -> AppDeleteResponse</code>
+- <code title="get /app/{id}">client.app.<a href="./src/resources/app.ts">get</a>(id) -> AppGetResponse</code>
+
 # Email
 
 Types:
