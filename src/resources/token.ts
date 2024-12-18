@@ -26,7 +26,7 @@ export class TokenResource extends APIResource {
   }
 
   /**
-   * Get the personal token with the given ID.
+   * Get the personal access token with the given ID.
    */
   get(id: string, options?: Core.RequestOptions): Core.APIPromise<TokenGetResponse> {
     return this._client.get(`/token/${id}`, options);
