@@ -75,6 +75,7 @@ const environments = {
   sandbox: 'https://sandbox.terminal.shop/',
 };
 type Environment = keyof typeof environments;
+
 export interface ClientOptions {
   /**
    * Defaults to process.env['TERMINAL_BEARER_TOKEN'].
