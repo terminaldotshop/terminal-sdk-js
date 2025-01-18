@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.5.0-alpha (2025-01-18)
+
+Full Changelog: [v0.4.1-alpha...v0.5.0-alpha](https://github.com/terminaldotshop/terminal-sdk-js/compare/v0.4.1-alpha...v0.5.0-alpha)
+
+### Features
+
+* **api:** manual updates ([#119](https://github.com/terminaldotshop/terminal-sdk-js/issues/119)) ([3f971d9](https://github.com/terminaldotshop/terminal-sdk-js/commit/3f971d9ccdfec6990a2ec4f6f9a91a810b446268))
+
+
+### Bug Fixes
+
+* **client:** normalize method ([#121](https://github.com/terminaldotshop/terminal-sdk-js/issues/121)) ([6bfd51f](https://github.com/terminaldotshop/terminal-sdk-js/commit/6bfd51fae44531fc56dd94c3aaf37fdd8e173f5e))
+
+
+### Chores
+
+* **internal:** codegen related update ([#123](https://github.com/terminaldotshop/terminal-sdk-js/issues/123)) ([0c56db2](https://github.com/terminaldotshop/terminal-sdk-js/commit/0c56db2c28a214ddf03a2f22fc3d951a3f58c7b9))
+* **internal:** codegen related update ([#124](https://github.com/terminaldotshop/terminal-sdk-js/issues/124)) ([fb5b055](https://github.com/terminaldotshop/terminal-sdk-js/commit/fb5b055b2e7605eec3c672ff4703463691010c2d))
+* **internal:** codegen related update ([#125](https://github.com/terminaldotshop/terminal-sdk-js/issues/125)) ([0ef2ea1](https://github.com/terminaldotshop/terminal-sdk-js/commit/0ef2ea18017d565d4a31f569b7f2d7aaa7f0e4c1))
+
+
+### Documentation
+
+* minor formatting changes ([#122](https://github.com/terminaldotshop/terminal-sdk-js/issues/122)) ([8957ff1](https://github.com/terminaldotshop/terminal-sdk-js/commit/8957ff1c0f5031190002071bb5a2426b92d2c044))
+
 ## 0.4.1-alpha (2024-12-17)
 
 Full Changelog: [v0.4.0-alpha...v0.4.1-alpha](https://github.com/terminaldotshop/terminal-sdk-js/compare/v0.4.0-alpha...v0.4.1-alpha)
