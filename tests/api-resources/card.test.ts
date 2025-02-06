@@ -59,4 +59,22 @@ describe('resource card', () => {
       client.card.delete('crd_XXXXXXXXXXXXXXXXXXXXXXXXX', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Terminal.NotFoundError);
   });
+
+  test('collect', async () => {
+    const responsePromise = client.card.collect();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('collect: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(client.card.collect({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Terminal.NotFoundError,
+    );
+  });
 });

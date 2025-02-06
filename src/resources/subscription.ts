@@ -62,6 +62,11 @@ export interface Subscription {
    * Quantity of the subscription.
    */
   quantity: number;
+
+  /**
+   * Next shipment and billing date for the subscription.
+   */
+  next?: string;
 }
 
 export interface SubscriptionCreateResponse {
@@ -109,6 +114,11 @@ export interface SubscriptionCreateParams {
    * Quantity of the subscription.
    */
   quantity: number;
+
+  /**
+   * Next shipment and billing date for the subscription.
+   */
+  next?: string;
 }
 
 export declare namespace SubscriptionResource {
