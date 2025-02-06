@@ -23,6 +23,7 @@ export {
   type CardCreateResponse,
   type CardListResponse,
   type CardDeleteResponse,
+  type CardCollectResponse,
   type CardCreateParams,
 } from './card';
 export {
