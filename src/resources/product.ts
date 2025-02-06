@@ -26,6 +26,8 @@ export interface Product {
    */
   description: string;
 
+  filters: Array<'eu' | 'na'>;
+
   /**
    * Name of the product.
    */

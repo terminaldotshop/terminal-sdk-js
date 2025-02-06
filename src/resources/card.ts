@@ -24,6 +24,14 @@ export class CardResource extends APIResource {
   delete(id: string, options?: Core.RequestOptions): Core.APIPromise<CardDeleteResponse> {
     return this._client.delete(`/card/${id}`, options);
   }
+
+  /**
+   * Create a temporary URL for collecting credit card information for the current
+   * user.
+   */
+  collect(options?: Core.RequestOptions): Core.APIPromise<CardCollectResponse> {
+    return this._client.post('/card/collect', options);
+  }
 }
 
 /**
@@ -86,6 +94,26 @@ export interface CardDeleteResponse {
   data: 'ok';
 }
 
+export interface CardCollectResponse {
+  /**
+   * URL for collecting card information.
+   */
+  data: CardCollectResponse.Data;
+}
+
+export namespace CardCollectResponse {
+  /**
+   * URL for collecting card information.
+   */
+  export interface Data {
+    /**
+     * Temporary URL that allows a user to enter credit card details over https at
+     * terminal.shop.
+     */
+    url: string;
+  }
+}
+
 export interface CardCreateParams {
   /**
    * Stripe card token. Learn how to
@@ -100,6 +128,7 @@ export declare namespace CardResource {
     type CardCreateResponse as CardCreateResponse,
     type CardListResponse as CardListResponse,
     type CardDeleteResponse as CardDeleteResponse,
+    type CardCollectResponse as CardCollectResponse,
     type CardCreateParams as CardCreateParams,
   };
 }
