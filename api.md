@@ -46,12 +46,14 @@ Types:
 - <code><a href="./src/resources/card.ts">CardCreateResponse</a></code>
 - <code><a href="./src/resources/card.ts">CardListResponse</a></code>
 - <code><a href="./src/resources/card.ts">CardDeleteResponse</a></code>
+- <code><a href="./src/resources/card.ts">CardCollectResponse</a></code>
 
 Methods:
 
 - <code title="post /card">client.card.<a href="./src/resources/card.ts">create</a>({ ...params }) -> CardCreateResponse</code>
 - <code title="get /card">client.card.<a href="./src/resources/card.ts">list</a>() -> CardListResponse</code>
 - <code title="delete /card/{id}">client.card.<a href="./src/resources/card.ts">delete</a>(id) -> CardDeleteResponse</code>
+- <code title="post /card/collect">client.card.<a href="./src/resources/card.ts">collect</a>() -> CardCollectResponse</code>
 
 # Cart
 

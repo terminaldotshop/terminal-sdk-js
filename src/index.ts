@@ -24,6 +24,7 @@ import {
 } from './resources/app';
 import {
   Card,
+  CardCollectResponse,
   CardCreateParams,
   CardCreateResponse,
   CardDeleteResponse,
@@ -298,6 +299,7 @@ export declare namespace Terminal {
     type CardCreateResponse as CardCreateResponse,
     type CardListResponse as CardListResponse,
     type CardDeleteResponse as CardDeleteResponse,
+    type CardCollectResponse as CardCollectResponse,
     type CardCreateParams as CardCreateParams,
   };
 
