@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.6.0-alpha (2025-02-06)
+
+Full Changelog: [v0.5.0-alpha...v0.6.0-alpha](https://github.com/terminaldotshop/terminal-sdk-js/compare/v0.5.0-alpha...v0.6.0-alpha)
+
+### Features
+
+* **api:** manual updates ([#130](https://github.com/terminaldotshop/terminal-sdk-js/issues/130)) ([65456ce](https://github.com/terminaldotshop/terminal-sdk-js/commit/65456ce13d90faa490e47e3d3e0b10de7c8d120a))
+* **client:** send `X-Stainless-Timeout` header ([#129](https://github.com/terminaldotshop/terminal-sdk-js/issues/129)) ([6edd10d](https://github.com/terminaldotshop/terminal-sdk-js/commit/6edd10ddd539df74c11ff21f1c13d8c82e9cdf4b))
+
+
+### Chores
+
+* **internal:** codegen related update ([#127](https://github.com/terminaldotshop/terminal-sdk-js/issues/127)) ([3044236](https://github.com/terminaldotshop/terminal-sdk-js/commit/3044236dce4264fca3e1a8382b784a57f93275c8))
+
 ## 0.5.0-alpha (2025-01-18)
 
 Full Changelog: [v0.4.1-alpha...v0.5.0-alpha](https://github.com/terminaldotshop/terminal-sdk-js/compare/v0.4.1-alpha...v0.5.0-alpha)
