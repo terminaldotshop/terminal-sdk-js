@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.6.1-alpha (2025-02-14)
+
+Full Changelog: [v0.6.0-alpha...v0.6.1-alpha](https://github.com/terminaldotshop/terminal-sdk-js/compare/v0.6.0-alpha...v0.6.1-alpha)
+
+### Bug Fixes
+
+* **client:** fix export map for index exports ([#132](https://github.com/terminaldotshop/terminal-sdk-js/issues/132)) ([0c1b9ec](https://github.com/terminaldotshop/terminal-sdk-js/commit/0c1b9ecff9c807787927171bb3c69a3c3092fa7c))
+
 ## 0.6.0-alpha (2025-02-06)
 
 Full Changelog: [v0.5.0-alpha...v0.6.0-alpha](https://github.com/terminaldotshop/terminal-sdk-js/compare/v0.5.0-alpha...v0.6.0-alpha)
