@@ -24,7 +24,7 @@ import Terminal from '@terminaldotshop/sdk';
 
 const client = new Terminal({
   bearerToken: process.env['TERMINAL_BEARER_TOKEN'], // This is the default and can be omitted
-  environment: 'sandbox', // defaults to 'production'
+  environment: 'dev', // defaults to 'production'
 });
 
 async function main() {
@@ -46,7 +46,7 @@ import Terminal from '@terminaldotshop/sdk';
 
 const client = new Terminal({
   bearerToken: process.env['TERMINAL_BEARER_TOKEN'], // This is the default and can be omitted
-  environment: 'sandbox', // defaults to 'production'
+  environment: 'dev', // defaults to 'production'
 });
 
 async function main() {
