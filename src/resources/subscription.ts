@@ -67,6 +67,23 @@ export interface Subscription {
    * Next shipment and billing date for the subscription.
    */
   next?: string;
+
+  /**
+   * Schedule of the subscription.
+   */
+  schedule?: Subscription.Type | Subscription.UnionMember1;
+}
+
+export namespace Subscription {
+  export interface Type {
+    type: 'fixed';
+  }
+
+  export interface UnionMember1 {
+    interval: number;
+
+    type: 'weekly';
+  }
 }
 
 export interface SubscriptionCreateResponse {
@@ -119,6 +136,23 @@ export interface SubscriptionCreateParams {
    * Next shipment and billing date for the subscription.
    */
   next?: string;
+
+  /**
+   * Schedule of the subscription.
+   */
+  schedule?: SubscriptionCreateParams.Type | SubscriptionCreateParams.UnionMember1;
+}
+
+export namespace SubscriptionCreateParams {
+  export interface Type {
+    type: 'fixed';
+  }
+
+  export interface UnionMember1 {
+    interval: number;
+
+    type: 'weekly';
+  }
 }
 
 export declare namespace SubscriptionResource {
