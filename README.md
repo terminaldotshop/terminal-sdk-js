@@ -28,9 +28,16 @@ const client = new Terminal({
 });
 
 async function main() {
-  const product = await client.product.list();
+  const subscription = await client.subscription.create({
+    id: 'sub_XXXXXXXXXXXXXXXXXXXXXXXXX',
+    addressID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX',
+    cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX',
+    frequency: 'fixed',
+    productVariantID: 'var_XXXXXXXXXXXXXXXXXXXXXXXXX',
+    quantity: 1,
+  });
 
-  console.log(product.data);
+  console.log(subscription.data);
 }
 
 main();
