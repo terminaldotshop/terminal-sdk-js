@@ -73,7 +73,7 @@ import { View, ViewInitResponse } from './resources/view';
 
 const environments = {
   production: 'https://api.terminal.shop/',
-  sandbox: 'https://sandbox.terminal.shop/',
+  dev: 'https://api.dev.terminal.shop/',
 };
 type Environment = keyof typeof environments;
 
@@ -88,7 +88,7 @@ export interface ClientOptions {
    *
    * Each environment maps to a different base URL:
    * - `production` corresponds to `https://api.terminal.shop/`
-   * - `sandbox` corresponds to `https://sandbox.terminal.shop/`
+   * - `dev` corresponds to `https://api.dev.terminal.shop/`
    */
   environment?: Environment | undefined;
 

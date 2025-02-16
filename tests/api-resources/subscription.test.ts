@@ -36,6 +36,7 @@ describe('resource subscription', () => {
       productVariantID: 'var_XXXXXXXXXXXXXXXXXXXXXXXXX',
       quantity: 1,
       next: '2025-02-01T19:36:19.000Z',
+      schedule: { interval: 3, type: 'weekly' },
     });
   });
 
