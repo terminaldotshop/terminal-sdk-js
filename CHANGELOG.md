@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.10.0-alpha (2025-02-17)
+
+Full Changelog: [v0.9.0-alpha...v0.10.0-alpha](https://github.com/terminaldotshop/terminal-sdk-js/compare/v0.9.0-alpha...v0.10.0-alpha)
+
+### Features
+
+* **api:** manual updates ([#144](https://github.com/terminaldotshop/terminal-sdk-js/issues/144)) ([beb3548](https://github.com/terminaldotshop/terminal-sdk-js/commit/beb3548144ddd5c3ea79151f2d6a1dab89e09ab9))
+
 ## 0.9.0-alpha (2025-02-16)
 
 Full Changelog: [v0.8.0-alpha...v0.9.0-alpha](https://github.com/terminaldotshop/terminal-sdk-js/compare/v0.8.0-alpha...v0.9.0-alpha)
