@@ -71,15 +71,15 @@ export interface Subscription {
   /**
    * Schedule of the subscription.
    */
-  schedule?: Subscription.Type | Subscription.UnionMember1;
+  schedule?: Subscription.Fixed | Subscription.Weekly;
 }
 
 export namespace Subscription {
-  export interface Type {
+  export interface Fixed {
     type: 'fixed';
   }
 
-  export interface UnionMember1 {
+  export interface Weekly {
     interval: number;
 
     type: 'weekly';
@@ -140,15 +140,15 @@ export interface SubscriptionCreateParams {
   /**
    * Schedule of the subscription.
    */
-  schedule?: SubscriptionCreateParams.Type | SubscriptionCreateParams.UnionMember1;
+  schedule?: SubscriptionCreateParams.Fixed | SubscriptionCreateParams.Weekly;
 }
 
 export namespace SubscriptionCreateParams {
-  export interface Type {
+  export interface Fixed {
     type: 'fixed';
   }
 
-  export interface UnionMember1 {
+  export interface Weekly {
     interval: number;
 
     type: 'weekly';
