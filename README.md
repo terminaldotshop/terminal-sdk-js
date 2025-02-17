@@ -28,16 +28,9 @@ const client = new Terminal({
 });
 
 async function main() {
-  const subscription = await client.subscription.create({
-    id: 'sub_XXXXXXXXXXXXXXXXXXXXXXXXX',
-    addressID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX',
-    cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX',
-    frequency: 'fixed',
-    productVariantID: 'var_XXXXXXXXXXXXXXXXXXXXXXXXX',
-    quantity: 1,
-  });
+  const product = await client.product.list();
 
-  console.log(subscription.data);
+  console.log(product.data);
 }
 
 main();
@@ -57,15 +50,7 @@ const client = new Terminal({
 });
 
 async function main() {
-  const params: Terminal.SubscriptionCreateParams = {
-    id: 'sub_XXXXXXXXXXXXXXXXXXXXXXXXX',
-    addressID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX',
-    cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX',
-    frequency: 'fixed',
-    productVariantID: 'var_XXXXXXXXXXXXXXXXXXXXXXXXX',
-    quantity: 1,
-  };
-  const subscription: Terminal.SubscriptionCreateResponse = await client.subscription.create(params);
+  const product: Terminal.ProductListResponse = await client.product.list();
 }
 
 main();
@@ -82,24 +67,15 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const subscription = await client.subscription
-    .create({
-      id: 'sub_XXXXXXXXXXXXXXXXXXXXXXXXX',
-      addressID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX',
-      cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX',
-      frequency: 'fixed',
-      productVariantID: 'var_XXXXXXXXXXXXXXXXXXXXXXXXX',
-      quantity: 1,
-    })
-    .catch(async (err) => {
-      if (err instanceof Terminal.APIError) {
-        console.log(err.status); // 400
-        console.log(err.name); // BadRequestError
-        console.log(err.headers); // {server: 'nginx', ...}
-      } else {
-        throw err;
-      }
-    });
+  const product = await client.product.list().catch(async (err) => {
+    if (err instanceof Terminal.APIError) {
+      console.log(err.status); // 400
+      console.log(err.name); // BadRequestError
+      console.log(err.headers); // {server: 'nginx', ...}
+    } else {
+      throw err;
+    }
+  });
 }
 
 main();
@@ -134,7 +110,7 @@ const client = new Terminal({
 });
 
 // Or, configure per-request:
-await client.subscription.create({ id: 'sub_XXXXXXXXXXXXXXXXXXXXXXXXX', addressID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX', cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX', frequency: 'fixed', productVariantID: 'var_XXXXXXXXXXXXXXXXXXXXXXXXX', quantity: 1 }, {
+await client.product.list({
   maxRetries: 5,
 });
 ```
@@ -151,7 +127,7 @@ const client = new Terminal({
 });
 
 // Override per-request:
-await client.subscription.create({ id: 'sub_XXXXXXXXXXXXXXXXXXXXXXXXX', addressID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX', cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX', frequency: 'fixed', productVariantID: 'var_XXXXXXXXXXXXXXXXXXXXXXXXX', quantity: 1 }, {
+await client.product.list({
   timeout: 5 * 1000,
 });
 ```
@@ -172,31 +148,13 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const client = new Terminal();
 
-const response = await client.subscription
-  .create({
-    id: 'sub_XXXXXXXXXXXXXXXXXXXXXXXXX',
-    addressID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX',
-    cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX',
-    frequency: 'fixed',
-    productVariantID: 'var_XXXXXXXXXXXXXXXXXXXXXXXXX',
-    quantity: 1,
-  })
-  .asResponse();
+const response = await client.product.list().asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: subscription, response: raw } = await client.subscription
-  .create({
-    id: 'sub_XXXXXXXXXXXXXXXXXXXXXXXXX',
-    addressID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX',
-    cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX',
-    frequency: 'fixed',
-    productVariantID: 'var_XXXXXXXXXXXXXXXXXXXXXXXXX',
-    quantity: 1,
-  })
-  .withResponse();
+const { data: product, response: raw } = await client.product.list().withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(subscription.data);
+console.log(product.data);
 ```
 
 ### Making custom/undocumented requests
@@ -300,19 +258,9 @@ const client = new Terminal({
 });
 
 // Override per-request:
-await client.subscription.create(
-  {
-    id: 'sub_XXXXXXXXXXXXXXXXXXXXXXXXX',
-    addressID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX',
-    cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX',
-    frequency: 'fixed',
-    productVariantID: 'var_XXXXXXXXXXXXXXXXXXXXXXXXX',
-    quantity: 1,
-  },
-  {
-    httpAgent: new http.Agent({ keepAlive: false }),
-  },
-);
+await client.product.list({
+  httpAgent: new http.Agent({ keepAlive: false }),
+});
 ```
 
 ## Semantic versioning
