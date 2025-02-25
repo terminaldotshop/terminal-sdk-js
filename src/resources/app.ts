@@ -51,6 +51,11 @@ export interface App {
    * Redirect URI of the app.
    */
   redirectURI: string;
+
+  /**
+   * OAuth 2.0 client secret of the app (obfuscated).
+   */
+  secret: string;
 }
 
 export interface AppCreateResponse {
@@ -104,6 +109,11 @@ export interface AppCreateParams {
    * Redirect URI of the app.
    */
   redirectURI: string;
+
+  /**
+   * OAuth 2.0 client secret of the app (obfuscated).
+   */
+  secret: string;
 }
 
 export declare namespace AppResource {
