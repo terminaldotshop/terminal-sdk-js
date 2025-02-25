@@ -14,6 +14,7 @@ describe('resource app', () => {
       id: 'cli_XXXXXXXXXXXXXXXXXXXXXXXXX',
       name: 'Example App',
       redirectURI: 'https://example.com/callback',
+      secret: 'sec_******XXXX',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -29,6 +30,7 @@ describe('resource app', () => {
       id: 'cli_XXXXXXXXXXXXXXXXXXXXXXXXX',
       name: 'Example App',
       redirectURI: 'https://example.com/callback',
+      secret: 'sec_******XXXX',
     });
   });
 
