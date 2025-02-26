@@ -79,11 +79,13 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/order.ts">Order</a></code>
+- <code><a href="./src/resources/order.ts">OrderCreateResponse</a></code>
 - <code><a href="./src/resources/order.ts">OrderListResponse</a></code>
 - <code><a href="./src/resources/order.ts">OrderGetResponse</a></code>
 
 Methods:
 
+- <code title="post /order">client.order.<a href="./src/resources/order.ts">create</a>({ ...params }) -> OrderCreateResponse</code>
 - <code title="get /order">client.order.<a href="./src/resources/order.ts">list</a>() -> OrderListResponse</code>
 - <code title="get /order/{id}">client.order.<a href="./src/resources/order.ts">get</a>(id) -> OrderGetResponse</code>
 
