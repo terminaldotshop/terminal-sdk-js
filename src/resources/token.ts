@@ -49,21 +49,9 @@ export interface Token {
   token: string;
 
   /**
-   * Relevant timestamps for the token.
+   * The created time for the token.
    */
-  time: Token.Time;
-}
-
-export namespace Token {
-  /**
-   * Relevant timestamps for the token.
-   */
-  export interface Time {
-    /**
-     * The created time for the token.
-     */
-    created: string;
-  }
+  created: string;
 }
 
 export interface TokenCreateResponse {
