@@ -14,7 +14,6 @@ describe('resource subscription', () => {
       id: 'sub_XXXXXXXXXXXXXXXXXXXXXXXXX',
       addressID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX',
       cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX',
-      frequency: 'fixed',
       productVariantID: 'var_XXXXXXXXXXXXXXXXXXXXXXXXX',
       quantity: 1,
     });
@@ -32,7 +31,6 @@ describe('resource subscription', () => {
       id: 'sub_XXXXXXXXXXXXXXXXXXXXXXXXX',
       addressID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX',
       cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX',
-      frequency: 'fixed',
       productVariantID: 'var_XXXXXXXXXXXXXXXXXXXXXXXXX',
       quantity: 1,
       next: '2025-02-01T19:36:19.000Z',

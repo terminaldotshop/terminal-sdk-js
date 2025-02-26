@@ -49,11 +49,6 @@ export interface Subscription {
   cardID: string;
 
   /**
-   * Frequency of the subscription.
-   */
-  frequency: 'fixed' | 'daily' | 'weekly' | 'monthly' | 'yearly';
-
-  /**
    * ID of the product variant being subscribed to.
    */
   productVariantID: string;
@@ -116,11 +111,6 @@ export interface SubscriptionCreateParams {
    * ID of the card used for the subscription.
    */
   cardID: string;
-
-  /**
-   * Frequency of the subscription.
-   */
-  frequency: 'fixed' | 'daily' | 'weekly' | 'monthly' | 'yearly';
 
   /**
    * ID of the product variant being subscribed to.
