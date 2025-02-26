@@ -5,6 +5,13 @@ import * as Core from '../core';
 
 export class OrderResource extends APIResource {
   /**
+   * Create an order without a cart. The order will be placed immediately.
+   */
+  create(body: OrderCreateParams, options?: Core.RequestOptions): Core.APIPromise<OrderCreateResponse> {
+    return this._client.post('/order', { body, ...options });
+  }
+
+  /**
    * List the orders associated with the current user.
    */
   list(options?: Core.RequestOptions): Core.APIPromise<OrderListResponse> {
@@ -163,6 +170,13 @@ export namespace Order {
   }
 }
 
+export interface OrderCreateResponse {
+  /**
+   * Order ID.
+   */
+  data: string;
+}
+
 export interface OrderListResponse {
   /**
    * List of orders.
@@ -177,10 +191,29 @@ export interface OrderGetResponse {
   data: Order;
 }
 
+export interface OrderCreateParams {
+  /**
+   * Shipping address ID.
+   */
+  addressID: string;
+
+  /**
+   * Card ID.
+   */
+  cardID: string;
+
+  /**
+   * Product variants to include in the order, along with their quantities.
+   */
+  variants: Record<string, number>;
+}
+
 export declare namespace OrderResource {
   export {
     type Order as Order,
+    type OrderCreateResponse as OrderCreateResponse,
     type OrderListResponse as OrderListResponse,
     type OrderGetResponse as OrderGetResponse,
+    type OrderCreateParams as OrderCreateParams,
   };
 }

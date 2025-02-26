@@ -44,7 +44,14 @@ import {
   CartSetItemResponse,
 } from './resources/cart';
 import { Email, EmailCreateParams, EmailCreateResponse } from './resources/email';
-import { Order, OrderGetResponse, OrderListResponse, OrderResource } from './resources/order';
+import {
+  Order,
+  OrderCreateParams,
+  OrderCreateResponse,
+  OrderGetResponse,
+  OrderListResponse,
+  OrderResource,
+} from './resources/order';
 import { Product, ProductListResponse, ProductResource, ProductVariant } from './resources/product';
 import {
   Profile,
@@ -319,8 +326,10 @@ export declare namespace Terminal {
   export {
     OrderResource as OrderResource,
     type Order as Order,
+    type OrderCreateResponse as OrderCreateResponse,
     type OrderListResponse as OrderListResponse,
     type OrderGetResponse as OrderGetResponse,
+    type OrderCreateParams as OrderCreateParams,
   };
 
   export {
