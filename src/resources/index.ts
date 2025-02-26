@@ -39,7 +39,14 @@ export {
   type CartSetItemParams,
 } from './cart';
 export { Email, type EmailCreateResponse, type EmailCreateParams } from './email';
-export { OrderResource, type Order, type OrderListResponse, type OrderGetResponse } from './order';
+export {
+  OrderResource,
+  type Order,
+  type OrderCreateResponse,
+  type OrderListResponse,
+  type OrderGetResponse,
+  type OrderCreateParams,
+} from './order';
 export { ProductResource, type Product, type ProductVariant, type ProductListResponse } from './product';
 export {
   ProfileResource,
