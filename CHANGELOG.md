@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.14.0-alpha (2025-02-28)
+
+Full Changelog: [v0.13.0-alpha...v0.14.0-alpha](https://github.com/terminaldotshop/terminal-sdk-js/compare/v0.13.0-alpha...v0.14.0-alpha)
+
+### Features
+
+* **api:** manual updates ([#159](https://github.com/terminaldotshop/terminal-sdk-js/issues/159)) ([7ffe202](https://github.com/terminaldotshop/terminal-sdk-js/commit/7ffe20259ac6a691d41719e21d9262ce5c9d3f67))
+
+
+### Documentation
+
+* update URLs from stainlessapi.com to stainless.com ([#157](https://github.com/terminaldotshop/terminal-sdk-js/issues/157)) ([1de28d3](https://github.com/terminaldotshop/terminal-sdk-js/commit/1de28d338462e4dc94b7a72f52f0a2ab7af0c3df))
+
 ## 0.13.0-alpha (2025-02-26)
 
 Full Changelog: [v0.12.0-alpha...v0.13.0-alpha](https://github.com/terminaldotshop/terminal-sdk-js/compare/v0.12.0-alpha...v0.13.0-alpha)
