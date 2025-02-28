@@ -90,7 +90,7 @@ export interface ClientOptions {
    */
   bearerToken?: string | undefined;
 
-  app?: string | null | undefined;
+  appId?: string | null | undefined;
 
   /**
    * Specifies the environment to use for the API.
@@ -163,7 +163,7 @@ export interface ClientOptions {
  */
 export class Terminal extends Core.APIClient {
   bearerToken: string;
-  app: string | null;
+  appId: string | null;
 
   private _options: ClientOptions;
 
@@ -171,7 +171,7 @@ export class Terminal extends Core.APIClient {
    * API Client for interfacing with the Terminal API.
    *
    * @param {string | undefined} [opts.bearerToken=process.env['TERMINAL_BEARER_TOKEN'] ?? undefined]
-   * @param {string | null | undefined} [opts.app]
+   * @param {string | null | undefined} [opts.appId]
    * @param {Environment} [opts.environment=production] - Specifies the environment URL to use for the API.
    * @param {string} [opts.baseURL=process.env['TERMINAL_BASE_URL'] ?? https://api.terminal.shop/] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
@@ -184,7 +184,7 @@ export class Terminal extends Core.APIClient {
   constructor({
     baseURL = Core.readEnv('TERMINAL_BASE_URL'),
     bearerToken = Core.readEnv('TERMINAL_BEARER_TOKEN'),
-    app = null,
+    appId = null,
     ...opts
   }: ClientOptions = {}) {
     if (bearerToken === undefined) {
@@ -195,7 +195,7 @@ export class Terminal extends Core.APIClient {
 
     const options: ClientOptions = {
       bearerToken,
-      app,
+      appId,
       ...opts,
       baseURL,
       environment: opts.environment ?? 'production',
@@ -218,7 +218,7 @@ export class Terminal extends Core.APIClient {
     this._options = options;
 
     this.bearerToken = bearerToken;
-    this.app = app;
+    this.appId = appId;
   }
 
   product: API.ProductResource = new API.ProductResource(this);
@@ -240,7 +240,7 @@ export class Terminal extends Core.APIClient {
   protected override defaultHeaders(opts: Core.FinalRequestOptions): Core.Headers {
     return {
       ...super.defaultHeaders(opts),
-      'x-terminal-app': this.app,
+      'x-terminal-app-id': this.appId,
       ...this._options.defaultHeaders,
     };
   }
