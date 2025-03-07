@@ -10,6 +10,13 @@ export class ProductResource extends APIResource {
   list(options?: Core.RequestOptions): Core.APIPromise<ProductListResponse> {
     return this._client.get('/product', options);
   }
+
+  /**
+   * Get a product by ID from the Terminal shop.
+   */
+  get(id: string, options?: Core.RequestOptions): Core.APIPromise<ProductGetResponse> {
+    return this._client.get(`/product/${id}`, options);
+  }
 }
 
 /**
@@ -25,8 +32,6 @@ export interface Product {
    * Description of the product.
    */
   description: string;
-
-  filters: Array<'eu' | 'na'>;
 
   /**
    * Name of the product.
@@ -51,7 +56,24 @@ export interface Product {
   /**
    * Tags for the product.
    */
-  tags?: Record<string, string>;
+  tags?: Product.Tags;
+}
+
+export namespace Product {
+  /**
+   * Tags for the product.
+   */
+  export interface Tags {
+    app?: string;
+
+    color?: string;
+
+    featured?: boolean;
+
+    market_eu?: boolean;
+
+    market_na?: boolean;
+  }
 }
 
 /**
@@ -81,10 +103,18 @@ export interface ProductListResponse {
   data: Array<Product>;
 }
 
+export interface ProductGetResponse {
+  /**
+   * Product sold in the Terminal shop.
+   */
+  data: Product;
+}
+
 export declare namespace ProductResource {
   export {
     type Product as Product,
     type ProductVariant as ProductVariant,
     type ProductListResponse as ProductListResponse,
+    type ProductGetResponse as ProductGetResponse,
   };
 }

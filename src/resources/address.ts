@@ -24,6 +24,13 @@ export class AddressResource extends APIResource {
   delete(id: string, options?: Core.RequestOptions): Core.APIPromise<AddressDeleteResponse> {
     return this._client.delete(`/address/${id}`, options);
   }
+
+  /**
+   * Get the shipping address with the given ID.
+   */
+  get(id: string, options?: Core.RequestOptions): Core.APIPromise<AddressGetResponse> {
+    return this._client.get(`/address/${id}`, options);
+  }
 }
 
 /**
@@ -94,6 +101,13 @@ export interface AddressDeleteResponse {
   data: 'ok';
 }
 
+export interface AddressGetResponse {
+  /**
+   * Physical address associated with a Terminal shop user.
+   */
+  data: Address;
+}
+
 export interface AddressCreateParams {
   /**
    * City of the address.
@@ -142,6 +156,7 @@ export declare namespace AddressResource {
     type AddressCreateResponse as AddressCreateResponse,
     type AddressListResponse as AddressListResponse,
     type AddressDeleteResponse as AddressDeleteResponse,
+    type AddressGetResponse as AddressGetResponse,
     type AddressCreateParams as AddressCreateParams,
   };
 }
