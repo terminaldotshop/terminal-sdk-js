@@ -1,6 +1,6 @@
 {
   "name": "@terminaldotshop/sdk",
-  "version": "0.15.0-alpha",
+  "version": "1.0.0",
   "description": "The official TypeScript library for the Terminal API",
   "author": "Terminal <dev@terminal.com>",
   "types": "dist/index.d.ts",
