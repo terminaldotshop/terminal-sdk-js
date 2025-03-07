@@ -6,6 +6,7 @@ export {
   type AddressCreateResponse,
   type AddressListResponse,
   type AddressDeleteResponse,
+  type AddressGetResponse,
   type AddressCreateParams,
 } from './address';
 export {
@@ -24,6 +25,7 @@ export {
   type CardListResponse,
   type CardDeleteResponse,
   type CardCollectResponse,
+  type CardGetResponse,
   type CardCreateParams,
 } from './card';
 export {
@@ -47,7 +49,13 @@ export {
   type OrderGetResponse,
   type OrderCreateParams,
 } from './order';
-export { ProductResource, type Product, type ProductVariant, type ProductListResponse } from './product';
+export {
+  ProductResource,
+  type Product,
+  type ProductVariant,
+  type ProductListResponse,
+  type ProductGetResponse,
+} from './product';
 export {
   ProfileResource,
   type Profile,
@@ -61,6 +69,7 @@ export {
   type SubscriptionCreateResponse,
   type SubscriptionListResponse,
   type SubscriptionDeleteResponse,
+  type SubscriptionGetResponse,
   type SubscriptionCreateParams,
 } from './subscription';
 export {

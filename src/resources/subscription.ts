@@ -27,6 +27,13 @@ export class SubscriptionResource extends APIResource {
   delete(id: string, options?: Core.RequestOptions): Core.APIPromise<SubscriptionDeleteResponse> {
     return this._client.delete(`/subscription/${id}`, options);
   }
+
+  /**
+   * Get the subscription with the given ID.
+   */
+  get(id: string, options?: Core.RequestOptions): Core.APIPromise<SubscriptionGetResponse> {
+    return this._client.get(`/subscription/${id}`, options);
+  }
 }
 
 /**
@@ -96,6 +103,13 @@ export interface SubscriptionDeleteResponse {
   data: 'ok';
 }
 
+export interface SubscriptionGetResponse {
+  /**
+   * Subscription to a Terminal shop product.
+   */
+  data: Subscription;
+}
+
 export interface SubscriptionCreateParams {
   /**
    * Unique object identifier. The format and length of IDs may change over time.
@@ -151,6 +165,7 @@ export declare namespace SubscriptionResource {
     type SubscriptionCreateResponse as SubscriptionCreateResponse,
     type SubscriptionListResponse as SubscriptionListResponse,
     type SubscriptionDeleteResponse as SubscriptionDeleteResponse,
+    type SubscriptionGetResponse as SubscriptionGetResponse,
     type SubscriptionCreateParams as SubscriptionCreateParams,
   };
 }

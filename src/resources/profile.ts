@@ -1,22 +1,13 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../resource';
-import { isRequestOptions } from '../core';
 import * as Core from '../core';
 
 export class ProfileResource extends APIResource {
   /**
    * Update the current user's profile.
    */
-  update(body?: ProfileUpdateParams, options?: Core.RequestOptions): Core.APIPromise<ProfileUpdateResponse>;
-  update(options?: Core.RequestOptions): Core.APIPromise<ProfileUpdateResponse>;
-  update(
-    body: ProfileUpdateParams | Core.RequestOptions = {},
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<ProfileUpdateResponse> {
-    if (isRequestOptions(body)) {
-      return this.update({}, body);
-    }
+  update(body: ProfileUpdateParams, options?: Core.RequestOptions): Core.APIPromise<ProfileUpdateResponse> {
     return this._client.put('/profile', { body, ...options });
   }
 
@@ -85,15 +76,9 @@ export interface ProfileMeResponse {
 }
 
 export interface ProfileUpdateParams {
-  /**
-   * Email address of the user.
-   */
-  email?: string | null;
+  email: string;
 
-  /**
-   * Name of the user.
-   */
-  name?: string | null;
+  name: string;
 }
 
 export declare namespace ProfileResource {
