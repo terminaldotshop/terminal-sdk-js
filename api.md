@@ -5,10 +5,12 @@ Types:
 - <code><a href="./src/resources/product.ts">Product</a></code>
 - <code><a href="./src/resources/product.ts">ProductVariant</a></code>
 - <code><a href="./src/resources/product.ts">ProductListResponse</a></code>
+- <code><a href="./src/resources/product.ts">ProductGetResponse</a></code>
 
 Methods:
 
 - <code title="get /product">client.product.<a href="./src/resources/product.ts">list</a>() -> ProductListResponse</code>
+- <code title="get /product/{id}">client.product.<a href="./src/resources/product.ts">get</a>(id) -> ProductGetResponse</code>
 
 # Profile
 
@@ -31,12 +33,14 @@ Types:
 - <code><a href="./src/resources/address.ts">AddressCreateResponse</a></code>
 - <code><a href="./src/resources/address.ts">AddressListResponse</a></code>
 - <code><a href="./src/resources/address.ts">AddressDeleteResponse</a></code>
+- <code><a href="./src/resources/address.ts">AddressGetResponse</a></code>
 
 Methods:
 
 - <code title="post /address">client.address.<a href="./src/resources/address.ts">create</a>({ ...params }) -> AddressCreateResponse</code>
 - <code title="get /address">client.address.<a href="./src/resources/address.ts">list</a>() -> AddressListResponse</code>
 - <code title="delete /address/{id}">client.address.<a href="./src/resources/address.ts">delete</a>(id) -> AddressDeleteResponse</code>
+- <code title="get /address/{id}">client.address.<a href="./src/resources/address.ts">get</a>(id) -> AddressGetResponse</code>
 
 # Card
 
@@ -47,6 +51,7 @@ Types:
 - <code><a href="./src/resources/card.ts">CardListResponse</a></code>
 - <code><a href="./src/resources/card.ts">CardDeleteResponse</a></code>
 - <code><a href="./src/resources/card.ts">CardCollectResponse</a></code>
+- <code><a href="./src/resources/card.ts">CardGetResponse</a></code>
 
 Methods:
 
@@ -54,6 +59,7 @@ Methods:
 - <code title="get /card">client.card.<a href="./src/resources/card.ts">list</a>() -> CardListResponse</code>
 - <code title="delete /card/{id}">client.card.<a href="./src/resources/card.ts">delete</a>(id) -> CardDeleteResponse</code>
 - <code title="post /card/collect">client.card.<a href="./src/resources/card.ts">collect</a>() -> CardCollectResponse</code>
+- <code title="get /card/{id}">client.card.<a href="./src/resources/card.ts">get</a>(id) -> CardGetResponse</code>
 
 # Cart
 
@@ -97,12 +103,14 @@ Types:
 - <code><a href="./src/resources/subscription.ts">SubscriptionCreateResponse</a></code>
 - <code><a href="./src/resources/subscription.ts">SubscriptionListResponse</a></code>
 - <code><a href="./src/resources/subscription.ts">SubscriptionDeleteResponse</a></code>
+- <code><a href="./src/resources/subscription.ts">SubscriptionGetResponse</a></code>
 
 Methods:
 
 - <code title="post /subscription">client.subscription.<a href="./src/resources/subscription.ts">create</a>({ ...params }) -> SubscriptionCreateResponse</code>
 - <code title="get /subscription">client.subscription.<a href="./src/resources/subscription.ts">list</a>() -> SubscriptionListResponse</code>
 - <code title="delete /subscription/{id}">client.subscription.<a href="./src/resources/subscription.ts">delete</a>(id) -> SubscriptionDeleteResponse</code>
+- <code title="get /subscription/{id}">client.subscription.<a href="./src/resources/subscription.ts">get</a>(id) -> SubscriptionGetResponse</code>
 
 # Token
 

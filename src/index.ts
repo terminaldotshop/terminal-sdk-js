@@ -10,6 +10,7 @@ import {
   AddressCreateParams,
   AddressCreateResponse,
   AddressDeleteResponse,
+  AddressGetResponse,
   AddressListResponse,
   AddressResource,
 } from './resources/address';
@@ -28,6 +29,7 @@ import {
   CardCreateParams,
   CardCreateResponse,
   CardDeleteResponse,
+  CardGetResponse,
   CardListResponse,
   CardResource,
 } from './resources/card';
@@ -52,7 +54,13 @@ import {
   OrderListResponse,
   OrderResource,
 } from './resources/order';
-import { Product, ProductListResponse, ProductResource, ProductVariant } from './resources/product';
+import {
+  Product,
+  ProductGetResponse,
+  ProductListResponse,
+  ProductResource,
+  ProductVariant,
+} from './resources/product';
 import {
   Profile,
   ProfileMeResponse,
@@ -65,6 +73,7 @@ import {
   SubscriptionCreateParams,
   SubscriptionCreateResponse,
   SubscriptionDeleteResponse,
+  SubscriptionGetResponse,
   SubscriptionListResponse,
   SubscriptionResource,
 } from './resources/subscription';
@@ -289,6 +298,7 @@ export declare namespace Terminal {
     type Product as Product,
     type ProductVariant as ProductVariant,
     type ProductListResponse as ProductListResponse,
+    type ProductGetResponse as ProductGetResponse,
   };
 
   export {
@@ -305,6 +315,7 @@ export declare namespace Terminal {
     type AddressCreateResponse as AddressCreateResponse,
     type AddressListResponse as AddressListResponse,
     type AddressDeleteResponse as AddressDeleteResponse,
+    type AddressGetResponse as AddressGetResponse,
     type AddressCreateParams as AddressCreateParams,
   };
 
@@ -315,6 +326,7 @@ export declare namespace Terminal {
     type CardListResponse as CardListResponse,
     type CardDeleteResponse as CardDeleteResponse,
     type CardCollectResponse as CardCollectResponse,
+    type CardGetResponse as CardGetResponse,
     type CardCreateParams as CardCreateParams,
   };
 
@@ -346,6 +358,7 @@ export declare namespace Terminal {
     type SubscriptionCreateResponse as SubscriptionCreateResponse,
     type SubscriptionListResponse as SubscriptionListResponse,
     type SubscriptionDeleteResponse as SubscriptionDeleteResponse,
+    type SubscriptionGetResponse as SubscriptionGetResponse,
     type SubscriptionCreateParams as SubscriptionCreateParams,
   };
 

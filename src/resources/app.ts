@@ -95,25 +95,9 @@ export interface AppGetResponse {
 }
 
 export interface AppCreateParams {
-  /**
-   * Unique object identifier. The format and length of IDs may change over time.
-   */
-  id: string;
-
-  /**
-   * Name of the app.
-   */
   name: string;
 
-  /**
-   * Redirect URI of the app.
-   */
   redirectURI: string;
-
-  /**
-   * OAuth 2.0 client secret of the app (obfuscated).
-   */
-  secret: string;
 }
 
 export declare namespace AppResource {

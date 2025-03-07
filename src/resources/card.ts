@@ -32,6 +32,13 @@ export class CardResource extends APIResource {
   collect(options?: Core.RequestOptions): Core.APIPromise<CardCollectResponse> {
     return this._client.post('/card/collect', options);
   }
+
+  /**
+   * Get a credit card by ID associated with the current user.
+   */
+  get(id: string, options?: Core.RequestOptions): Core.APIPromise<CardGetResponse> {
+    return this._client.get(`/card/${id}`, options);
+  }
 }
 
 /**
@@ -114,6 +121,13 @@ export namespace CardCollectResponse {
   }
 }
 
+export interface CardGetResponse {
+  /**
+   * Credit card used for payments in the Terminal shop.
+   */
+  data: Card;
+}
+
 export interface CardCreateParams {
   /**
    * Stripe card token. Learn how to
@@ -129,6 +143,7 @@ export declare namespace CardResource {
     type CardListResponse as CardListResponse,
     type CardDeleteResponse as CardDeleteResponse,
     type CardCollectResponse as CardCollectResponse,
+    type CardGetResponse as CardGetResponse,
     type CardCreateParams as CardCreateParams,
   };
 }
