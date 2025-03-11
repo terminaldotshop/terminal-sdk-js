@@ -73,6 +73,8 @@ export namespace Product {
     market_eu?: boolean;
 
     market_na?: boolean;
+
+    type?: string;
   }
 }
 
