@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../resource';
+import { isRequestOptions } from '../core';
 import * as Core from '../core';
 import * as OrderAPI from './order';
 
@@ -8,8 +9,16 @@ export class CartResource extends APIResource {
   /**
    * Convert the current user's cart to an order.
    */
-  convert(options?: Core.RequestOptions): Core.APIPromise<CartConvertResponse> {
-    return this._client.post('/cart/convert', options);
+  convert(body?: CartConvertParams, options?: Core.RequestOptions): Core.APIPromise<CartConvertResponse>;
+  convert(options?: Core.RequestOptions): Core.APIPromise<CartConvertResponse>;
+  convert(
+    body: CartConvertParams | Core.RequestOptions = {},
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<CartConvertResponse> {
+    if (isRequestOptions(body)) {
+      return this.convert({}, body);
+    }
+    return this._client.post('/cart/convert', { body, ...options });
   }
 
   /**
@@ -17,6 +26,23 @@ export class CartResource extends APIResource {
    */
   get(options?: Core.RequestOptions): Core.APIPromise<CartGetResponse> {
     return this._client.get('/cart', options);
+  }
+
+  /**
+   * Apply a gift card to the current user's cart.
+   */
+  redeemGiftCard(
+    body: CartRedeemGiftCardParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<CartRedeemGiftCardResponse> {
+    return this._client.put('/cart/gift-card', { body, ...options });
+  }
+
+  /**
+   * Remove the gift card from the current user's cart.
+   */
+  removeGiftCard(options?: Core.RequestOptions): Core.APIPromise<CartRemoveGiftCardResponse> {
+    return this._client.delete('/cart/gift-card', options);
   }
 
   /**
@@ -74,6 +100,11 @@ export interface Cart {
   cardID?: string;
 
   /**
+   * ID of the gift card applied to the current user's cart.
+   */
+  giftCardID?: string;
+
+  /**
    * Shipping information for the current user's cart.
    */
   shipping?: Cart.Shipping;
@@ -90,9 +121,19 @@ export namespace Cart {
     subtotal: number;
 
     /**
+     * Amount applied from gift card on the current user's cart, in cents (USD).
+     */
+    giftCard?: number;
+
+    /**
      * Shipping amount of the current user's cart, in cents (USD).
      */
     shipping?: number;
+
+    /**
+     * Total amount after gift card applied, in cents (USD).
+     */
+    total?: number;
   }
 
   /**
@@ -150,6 +191,30 @@ export interface CartGetResponse {
   data: Cart;
 }
 
+export interface CartRedeemGiftCardResponse {
+  /**
+   * Gift card redemption result
+   */
+  data: CartRedeemGiftCardResponse.Data;
+}
+
+export namespace CartRedeemGiftCardResponse {
+  /**
+   * Gift card redemption result
+   */
+  export interface Data {
+    appliedAmount: number;
+
+    giftCardID: string;
+
+    remainingBalance: number;
+  }
+}
+
+export interface CartRemoveGiftCardResponse {
+  data: 'ok';
+}
+
 export interface CartSetAddressResponse {
   data: 'ok';
 }
@@ -163,6 +228,14 @@ export interface CartSetItemResponse {
    * The current Terminal shop user's cart.
    */
   data: Cart;
+}
+
+export interface CartConvertParams {
+  recipientEmail?: string;
+}
+
+export interface CartRedeemGiftCardParams {
+  giftCardID: string;
 }
 
 export interface CartSetAddressParams {
@@ -196,9 +269,13 @@ export declare namespace CartResource {
     type Cart as Cart,
     type CartConvertResponse as CartConvertResponse,
     type CartGetResponse as CartGetResponse,
+    type CartRedeemGiftCardResponse as CartRedeemGiftCardResponse,
+    type CartRemoveGiftCardResponse as CartRemoveGiftCardResponse,
     type CartSetAddressResponse as CartSetAddressResponse,
     type CartSetCardResponse as CartSetCardResponse,
     type CartSetItemResponse as CartSetItemResponse,
+    type CartConvertParams as CartConvertParams,
+    type CartRedeemGiftCardParams as CartRedeemGiftCardParams,
     type CartSetAddressParams as CartSetAddressParams,
     type CartSetCardParams as CartSetCardParams,
     type CartSetItemParams as CartSetItemParams,
