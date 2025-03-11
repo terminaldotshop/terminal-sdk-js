@@ -68,14 +68,18 @@ Types:
 - <code><a href="./src/resources/cart.ts">Cart</a></code>
 - <code><a href="./src/resources/cart.ts">CartConvertResponse</a></code>
 - <code><a href="./src/resources/cart.ts">CartGetResponse</a></code>
+- <code><a href="./src/resources/cart.ts">CartRedeemGiftCardResponse</a></code>
+- <code><a href="./src/resources/cart.ts">CartRemoveGiftCardResponse</a></code>
 - <code><a href="./src/resources/cart.ts">CartSetAddressResponse</a></code>
 - <code><a href="./src/resources/cart.ts">CartSetCardResponse</a></code>
 - <code><a href="./src/resources/cart.ts">CartSetItemResponse</a></code>
 
 Methods:
 
-- <code title="post /cart/convert">client.cart.<a href="./src/resources/cart.ts">convert</a>() -> CartConvertResponse</code>
+- <code title="post /cart/convert">client.cart.<a href="./src/resources/cart.ts">convert</a>({ ...params }) -> CartConvertResponse</code>
 - <code title="get /cart">client.cart.<a href="./src/resources/cart.ts">get</a>() -> CartGetResponse</code>
+- <code title="put /cart/gift-card">client.cart.<a href="./src/resources/cart.ts">redeemGiftCard</a>({ ...params }) -> CartRedeemGiftCardResponse</code>
+- <code title="delete /cart/gift-card">client.cart.<a href="./src/resources/cart.ts">removeGiftCard</a>() -> CartRemoveGiftCardResponse</code>
 - <code title="put /cart/address">client.cart.<a href="./src/resources/cart.ts">setAddress</a>({ ...params }) -> CartSetAddressResponse</code>
 - <code title="put /cart/card">client.cart.<a href="./src/resources/cart.ts">setCard</a>({ ...params }) -> CartSetCardResponse</code>
 - <code title="put /cart/item">client.cart.<a href="./src/resources/cart.ts">setItem</a>({ ...params }) -> CartSetItemResponse</code>
