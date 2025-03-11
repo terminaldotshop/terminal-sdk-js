@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.1.0 (2025-03-11)
+
+Full Changelog: [v1.0.0...v1.1.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.0.0...v1.1.0)
+
+### Features
+
+* add SKIP_BREW env var to ./scripts/bootstrap ([#167](https://github.com/terminaldotshop/terminal-sdk-js/issues/167)) ([6879940](https://github.com/terminaldotshop/terminal-sdk-js/commit/6879940badcc3e2701ad32a572e57883462b0bf9))
+* **api:** gift cards ([#170](https://github.com/terminaldotshop/terminal-sdk-js/issues/170)) ([79f3fbc](https://github.com/terminaldotshop/terminal-sdk-js/commit/79f3fbc33e5aebe3cba6388f68392c3d6941d71a))
+* **client:** accept RFC6838 JSON content types ([#169](https://github.com/terminaldotshop/terminal-sdk-js/issues/169)) ([9a0ce48](https://github.com/terminaldotshop/terminal-sdk-js/commit/9a0ce48b87c4d96871b915d5e7a71a000f9c69f0))
+
 ## 1.0.0 (2025-03-07)
 
 Full Changelog: [v0.15.0-alpha...v1.0.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v0.15.0-alpha...v1.0.0)
