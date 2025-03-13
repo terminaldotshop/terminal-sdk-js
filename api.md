@@ -66,6 +66,7 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/cart.ts">Cart</a></code>
+- <code><a href="./src/resources/cart.ts">CartClearResponse</a></code>
 - <code><a href="./src/resources/cart.ts">CartConvertResponse</a></code>
 - <code><a href="./src/resources/cart.ts">CartGetResponse</a></code>
 - <code><a href="./src/resources/cart.ts">CartRedeemGiftCardResponse</a></code>
@@ -76,6 +77,7 @@ Types:
 
 Methods:
 
+- <code title="delete /cart">client.cart.<a href="./src/resources/cart.ts">clear</a>() -> CartClearResponse</code>
 - <code title="post /cart/convert">client.cart.<a href="./src/resources/cart.ts">convert</a>({ ...params }) -> CartConvertResponse</code>
 - <code title="get /cart">client.cart.<a href="./src/resources/cart.ts">get</a>() -> CartGetResponse</code>
 - <code title="put /cart/gift-card">client.cart.<a href="./src/resources/cart.ts">redeemGiftCard</a>({ ...params }) -> CartRedeemGiftCardResponse</code>
