@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.4.0 (2025-03-13)
+
+Full Changelog: [v1.3.0...v1.4.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.3.0...v1.4.0)
+
+### Features
+
+* **api:** add region to `GET /view/init` ([#178](https://github.com/terminaldotshop/terminal-sdk-js/issues/178)) ([c0388e6](https://github.com/terminaldotshop/terminal-sdk-js/commit/c0388e6fed8ab750c2575880ce6167ff867522bb))
+
 ## 1.3.0 (2025-03-13)
 
 Full Changelog: [v1.2.0...v1.3.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.2.0...v1.3.0)
