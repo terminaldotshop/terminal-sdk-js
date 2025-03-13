@@ -162,6 +162,7 @@ Methods:
 
 Types:
 
+- <code><a href="./src/resources/view.ts">Region</a></code>
 - <code><a href="./src/resources/view.ts">ViewInitResponse</a></code>
 
 Methods:

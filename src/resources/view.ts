@@ -2,6 +2,7 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
+import * as ViewAPI from './view';
 import * as AddressAPI from './address';
 import * as AppAPI from './app';
 import * as CardAPI from './card';
@@ -21,6 +22,11 @@ export class View extends APIResource {
     return this._client.get('/view/init', options);
   }
 }
+
+/**
+ * A Terminal shop user's region.
+ */
+export type Region = 'eu' | 'na';
 
 export interface ViewInitResponse {
   /**
@@ -57,7 +63,7 @@ export namespace ViewInitResponse {
     /**
      * A Terminal shop user's region.
      */
-    region: 'eu' | 'na';
+    region: ViewAPI.Region;
 
     subscriptions: Array<SubscriptionAPI.Subscription>;
 
@@ -66,5 +72,5 @@ export namespace ViewInitResponse {
 }
 
 export declare namespace View {
-  export { type ViewInitResponse as ViewInitResponse };
+  export { type Region as Region, type ViewInitResponse as ViewInitResponse };
 }

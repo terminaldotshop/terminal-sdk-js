@@ -81,4 +81,4 @@ export {
   type TokenDeleteResponse,
   type TokenGetResponse,
 } from './token';
-export { View, type ViewInitResponse } from './view';
+export { View, type Region, type ViewInitResponse } from './view';
