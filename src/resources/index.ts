@@ -31,6 +31,7 @@ export {
 export {
   CartResource,
   type Cart,
+  type CartClearResponse,
   type CartConvertResponse,
   type CartGetResponse,
   type CartRedeemGiftCardResponse,

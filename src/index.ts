@@ -35,6 +35,7 @@ import {
 } from './resources/card';
 import {
   Cart,
+  CartClearResponse,
   CartConvertParams,
   CartConvertResponse,
   CartGetResponse,
@@ -337,6 +338,7 @@ export declare namespace Terminal {
   export {
     CartResource as CartResource,
     type Cart as Cart,
+    type CartClearResponse as CartClearResponse,
     type CartConvertResponse as CartConvertResponse,
     type CartGetResponse as CartGetResponse,
     type CartRedeemGiftCardResponse as CartRedeemGiftCardResponse,
