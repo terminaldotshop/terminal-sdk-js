@@ -54,7 +54,10 @@ export namespace ViewInitResponse {
      */
     profile: ProfileAPI.Profile;
 
-    region: 'na' | 'eu';
+    /**
+     * A Terminal shop user's region.
+     */
+    region: 'eu' | 'na';
 
     subscriptions: Array<SubscriptionAPI.Subscription>;
 
