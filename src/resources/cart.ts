@@ -7,6 +7,13 @@ import * as OrderAPI from './order';
 
 export class CartResource extends APIResource {
   /**
+   * Clear the current user's cart.
+   */
+  clear(options?: Core.RequestOptions): Core.APIPromise<CartClearResponse> {
+    return this._client.delete('/cart', options);
+  }
+
+  /**
    * Convert the current user's cart to an order.
    */
   convert(body?: CartConvertParams, options?: Core.RequestOptions): Core.APIPromise<CartConvertResponse>;
@@ -177,6 +184,10 @@ export namespace Cart {
   }
 }
 
+export interface CartClearResponse {
+  data: 'ok';
+}
+
 export interface CartConvertResponse {
   /**
    * An order from the Terminal shop.
@@ -267,6 +278,7 @@ export interface CartSetItemParams {
 export declare namespace CartResource {
   export {
     type Cart as Cart,
+    type CartClearResponse as CartClearResponse,
     type CartConvertResponse as CartConvertResponse,
     type CartGetResponse as CartGetResponse,
     type CartRedeemGiftCardResponse as CartRedeemGiftCardResponse,
