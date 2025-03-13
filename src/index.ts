@@ -86,7 +86,7 @@ import {
   TokenListResponse,
   TokenResource,
 } from './resources/token';
-import { View, ViewInitResponse } from './resources/view';
+import { Region, View, ViewInitResponse } from './resources/view';
 
 const environments = {
   production: 'https://api.terminal.shop/',
@@ -389,7 +389,7 @@ export declare namespace Terminal {
     type EmailCreateParams as EmailCreateParams,
   };
 
-  export { View as View, type ViewInitResponse as ViewInitResponse };
+  export { View as View, type Region as Region, type ViewInitResponse as ViewInitResponse };
 }
 
 export { toFile, fileFromPath } from './uploads';
