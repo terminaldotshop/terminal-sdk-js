@@ -54,6 +54,8 @@ export namespace ViewInitResponse {
      */
     profile: ProfileAPI.Profile;
 
+    region: 'na' | 'eu';
+
     subscriptions: Array<SubscriptionAPI.Subscription>;
 
     tokens: Array<TokenAPI.Token>;
