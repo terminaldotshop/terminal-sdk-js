@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.3.0 (2025-03-13)
+
+Full Changelog: [v1.2.0...v1.3.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.2.0...v1.3.0)
+
+### Features
+
+* **api:** remove gift cards ([#175](https://github.com/terminaldotshop/terminal-sdk-js/issues/175)) ([35afcc7](https://github.com/terminaldotshop/terminal-sdk-js/commit/35afcc76e5a53dc97f52dd9d56395419d3ce7b9a))
+
 ## 1.2.0 (2025-03-13)
 
 Full Changelog: [v1.1.0...v1.2.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.1.0...v1.2.0)
