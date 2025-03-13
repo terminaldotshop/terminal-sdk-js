@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.0 (2025-03-13)
+
+Full Changelog: [v1.1.0...v1.2.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.1.0...v1.2.0)
+
+### Features
+
+* **api:** clear cart api ([#172](https://github.com/terminaldotshop/terminal-sdk-js/issues/172)) ([854938c](https://github.com/terminaldotshop/terminal-sdk-js/commit/854938c1a1cd3cf0ec7203b89b4157bebc48eb0f))
+
 ## 1.1.0 (2025-03-11)
 
 Full Changelog: [v1.0.0...v1.1.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.0.0...v1.1.0)
