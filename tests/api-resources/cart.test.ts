@@ -45,13 +45,6 @@ describe('resource cart', () => {
     );
   });
 
-  test('convert: request options and params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(
-      client.cart.convert({ recipientEmail: 'dev@stainless.com' }, { path: '/_stainless_unknown_path' }),
-    ).rejects.toThrow(Terminal.NotFoundError);
-  });
-
   test('get', async () => {
     const responsePromise = client.cart.get();
     const rawResponse = await responsePromise.asResponse();
@@ -66,39 +59,6 @@ describe('resource cart', () => {
   test('get: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(client.cart.get({ path: '/_stainless_unknown_path' })).rejects.toThrow(
-      Terminal.NotFoundError,
-    );
-  });
-
-  test('redeemGiftCard: only required params', async () => {
-    const responsePromise = client.cart.redeemGiftCard({ giftCardID: 'giftCardID' });
-    const rawResponse = await responsePromise.asResponse();
-    expect(rawResponse).toBeInstanceOf(Response);
-    const response = await responsePromise;
-    expect(response).not.toBeInstanceOf(Response);
-    const dataAndResponse = await responsePromise.withResponse();
-    expect(dataAndResponse.data).toBe(response);
-    expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  test('redeemGiftCard: required and optional params', async () => {
-    const response = await client.cart.redeemGiftCard({ giftCardID: 'giftCardID' });
-  });
-
-  test('removeGiftCard', async () => {
-    const responsePromise = client.cart.removeGiftCard();
-    const rawResponse = await responsePromise.asResponse();
-    expect(rawResponse).toBeInstanceOf(Response);
-    const response = await responsePromise;
-    expect(response).not.toBeInstanceOf(Response);
-    const dataAndResponse = await responsePromise.withResponse();
-    expect(dataAndResponse.data).toBe(response);
-    expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  test('removeGiftCard: request options instead of params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.cart.removeGiftCard({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Terminal.NotFoundError,
     );
   });
