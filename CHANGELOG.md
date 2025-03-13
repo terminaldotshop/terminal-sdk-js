@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.5.0 (2025-03-13)
+
+Full Changelog: [v1.4.0...v1.5.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.4.0...v1.5.0)
+
+### Features
+
+* **api:** region type ([#181](https://github.com/terminaldotshop/terminal-sdk-js/issues/181)) ([0fbf893](https://github.com/terminaldotshop/terminal-sdk-js/commit/0fbf89347b04fa08f4d6eb7a4bc870b3736bf507))
+
 ## 1.4.0 (2025-03-13)
 
 Full Changelog: [v1.3.0...v1.4.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.3.0...v1.4.0)
