@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.6.1 (2025-03-14)
+
+Full Changelog: [v1.6.0...v1.6.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.6.0...v1.6.1)
+
+### Chores
+
+* **internal:** remove extra empty newlines ([#187](https://github.com/terminaldotshop/terminal-sdk-js/issues/187)) ([ee14dbd](https://github.com/terminaldotshop/terminal-sdk-js/commit/ee14dbd3deff188132e1529c55b4ff2142ca7578))
+
 ## 1.6.0 (2025-03-13)
 
 Full Changelog: [v1.5.0...v1.6.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.5.0...v1.6.0)
