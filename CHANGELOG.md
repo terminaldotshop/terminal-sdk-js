@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.6.1 (2025-03-22)
+
+Full Changelog: [v1.6.0...v1.6.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.6.0...v1.6.1)
+
+### Bug Fixes
+
+* avoid type error in certain environments ([#192](https://github.com/terminaldotshop/terminal-sdk-js/issues/192)) ([2ce1349](https://github.com/terminaldotshop/terminal-sdk-js/commit/2ce1349d7b8e4da9302448d31f62f75182caf1f8))
+
+
+### Chores
+
+* **exports:** cleaner resource index imports ([#189](https://github.com/terminaldotshop/terminal-sdk-js/issues/189)) ([dda672d](https://github.com/terminaldotshop/terminal-sdk-js/commit/dda672dddd59dfc01e3d35ad86a499b7fcbb306d))
+* **exports:** stop using path fallbacks ([#190](https://github.com/terminaldotshop/terminal-sdk-js/issues/190)) ([3f3d651](https://github.com/terminaldotshop/terminal-sdk-js/commit/3f3d6519eede083390a7f663db65b4dda609dd25))
+* **internal:** remove extra empty newlines ([#187](https://github.com/terminaldotshop/terminal-sdk-js/issues/187)) ([ee14dbd](https://github.com/terminaldotshop/terminal-sdk-js/commit/ee14dbd3deff188132e1529c55b4ff2142ca7578))
+
 ## 1.6.0 (2025-03-13)
 
 Full Changelog: [v1.5.0...v1.6.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.5.0...v1.6.0)
