@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.6.2 (2025-03-28)
+
+Full Changelog: [v1.6.1...v1.6.2](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.6.1...v1.6.2)
+
+### Bug Fixes
+
+* **internal:** work around https://github.com/vercel/next.js/issues/76881 ([#194](https://github.com/terminaldotshop/terminal-sdk-js/issues/194)) ([caab92b](https://github.com/terminaldotshop/terminal-sdk-js/commit/caab92bcbf7959cfc5feef615cc85c0bc3765dd0))
+
 ## 1.6.1 (2025-03-22)
 
 Full Changelog: [v1.6.0...v1.6.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.6.0...v1.6.1)
