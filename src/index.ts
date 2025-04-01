@@ -89,8 +89,8 @@ import {
 import { Region, View, ViewInitResponse } from './resources/view';
 
 const environments = {
-  production: 'https://api.terminal.shop/',
-  dev: 'https://api.dev.terminal.shop/',
+  production: 'https://api.terminal.shop',
+  dev: 'https://api.dev.terminal.shop',
 };
 type Environment = keyof typeof environments;
 
@@ -106,8 +106,8 @@ export interface ClientOptions {
    * Specifies the environment to use for the API.
    *
    * Each environment maps to a different base URL:
-   * - `production` corresponds to `https://api.terminal.shop/`
-   * - `dev` corresponds to `https://api.dev.terminal.shop/`
+   * - `production` corresponds to `https://api.terminal.shop`
+   * - `dev` corresponds to `https://api.dev.terminal.shop`
    */
   environment?: Environment | undefined;
 
@@ -183,7 +183,7 @@ export class Terminal extends Core.APIClient {
    * @param {string | undefined} [opts.bearerToken=process.env['TERMINAL_BEARER_TOKEN'] ?? undefined]
    * @param {string | null | undefined} [opts.appId]
    * @param {Environment} [opts.environment=production] - Specifies the environment URL to use for the API.
-   * @param {string} [opts.baseURL=process.env['TERMINAL_BASE_URL'] ?? https://api.terminal.shop/] - Override the default base URL for the API.
+   * @param {string} [opts.baseURL=process.env['TERMINAL_BASE_URL'] ?? https://api.terminal.shop] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {number} [opts.httpAgent] - An HTTP agent used to manage HTTP(s) connections.
    * @param {Core.Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
