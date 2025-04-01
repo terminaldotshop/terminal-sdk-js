@@ -183,13 +183,13 @@ describe('instantiate client', () => {
     test('empty env variable', () => {
       process.env['TERMINAL_BASE_URL'] = ''; // empty
       const client = new Terminal({ bearerToken: 'My Bearer Token' });
-      expect(client.baseURL).toEqual('https://api.terminal.shop/');
+      expect(client.baseURL).toEqual('https://api.terminal.shop');
     });
 
     test('blank env variable', () => {
       process.env['TERMINAL_BASE_URL'] = '  '; // blank
       const client = new Terminal({ bearerToken: 'My Bearer Token' });
-      expect(client.baseURL).toEqual('https://api.terminal.shop/');
+      expect(client.baseURL).toEqual('https://api.terminal.shop');
     });
 
     test('env variable with environment', () => {
@@ -206,7 +206,7 @@ describe('instantiate client', () => {
         baseURL: null,
         environment: 'production',
       });
-      expect(client.baseURL).toEqual('https://api.terminal.shop/');
+      expect(client.baseURL).toEqual('https://api.terminal.shop');
     });
   });
 
