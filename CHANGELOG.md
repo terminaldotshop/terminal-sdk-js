@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.6.3 (2025-04-01)
+
+Full Changelog: [v1.6.2...v1.6.3](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.6.2...v1.6.3)
+
+### Bug Fixes
+
+* remove trailing / for environments ([#197](https://github.com/terminaldotshop/terminal-sdk-js/issues/197)) ([1c68e14](https://github.com/terminaldotshop/terminal-sdk-js/commit/1c68e14c17464dd3a299fb3ed20a0bdd6e47e160))
+
 ## 1.6.2 (2025-03-28)
 
 Full Changelog: [v1.6.1...v1.6.2](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.6.1...v1.6.2)
