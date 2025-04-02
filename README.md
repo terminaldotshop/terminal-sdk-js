@@ -28,9 +28,9 @@ const client = new Terminal({
 });
 
 async function main() {
-  const product = await client.product.list();
+  const products = await client.product.list();
 
-  console.log(product.data);
+  console.log(products.data);
 }
 
 main();
@@ -50,7 +50,7 @@ const client = new Terminal({
 });
 
 async function main() {
-  const product: Terminal.ProductListResponse = await client.product.list();
+  const products: Terminal.ProductListResponse = await client.product.list();
 }
 
 main();
@@ -67,7 +67,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const product = await client.product.list().catch(async (err) => {
+  const products = await client.product.list().catch(async (err) => {
     if (err instanceof Terminal.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -152,9 +152,9 @@ const response = await client.product.list().asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: product, response: raw } = await client.product.list().withResponse();
+const { data: products, response: raw } = await client.product.list().withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(product.data);
+console.log(products.data);
 ```
 
 ### Making custom/undocumented requests
