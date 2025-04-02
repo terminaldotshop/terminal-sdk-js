@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.6.4 (2025-04-02)
+
+Full Changelog: [v1.6.3...v1.6.4](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.6.3...v1.6.4)
+
+### Bug Fixes
+
+* pluralize `list` response variables ([#200](https://github.com/terminaldotshop/terminal-sdk-js/issues/200)) ([7c6f5fb](https://github.com/terminaldotshop/terminal-sdk-js/commit/7c6f5fb1b1dcb26f467bc8e479c3d04624f3acf0))
+
 ## 1.6.3 (2025-04-01)
 
 Full Changelog: [v1.6.2...v1.6.3](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.6.2...v1.6.3)
