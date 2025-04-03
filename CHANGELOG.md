@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.6.5 (2025-04-03)
+
+Full Changelog: [v1.6.4...v1.6.5](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.6.4...v1.6.5)
+
+### Bug Fixes
+
+* **client:** send `X-Stainless-Timeout` in seconds ([#203](https://github.com/terminaldotshop/terminal-sdk-js/issues/203)) ([9882f7a](https://github.com/terminaldotshop/terminal-sdk-js/commit/9882f7a8eb073a9614ea4794c494105c088e2184))
+
 ## 1.6.4 (2025-04-02)
 
 Full Changelog: [v1.6.3...v1.6.4](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.6.3...v1.6.4)
