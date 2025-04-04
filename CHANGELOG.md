@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.6.6 (2025-04-04)
+
+Full Changelog: [v1.6.5...v1.6.6](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.6.5...v1.6.6)
+
+### Bug Fixes
+
+* **api:** improve type resolution when importing as a package ([#208](https://github.com/terminaldotshop/terminal-sdk-js/issues/208)) ([821366e](https://github.com/terminaldotshop/terminal-sdk-js/commit/821366ea19134086805bc68467b46016aad65d8b))
+
+
+### Chores
+
+* **internal:** add aliases for Record and Array ([#206](https://github.com/terminaldotshop/terminal-sdk-js/issues/206)) ([c96b422](https://github.com/terminaldotshop/terminal-sdk-js/commit/c96b422c35d979a999391eba5f159dc2da3cba04))
+
 ## 1.6.5 (2025-04-03)
 
 Full Changelog: [v1.6.4...v1.6.5](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.6.4...v1.6.5)
