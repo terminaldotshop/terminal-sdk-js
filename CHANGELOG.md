@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.6.7 (2025-04-05)
+
+Full Changelog: [v1.6.6...v1.6.7](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.6.6...v1.6.7)
+
+### Bug Fixes
+
+* **mcp:** remove unused tools.ts ([#210](https://github.com/terminaldotshop/terminal-sdk-js/issues/210)) ([f81bf94](https://github.com/terminaldotshop/terminal-sdk-js/commit/f81bf94b63bbfc14babc8b7b21c433633ae72c13))
+
 ## 1.6.6 (2025-04-04)
 
 Full Changelog: [v1.6.5...v1.6.6](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.6.5...v1.6.6)
