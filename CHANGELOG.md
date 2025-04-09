@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.7.0 (2025-04-09)
+
+Full Changelog: [v1.6.7...v1.7.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.6.7...v1.7.0)
+
+### Features
+
+* **api:** include shipment tracking info on order ([#213](https://github.com/terminaldotshop/terminal-sdk-js/issues/213)) ([f9f67ea](https://github.com/terminaldotshop/terminal-sdk-js/commit/f9f67ea8e124559dc757f4415cd21a1f42772a67))
+
 ## 1.6.7 (2025-04-05)
 
 Full Changelog: [v1.6.6...v1.6.7](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.6.6...v1.6.7)
