@@ -164,6 +164,21 @@ export namespace Order {
     service?: string;
 
     /**
+     * Current tracking status of the shipment.
+     */
+    status?: string;
+
+    /**
+     * Additional details about the tracking status.
+     */
+    statusDetails?: string;
+
+    /**
+     * When the tracking status was last updated.
+     */
+    statusUpdatedAt?: string;
+
+    /**
      * Tracking URL of the order.
      */
     url?: string;
