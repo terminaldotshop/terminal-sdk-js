@@ -1,5 +1,5 @@
 {
-  "name": "@terminaldotshop/sdk-mcp",
+  "name": "@terminaldotshop/mcp",
   "version": "1.7.0",
   "description": "The official MCP Server for the Terminal API",
   "author": "Terminal <dev@terminal.com>",
@@ -51,8 +51,8 @@
     "typescript": "^4.8.2"
   },
   "imports": {
-    "@terminaldotshop/sdk-mcp": ".",
-    "@terminaldotshop/sdk-mcp/*": "./src/*"
+    "@terminaldotshop/mcp": ".",
+    "@terminaldotshop/mcp/*": "./src/*"
   },
   "exports": {
     ".": {

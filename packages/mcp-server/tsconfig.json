@@ -9,8 +9,8 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "@terminaldotshop/sdk-mcp/*": ["src/*"],
-      "@terminaldotshop/sdk-mcp": ["src/index.ts"]
+      "@terminaldotshop/mcp/*": ["src/*"],
+      "@terminaldotshop/mcp": ["src/index.ts"]
     },
     "noEmit": true,
 
