@@ -7,8 +7,8 @@ const config: JestConfigWithTsJest = {
     '^.+\\.(t|j)sx?$': ['@swc/jest', { sourceMaps: 'inline' }],
   },
   moduleNameMapper: {
-    '^@terminaldotshop/sdk-mcp$': '<rootDir>/src/index.ts',
-    '^@terminaldotshop/sdk-mcp/(.*)$': '<rootDir>/src/$1',
+    '^@terminaldotshop/mcp$': '<rootDir>/src/index.ts',
+    '^@terminaldotshop/mcp/(.*)$': '<rootDir>/src/$1',
   },
   modulePathIgnorePatterns: ['<rootDir>/dist/'],
   testPathIgnorePatterns: ['scripts'],
