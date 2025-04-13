@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.7.1 (2025-04-13)
+
+Full Changelog: [v1.7.0...v1.7.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.7.0...v1.7.1)
+
+### Chores
+
+* configure new SDK language ([ca77de5](https://github.com/terminaldotshop/terminal-sdk-js/commit/ca77de54e92195de2b83f874b3b7ebbe8948b999))
+* **internal:** reduce CI branch coverage ([b450bf9](https://github.com/terminaldotshop/terminal-sdk-js/commit/b450bf94c4c622b7acb8679627faaf60595851db))
+* **internal:** upload builds and expand CI branch coverage ([6845ab1](https://github.com/terminaldotshop/terminal-sdk-js/commit/6845ab1eba2038601d2c1ccf4c503c303d54a88f))
+* **mcp:** update package name ([329aa46](https://github.com/terminaldotshop/terminal-sdk-js/commit/329aa46bb78d20935b63720fda0e450ec008dc48))
+
 ## 1.7.0 (2025-04-09)
 
 Full Changelog: [v1.6.7...v1.7.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.6.7...v1.7.0)
