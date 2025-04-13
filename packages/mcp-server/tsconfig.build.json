@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "@terminaldotshop/sdk-mcp/*": ["dist/src/*"],
-      "@terminaldotshop/sdk-mcp": ["dist/src/index.ts"]
+      "@terminaldotshop/mcp/*": ["dist/src/*"],
+      "@terminaldotshop/mcp": ["dist/src/index.ts"]
     },
     "noEmit": false,
     "declaration": true,

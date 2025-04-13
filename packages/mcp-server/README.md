@@ -11,7 +11,7 @@ You can run the MCP Server directly via `npx`:
 ```sh
 export TERMINAL_BEARER_TOKEN="My Bearer Token"
 export TERMINAL_APP_ID="My App ID"
-npx -y @terminaldotshop/sdk-mcp
+npx -y @terminaldotshop/mcp
 ```
 
 ### Via MCP Client
@@ -26,7 +26,7 @@ For clients with a configuration JSON, it might look something like this:
   "mcpServers": {
     "terminaldotshop_sdk_api": {
       "command": "npx",
-      "args": ["-y", "@terminaldotshop/sdk-mcp"],
+      "args": ["-y", "@terminaldotshop/mcp"],
       "env": {
         "TERMINAL_BEARER_TOKEN": "My Bearer Token",
         "TERMINAL_APP_ID": "My App ID"
@@ -58,10 +58,10 @@ Use `--list` to see the list of available tools, or see below.
 
 ```js
 // Import the server, generated endpoints, or the init function
-import { server, endpoints, init } from "@terminaldotshop/sdk-mcp/server";
+import { server, endpoints, init } from "@terminaldotshop/mcp/server";
 
 // import a specific tool
-import listProduct from "@terminaldotshop/sdk-mcp/tools/product/list-product";
+import listProduct from "@terminaldotshop/mcp/tools/product/list-product";
 
 // initialize the server and all endpoints
 init({ server, endpoints });
