@@ -56,6 +56,11 @@ export interface Subscription {
   cardID: string;
 
   /**
+   * Date the subscription was created.
+   */
+  created: string;
+
+  /**
    * ID of the product variant being subscribed to.
    */
   productVariantID: string;
@@ -125,6 +130,11 @@ export interface SubscriptionCreateParams {
    * ID of the card used for the subscription.
    */
   cardID: string;
+
+  /**
+   * Date the subscription was created.
+   */
+  created: string;
 
   /**
    * ID of the product variant being subscribed to.
