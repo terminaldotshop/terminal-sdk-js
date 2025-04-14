@@ -41,6 +41,11 @@ export interface Order {
   amount: Order.Amount;
 
   /**
+   * Date the order was created.
+   */
+  created: string;
+
+  /**
    * Items in the order.
    */
   items: Array<Order.Item>;
