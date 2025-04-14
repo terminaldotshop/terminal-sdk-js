@@ -28,6 +28,10 @@ export const tool: Tool = {
         type: 'string',
         description: 'ID of the card used for the subscription.',
       },
+      created: {
+        type: 'string',
+        description: 'Date the subscription was created.',
+      },
       productVariantID: {
         type: 'string',
         description: 'ID of the product variant being subscribed to.',

@@ -56,6 +56,11 @@ export interface Card {
   brand: string;
 
   /**
+   * Date the card was created.
+   */
+  created: string;
+
+  /**
    * Expiration of the card.
    */
   expiration: Card.Expiration;

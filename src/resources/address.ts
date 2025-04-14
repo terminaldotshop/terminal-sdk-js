@@ -53,6 +53,11 @@ export interface Address {
   country: string;
 
   /**
+   * Date the address was created.
+   */
+  created: string;
+
+  /**
    * The recipient's name.
    */
   name: string;
