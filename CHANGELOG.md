@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.8.0 (2025-04-15)
+
+Full Changelog: [v1.7.1...v1.8.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.7.1...v1.8.0)
+
+### Features
+
+* **api:** include created timestamps ([963b764](https://github.com/terminaldotshop/terminal-sdk-js/commit/963b76486dda4d409811db34b45948a320d562ff))
+
+
+### Chores
+
+* **client:** minor internal fixes ([4285926](https://github.com/terminaldotshop/terminal-sdk-js/commit/428592695ec9ca1689abf9b6f470aa93ee13cbe5))
+
 ## 1.7.1 (2025-04-13)
 
 Full Changelog: [v1.7.0...v1.7.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.7.0...v1.7.1)
