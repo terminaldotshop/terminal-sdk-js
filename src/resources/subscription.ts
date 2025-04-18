@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../resource';
+import { isRequestOptions } from '../core';
 import * as Core from '../core';
 
 export class SubscriptionResource extends APIResource {
@@ -12,6 +13,26 @@ export class SubscriptionResource extends APIResource {
     options?: Core.RequestOptions,
   ): Core.APIPromise<SubscriptionCreateResponse> {
     return this._client.post('/subscription', { body, ...options });
+  }
+
+  /**
+   * Update card, address, or interval for an existing subscription.
+   */
+  update(
+    id: string,
+    body?: SubscriptionUpdateParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<SubscriptionUpdateResponse>;
+  update(id: string, options?: Core.RequestOptions): Core.APIPromise<SubscriptionUpdateResponse>;
+  update(
+    id: string,
+    body: SubscriptionUpdateParams | Core.RequestOptions = {},
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<SubscriptionUpdateResponse> {
+    if (isRequestOptions(body)) {
+      return this.update(id, {}, body);
+    }
+    return this._client.put(`/subscription/${id}`, { body, ...options });
   }
 
   /**
@@ -97,6 +118,13 @@ export interface SubscriptionCreateResponse {
   data: 'ok';
 }
 
+export interface SubscriptionUpdateResponse {
+  /**
+   * Subscription to a Terminal shop product.
+   */
+  data: Subscription;
+}
+
 export interface SubscriptionListResponse {
   /**
    * List of subscriptions.
@@ -169,13 +197,44 @@ export namespace SubscriptionCreateParams {
   }
 }
 
+export interface SubscriptionUpdateParams {
+  /**
+   * New shipping address ID for the subscription.
+   */
+  addressID?: string;
+
+  /**
+   * New payment method ID for the subscription.
+   */
+  cardID?: string;
+
+  /**
+   * New schedule for the subscription.
+   */
+  schedule?: SubscriptionUpdateParams.Fixed | SubscriptionUpdateParams.Weekly;
+}
+
+export namespace SubscriptionUpdateParams {
+  export interface Fixed {
+    type: 'fixed';
+  }
+
+  export interface Weekly {
+    interval: number;
+
+    type: 'weekly';
+  }
+}
+
 export declare namespace SubscriptionResource {
   export {
     type Subscription as Subscription,
     type SubscriptionCreateResponse as SubscriptionCreateResponse,
+    type SubscriptionUpdateResponse as SubscriptionUpdateResponse,
     type SubscriptionListResponse as SubscriptionListResponse,
     type SubscriptionDeleteResponse as SubscriptionDeleteResponse,
     type SubscriptionGetResponse as SubscriptionGetResponse,
     type SubscriptionCreateParams as SubscriptionCreateParams,
+    type SubscriptionUpdateParams as SubscriptionUpdateParams,
   };
 }
