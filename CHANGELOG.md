@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.9.0 (2025-04-18)
+
+Full Changelog: [v1.8.0...v1.9.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.8.0...v1.9.0)
+
+### Features
+
+* **api:** update subscription route ([9978037](https://github.com/terminaldotshop/terminal-sdk-js/commit/9978037d60274f7063d7b6d374b6229dbb2ebf1f))
+
 ## 1.8.0 (2025-04-15)
 
 Full Changelog: [v1.7.1...v1.8.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.7.1...v1.8.0)
