@@ -68,10 +68,12 @@ export {
   SubscriptionResource,
   type Subscription,
   type SubscriptionCreateResponse,
+  type SubscriptionUpdateResponse,
   type SubscriptionListResponse,
   type SubscriptionDeleteResponse,
   type SubscriptionGetResponse,
   type SubscriptionCreateParams,
+  type SubscriptionUpdateParams,
 } from './subscription';
 export {
   TokenResource,

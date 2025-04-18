@@ -40,6 +40,39 @@ describe('resource subscription', () => {
     });
   });
 
+  test('update', async () => {
+    const responsePromise = client.subscription.update('sub_XXXXXXXXXXXXXXXXXXXXXXXXX');
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('update: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.subscription.update('sub_XXXXXXXXXXXXXXXXXXXXXXXXX', { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Terminal.NotFoundError);
+  });
+
+  test('update: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.subscription.update(
+        'sub_XXXXXXXXXXXXXXXXXXXXXXXXX',
+        {
+          addressID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX',
+          cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX',
+          schedule: { interval: 3, type: 'weekly' },
+        },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(Terminal.NotFoundError);
+  });
+
   test('list', async () => {
     const responsePromise = client.subscription.list();
     const rawResponse = await responsePromise.asResponse();
