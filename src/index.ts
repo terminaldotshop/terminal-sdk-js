@@ -77,6 +77,8 @@ import {
   SubscriptionGetResponse,
   SubscriptionListResponse,
   SubscriptionResource,
+  SubscriptionUpdateParams,
+  SubscriptionUpdateResponse,
 } from './resources/subscription';
 import {
   Token,
@@ -358,10 +360,12 @@ export declare namespace Terminal {
     SubscriptionResource as SubscriptionResource,
     type Subscription as Subscription,
     type SubscriptionCreateResponse as SubscriptionCreateResponse,
+    type SubscriptionUpdateResponse as SubscriptionUpdateResponse,
     type SubscriptionListResponse as SubscriptionListResponse,
     type SubscriptionDeleteResponse as SubscriptionDeleteResponse,
     type SubscriptionGetResponse as SubscriptionGetResponse,
     type SubscriptionCreateParams as SubscriptionCreateParams,
+    type SubscriptionUpdateParams as SubscriptionUpdateParams,
   };
 
   export {

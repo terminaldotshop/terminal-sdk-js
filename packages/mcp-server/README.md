@@ -136,6 +136,7 @@ The following tools are available in this MCP server.
 ### Resource `subscription`:
 
 - `create_subscription` (`write`): Create a subscription for the current user.
+- `update_subscription` (`write`): Update card, address, or interval for an existing subscription.
 - `list_subscription` (`read`): List the subscriptions associated with the current user.
 - `delete_subscription` (`write`): Cancel a subscription for the current user.
 - `get_subscription` (`read`): Get the subscription with the given ID.
