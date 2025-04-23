@@ -82,6 +82,11 @@ export interface Subscription {
   created: string;
 
   /**
+   * Price of the subscription in cents (USD).
+   */
+  price: number;
+
+  /**
    * ID of the product variant being subscribed to.
    */
   productVariantID: string;
@@ -163,6 +168,11 @@ export interface SubscriptionCreateParams {
    * Date the subscription was created.
    */
   created: string;
+
+  /**
+   * Price of the subscription in cents (USD).
+   */
+  price: number;
 
   /**
    * ID of the product variant being subscribed to.

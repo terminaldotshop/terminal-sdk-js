@@ -32,6 +32,10 @@ export const tool: Tool = {
         type: 'string',
         description: 'Date the subscription was created.',
       },
+      price: {
+        type: 'integer',
+        description: 'Price of the subscription in cents (USD).',
+      },
       productVariantID: {
         type: 'string',
         description: 'ID of the product variant being subscribed to.',
