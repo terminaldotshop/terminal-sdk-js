@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.10.0 (2025-04-23)
+
+Full Changelog: [v1.9.0...v1.10.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.9.0...v1.10.0)
+
+### Features
+
+* **api:** include price on subscriptions ([ae6ee1b](https://github.com/terminaldotshop/terminal-sdk-js/commit/ae6ee1b8963e995f50e73faaa3ed4d6d19b3a3c9))
+
+
+### Chores
+
+* **ci:** add timeout thresholds for CI jobs ([21a2230](https://github.com/terminaldotshop/terminal-sdk-js/commit/21a2230439af60542adb77ddf8af866761efdbd0))
+
 ## 1.9.0 (2025-04-18)
 
 Full Changelog: [v1.8.0...v1.9.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.8.0...v1.9.0)
