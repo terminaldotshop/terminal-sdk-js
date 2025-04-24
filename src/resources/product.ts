@@ -72,6 +72,8 @@ export namespace Product {
 
     market_eu?: boolean;
 
+    market_global?: boolean;
+
     market_na?: boolean;
   }
 }
@@ -94,6 +96,26 @@ export interface ProductVariant {
    * Price of the product variant in cents (USD).
    */
   price: number;
+
+  /**
+   * Tags for the product variant.
+   */
+  tags?: ProductVariant.Tags;
+}
+
+export namespace ProductVariant {
+  /**
+   * Tags for the product variant.
+   */
+  export interface Tags {
+    app?: string;
+
+    market_eu?: boolean;
+
+    market_global?: boolean;
+
+    market_na?: boolean;
+  }
 }
 
 export interface ProductListResponse {
