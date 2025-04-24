@@ -26,7 +26,7 @@ export class View extends APIResource {
 /**
  * A Terminal shop user's region.
  */
-export type Region = 'eu' | 'na';
+export type Region = 'eu' | 'na' | 'global';
 
 export interface ViewInitResponse {
   /**

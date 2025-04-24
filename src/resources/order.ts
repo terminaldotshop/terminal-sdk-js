@@ -171,7 +171,7 @@ export namespace Order {
     /**
      * Current tracking status of the shipment.
      */
-    status?: string;
+    status?: 'PRE_TRANSIT' | 'TRANSIT' | 'DELIVERED' | 'RETURNED' | 'FAILURE' | 'UNKNOWN';
 
     /**
      * Additional details about the tracking status.
