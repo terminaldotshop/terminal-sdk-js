@@ -11,7 +11,7 @@ export { endpoints } from './tools';
 export const server = new McpServer(
   {
     name: 'terminaldotshop_sdk_api',
-    version: '1.10.0',
+    version: '1.11.0',
   },
   {
     capabilities: {

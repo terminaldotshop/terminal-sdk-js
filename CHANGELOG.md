@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.11.0 (2025-04-24)
+
+Full Changelog: [v1.10.0...v1.11.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.10.0...v1.11.0)
+
+### Features
+
+* **api:** global region, typed tracking status, variant tags ([149d721](https://github.com/terminaldotshop/terminal-sdk-js/commit/149d7214ef7883f269c64d727a889e2456fa5afd))
+* **api:** product variant descriptions ([89fb5db](https://github.com/terminaldotshop/terminal-sdk-js/commit/89fb5db2fcd091cda1e02c723962d85568438b45))
+
+
+### Chores
+
+* **ci:** only use depot for staging repos ([ef8174a](https://github.com/terminaldotshop/terminal-sdk-js/commit/ef8174a9dcf8eae0fed6e0cf8dd068da07df6766))
+* **internal:** codegen related update ([6a2d08f](https://github.com/terminaldotshop/terminal-sdk-js/commit/6a2d08fa3c5a99cc189088a48217c6c52c15929b))
+
 ## 1.10.0 (2025-04-23)
 
 Full Changelog: [v1.9.0...v1.10.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.9.0...v1.10.0)
