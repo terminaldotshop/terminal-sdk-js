@@ -98,6 +98,11 @@ export interface ProductVariant {
   price: number;
 
   /**
+   * Description of the product variant.
+   */
+  description?: string;
+
+  /**
    * Tags for the product variant.
    */
   tags?: ProductVariant.Tags;
