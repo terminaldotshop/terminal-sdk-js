@@ -20,8 +20,7 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: Terminal, args: any) => {
-  const {} = args;
+export const handler = (client: Terminal, args: Record<string, unknown> | undefined) => {
   return client.view.init();
 };
 
