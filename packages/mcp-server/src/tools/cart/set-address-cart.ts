@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export const tool: Tool = {
-  name: 'setAddress_cart',
+  name: 'set_address_cart',
   description: "Set the shipping address for the current user's cart.",
   inputSchema: {
     type: 'object',
