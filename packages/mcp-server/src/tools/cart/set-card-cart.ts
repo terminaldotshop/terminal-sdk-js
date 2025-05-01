@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export const tool: Tool = {
-  name: 'setCard_cart',
+  name: 'set_card_cart',
   description: "Set the credit card for the current user's cart.",
   inputSchema: {
     type: 'object',

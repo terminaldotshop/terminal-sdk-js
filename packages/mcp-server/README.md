@@ -175,9 +175,9 @@ The following tools are available in this MCP server.
 - `clear_cart` (`write`): Clear the current user's cart.
 - `convert_cart` (`write`): Convert the current user's cart to an order.
 - `get_cart` (`read`): Get the current user's cart.
-- `setAddress_cart` (`write`): Set the shipping address for the current user's cart.
-- `setCard_cart` (`write`): Set the credit card for the current user's cart.
-- `setItem_cart` (`write`): Add an item to the current user's cart.
+- `set_address_cart` (`write`): Set the shipping address for the current user's cart.
+- `set_card_cart` (`write`): Set the credit card for the current user's cart.
+- `set_item_cart` (`write`): Add an item to the current user's cart.
 
 ### Resource `order`:
 
