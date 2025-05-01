@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.12.0 (2025-05-01)
+
+Full Changelog: [v1.11.0...v1.12.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.11.0...v1.12.0)
+
+### Features
+
+* more gracefully handle $refs and work around schema limitations ([83f97dd](https://github.com/terminaldotshop/terminal-sdk-js/commit/83f97dd32a71948801126f1366a3db99b817d199))
+
+
+### Bug Fixes
+
+* **mcp:** normalize tool name casing to snake case ([347a026](https://github.com/terminaldotshop/terminal-sdk-js/commit/347a026afee7fd8d214c810d61f28f564d6d42bd))
+
 ## 1.11.0 (2025-04-24)
 
 Full Changelog: [v1.10.0...v1.11.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.10.0...v1.11.0)
