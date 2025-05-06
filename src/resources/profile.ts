@@ -6,6 +6,14 @@ import * as Core from '../core';
 export class ProfileResource extends APIResource {
   /**
    * Update the current user's profile.
+   *
+   * @example
+   * ```ts
+   * const profile = await client.profile.update({
+   *   email: 'john@example.com',
+   *   name: 'John Doe',
+   * });
+   * ```
    */
   update(body: ProfileUpdateParams, options?: Core.RequestOptions): Core.APIPromise<ProfileUpdateResponse> {
     return this._client.put('/profile', { body, ...options });
@@ -13,6 +21,11 @@ export class ProfileResource extends APIResource {
 
   /**
    * Get the current user's profile.
+   *
+   * @example
+   * ```ts
+   * const response = await client.profile.me();
+   * ```
    */
   me(options?: Core.RequestOptions): Core.APIPromise<ProfileMeResponse> {
     return this._client.get('/profile', options);

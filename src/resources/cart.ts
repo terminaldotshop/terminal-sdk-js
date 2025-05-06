@@ -7,6 +7,11 @@ import * as OrderAPI from './order';
 export class CartResource extends APIResource {
   /**
    * Clear the current user's cart.
+   *
+   * @example
+   * ```ts
+   * const response = await client.cart.clear();
+   * ```
    */
   clear(options?: Core.RequestOptions): Core.APIPromise<CartClearResponse> {
     return this._client.delete('/cart', options);
@@ -14,6 +19,11 @@ export class CartResource extends APIResource {
 
   /**
    * Convert the current user's cart to an order.
+   *
+   * @example
+   * ```ts
+   * const response = await client.cart.convert();
+   * ```
    */
   convert(options?: Core.RequestOptions): Core.APIPromise<CartConvertResponse> {
     return this._client.post('/cart/convert', options);
@@ -21,6 +31,11 @@ export class CartResource extends APIResource {
 
   /**
    * Get the current user's cart.
+   *
+   * @example
+   * ```ts
+   * const cart = await client.cart.get();
+   * ```
    */
   get(options?: Core.RequestOptions): Core.APIPromise<CartGetResponse> {
     return this._client.get('/cart', options);
@@ -28,6 +43,13 @@ export class CartResource extends APIResource {
 
   /**
    * Set the shipping address for the current user's cart.
+   *
+   * @example
+   * ```ts
+   * const response = await client.cart.setAddress({
+   *   addressID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX',
+   * });
+   * ```
    */
   setAddress(
     body: CartSetAddressParams,
@@ -38,6 +60,13 @@ export class CartResource extends APIResource {
 
   /**
    * Set the credit card for the current user's cart.
+   *
+   * @example
+   * ```ts
+   * const response = await client.cart.setCard({
+   *   cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX',
+   * });
+   * ```
    */
   setCard(body: CartSetCardParams, options?: Core.RequestOptions): Core.APIPromise<CartSetCardResponse> {
     return this._client.put('/cart/card', { body, ...options });
@@ -45,6 +74,14 @@ export class CartResource extends APIResource {
 
   /**
    * Add an item to the current user's cart.
+   *
+   * @example
+   * ```ts
+   * const response = await client.cart.setItem({
+   *   productVariantID: 'var_XXXXXXXXXXXXXXXXXXXXXXXXX',
+   *   quantity: 2,
+   * });
+   * ```
    */
   setItem(body: CartSetItemParams, options?: Core.RequestOptions): Core.APIPromise<CartSetItemResponse> {
     return this._client.put('/cart/item', { body, ...options });
