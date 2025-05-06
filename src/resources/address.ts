@@ -6,6 +6,17 @@ import * as Core from '../core';
 export class AddressResource extends APIResource {
   /**
    * Create and add a shipping address to the current user.
+   *
+   * @example
+   * ```ts
+   * const address = await client.address.create({
+   *   city: 'Anytown',
+   *   country: 'US',
+   *   name: 'John Doe',
+   *   street1: '123 Main St',
+   *   zip: '12345',
+   * });
+   * ```
    */
   create(body: AddressCreateParams, options?: Core.RequestOptions): Core.APIPromise<AddressCreateResponse> {
     return this._client.post('/address', { body, ...options });
@@ -13,6 +24,11 @@ export class AddressResource extends APIResource {
 
   /**
    * Get the shipping addresses associated with the current user.
+   *
+   * @example
+   * ```ts
+   * const addresses = await client.address.list();
+   * ```
    */
   list(options?: Core.RequestOptions): Core.APIPromise<AddressListResponse> {
     return this._client.get('/address', options);
@@ -20,6 +36,13 @@ export class AddressResource extends APIResource {
 
   /**
    * Delete a shipping address from the current user.
+   *
+   * @example
+   * ```ts
+   * const address = await client.address.delete(
+   *   'shp_XXXXXXXXXXXXXXXXXXXXXXXXX',
+   * );
+   * ```
    */
   delete(id: string, options?: Core.RequestOptions): Core.APIPromise<AddressDeleteResponse> {
     return this._client.delete(`/address/${id}`, options);
@@ -27,6 +50,13 @@ export class AddressResource extends APIResource {
 
   /**
    * Get the shipping address with the given ID.
+   *
+   * @example
+   * ```ts
+   * const address = await client.address.get(
+   *   'shp_XXXXXXXXXXXXXXXXXXXXXXXXX',
+   * );
+   * ```
    */
   get(id: string, options?: Core.RequestOptions): Core.APIPromise<AddressGetResponse> {
     return this._client.get(`/address/${id}`, options);

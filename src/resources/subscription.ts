@@ -7,6 +7,19 @@ import * as Core from '../core';
 export class SubscriptionResource extends APIResource {
   /**
    * Create a subscription for the current user.
+   *
+   * @example
+   * ```ts
+   * const subscription = await client.subscription.create({
+   *   id: 'sub_XXXXXXXXXXXXXXXXXXXXXXXXX',
+   *   addressID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX',
+   *   cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX',
+   *   created: '2024-06-29T19:36:19.000Z',
+   *   price: 2200,
+   *   productVariantID: 'var_XXXXXXXXXXXXXXXXXXXXXXXXX',
+   *   quantity: 1,
+   * });
+   * ```
    */
   create(
     body: SubscriptionCreateParams,
@@ -17,6 +30,13 @@ export class SubscriptionResource extends APIResource {
 
   /**
    * Update card, address, or interval for an existing subscription.
+   *
+   * @example
+   * ```ts
+   * const subscription = await client.subscription.update(
+   *   'sub_XXXXXXXXXXXXXXXXXXXXXXXXX',
+   * );
+   * ```
    */
   update(
     id: string,
@@ -37,6 +57,11 @@ export class SubscriptionResource extends APIResource {
 
   /**
    * List the subscriptions associated with the current user.
+   *
+   * @example
+   * ```ts
+   * const subscriptions = await client.subscription.list();
+   * ```
    */
   list(options?: Core.RequestOptions): Core.APIPromise<SubscriptionListResponse> {
     return this._client.get('/subscription', options);
@@ -44,6 +69,13 @@ export class SubscriptionResource extends APIResource {
 
   /**
    * Cancel a subscription for the current user.
+   *
+   * @example
+   * ```ts
+   * const subscription = await client.subscription.delete(
+   *   'sub_XXXXXXXXXXXXXXXXXXXXXXXXX',
+   * );
+   * ```
    */
   delete(id: string, options?: Core.RequestOptions): Core.APIPromise<SubscriptionDeleteResponse> {
     return this._client.delete(`/subscription/${id}`, options);
@@ -51,6 +83,13 @@ export class SubscriptionResource extends APIResource {
 
   /**
    * Get the subscription with the given ID.
+   *
+   * @example
+   * ```ts
+   * const subscription = await client.subscription.get(
+   *   'sub_XXXXXXXXXXXXXXXXXXXXXXXXX',
+   * );
+   * ```
    */
   get(id: string, options?: Core.RequestOptions): Core.APIPromise<SubscriptionGetResponse> {
     return this._client.get(`/subscription/${id}`, options);
