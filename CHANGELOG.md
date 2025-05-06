@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.12.1 (2025-05-06)
+
+Full Changelog: [v1.12.0...v1.12.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.12.0...v1.12.1)
+
+### Bug Fixes
+
+* **mcp:** remove ajv dependency so MCP servers are more compatible with Cloudflare Workers ([cc3736b](https://github.com/terminaldotshop/terminal-sdk-js/commit/cc3736b422bb6578491fec51e49e45e499df582d))
+
+
+### Chores
+
+* **ci:** bump node version for release workflows ([cb7361f](https://github.com/terminaldotshop/terminal-sdk-js/commit/cb7361f6f755f19f258f6f98c8eb1f9af43fa21f))
+* **internal:** update dependency ([9629926](https://github.com/terminaldotshop/terminal-sdk-js/commit/96299261091c86d82fea03972dbf3373c1a1e4e4))
+
+
+### Documentation
+
+* **readme:** fix typo ([eb37b28](https://github.com/terminaldotshop/terminal-sdk-js/commit/eb37b28542a8c3d909fdc4923a64fc8af118520e))
+
 ## 1.12.0 (2025-05-01)
 
 Full Changelog: [v1.11.0...v1.12.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.11.0...v1.12.0)
