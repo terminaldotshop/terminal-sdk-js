@@ -6,6 +6,15 @@ import * as Core from '../core';
 export class OrderResource extends APIResource {
   /**
    * Create an order without a cart. The order will be placed immediately.
+   *
+   * @example
+   * ```ts
+   * const order = await client.order.create({
+   *   addressID: 'shp_XXXXXXXXXXXXXXXXXXXXXXXXX',
+   *   cardID: 'crd_XXXXXXXXXXXXXXXXXXXXXXXXX',
+   *   variants: { var_XXXXXXXXXXXXXXXXXXXXXXXXX: 1 },
+   * });
+   * ```
    */
   create(body: OrderCreateParams, options?: Core.RequestOptions): Core.APIPromise<OrderCreateResponse> {
     return this._client.post('/order', { body, ...options });
@@ -13,6 +22,11 @@ export class OrderResource extends APIResource {
 
   /**
    * List the orders associated with the current user.
+   *
+   * @example
+   * ```ts
+   * const orders = await client.order.list();
+   * ```
    */
   list(options?: Core.RequestOptions): Core.APIPromise<OrderListResponse> {
     return this._client.get('/order', options);
@@ -20,6 +34,13 @@ export class OrderResource extends APIResource {
 
   /**
    * Get the order with the given ID.
+   *
+   * @example
+   * ```ts
+   * const order = await client.order.get(
+   *   'ord_XXXXXXXXXXXXXXXXXXXXXXXXX',
+   * );
+   * ```
    */
   get(id: string, options?: Core.RequestOptions): Core.APIPromise<OrderGetResponse> {
     return this._client.get(`/order/${id}`, options);

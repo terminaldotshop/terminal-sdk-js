@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.13.0 (2025-05-10)
+
+Full Changelog: [v1.12.1...v1.13.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.12.1...v1.13.0)
+
+### Features
+
+* **mcp:** support dynamically discovering and invoking tools for APIs with many endpoints ([374e31f](https://github.com/terminaldotshop/terminal-sdk-js/commit/374e31f25f0c90f412a365d5926906311ea15621))
+
+
+### Chores
+
+* **build:** automatically build subpackages if present ([dd82a47](https://github.com/terminaldotshop/terminal-sdk-js/commit/dd82a474bd5745d18ba60be4bc661363b25e6c28))
+
+
+### Documentation
+
+* add examples to tsdocs ([5a9231e](https://github.com/terminaldotshop/terminal-sdk-js/commit/5a9231e7ed4825872162bf7cb795923b2f74827a))
+
 ## 1.12.1 (2025-05-06)
 
 Full Changelog: [v1.12.0...v1.12.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.12.0...v1.12.1)

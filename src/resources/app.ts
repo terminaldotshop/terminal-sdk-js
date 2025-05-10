@@ -6,6 +6,14 @@ import * as Core from '../core';
 export class AppResource extends APIResource {
   /**
    * Create an app.
+   *
+   * @example
+   * ```ts
+   * const app = await client.app.create({
+   *   name: 'Example App',
+   *   redirectURI: 'https://example.com/callback',
+   * });
+   * ```
    */
   create(body: AppCreateParams, options?: Core.RequestOptions): Core.APIPromise<AppCreateResponse> {
     return this._client.post('/app', { body, ...options });
@@ -13,6 +21,11 @@ export class AppResource extends APIResource {
 
   /**
    * List the current user's registered apps.
+   *
+   * @example
+   * ```ts
+   * const apps = await client.app.list();
+   * ```
    */
   list(options?: Core.RequestOptions): Core.APIPromise<AppListResponse> {
     return this._client.get('/app', options);
@@ -20,6 +33,13 @@ export class AppResource extends APIResource {
 
   /**
    * Delete the app with the given ID.
+   *
+   * @example
+   * ```ts
+   * const app = await client.app.delete(
+   *   'cli_XXXXXXXXXXXXXXXXXXXXXXXXX',
+   * );
+   * ```
    */
   delete(id: string, options?: Core.RequestOptions): Core.APIPromise<AppDeleteResponse> {
     return this._client.delete(`/app/${id}`, options);
@@ -27,6 +47,13 @@ export class AppResource extends APIResource {
 
   /**
    * Get the app with the given ID.
+   *
+   * @example
+   * ```ts
+   * const app = await client.app.get(
+   *   'cli_XXXXXXXXXXXXXXXXXXXXXXXXX',
+   * );
+   * ```
    */
   get(id: string, options?: Core.RequestOptions): Core.APIPromise<AppGetResponse> {
     return this._client.get(`/app/${id}`, options);

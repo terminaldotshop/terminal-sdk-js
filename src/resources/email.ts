@@ -6,6 +6,13 @@ import * as Core from '../core';
 export class Email extends APIResource {
   /**
    * Subscribe to email updates from Terminal.
+   *
+   * @example
+   * ```ts
+   * const email = await client.email.create({
+   *   email: 'john@example.com',
+   * });
+   * ```
    */
   create(body: EmailCreateParams, options?: Core.RequestOptions): Core.APIPromise<EmailCreateResponse> {
     return this._client.post('/email', { body, ...options });

@@ -6,6 +6,13 @@ import * as Core from '../core';
 export class CardResource extends APIResource {
   /**
    * Attach a credit card (tokenized via Stripe) to the current user.
+   *
+   * @example
+   * ```ts
+   * const card = await client.card.create({
+   *   token: 'tok_1N3T00LkdIwHu7ixt44h1F8k',
+   * });
+   * ```
    */
   create(body: CardCreateParams, options?: Core.RequestOptions): Core.APIPromise<CardCreateResponse> {
     return this._client.post('/card', { body, ...options });
@@ -13,6 +20,11 @@ export class CardResource extends APIResource {
 
   /**
    * List the credit cards associated with the current user.
+   *
+   * @example
+   * ```ts
+   * const cards = await client.card.list();
+   * ```
    */
   list(options?: Core.RequestOptions): Core.APIPromise<CardListResponse> {
     return this._client.get('/card', options);
@@ -20,6 +32,13 @@ export class CardResource extends APIResource {
 
   /**
    * Delete a credit card associated with the current user.
+   *
+   * @example
+   * ```ts
+   * const card = await client.card.delete(
+   *   'crd_XXXXXXXXXXXXXXXXXXXXXXXXX',
+   * );
+   * ```
    */
   delete(id: string, options?: Core.RequestOptions): Core.APIPromise<CardDeleteResponse> {
     return this._client.delete(`/card/${id}`, options);
@@ -28,6 +47,11 @@ export class CardResource extends APIResource {
   /**
    * Create a temporary URL for collecting credit card information for the current
    * user.
+   *
+   * @example
+   * ```ts
+   * const response = await client.card.collect();
+   * ```
    */
   collect(options?: Core.RequestOptions): Core.APIPromise<CardCollectResponse> {
     return this._client.post('/card/collect', options);
@@ -35,6 +59,13 @@ export class CardResource extends APIResource {
 
   /**
    * Get a credit card by ID associated with the current user.
+   *
+   * @example
+   * ```ts
+   * const card = await client.card.get(
+   *   'crd_XXXXXXXXXXXXXXXXXXXXXXXXX',
+   * );
+   * ```
    */
   get(id: string, options?: Core.RequestOptions): Core.APIPromise<CardGetResponse> {
     return this._client.get(`/card/${id}`, options);

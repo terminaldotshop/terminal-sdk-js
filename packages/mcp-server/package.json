@@ -1,6 +1,6 @@
 {
   "name": "@terminaldotshop/mcp",
-  "version": "1.12.1",
+  "version": "1.13.0",
   "description": "The official MCP Server for the Terminal API",
   "author": "Terminal <dev@terminal.com>",
   "types": "dist/index.d.ts",
@@ -29,7 +29,8 @@
   "dependencies": {
     "@terminaldotshop/sdk": "file:../../dist/",
     "@modelcontextprotocol/sdk": "^1.6.1",
-    "yargs": "^17.7.2"
+    "yargs": "^17.7.2",
+    "@cloudflare/cabidela": "^0.2.4"
   },
   "bin": {
     "mcp-server": "dist/index.js"
