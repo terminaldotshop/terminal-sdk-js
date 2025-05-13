@@ -1,5 +1,30 @@
 # Changelog
 
+## 1.13.0 (2025-05-13)
+
+Full Changelog: [v1.12.1...v1.13.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.12.1...v1.13.0)
+
+### Features
+
+* **mcp:** support dynamically discovering and invoking tools for APIs with many endpoints ([374e31f](https://github.com/terminaldotshop/terminal-sdk-js/commit/374e31f25f0c90f412a365d5926906311ea15621))
+
+
+### Bug Fixes
+
+* **mcp:** explicitly include zod and zod-to-json-schema in package.json ([5ec3a3c](https://github.com/terminaldotshop/terminal-sdk-js/commit/5ec3a3c5c67813bbee5ccddf74ee8deb2cc4710f))
+
+
+### Chores
+
+* **build:** automatically build subpackages if present ([dd82a47](https://github.com/terminaldotshop/terminal-sdk-js/commit/dd82a474bd5745d18ba60be4bc661363b25e6c28))
+* **internal:** codegen related update ([2056104](https://github.com/terminaldotshop/terminal-sdk-js/commit/20561047ea078d9038df9cf065698a5da8c18ff0))
+* **tests:** use node 22 for CI tests ([a25bc44](https://github.com/terminaldotshop/terminal-sdk-js/commit/a25bc4450b56ba11a4f7a8c506bcbb242e725c34))
+
+
+### Documentation
+
+* add examples to tsdocs ([5a9231e](https://github.com/terminaldotshop/terminal-sdk-js/commit/5a9231e7ed4825872162bf7cb795923b2f74827a))
+
 ## 1.12.1 (2025-05-06)
 
 Full Changelog: [v1.12.0...v1.12.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.12.0...v1.12.1)
