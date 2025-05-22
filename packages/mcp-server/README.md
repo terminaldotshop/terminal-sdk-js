@@ -11,6 +11,7 @@ You can run the MCP Server directly via `npx`:
 ```sh
 export TERMINAL_BEARER_TOKEN="My Bearer Token"
 export TERMINAL_APP_ID="My App ID"
+export TERMINAL_ENVIRONMENT="production"
 npx -y @terminaldotshop/mcp@latest
 ```
 
@@ -29,7 +30,8 @@ For clients with a configuration JSON, it might look something like this:
       "args": ["-y", "@terminaldotshop/mcp", "--client=claude", "--tools=dynamic"],
       "env": {
         "TERMINAL_BEARER_TOKEN": "My Bearer Token",
-        "TERMINAL_APP_ID": "My App ID"
+        "TERMINAL_APP_ID": "My App ID",
+        "TERMINAL_ENVIRONMENT": "production"
       }
     }
   }
