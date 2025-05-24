@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.14.0 (2025-05-24)
+
+Full Changelog: [v1.13.0...v1.14.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.13.0...v1.14.0)
+
+### Features
+
+* **mcp:** support initializing the server with an "environment" ([8352096](https://github.com/terminaldotshop/terminal-sdk-js/commit/83520967133f648af43452bfa323e7b7441861e0))
+
+
+### Bug Fixes
+
+* **mcp:** fix cursor schema transformation issue with recursive references ([0352c0a](https://github.com/terminaldotshop/terminal-sdk-js/commit/0352c0ad4f128192ea44b5cb1d36650880ede853))
+
+
+### Chores
+
+* **docs:** grammar improvements ([7a97711](https://github.com/terminaldotshop/terminal-sdk-js/commit/7a977115b6d2ad546d80a5bf2f164341d6e0f587))
+
 ## 1.13.0 (2025-05-13)
 
 Full Changelog: [v1.12.1...v1.13.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.12.1...v1.13.0)
