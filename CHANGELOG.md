@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.14.1 (2025-05-28)
+
+Full Changelog: [v1.14.0...v1.14.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.14.0...v1.14.1)
+
+### Bug Fixes
+
+* **mcp:** include description in dynamic tool search ([9bd6ff4](https://github.com/terminaldotshop/terminal-sdk-js/commit/9bd6ff4618d5114f888d87f4cbbd18f6d76d39da))
+
 ## 1.14.0 (2025-05-24)
 
 Full Changelog: [v1.13.0...v1.14.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.13.0...v1.14.0)
