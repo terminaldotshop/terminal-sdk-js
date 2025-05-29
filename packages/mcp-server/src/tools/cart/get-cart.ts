@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'cart',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/cart',
+  operationId: 'getCart',
 };
 
 export const tool: Tool = {

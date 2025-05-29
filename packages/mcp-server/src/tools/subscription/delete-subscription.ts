@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'subscription',
   operation: 'write',
   tags: [],
+  httpMethod: 'delete',
+  httpPath: '/subscription/{id}',
+  operationId: 'deleteSubscriptionById',
 };
 
 export const tool: Tool = {
