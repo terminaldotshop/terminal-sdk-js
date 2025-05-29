@@ -19,7 +19,7 @@ export { endpoints } from './tools';
 export const server = new McpServer(
   {
     name: 'terminaldotshop_sdk_api',
-    version: '1.14.1',
+    version: '1.15.0',
   },
   {
     capabilities: {
@@ -102,7 +102,7 @@ export async function executeHandler(
 ) {
   const options = { ...defaultClientCapabilities, ...compatibilityOptions };
   if (options.validJson && args) {
-    args = args = parseEmbeddedJSON(args, tool.inputSchema);
+    args = parseEmbeddedJSON(args, tool.inputSchema);
   }
   const result = await handler(client, args || {});
   return {

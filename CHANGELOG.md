@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.15.0 (2025-05-29)
+
+Full Changelog: [v1.14.1...v1.15.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.14.1...v1.15.0)
+
+### Features
+
+* **mcp:** include http information in tools ([0a58323](https://github.com/terminaldotshop/terminal-sdk-js/commit/0a58323ffc49ac70eb8c952962d7bcbc68a76636))
+
+
+### Chores
+
+* improve publish-npm script --latest tag logic ([a7e84ec](https://github.com/terminaldotshop/terminal-sdk-js/commit/a7e84ecfb86469ba2456ae1a5963d996cabd344f))
+* **mcp:** remove duplicate assignment ([25fa9b7](https://github.com/terminaldotshop/terminal-sdk-js/commit/25fa9b7d696a8111abfd37acacb988afa4b90889))
+
 ## 1.14.1 (2025-05-28)
 
 Full Changelog: [v1.14.0...v1.14.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.14.0...v1.14.1)

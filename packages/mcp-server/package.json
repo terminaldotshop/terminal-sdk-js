@@ -1,6 +1,6 @@
 {
   "name": "@terminaldotshop/mcp",
-  "version": "1.14.1",
+  "version": "1.15.0",
   "description": "The official MCP Server for the Terminal API",
   "author": "Terminal <dev@terminal.com>",
   "types": "dist/index.d.ts",

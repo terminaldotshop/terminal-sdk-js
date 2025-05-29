@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'token',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/token',
+  operationId: 'postToken',
 };
 
 export const tool: Tool = {

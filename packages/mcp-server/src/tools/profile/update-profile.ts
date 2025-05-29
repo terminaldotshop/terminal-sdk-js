@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'profile',
   operation: 'write',
   tags: [],
+  httpMethod: 'put',
+  httpPath: '/profile',
+  operationId: 'putProfile',
 };
 
 export const tool: Tool = {

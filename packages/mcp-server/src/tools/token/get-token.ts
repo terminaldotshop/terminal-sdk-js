@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'token',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/token/{id}',
+  operationId: 'getTokenById',
 };
 
 export const tool: Tool = {

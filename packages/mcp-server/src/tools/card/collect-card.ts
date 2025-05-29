@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'card',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/card/collect',
+  operationId: 'postCardCollect',
 };
 
 export const tool: Tool = {
