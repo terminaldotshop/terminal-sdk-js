@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'card',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/card',
+  operationId: 'getCard',
 };
 
 export const tool: Tool = {

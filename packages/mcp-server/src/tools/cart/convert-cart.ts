@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'cart',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/cart/convert',
+  operationId: 'postCartConvert',
 };
 
 export const tool: Tool = {
