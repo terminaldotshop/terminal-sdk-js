@@ -27,13 +27,9 @@ const client = new Terminal({
   environment: 'dev', // defaults to 'production'
 });
 
-async function main() {
-  const products = await client.product.list();
+const products = await client.product.list();
 
-  console.log(products.data);
-}
-
-main();
+console.log(products.data);
 ```
 
 ### Request & Response types
@@ -49,11 +45,7 @@ const client = new Terminal({
   environment: 'dev', // defaults to 'production'
 });
 
-async function main() {
-  const products: Terminal.ProductListResponse = await client.product.list();
-}
-
-main();
+const products: Terminal.ProductListResponse = await client.product.list();
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -66,19 +58,15 @@ a subclass of `APIError` will be thrown:
 
 <!-- prettier-ignore -->
 ```ts
-async function main() {
-  const products = await client.product.list().catch(async (err) => {
-    if (err instanceof Terminal.APIError) {
-      console.log(err.status); // 400
-      console.log(err.name); // BadRequestError
-      console.log(err.headers); // {server: 'nginx', ...}
-    } else {
-      throw err;
-    }
-  });
-}
-
-main();
+const products = await client.product.list().catch(async (err) => {
+  if (err instanceof Terminal.APIError) {
+    console.log(err.status); // 400
+    console.log(err.name); // BadRequestError
+    console.log(err.headers); // {server: 'nginx', ...}
+  } else {
+    throw err;
+  }
+});
 ```
 
 Error codes are as follows:
