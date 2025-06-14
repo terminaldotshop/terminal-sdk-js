@@ -70,6 +70,7 @@ export function init(params: {
     new Terminal({
       appId: readEnv('TERMINAL_APP_ID'),
       environment: (readEnv('TERMINAL_ENVIRONMENT') || undefined) as any,
+      defaultHeaders: { 'X-Stainless-MCP': 'true' },
     });
 
   server.setRequestHandler(ListToolsRequestSchema, async () => {
