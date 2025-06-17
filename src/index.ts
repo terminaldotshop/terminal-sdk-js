@@ -221,6 +221,7 @@ export class Terminal extends Core.APIClient {
 
     super({
       baseURL: options.baseURL || environments[options.environment || 'production'],
+      baseURLOverridden: baseURL ? baseURL !== environments[options.environment || 'production'] : false,
       timeout: options.timeout ?? 60000 /* 1 minute */,
       httpAgent: options.httpAgent,
       maxRetries: options.maxRetries,
@@ -244,6 +245,13 @@ export class Terminal extends Core.APIClient {
   app: API.AppResource = new API.AppResource(this);
   email: API.Email = new API.Email(this);
   view: API.View = new API.View(this);
+
+  /**
+   * Check whether the base URL is set to its default.
+   */
+  #baseURLOverridden(): boolean {
+    return this.baseURL !== environments[this._options.environment || 'production'];
+  }
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;

@@ -1,5 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { asTextContentResult } from '@terminaldotshop/mcp/tools/types';
+
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../';
 import Terminal from '@terminaldotshop/sdk';
@@ -8,6 +10,9 @@ export const metadata: Metadata = {
   resource: 'card',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/card',
+  operationId: 'postCard',
 };
 
 export const tool: Tool = {
@@ -25,9 +30,9 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: Terminal, args: Record<string, unknown> | undefined) => {
+export const handler = async (client: Terminal, args: Record<string, unknown> | undefined) => {
   const body = args as any;
-  return client.card.create(body);
+  return asTextContentResult(await client.card.create(body));
 };
 
 export default { metadata, tool, handler };
