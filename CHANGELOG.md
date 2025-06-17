@@ -1,5 +1,31 @@
 # Changelog
 
+## 1.15.0 (2025-06-17)
+
+Full Changelog: [v1.14.1...v1.15.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.14.1...v1.15.0)
+
+### Features
+
+* **client:** add support for endpoint-specific base URLs ([52c7167](https://github.com/terminaldotshop/terminal-sdk-js/commit/52c7167eda4e1119144deb4014ec483e75d2f8ee))
+* **mcp:** implement support for binary responses ([9affb11](https://github.com/terminaldotshop/terminal-sdk-js/commit/9affb118098adc41f51ad21083c2049094988453))
+* **mcp:** include http information in tools ([0a58323](https://github.com/terminaldotshop/terminal-sdk-js/commit/0a58323ffc49ac70eb8c952962d7bcbc68a76636))
+* **mcp:** set X-Stainless-MCP header ([41a3596](https://github.com/terminaldotshop/terminal-sdk-js/commit/41a3596f65b4f01a06a2552b22042cf0f8b1e363))
+
+
+### Bug Fixes
+
+* publish script — handle NPM errors correctly ([b2d663b](https://github.com/terminaldotshop/terminal-sdk-js/commit/b2d663bc3b5a709d3d320a1490776ccbcce037be))
+
+
+### Chores
+
+* **ci:** enable for pull requests ([fdbc293](https://github.com/terminaldotshop/terminal-sdk-js/commit/fdbc29357728339d7356551b9359b200dc273b7a))
+* **docs:** use top-level-await in example snippets ([3c973ca](https://github.com/terminaldotshop/terminal-sdk-js/commit/3c973ca6c79d0266a32d26ea2d22a7ef0e50d893))
+* improve publish-npm script --latest tag logic ([a7e84ec](https://github.com/terminaldotshop/terminal-sdk-js/commit/a7e84ecfb86469ba2456ae1a5963d996cabd344f))
+* **internal:** make base APIResource abstract ([6fc67ff](https://github.com/terminaldotshop/terminal-sdk-js/commit/6fc67ff16fdad22536d043456340480a67172335))
+* **mcp:** provides high-level initMcpServer function and exports known clients ([147186b](https://github.com/terminaldotshop/terminal-sdk-js/commit/147186b67ddf2501b781693863901be5fa630aa6))
+* **mcp:** remove duplicate assignment ([25fa9b7](https://github.com/terminaldotshop/terminal-sdk-js/commit/25fa9b7d696a8111abfd37acacb988afa4b90889))
+
 ## 1.14.1 (2025-05-28)
 
 Full Changelog: [v1.14.0...v1.14.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.14.0...v1.14.1)
