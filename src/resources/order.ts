@@ -246,7 +246,7 @@ export interface OrderCreateParams {
   /**
    * Product variants to include in the order, along with their quantities.
    */
-  variants: Record<string, number>;
+  variants: { [key: string]: number };
 }
 
 export declare namespace OrderResource {
