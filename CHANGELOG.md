@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.15.1 (2025-06-27)
+
+Full Changelog: [v1.15.0...v1.15.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.15.0...v1.15.1)
+
+### Bug Fixes
+
+* **ci:** release-doctor — report correct token name ([f8bb7b8](https://github.com/terminaldotshop/terminal-sdk-js/commit/f8bb7b81d562fd4959247d95db6cfbc0876e1ab0))
+
+
+### Refactors
+
+* **types:** replace Record with mapped types ([a94b792](https://github.com/terminaldotshop/terminal-sdk-js/commit/a94b7927d3413f4650dd9dd8e59a495b4bddc2ca))
+
 ## 1.15.0 (2025-06-17)
 
 Full Changelog: [v1.14.1...v1.15.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.14.1...v1.15.0)
