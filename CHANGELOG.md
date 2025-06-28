@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.15.2 (2025-06-28)
+
+Full Changelog: [v1.15.1...v1.15.2](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.15.1...v1.15.2)
+
+### Chores
+
+* **ci:** only run for pushes and fork pull requests ([5d2961c](https://github.com/terminaldotshop/terminal-sdk-js/commit/5d2961ca1b33fe4548d079db560a43a8d0a88c96))
+
 ## 1.15.1 (2025-06-27)
 
 Full Changelog: [v1.15.0...v1.15.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.15.0...v1.15.1)
