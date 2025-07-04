@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.15.2 (2025-07-04)
+
+Full Changelog: [v1.15.1...v1.15.2](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.15.1...v1.15.2)
+
+### Bug Fixes
+
+* **build:** bump node version in CI build to 20 to be compatible with MCP package ([b3ce137](https://github.com/terminaldotshop/terminal-sdk-js/commit/b3ce137c5343a783a40d8c59dfc05b1652441cc6))
+* **client:** don't send `Content-Type` for bodyless methods ([5d84adc](https://github.com/terminaldotshop/terminal-sdk-js/commit/5d84adcd4937ba03866b8b8ecd87a88910f107e5))
+
+
+### Chores
+
+* **ci:** only run for pushes and fork pull requests ([5d2961c](https://github.com/terminaldotshop/terminal-sdk-js/commit/5d2961ca1b33fe4548d079db560a43a8d0a88c96))
+* mention unit type in timeout docs ([0b981d6](https://github.com/terminaldotshop/terminal-sdk-js/commit/0b981d6214a70ae3e8336c8e91e655ee3962dc7f))
+
 ## 1.15.1 (2025-06-27)
 
 Full Changelog: [v1.15.0...v1.15.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.15.0...v1.15.1)
