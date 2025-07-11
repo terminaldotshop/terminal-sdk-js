@@ -1,5 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { maybeFilter } from '@terminaldotshop/mcp/filtering';
 import { asTextContentResult } from '@terminaldotshop/mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
@@ -17,7 +18,8 @@ export const metadata: Metadata = {
 
 export const tool: Tool = {
   name: 'get_card',
-  description: 'Get a credit card by ID associated with the current user.',
+  description:
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nGet a credit card by ID associated with the current user.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    data: {\n      $ref: '#/$defs/card'\n    }\n  },\n  required: [    'data'\n  ],\n  $defs: {\n    card: {\n      type: 'object',\n      description: 'Credit card used for payments in the Terminal shop.',\n      properties: {\n        id: {\n          type: 'string',\n          description: 'Unique object identifier.\\nThe format and length of IDs may change over time.'\n        },\n        brand: {\n          type: 'string',\n          description: 'Brand of the card.'\n        },\n        created: {\n          type: 'string',\n          description: 'Date the card was created.'\n        },\n        expiration: {\n          type: 'object',\n          description: 'Expiration of the card.',\n          properties: {\n            month: {\n              type: 'integer',\n              description: 'Expiration month of the card.'\n            },\n            year: {\n              type: 'integer',\n              description: 'Expiration year of the card.'\n            }\n          },\n          required: [            'month',\n            'year'\n          ]\n        },\n        last4: {\n          type: 'string',\n          description: 'Last four digits of the card.'\n        }\n      },\n      required: [        'id',\n        'brand',\n        'created',\n        'expiration',\n        'last4'\n      ]\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -25,13 +27,19 @@ export const tool: Tool = {
         type: 'string',
         description: 'ID of the card to get.',
       },
+      jq_filter: {
+        type: 'string',
+        title: 'jq Filter',
+        description:
+          'A jq filter to apply to the response to include certain fields. Consult the output schema in the tool description to see the fields that are available.\n\nFor example: to include only the `name` field in every object of a results array, you can provide ".results[].name".\n\nFor more information, see the [jq documentation](https://jqlang.org/manual/).',
+      },
     },
   },
 };
 
 export const handler = async (client: Terminal, args: Record<string, unknown> | undefined) => {
   const { id, ...body } = args as any;
-  return asTextContentResult(await client.card.get(id));
+  return asTextContentResult(await maybeFilter(args, await client.card.get(id)));
 };
 
 export default { metadata, tool, handler };
