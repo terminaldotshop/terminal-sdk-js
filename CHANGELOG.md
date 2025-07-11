@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.16.0 (2025-07-11)
+
+Full Changelog: [v1.15.2...v1.16.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.15.2...v1.16.0)
+
+### Features
+
+* **mcp:** support filtering tool results by a jq expression ([ed1b1b6](https://github.com/terminaldotshop/terminal-sdk-js/commit/ed1b1b6f09eaa36bd975394db80a0136c8b1ed32))
+
+
+### Bug Fixes
+
+* **mcp:** relax input type for asTextContextResult ([e5e1cff](https://github.com/terminaldotshop/terminal-sdk-js/commit/e5e1cff008344c04358a0998b8b8d3dcf3bfa72f))
+
+
+### Chores
+
+* make some internal functions async ([98c77c6](https://github.com/terminaldotshop/terminal-sdk-js/commit/98c77c6d91cf7f076e2d66be629211a6907b6cd5))
+
 ## 1.15.2 (2025-07-04)
 
 Full Changelog: [v1.15.1...v1.15.2](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.15.1...v1.15.2)
