@@ -23,7 +23,6 @@ The full API of this library can be found in [api.md](api.md).
 import Terminal from '@terminaldotshop/sdk';
 
 const client = new Terminal({
-  bearerToken: process.env['TERMINAL_BEARER_TOKEN'], // This is the default and can be omitted
   environment: 'dev', // defaults to 'production'
 });
 
@@ -41,7 +40,6 @@ This library includes TypeScript definitions for all request params and response
 import Terminal from '@terminaldotshop/sdk';
 
 const client = new Terminal({
-  bearerToken: process.env['TERMINAL_BEARER_TOKEN'], // This is the default and can be omitted
   environment: 'dev', // defaults to 'production'
 });
 
