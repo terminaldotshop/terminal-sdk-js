@@ -1,10 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { maybeFilter } from '@terminaldotshop/mcp/filtering';
-import { asTextContentResult } from '@terminaldotshop/mcp/tools/types';
+import { Metadata, asTextContentResult } from '@terminaldotshop/mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
-import type { Metadata } from '../';
 import Terminal from '@terminaldotshop/sdk';
 
 export const metadata: Metadata = {
