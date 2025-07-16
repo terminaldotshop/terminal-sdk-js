@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.17.0 (2025-07-16)
+
+Full Changelog: [v1.16.0...v1.17.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.16.0...v1.17.0)
+
+### Features
+
+* clean up environment call outs ([cb796c9](https://github.com/terminaldotshop/terminal-sdk-js/commit/cb796c9f8659b4a134e28bfdadaac08c3808a93e))
+
+
+### Bug Fixes
+
+* **mcp:** support jq filtering on cloudflare workers ([a920dd1](https://github.com/terminaldotshop/terminal-sdk-js/commit/a920dd1230140f2bff18239a21b2904f5a2771c0))
+
 ## 1.16.0 (2025-07-11)
 
 Full Changelog: [v1.15.2...v1.16.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.15.2...v1.16.0)
