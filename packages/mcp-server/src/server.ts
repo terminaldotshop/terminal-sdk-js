@@ -28,11 +28,7 @@ export const server = new McpServer(
     name: 'terminaldotshop_sdk_api',
     version: '1.17.0',
   },
-  {
-    capabilities: {
-      tools: {},
-    },
-  },
+  { capabilities: { tools: {} } },
 );
 
 /**
