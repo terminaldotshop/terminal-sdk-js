@@ -21,6 +21,7 @@ export const tool: Tool = {
   inputSchema: {
     type: 'object',
     properties: {},
+    required: [],
   },
 };
 
