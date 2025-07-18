@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.17.1 (2025-07-18)
+
+Full Changelog: [v1.17.0...v1.17.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.17.0...v1.17.1)
+
+### Bug Fixes
+
+* **mcp:** include required section for top-level properties and support naming transformations ([0c2f51d](https://github.com/terminaldotshop/terminal-sdk-js/commit/0c2f51d1eead4a15faa25d1a645261bc953509e4))
+
+
+### Chores
+
+* **mcp:** formatting ([a93e66f](https://github.com/terminaldotshop/terminal-sdk-js/commit/a93e66f62914706dc6489d8fad19c95cdabfd949))
+* **mcp:** rework imports in tools ([4535a21](https://github.com/terminaldotshop/terminal-sdk-js/commit/4535a2105abb5c8c7e75c16438d0acddabc43aac))
+
 ## 1.17.0 (2025-07-16)
 
 Full Changelog: [v1.16.0...v1.17.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.16.0...v1.17.0)
