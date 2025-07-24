@@ -36,6 +36,7 @@ export const tool: Tool = {
     },
     required: ['token'],
   },
+  annotations: {},
 };
 
 export const handler = async (client: Terminal, args: Record<string, unknown> | undefined) => {

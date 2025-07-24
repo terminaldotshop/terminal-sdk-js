@@ -35,6 +35,9 @@ export const tool: Tool = {
     },
     required: ['cardID'],
   },
+  annotations: {
+    idempotentHint: true,
+  },
 };
 
 export const handler = async (client: Terminal, args: Record<string, unknown> | undefined) => {
