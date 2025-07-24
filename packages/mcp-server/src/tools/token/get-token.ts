@@ -35,6 +35,9 @@ export const tool: Tool = {
     },
     required: ['id'],
   },
+  annotations: {
+    readOnlyHint: true,
+  },
 };
 
 export const handler = async (client: Terminal, args: Record<string, unknown> | undefined) => {

@@ -35,6 +35,9 @@ export const tool: Tool = {
     },
     required: ['addressID'],
   },
+  annotations: {
+    idempotentHint: true,
+  },
 };
 
 export const handler = async (client: Terminal, args: Record<string, unknown> | undefined) => {
