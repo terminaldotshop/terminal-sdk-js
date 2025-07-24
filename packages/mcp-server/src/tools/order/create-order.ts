@@ -43,6 +43,7 @@ export const tool: Tool = {
     },
     required: ['addressID', 'cardID', 'variants'],
   },
+  annotations: {},
 };
 
 export const handler = async (client: Terminal, args: Record<string, unknown> | undefined) => {

@@ -93,6 +93,7 @@ export const tool: Tool = {
     },
     required: ['id', 'addressID', 'cardID', 'created', 'price', 'productVariantID', 'quantity'],
   },
+  annotations: {},
 };
 
 export const handler = async (client: Terminal, args: Record<string, unknown> | undefined) => {
