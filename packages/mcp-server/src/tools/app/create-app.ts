@@ -37,6 +37,7 @@ export const tool: Tool = {
     },
     required: ['name', 'redirectURI'],
   },
+  annotations: {},
 };
 
 export const handler = async (client: Terminal, args: Record<string, unknown> | undefined) => {
