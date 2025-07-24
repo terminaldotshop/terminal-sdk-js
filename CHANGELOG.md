@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.17.2 (2025-07-24)
+
+Full Changelog: [v1.17.1...v1.17.2](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.17.1...v1.17.2)
+
+### Chores
+
+* **internal:** codegen related update ([ec3d000](https://github.com/terminaldotshop/terminal-sdk-js/commit/ec3d000ba4495abb8a18127f529764f9d71c6f83))
+
 ## 1.17.1 (2025-07-18)
 
 Full Changelog: [v1.17.0...v1.17.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.17.0...v1.17.1)
