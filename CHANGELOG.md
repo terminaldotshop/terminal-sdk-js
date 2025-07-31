@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.17.2 (2025-07-31)
+
+Full Changelog: [v1.17.1...v1.17.2](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.17.1...v1.17.2)
+
+### Bug Fixes
+
+* **mcp:** fix tool description of jq_filter ([bfc7ab2](https://github.com/terminaldotshop/terminal-sdk-js/commit/bfc7ab2f5348aff530df807c321294d9e90cc0b0))
+
+
+### Chores
+
+* **internal:** codegen related update ([ec3d000](https://github.com/terminaldotshop/terminal-sdk-js/commit/ec3d000ba4495abb8a18127f529764f9d71c6f83))
+* **internal:** remove redundant imports config ([de58290](https://github.com/terminaldotshop/terminal-sdk-js/commit/de58290e9dc1f04fa5e515dba7eda58ff23ce5bd))
+
 ## 1.17.1 (2025-07-18)
 
 Full Changelog: [v1.17.0...v1.17.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.17.0...v1.17.1)
