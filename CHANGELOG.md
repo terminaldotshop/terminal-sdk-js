@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.17.3 (2025-08-01)
+
+Full Changelog: [v1.17.2...v1.17.3](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.17.2...v1.17.3)
+
+### Bug Fixes
+
+* **mcp:** avoid sending `jq_filter` to base API ([74901c8](https://github.com/terminaldotshop/terminal-sdk-js/commit/74901c8386eeb7b672c62ea93a8238de7d32a5f8))
+* **mcp:** reverse validJson capability option and limit scope ([8621727](https://github.com/terminaldotshop/terminal-sdk-js/commit/8621727225975ce08a7cf84d3d26466bd434c17a))
+
 ## 1.17.2 (2025-07-31)
 
 Full Changelog: [v1.17.1...v1.17.2](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.17.1...v1.17.2)
