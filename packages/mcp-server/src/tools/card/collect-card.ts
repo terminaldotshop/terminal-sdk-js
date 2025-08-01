@@ -35,7 +35,8 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: Terminal, args: Record<string, unknown> | undefined) => {
-  return asTextContentResult(await maybeFilter(args, await client.card.collect()));
+  const { jq_filter } = args as any;
+  return asTextContentResult(await maybeFilter(jq_filter, await client.card.collect()));
 };
 
 export default { metadata, tool, handler };
