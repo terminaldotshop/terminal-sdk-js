@@ -57,6 +57,11 @@ export interface Product {
    * Tags for the product.
    */
   tags?: Product.Tags;
+
+  /**
+   * Timestamp when the product was hidden from public view.
+   */
+  timeHidden?: string;
 }
 
 export namespace Product {
@@ -96,11 +101,6 @@ export interface ProductVariant {
    * Price of the product variant in cents (USD).
    */
   price: number;
-
-  /**
-   * Description of the product variant.
-   */
-  description?: string;
 
   /**
    * Tags for the product variant.
