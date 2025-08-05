@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.18.0 (2025-08-05)
+
+Full Changelog: [v1.17.3...v1.18.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.17.3...v1.18.0)
+
+### Features
+
+* **api:** manual updates ([dfba1f4](https://github.com/terminaldotshop/terminal-sdk-js/commit/dfba1f43316eefc8d2e5112d66166c09b36d8734))
+
 ## 1.17.3 (2025-08-01)
 
 Full Changelog: [v1.17.2...v1.17.3](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.17.2...v1.17.3)
