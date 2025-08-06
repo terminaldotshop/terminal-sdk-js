@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.18.1 (2025-08-06)
+
+Full Changelog: [v1.18.0...v1.18.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.18.0...v1.18.1)
+
+### Features
+
+* **mcp:** remote server with passthru auth ([c731dbb](https://github.com/terminaldotshop/terminal-sdk-js/commit/c731dbb608e7a24707d617aecd2d53a805d92b90))
+
+
+### Bug Fixes
+
+* **mcp:** fix bug in header handling ([fa098cb](https://github.com/terminaldotshop/terminal-sdk-js/commit/fa098cb8c42908d2fdd4c28978116c992acd0a2d))
+
+
+### Chores
+
+* **internal:** codegen related update ([4fa35d9](https://github.com/terminaldotshop/terminal-sdk-js/commit/4fa35d9dde8c606f4ab479891176bce0c2eef891))
+
 ## 1.18.0 (2025-08-05)
 
 Full Changelog: [v1.17.3...v1.18.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.17.3...v1.18.0)
