@@ -33,6 +33,7 @@ export const tool: Tool = {
       variants: {
         type: 'object',
         description: 'Product variants to include in the order, along with their quantities.',
+        additionalProperties: true,
       },
       jq_filter: {
         type: 'string',
