@@ -1,5 +1,28 @@
 # Changelog
 
+## 1.18.2 (2025-08-15)
+
+Full Changelog: [v1.18.1...v1.18.2](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.18.1...v1.18.2)
+
+### Features
+
+* **mcp:** add unix socket option for remote MCP ([507fc99](https://github.com/terminaldotshop/terminal-sdk-js/commit/507fc99631ebbf197ab73dfe5b8ac8ac3928375d))
+
+
+### Bug Fixes
+
+* **mcp:** generate additionalProperties=true for map schemas to avoid validation issues ([3b1d322](https://github.com/terminaldotshop/terminal-sdk-js/commit/3b1d322db9436cd25257ea5e6f56512d0ce82855))
+
+
+### Chores
+
+* **internal:** codegen related update ([922a386](https://github.com/terminaldotshop/terminal-sdk-js/commit/922a386dbf2aaa0109de1e8db09c6a4b928177a5))
+* **internal:** move publish config ([7f8c2fd](https://github.com/terminaldotshop/terminal-sdk-js/commit/7f8c2fd7c8eb678fc1d2994e8e25d0556f696e9c))
+* **internal:** update comment in script ([a163fbb](https://github.com/terminaldotshop/terminal-sdk-js/commit/a163fbb5b77685f15e0792624b47631b42401cdd))
+* **mcp:** minor cleanup of types and package.json ([82e7df4](https://github.com/terminaldotshop/terminal-sdk-js/commit/82e7df498cc705c0ae3a0244a41943474f123793))
+* **mcp:** refactor streamable http transport ([7f17cbc](https://github.com/terminaldotshop/terminal-sdk-js/commit/7f17cbc4967f34b9cbc526c3fbe268d8337590ba))
+* update @stainless-api/prism-cli to v5.15.0 ([1fc5282](https://github.com/terminaldotshop/terminal-sdk-js/commit/1fc52825897204db6d52a4cd537434c41c8e0015))
+
 ## 1.18.1 (2025-08-06)
 
 Full Changelog: [v1.18.0...v1.18.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.18.0...v1.18.1)
