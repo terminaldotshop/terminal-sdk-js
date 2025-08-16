@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.18.3 (2025-08-16)
+
+Full Changelog: [v1.18.2...v1.18.3](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.18.2...v1.18.3)
+
+### Chores
+
+* **deps:** update dependency node-fetch to v2.6.13 ([e3d170c](https://github.com/terminaldotshop/terminal-sdk-js/commit/e3d170c6015b7f699ea1b09b92098e274ebecdc6))
+* **internal:** formatting change ([ae095d7](https://github.com/terminaldotshop/terminal-sdk-js/commit/ae095d774c68c21d3962406755f59f72320fe2d0))
+* **mcp:** document remote server in README.md ([3c60755](https://github.com/terminaldotshop/terminal-sdk-js/commit/3c607558255a700a8e16235c50816e5f65f80923))
+* **mcp:** update README ([691d97a](https://github.com/terminaldotshop/terminal-sdk-js/commit/691d97a15feeda2dcc1c860c7b69cdd3774cd814))
+
 ## 1.18.2 (2025-08-15)
 
 Full Changelog: [v1.18.1...v1.18.2](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.18.1...v1.18.2)
