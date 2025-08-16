@@ -303,6 +303,7 @@ Terminal.TokenResource = TokenResource;
 Terminal.AppResource = AppResource;
 Terminal.Email = Email;
 Terminal.View = View;
+
 export declare namespace Terminal {
   export type RequestOptions = Core.RequestOptions;
 
