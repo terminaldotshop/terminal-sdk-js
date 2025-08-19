@@ -17,7 +17,7 @@ export const parseAuthHeaders = (req: IncomingMessage): Partial<ClientOptions> =
   }
 
   const bearerToken =
-    req.headers['x-terminal-bearer-token'] instanceof Array ?
+    Array.isArray(req.headers['x-terminal-bearer-token']) ?
       req.headers['x-terminal-bearer-token'][0]
     : req.headers['x-terminal-bearer-token'];
   return { bearerToken };
