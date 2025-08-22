@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { type ClientOptions } from '@terminaldotshop/sdk/index';
+import { ClientOptions } from '@terminaldotshop/sdk';
 
 export type WorkerInput = {
   opts: ClientOptions;

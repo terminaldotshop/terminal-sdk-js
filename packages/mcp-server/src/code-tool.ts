@@ -1,10 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { type ClientOptions } from '@terminaldotshop/sdk/index';
-
 import { dirname } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import Terminal from '@terminaldotshop/sdk';
+import Terminal, { ClientOptions } from '@terminaldotshop/sdk';
 import { Endpoint, ContentBlock, Metadata } from './tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
