@@ -2,7 +2,7 @@
 
 import { selectTools } from './server';
 import { Endpoint, endpoints } from './tools';
-import { McpOptions, parseOptions } from './options';
+import { McpOptions, parseCLIOptions } from './options';
 import { launchStdioServer } from './stdio';
 import { launchStreamableHTTPServer } from './http';
 
@@ -23,10 +23,10 @@ async function main() {
 
   switch (options.transport) {
     case 'stdio':
-      await launchStdioServer(options, selectedTools);
+      await launchStdioServer(options);
       break;
     case 'http':
-      await launchStreamableHTTPServer(options, selectedTools, options.port ?? options.socket);
+      await launchStreamableHTTPServer(options, options.port ?? options.socket);
       break;
   }
 }
@@ -40,7 +40,7 @@ if (require.main === module) {
 
 function parseOptionsOrError() {
   try {
-    return parseOptions();
+    return parseCLIOptions();
   } catch (error) {
     console.error('Error parsing options:', error);
     process.exit(1);

@@ -1,8 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { type ClientOptions } from '@terminaldotshop/sdk/index';
-
 import { IncomingMessage } from 'node:http';
+import { ClientOptions } from '@terminaldotshop/sdk';
 
 export const parseAuthHeaders = (req: IncomingMessage): Partial<ClientOptions> => {
   if (req.headers.authorization) {
@@ -17,7 +16,7 @@ export const parseAuthHeaders = (req: IncomingMessage): Partial<ClientOptions> =
   }
 
   const bearerToken =
-    req.headers['x-terminal-bearer-token'] instanceof Array ?
+    Array.isArray(req.headers['x-terminal-bearer-token']) ?
       req.headers['x-terminal-bearer-token'][0]
     : req.headers['x-terminal-bearer-token'];
   return { bearerToken };
