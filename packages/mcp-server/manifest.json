@@ -1,0 +1,53 @@
+{
+  "dxt_version": "0.1",
+  "name": "@terminaldotshop/mcp",
+  "version": "1.18.2",
+  "description": "The official MCP Server for the Terminal API",
+  "author": {
+    "name": "Terminal",
+    "email": "dev@terminal.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/terminaldotshop/terminal-sdk-js.git"
+  },
+  "homepage": "https://github.com/terminaldotshop/terminal-sdk-js/tree/main/packages/mcp-server#readme",
+  "documentation": "https://terminal.shop/docs",
+  "server": {
+    "type": "node",
+    "entry_point": "${"templates/TypeScriptSDK/mcp"}/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${"templates/TypeScriptSDK/mcp"}/index.js"
+      ],
+      "env": {
+        "TERMINAL_BEARER_TOKEN": "${user_config.TERMINAL_BEARER_TOKEN}",
+        "TERMINAL_APP_ID": "${user_config.TERMINAL_APP_ID}"
+      }
+    }
+  },
+  "user_config": {
+    "TERMINAL_BEARER_TOKEN": {
+      "title": "bearer_token",
+      "description": "",
+      "required": true,
+      "type": "string"
+    },
+    "TERMINAL_APP_ID": {
+      "title": "app_id",
+      "description": "",
+      "required": false,
+      "type": "string"
+    }
+  },
+  "tools_generated": true,
+  "compatibility": {
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  },
+  "keywords": [
+    "api"
+  ]
+}
