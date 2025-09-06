@@ -1,5 +1,41 @@
 # Changelog
 
+## 1.19.0 (2025-09-06)
+
+Full Changelog: [v1.18.2...v1.19.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.18.2...v1.19.0)
+
+### Features
+
+* **mcp:** add code execution tool ([f6b3d81](https://github.com/terminaldotshop/terminal-sdk-js/commit/f6b3d8118938f950429d00c9ba186b690d2e20f3))
+* **mcp:** add option to infer mcp client ([496e98b](https://github.com/terminaldotshop/terminal-sdk-js/commit/496e98bfa286b055acc3d31d5a8dfe0539a7454c))
+* **mcp:** allow setting logging level ([b3e657c](https://github.com/terminaldotshop/terminal-sdk-js/commit/b3e657ce405828af793d17980ad1a1fc53be5b2e))
+* **mcp:** expose client options in `streamableHTTPApp` ([7a0b2e6](https://github.com/terminaldotshop/terminal-sdk-js/commit/7a0b2e6762a52a8a30117bef3f0b3a21b50540c0))
+* **mcp:** parse query string as mcp client options in mcp server ([5af6022](https://github.com/terminaldotshop/terminal-sdk-js/commit/5af602246b949f4838f73dc29e7335c15359fdf6))
+
+
+### Bug Fixes
+
+* **mcp:** fix query options parsing ([4502375](https://github.com/terminaldotshop/terminal-sdk-js/commit/4502375e383ac13d42a9ec7e1ba8b19dbdf403a0))
+
+
+### Chores
+
+* ci build action ([12705ec](https://github.com/terminaldotshop/terminal-sdk-js/commit/12705ec34a4711581d6123e9e19332ff60170e61))
+* **deps:** update dependency node-fetch to v2.6.13 ([e3d170c](https://github.com/terminaldotshop/terminal-sdk-js/commit/e3d170c6015b7f699ea1b09b92098e274ebecdc6))
+* **internal:** codegen related update ([a068897](https://github.com/terminaldotshop/terminal-sdk-js/commit/a0688977cfa60891beed29127e1764faa4c5ccc7))
+* **internal:** codegen related update ([d8a41e5](https://github.com/terminaldotshop/terminal-sdk-js/commit/d8a41e57ea408214a55a6cfebcb7d9f5ef2098c0))
+* **internal:** codegen related update ([b551f54](https://github.com/terminaldotshop/terminal-sdk-js/commit/b551f549ff940265b80ed65e4435fa3c29d21794))
+* **internal:** codegen related update ([b84d4f4](https://github.com/terminaldotshop/terminal-sdk-js/commit/b84d4f4c43b75d2ee3355cae901bf9ca66667fd3))
+* **internal:** formatting change ([ae095d7](https://github.com/terminaldotshop/terminal-sdk-js/commit/ae095d774c68c21d3962406755f59f72320fe2d0))
+* **internal:** make mcp-server publishing public by defaut ([7bdd2b3](https://github.com/terminaldotshop/terminal-sdk-js/commit/7bdd2b3f08a276e4a3a751e1ea4a374fc9906d5d))
+* **internal:** refactor array check ([768423b](https://github.com/terminaldotshop/terminal-sdk-js/commit/768423b460180a8461db9570bfa0b5ab2d8c69f4))
+* **mcp:** add cors to oauth metadata route ([e75affd](https://github.com/terminaldotshop/terminal-sdk-js/commit/e75affd4a666f9b4d4b05dc248351d05ebd95e82))
+* **mcp:** document remote server in README.md ([3c60755](https://github.com/terminaldotshop/terminal-sdk-js/commit/3c607558255a700a8e16235c50816e5f65f80923))
+* **mcp:** update package.json ([c53cbfc](https://github.com/terminaldotshop/terminal-sdk-js/commit/c53cbfc9c31ef43cbad6338b43b5f47c7b7230b1))
+* **mcp:** update README ([691d97a](https://github.com/terminaldotshop/terminal-sdk-js/commit/691d97a15feeda2dcc1c860c7b69cdd3774cd814))
+* **mcp:** update types ([532c63c](https://github.com/terminaldotshop/terminal-sdk-js/commit/532c63cbf2ba8ce937e63b6500f9b74ce2329d3d))
+* update CI script ([8e5dc26](https://github.com/terminaldotshop/terminal-sdk-js/commit/8e5dc2698ed4d40f76b90245e29f2492fe03a771))
+
 ## 1.18.2 (2025-08-15)
 
 Full Changelog: [v1.18.1...v1.18.2](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.18.1...v1.18.2)
