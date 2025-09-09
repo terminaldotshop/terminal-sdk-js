@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.19.1 (2025-09-09)
+
+Full Changelog: [v1.19.0...v1.19.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.19.0...v1.19.1)
+
+### Bug Fixes
+
+* coerce nullable values to undefined ([f94a764](https://github.com/terminaldotshop/terminal-sdk-js/commit/f94a764b272b054e69f5f071ebd1c0b4aebe081e))
+
 ## 1.19.0 (2025-09-06)
 
 Full Changelog: [v1.18.2...v1.19.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.18.2...v1.19.0)
