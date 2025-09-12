@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.19.2 (2025-09-12)
+
+Full Changelog: [v1.19.1...v1.19.2](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.19.1...v1.19.2)
+
+### Bug Fixes
+
+* **mcp:** fix uploading dxt release assets ([ff76600](https://github.com/terminaldotshop/terminal-sdk-js/commit/ff76600ee3191e9c6adbffb35aff15577e80459d))
+
+
+### Chores
+
+* **mcp:** upload dxt as release asset ([77af703](https://github.com/terminaldotshop/terminal-sdk-js/commit/77af703ce380c5194e0d4ea921c89ac18eb2fb8d))
+
 ## 1.19.1 (2025-09-09)
 
 Full Changelog: [v1.19.0...v1.19.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.19.0...v1.19.1)
