@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.19.3 (2025-09-17)
+
+Full Changelog: [v1.19.2...v1.19.3](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.19.2...v1.19.3)
+
+### Bug Fixes
+
+* **ci:** set permissions for DXT publish action ([7440e4d](https://github.com/terminaldotshop/terminal-sdk-js/commit/7440e4de805293b929b66aaf567c20e995f4b238))
+
 ## 1.19.2 (2025-09-12)
 
 Full Changelog: [v1.19.1...v1.19.2](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.19.1...v1.19.2)
