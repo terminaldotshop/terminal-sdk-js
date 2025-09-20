@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.20.0 (2025-09-20)
+
+Full Changelog: [v1.19.3...v1.20.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.19.3...v1.20.0)
+
+### Features
+
+* **mcp:** add docs search tool ([f7616fd](https://github.com/terminaldotshop/terminal-sdk-js/commit/f7616fd85904701cb968f5df71ac104f8c73566c))
+
+
+### Chores
+
+* **codegen:** internal codegen update ([108a304](https://github.com/terminaldotshop/terminal-sdk-js/commit/108a3045c6cf61f0adb6cae52b411e65a759aaee))
+* do not install brew dependencies in ./scripts/bootstrap by default ([5aec36d](https://github.com/terminaldotshop/terminal-sdk-js/commit/5aec36d989f64aa2712693622603c0f1bbe0671e))
+* **internal:** gitignore .mcpb files ([c68da98](https://github.com/terminaldotshop/terminal-sdk-js/commit/c68da98bf0f84741b75342536921d6391b1cb3e6))
+* **mcp:** rename dxt to mcpb ([1fe572a](https://github.com/terminaldotshop/terminal-sdk-js/commit/1fe572ad4ab9d50eab19469956461021b8af0d82))
+
 ## 1.19.3 (2025-09-17)
 
 Full Changelog: [v1.19.2...v1.19.3](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.19.2...v1.19.3)
