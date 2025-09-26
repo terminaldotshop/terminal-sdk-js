@@ -7,10 +7,9 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "baseUrl": "./",
     "paths": {
-      "@terminaldotshop/mcp/*": ["src/*"],
-      "@terminaldotshop/mcp": ["src/index.ts"]
+      "@terminaldotshop/mcp/*": ["./src/*"],
+      "@terminaldotshop/mcp": ["./src/index.ts"]
     },
     "noEmit": true,
 
