@@ -1,5 +1,38 @@
 # Changelog
 
+## 1.20.0 (2025-09-30)
+
+Full Changelog: [v1.19.3...v1.20.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.19.3...v1.20.0)
+
+### Features
+
+* **mcp:** add docs search tool ([f7616fd](https://github.com/terminaldotshop/terminal-sdk-js/commit/f7616fd85904701cb968f5df71ac104f8c73566c))
+* **mcp:** add option for including docs tools ([4792ed9](https://github.com/terminaldotshop/terminal-sdk-js/commit/4792ed99bcd8f5ad01ed585dfc3e701b41c54eea))
+* **mcp:** enable experimental docs search tool ([0caf7c4](https://github.com/terminaldotshop/terminal-sdk-js/commit/0caf7c4349b34fed42925e3d259595d6ef0f3594))
+
+
+### Bug Fixes
+
+* **mcp:** fix cli argument parsing logic ([258c14a](https://github.com/terminaldotshop/terminal-sdk-js/commit/258c14a960fe41f2d1c3f6732f71f728e5c4cc9b))
+
+
+### Performance Improvements
+
+* faster formatting ([45aaf74](https://github.com/terminaldotshop/terminal-sdk-js/commit/45aaf7498bb8d7e6469d7251cfaf733814e5b0c3))
+
+
+### Chores
+
+* **codegen:** internal codegen update ([108a304](https://github.com/terminaldotshop/terminal-sdk-js/commit/108a3045c6cf61f0adb6cae52b411e65a759aaee))
+* do not install brew dependencies in ./scripts/bootstrap by default ([5aec36d](https://github.com/terminaldotshop/terminal-sdk-js/commit/5aec36d989f64aa2712693622603c0f1bbe0671e))
+* **internal:** codegen related update ([e4054ef](https://github.com/terminaldotshop/terminal-sdk-js/commit/e4054efc48ef931ff6de7e0e4ac7f8ca3f4421ee))
+* **internal:** fix incremental formatting in some cases ([8df1092](https://github.com/terminaldotshop/terminal-sdk-js/commit/8df1092abd667765c3525e61d7af01c450cffd36))
+* **internal:** gitignore .mcpb files ([c68da98](https://github.com/terminaldotshop/terminal-sdk-js/commit/c68da98bf0f84741b75342536921d6391b1cb3e6))
+* **internal:** ignore .eslintcache ([920d7e3](https://github.com/terminaldotshop/terminal-sdk-js/commit/920d7e340071ece17727f70ff5fa89906511160a))
+* **internal:** remove deprecated `compilerOptions.baseUrl` from tsconfig.json ([ba270a7](https://github.com/terminaldotshop/terminal-sdk-js/commit/ba270a7f33f5cbe844851dd2849f8bbfa1e357d7))
+* **mcp:** allow pointing `docs_search` tool at other URLs ([d68c2f3](https://github.com/terminaldotshop/terminal-sdk-js/commit/d68c2f36bd12ad3bdbe91307f5e9ffbea17af059))
+* **mcp:** rename dxt to mcpb ([1fe572a](https://github.com/terminaldotshop/terminal-sdk-js/commit/1fe572ad4ab9d50eab19469956461021b8af0d82))
+
 ## 1.19.3 (2025-09-17)
 
 Full Changelog: [v1.19.2...v1.19.3](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.19.2...v1.19.3)
