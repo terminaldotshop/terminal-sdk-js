@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.20.1 (2025-09-30)
+
+Full Changelog: [v1.20.0...v1.20.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.20.0...v1.20.1)
+
+### Bug Fixes
+
+* **mcp:** resolve a linting issue in server code ([63bfdf6](https://github.com/terminaldotshop/terminal-sdk-js/commit/63bfdf61df2c891b3e305de133a0a695d100da85))
+
+
+### Chores
+
+* update lockfile ([319fcbb](https://github.com/terminaldotshop/terminal-sdk-js/commit/319fcbb7c7ccf7f4e73a68ba51592d2a60de94e8))
+
 ## 1.20.0 (2025-09-30)
 
 Full Changelog: [v1.19.3...v1.20.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.19.3...v1.20.0)
