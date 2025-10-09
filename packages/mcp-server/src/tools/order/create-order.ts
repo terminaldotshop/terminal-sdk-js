@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'create_order',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nCreate an order without a cart. The order will be placed immediately.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    data: {\n      type: 'string',\n      description: 'Order ID.'\n    }\n  },\n  required: [    'data'\n  ]\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nCreate an order without a cart. The order will be placed immediately.\n\n# Response Schema\n```json\n{\n  $ref: '#/$defs/order_create_response',\n  $defs: {\n    order_create_response: {\n      type: 'object',\n      properties: {\n        data: {\n          type: 'string',\n          description: 'Order ID.'\n        }\n      },\n      required: [        'data'\n      ]\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {

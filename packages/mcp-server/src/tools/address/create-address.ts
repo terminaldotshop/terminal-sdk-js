@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'create_address',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nCreate and add a shipping address to the current user.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    data: {\n      type: 'string',\n      description: 'Shipping address ID.'\n    }\n  },\n  required: [    'data'\n  ]\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nCreate and add a shipping address to the current user.\n\n# Response Schema\n```json\n{\n  $ref: '#/$defs/address_create_response',\n  $defs: {\n    address_create_response: {\n      type: 'object',\n      properties: {\n        data: {\n          type: 'string',\n          description: 'Shipping address ID.'\n        }\n      },\n      required: [        'data'\n      ]\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
