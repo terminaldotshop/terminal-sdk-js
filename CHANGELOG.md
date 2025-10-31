@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.20.2 (2025-10-31)
+
+Full Changelog: [v1.20.1...v1.20.2](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.20.1...v1.20.2)
+
+### Bug Fixes
+
+* **mcpb:** pin @anthropic-ai/mcpb version ([a675599](https://github.com/terminaldotshop/terminal-sdk-js/commit/a675599961e8b9233bf9bed71bf11eaad5cf6c85))
+
+
+### Chores
+
+* extract some types in mcp docs ([0eec0d0](https://github.com/terminaldotshop/terminal-sdk-js/commit/0eec0d0a4b58da3130adaa7fd3e95f5f9c360638))
+* **internal:** remove .eslintcache ([4495410](https://github.com/terminaldotshop/terminal-sdk-js/commit/4495410174792b7373d2962426ab14b4eed3a783))
+* **internal:** use npm pack for build uploads ([4246941](https://github.com/terminaldotshop/terminal-sdk-js/commit/42469410275b75679708ae25d5c80535953a9bc3))
+
 ## 1.20.1 (2025-09-30)
 
 Full Changelog: [v1.20.0...v1.20.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.20.0...v1.20.1)
