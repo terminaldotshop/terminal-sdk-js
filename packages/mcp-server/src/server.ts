@@ -33,7 +33,7 @@ export const newMcpServer = () =>
   new McpServer(
     {
       name: 'terminaldotshop_sdk_api',
-      version: '1.20.1',
+      version: '1.20.2',
     },
     { capabilities: { tools: {}, logging: {} } },
   );
