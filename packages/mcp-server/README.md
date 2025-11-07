@@ -45,6 +45,22 @@ in Cursor's `mcp.json`, which can be found in Cursor Settings > Tools & MCP > Ne
 
 [![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en-US/install-mcp?name=@terminaldotshop/mcp&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsIkB0ZXJtaW5hbGRvdHNob3AvbWNwIl0sImVudiI6eyJURVJNSU5BTF9CRUFSRVJfVE9LRU4iOiJTZXQgeW91ciBURVJNSU5BTF9CRUFSRVJfVE9LRU4gaGVyZS4iLCJURVJNSU5BTF9BUFBfSUQiOiJTZXQgeW91ciBURVJNSU5BTF9BUFBfSUQgaGVyZS4ifX0)
 
+### VS Code
+
+If you use MCP, you can install the MCP server by clicking the link below. You will need to set your environment variables
+in VS Code's `mcp.json`, which can be found via Command Palette > MCP: Open User Configuration.
+
+[Open VS Code](https://vscode.stainless.com/mcp/%7B%22name%22%3A%22%40terminaldotshop%2Fmcp%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22%40terminaldotshop%2Fmcp%22%5D%2C%22env%22%3A%7B%22TERMINAL_BEARER_TOKEN%22%3A%22Set%20your%20TERMINAL_BEARER_TOKEN%20here.%22%2C%22TERMINAL_APP_ID%22%3A%22Set%20your%20TERMINAL_APP_ID%20here.%22%7D%7D)
+
+### Claude Code
+
+If you use Claude Code, you can install the MCP server by running the command below in your terminal. You will need to set your
+environment variables in Claude Code's `.claude.json`, which can be found in your home directory.
+
+```
+claude mcp add --transport stdio terminaldotshop_sdk_api --env TERMINAL_BEARER_TOKEN="Your TERMINAL_BEARER_TOKEN here." TERMINAL_APP_ID="Your TERMINAL_APP_ID here." -- npx -y @terminaldotshop/mcp
+```
+
 ## Exposing endpoints to your MCP Client
 
 There are three ways to expose endpoints as tools in the MCP server:
