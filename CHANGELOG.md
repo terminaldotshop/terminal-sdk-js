@@ -1,5 +1,36 @@
 # Changelog
 
+## 1.21.0 (2025-11-13)
+
+Full Changelog: [v1.20.2...v1.21.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.20.2...v1.21.0)
+
+### Features
+
+* **mcp:** enable optional code execution tool on http mcp servers ([b2a081d](https://github.com/terminaldotshop/terminal-sdk-js/commit/b2a081d2c314e1016b1ac4c4e6a70144f4df9e35))
+
+
+### Bug Fixes
+
+* **mcp:** return tool execution error on jq failure ([0b17ea4](https://github.com/terminaldotshop/terminal-sdk-js/commit/0b17ea4494c55f4de1f9d3efde6e7676b7642132))
+
+
+### Chores
+
+* **internal:** codegen related update ([9de343d](https://github.com/terminaldotshop/terminal-sdk-js/commit/9de343df76df70811377909e3831cd18e25cecc3))
+* **internal:** codegen related update ([6c91ff1](https://github.com/terminaldotshop/terminal-sdk-js/commit/6c91ff1cb2533e8a69eee5a1fcb2851d3a5252c1))
+* **internal:** grammar fix (it's -&gt; its) ([12ac08b](https://github.com/terminaldotshop/terminal-sdk-js/commit/12ac08bd5cd967208177cb82d69f8fe91b18a253))
+* mcp code tool explicit error message when missing a run function ([20cb4ac](https://github.com/terminaldotshop/terminal-sdk-js/commit/20cb4acc8a00121c3075ed7a0e18820576fc60ef))
+* **mcp:** add friendlier MCP code tool errors on incorrect method invocations ([72a943e](https://github.com/terminaldotshop/terminal-sdk-js/commit/72a943e87028e341b219f99c89fff95aa80f0499))
+* **mcp:** add line numbers to code tool errors ([4c8140e](https://github.com/terminaldotshop/terminal-sdk-js/commit/4c8140e8217d6185c0431f939b51f149b41594e9))
+* **mcp:** clarify http auth error ([d4db357](https://github.com/terminaldotshop/terminal-sdk-js/commit/d4db35734789c95e568ea5262149f0a3cd6807ac))
+* use structured error when code execution tool errors ([13fe43b](https://github.com/terminaldotshop/terminal-sdk-js/commit/13fe43bc4e2b24a4f94ddb6e94f795693a9b86b7))
+
+
+### Documentation
+
+* **mcp:** add a README button for one-click add to Cursor ([974a47f](https://github.com/terminaldotshop/terminal-sdk-js/commit/974a47fc14507b7cb3f2c2b972ac59da43ceda9c))
+* **mcp:** add a README link to add server to VS Code or Claude Code ([25e5b7d](https://github.com/terminaldotshop/terminal-sdk-js/commit/25e5b7d60417a018f673b1fa8eeeb35867070155))
+
 ## 1.20.2 (2025-10-31)
 
 Full Changelog: [v1.20.1...v1.20.2](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.20.1...v1.20.2)
