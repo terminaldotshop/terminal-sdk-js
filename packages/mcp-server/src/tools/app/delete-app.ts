@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { maybeFilter } from '@terminaldotshop/mcp/filtering';
-import { Metadata, asTextContentResult } from '@terminaldotshop/mcp/tools/types';
+import { isJqError, maybeFilter } from '@terminaldotshop/mcp/filtering';
+import { Metadata, asErrorResult, asTextContentResult } from '@terminaldotshop/mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import Terminal from '@terminaldotshop/sdk';
@@ -42,7 +42,14 @@ export const tool: Tool = {
 
 export const handler = async (client: Terminal, args: Record<string, unknown> | undefined) => {
   const { id, jq_filter, ...body } = args as any;
-  return asTextContentResult(await maybeFilter(jq_filter, await client.app.delete(id)));
+  try {
+    return asTextContentResult(await maybeFilter(jq_filter, await client.app.delete(id)));
+  } catch (error) {
+    if (isJqError(error)) {
+      return asErrorResult(error.message);
+    }
+    throw error;
+  }
 };
 
 export default { metadata, tool, handler };
