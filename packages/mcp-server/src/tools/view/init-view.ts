@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { Metadata, asTextContentResult } from '@terminaldotshop/mcp/tools/types';
+import { Metadata, asErrorResult, asTextContentResult } from '@terminaldotshop/mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import Terminal from '@terminaldotshop/sdk';
@@ -29,7 +29,14 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: Terminal, args: Record<string, unknown> | undefined) => {
-  return asTextContentResult(await client.view.init());
+  try {
+    return asTextContentResult(await client.view.init());
+  } catch (error) {
+    if (error instanceof Terminal.APIError) {
+      return asErrorResult(error.message);
+    }
+    throw error;
+  }
 };
 
 export default { metadata, tool, handler };
