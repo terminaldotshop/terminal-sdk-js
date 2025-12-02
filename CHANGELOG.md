@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.22.0 (2025-12-02)
+
+Full Changelog: [v1.21.0...v1.22.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.21.0...v1.22.0)
+
+### Features
+
+* **mcp:** add detail field to docs search tool ([0ea30c2](https://github.com/terminaldotshop/terminal-sdk-js/commit/0ea30c286a4b87903c3eea2f918eecde86417fce))
+
+
+### Bug Fixes
+
+* **mcp:** return tool execution error on api error ([228b44b](https://github.com/terminaldotshop/terminal-sdk-js/commit/228b44beecdd6c30fad14fc7f8893c73b60970c7))
+
+
+### Chores
+
+* **mcp:** upgrade jq-web ([b22eed6](https://github.com/terminaldotshop/terminal-sdk-js/commit/b22eed6402bd94997a546f19abb773121731da85))
+
 ## 1.21.0 (2025-11-13)
 
 Full Changelog: [v1.20.2...v1.21.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.20.2...v1.21.0)
