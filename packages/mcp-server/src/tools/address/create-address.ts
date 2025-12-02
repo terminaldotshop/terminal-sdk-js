@@ -71,7 +71,7 @@ export const handler = async (client: Terminal, args: Record<string, unknown> | 
   try {
     return asTextContentResult(await maybeFilter(jq_filter, await client.address.create(body)));
   } catch (error) {
-    if (isJqError(error)) {
+    if (error instanceof Terminal.APIError || isJqError(error)) {
       return asErrorResult(error.message);
     }
     throw error;
