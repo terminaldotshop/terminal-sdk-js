@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.23.0 (2025-12-06)
+
+Full Changelog: [v1.22.0...v1.23.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.22.0...v1.23.0)
+
+### Features
+
+* **mcp:** add typescript check to code execution tool ([be87191](https://github.com/terminaldotshop/terminal-sdk-js/commit/be87191e8f75cf02f44142c5cea9c67ebf46dda0))
+* **mcp:** handle code mode calls in the Stainless API ([c7aed43](https://github.com/terminaldotshop/terminal-sdk-js/commit/c7aed430cb08d45d5f86d7468287406d97fbd7bd))
+* **mcp:** return logs on code tool errors ([9861862](https://github.com/terminaldotshop/terminal-sdk-js/commit/9861862afa6717152080d5f0698e9eaecaad4faf))
+
+
+### Bug Fixes
+
+* **mcp:** return correct lines on typescript errors ([028dc97](https://github.com/terminaldotshop/terminal-sdk-js/commit/028dc9710094dbd076112f94b38b9b6d896241cc))
+
+
+### Chores
+
+* use latest @modelcontextprotocol/sdk ([ef6b6f7](https://github.com/terminaldotshop/terminal-sdk-js/commit/ef6b6f7fbcd58be1579d670072fe61a06034a4ac))
+
 ## 1.22.0 (2025-12-02)
 
 Full Changelog: [v1.21.0...v1.22.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.21.0...v1.22.0)
