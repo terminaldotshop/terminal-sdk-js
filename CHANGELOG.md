@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.23.2 (2025-12-06)
+
+Full Changelog: [v1.23.1...v1.23.2](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.23.1...v1.23.2)
+
+### Chores
+
+* **internal:** codegen related update ([0457d5e](https://github.com/terminaldotshop/terminal-sdk-js/commit/0457d5ee3955f3a237e717cb7731506a944f4c86))
+
 ## 1.23.1 (2025-12-06)
 
 Full Changelog: [v1.23.0...v1.23.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.23.0...v1.23.1)
