@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.23.1 (2025-12-06)
+
+Full Changelog: [v1.23.0...v1.23.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.23.0...v1.23.1)
+
+### Bug Fixes
+
+* **mcp:** correct code tool API endpoint ([bd8df3f](https://github.com/terminaldotshop/terminal-sdk-js/commit/bd8df3f77b75af5c59eeb1d2e10d51517584d1c0))
+
+
+### Chores
+
+* **internal:** codegen related update ([fef3986](https://github.com/terminaldotshop/terminal-sdk-js/commit/fef3986ea05b5498b0b465fc6a1c08ca2b58e438))
+
 ## 1.23.0 (2025-12-06)
 
 Full Changelog: [v1.22.0...v1.23.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.22.0...v1.23.0)
