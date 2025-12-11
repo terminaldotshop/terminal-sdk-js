@@ -42,6 +42,10 @@ export async function codeTool() {
       },
       body: JSON.stringify({
         project_name: 'terminal',
+        client_opts: {
+          appId: readEnv('TERMINAL_APP_ID'),
+          environment: (readEnv('TERMINAL_ENVIRONMENT') || undefined) as any,
+        },
         code,
       }),
     });
