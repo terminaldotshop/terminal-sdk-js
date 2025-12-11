@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.23.2 (2025-12-11)
+
+Full Changelog: [v1.23.1...v1.23.2](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.23.1...v1.23.2)
+
+### Bug Fixes
+
+* **mcp:** add client instantiation options to code tool ([3a5e10a](https://github.com/terminaldotshop/terminal-sdk-js/commit/3a5e10a79f26f107502443ecfa45cbb2f7369e0e))
+
+
+### Chores
+
+* **internal:** codegen related update ([0457d5e](https://github.com/terminaldotshop/terminal-sdk-js/commit/0457d5ee3955f3a237e717cb7731506a944f4c86))
+* **mcp:** update lockfile ([17fcef0](https://github.com/terminaldotshop/terminal-sdk-js/commit/17fcef072a662a105146c36a7a7146553959e40c))
+
 ## 1.23.1 (2025-12-06)
 
 Full Changelog: [v1.23.0...v1.23.1](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.23.0...v1.23.1)
