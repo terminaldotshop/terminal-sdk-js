@@ -38,6 +38,7 @@ export async function codeTool() {
         client_envs: JSON.stringify({
           TERMINAL_BEARER_TOKEN: readEnv('TERMINAL_BEARER_TOKEN'),
           TERMINAL_APP_ID: readEnv('TERMINAL_APP_ID'),
+          TERMINAL_BASE_URL: readEnv('TERMINAL_BASE_URL'),
         }),
       },
       body: JSON.stringify({
