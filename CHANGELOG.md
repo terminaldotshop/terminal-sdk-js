@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.23.3 (2025-12-18)
+
+Full Changelog: [v1.23.2...v1.23.3](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.23.2...v1.23.3)
+
+### Bug Fixes
+
+* **mcp:** pass base url to code tool ([6c4b04d](https://github.com/terminaldotshop/terminal-sdk-js/commit/6c4b04d972c9816d89fe07244f23d545a6b5d83d))
+
 ## 1.23.2 (2025-12-11)
 
 Full Changelog: [v1.23.1...v1.23.2](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.23.1...v1.23.2)
