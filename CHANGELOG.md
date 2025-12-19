@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.0.0 (2025-12-19)
+
+Full Changelog: [v1.23.3...v2.0.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.23.3...v2.0.0)
+
+### ⚠ BREAKING CHANGES
+
+* **mcp:** remove deprecated tool schemes
+* **mcp:** **Migration:** To migrate, simply modify the command used to invoke the MCP server. Currently, the only supported tool scheme is code mode. Now, starting the server with just `node /path/to/mcp/server` or `npx package-name` will invoke code tools: changing your command to one of these is likely all you will need to do.
+
+### Chores
+
+* **mcp:** remove deprecated tool schemes ([c8d468d](https://github.com/terminaldotshop/terminal-sdk-js/commit/c8d468df1a52f25d867b94006277a4d19331aba4))
+
 ## 1.23.3 (2025-12-18)
 
 Full Changelog: [v1.23.2...v1.23.3](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.23.2...v1.23.3)
