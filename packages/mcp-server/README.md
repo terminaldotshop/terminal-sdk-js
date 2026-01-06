@@ -43,7 +43,7 @@ For clients with a configuration JSON, it might look something like this:
 If you use Cursor, you can install the MCP server by using the button below. You will need to set your environment variables
 in Cursor's `mcp.json`, which can be found in Cursor Settings > Tools & MCP > New MCP Server.
 
-[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en-US/install-mcp?name=@terminaldotshop/mcp&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsIkB0ZXJtaW5hbGRvdHNob3AvbWNwIl0sImVudiI6eyJURVJNSU5BTF9CRUFSRVJfVE9LRU4iOiJTZXQgeW91ciBURVJNSU5BTF9CRUFSRVJfVE9LRU4gaGVyZS4iLCJURVJNSU5BTF9BUFBfSUQiOiJTZXQgeW91ciBURVJNSU5BTF9BUFBfSUQgaGVyZS4ifX0)
+[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en-US/install-mcp?name=%40terminaldotshop%2Fmcp&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsIkB0ZXJtaW5hbGRvdHNob3AvbWNwIl0sImVudiI6eyJURVJNSU5BTF9CRUFSRVJfVE9LRU4iOiJTZXQgeW91ciBURVJNSU5BTF9CRUFSRVJfVE9LRU4gaGVyZS4iLCJURVJNSU5BTF9BUFBfSUQiOiJTZXQgeW91ciBURVJNSU5BTF9BUFBfSUQgaGVyZS4ifX0)
 
 ### VS Code
 
@@ -58,7 +58,7 @@ If you use Claude Code, you can install the MCP server by running the command be
 environment variables in Claude Code's `.claude.json`, which can be found in your home directory.
 
 ```
-claude mcp add --transport stdio terminaldotshop_sdk_api --env TERMINAL_BEARER_TOKEN="Your TERMINAL_BEARER_TOKEN here." TERMINAL_APP_ID="Your TERMINAL_APP_ID here." -- npx -y @terminaldotshop/mcp
+claude mcp add terminaldotshop_mcp_api --env TERMINAL_BEARER_TOKEN="Your TERMINAL_BEARER_TOKEN here." TERMINAL_APP_ID="Your TERMINAL_APP_ID here." -- npx -y @terminaldotshop/mcp
 ```
 
 ## Code Mode
