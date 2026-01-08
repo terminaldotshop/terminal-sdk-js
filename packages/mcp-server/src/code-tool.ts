@@ -2,7 +2,7 @@
 
 import { McpTool, Metadata, ToolCallResult, asErrorResult, asTextContentResult } from './types';
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
-import { readEnv } from './server';
+import { readEnv, readEnvOrError } from './server';
 import { WorkerInput, WorkerOutput } from './code-tool-types';
 /**
  * A tool that runs code against a copy of the SDK.
@@ -36,8 +36,7 @@ export function codeTool(): McpTool {
         ...(stainlessAPIKey && { Authorization: stainlessAPIKey }),
         'Content-Type': 'application/json',
         client_envs: JSON.stringify({
-          TERMINAL_BEARER_TOKEN: readEnv('TERMINAL_BEARER_TOKEN'),
-          TERMINAL_APP_ID: readEnv('TERMINAL_APP_ID'),
+          TERMINAL_BEARER_TOKEN: readEnvOrError('TERMINAL_BEARER_TOKEN'),
           TERMINAL_BASE_URL: readEnv('TERMINAL_BASE_URL'),
         }),
       },
