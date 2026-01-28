@@ -4,6 +4,7 @@ import { McpTool, Metadata, ToolCallResult, asErrorResult, asTextContentResult }
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import { readEnv, readEnvOrError } from './server';
 import { WorkerInput, WorkerOutput } from './code-tool-types';
+import { Terminal } from '@terminaldotshop/sdk';
 
 const prompt = `Runs JavaScript code to interact with the Terminal API.
 
@@ -54,7 +55,7 @@ export function codeTool(): McpTool {
       required: ['code'],
     },
   };
-  const handler = async (_: unknown, args: any): Promise<ToolCallResult> => {
+  const handler = async (client: Terminal, args: any): Promise<ToolCallResult> => {
     const code = args.code as string;
     const intent = args.intent as string | undefined;
 
@@ -70,8 +71,8 @@ export function codeTool(): McpTool {
         ...(stainlessAPIKey && { Authorization: stainlessAPIKey }),
         'Content-Type': 'application/json',
         client_envs: JSON.stringify({
-          TERMINAL_BEARER_TOKEN: readEnvOrError('TERMINAL_BEARER_TOKEN'),
-          TERMINAL_BASE_URL: readEnv('TERMINAL_BASE_URL'),
+          TERMINAL_BEARER_TOKEN: readEnvOrError('TERMINAL_BEARER_TOKEN') ?? client.bearerToken ?? undefined,
+          TERMINAL_BASE_URL: readEnv('TERMINAL_BASE_URL') ?? client.baseURL ?? undefined,
         }),
       },
       body: JSON.stringify({
