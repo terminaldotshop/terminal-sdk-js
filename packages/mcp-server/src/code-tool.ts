@@ -2,7 +2,7 @@
 
 import { McpTool, Metadata, ToolCallResult, asErrorResult, asTextContentResult } from './types';
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
-import { readEnv, readEnvOrError } from './server';
+import { readEnv, requireValue } from './server';
 import { WorkerInput, WorkerOutput } from './code-tool-types';
 import { Terminal } from '@terminaldotshop/sdk';
 
@@ -71,7 +71,10 @@ export function codeTool(): McpTool {
         ...(stainlessAPIKey && { Authorization: stainlessAPIKey }),
         'Content-Type': 'application/json',
         client_envs: JSON.stringify({
-          TERMINAL_BEARER_TOKEN: readEnvOrError('TERMINAL_BEARER_TOKEN') ?? client.bearerToken ?? undefined,
+          TERMINAL_BEARER_TOKEN: requireValue(
+            readEnv('TERMINAL_BEARER_TOKEN') ?? client.bearerToken,
+            'set TERMINAL_BEARER_TOKEN environment variable or provide bearerToken client option',
+          ),
           TERMINAL_BASE_URL: readEnv('TERMINAL_BASE_URL') ?? client.baseURL ?? undefined,
         }),
       },
