@@ -75,7 +75,10 @@ export function codeTool(): McpTool {
             readEnv('TERMINAL_BEARER_TOKEN') ?? client.bearerToken,
             'set TERMINAL_BEARER_TOKEN environment variable or provide bearerToken client option',
           ),
-          TERMINAL_BASE_URL: readEnv('TERMINAL_BASE_URL') ?? client.baseURL ?? undefined,
+          TERMINAL_BASE_URL:
+            readEnv('TERMINAL_BASE_URL') ?? readEnv('TERMINAL_ENVIRONMENT') ?
+              undefined
+            : client.baseURL ?? undefined,
         }),
       },
       body: JSON.stringify({
