@@ -9,17 +9,17 @@ import { codeTool } from './code-tool';
 import docsSearchTool from './docs-search-tool';
 import { McpOptions } from './options';
 import { blockedMethodsForCodeTool } from './methods';
-import { HandlerFunction, McpTool } from './types';
+import { HandlerFunction, McpRequestContext, ToolCallResult, McpTool } from './types';
 import { readEnv } from './util';
 
-async function getInstructions() {
-  // This API key is optional; providing it allows the server to fetch instructions for unreleased versions.
-  const stainlessAPIKey = readEnv('STAINLESS_API_KEY');
+async function getInstructions(stainlessApiKey: string | undefined): Promise<string> {
+  // Setting the stainless API key is optional, but may be required
+  // to authenticate requests to the Stainless API.
   const response = await fetch(
     readEnv('CODE_MODE_INSTRUCTIONS_URL') ?? 'https://api.stainless.com/api/ai/instructions/terminal',
     {
       method: 'GET',
-      headers: { ...(stainlessAPIKey && { Authorization: stainlessAPIKey }) },
+      headers: { ...(stainlessApiKey && { Authorization: stainlessApiKey }) },
     },
   );
 
@@ -48,14 +48,14 @@ async function getInstructions() {
   return instructions;
 }
 
-export const newMcpServer = async () =>
+export const newMcpServer = async (stainlessApiKey: string | undefined) =>
   new McpServer(
     {
       name: 'terminaldotshop_sdk_api',
       version: '1.23.3',
     },
     {
-      instructions: await getInstructions(),
+      instructions: await getInstructions(stainlessApiKey),
       capabilities: { tools: {}, logging: {} },
     },
   );
@@ -68,6 +68,7 @@ export async function initMcpServer(params: {
   server: Server | McpServer;
   clientOptions?: ClientOptions;
   mcpOptions?: McpOptions;
+  stainlessApiKey?: string | undefined;
 }) {
   const server = params.server instanceof McpServer ? params.server.server : params.server;
 
@@ -100,7 +101,14 @@ export async function initMcpServer(params: {
       throw new Error(`Unknown tool: ${name}`);
     }
 
-    return executeHandler(mcpTool.handler, client, args);
+    return executeHandler({
+      handler: mcpTool.handler,
+      reqContext: {
+        client,
+        stainlessApiKey: params.stainlessApiKey ?? params.mcpOptions?.stainlessApiKey,
+      },
+      args,
+    });
   });
 }
 
@@ -122,10 +130,14 @@ export function selectTools(options?: McpOptions): McpTool[] {
 /**
  * Runs the provided handler with the given client and arguments.
  */
-export async function executeHandler(
-  handler: HandlerFunction,
-  client: Terminal,
-  args: Record<string, unknown> | undefined,
-) {
-  return await handler(client, args || {});
+export async function executeHandler({
+  handler,
+  reqContext,
+  args,
+}: {
+  handler: HandlerFunction;
+  reqContext: McpRequestContext;
+  args: Record<string, unknown> | undefined;
+}): Promise<ToolCallResult> {
+  return await handler({ reqContext, args: args || {} });
 }
