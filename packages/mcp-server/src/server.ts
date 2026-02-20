@@ -37,18 +37,36 @@ export async function initMcpServer(params: {
 }) {
   const server = params.server instanceof McpServer ? params.server.server : params.server;
 
-  const client = new Terminal({
-    ...{
-      appId: readEnv('TERMINAL_APP_ID'),
-      environment: (readEnv('TERMINAL_ENVIRONMENT') || undefined) as any,
-    },
+  let _client: Terminal | undefined;
+  let _clientError: Error | undefined;
+  let _logLevel: 'debug' | 'info' | 'warn' | 'error' | 'off' | undefined;
 
-    ...params.clientOptions,
-    defaultHeaders: {
-      ...params.clientOptions?.defaultHeaders,
-      'X-Stainless-MCP': 'true',
-    },
-  });
+  const getClient = (): Terminal => {
+    if (_clientError) throw _clientError;
+    if (!_client) {
+      try {
+        _client = new Terminal({
+          ...{
+            appId: readEnv('TERMINAL_APP_ID'),
+            environment: (readEnv('TERMINAL_ENVIRONMENT') || undefined) as any,
+          },
+
+          ...params.clientOptions,
+          defaultHeaders: {
+            ...params.clientOptions?.defaultHeaders,
+            'X-Stainless-MCP': 'true',
+          },
+        });
+        if (_logLevel) {
+          _client = _client.withOptions({ logLevel: _logLevel });
+        }
+      } catch (e) {
+        _clientError = e instanceof Error ? e : new Error(String(e));
+        throw _clientError;
+      }
+    }
+    return _client;
+  };
 
   const providedTools = selectTools(params.mcpOptions);
   const toolMap = Object.fromEntries(providedTools.map((mcpTool) => [mcpTool.tool.name, mcpTool]));
@@ -64,6 +82,21 @@ export async function initMcpServer(params: {
     const mcpTool = toolMap[name];
     if (!mcpTool) {
       throw new Error(`Unknown tool: ${name}`);
+    }
+
+    let client: Terminal;
+    try {
+      client = getClient();
+    } catch (error) {
+      return {
+        content: [
+          {
+            type: 'text' as const,
+            text: `Failed to initialize client: ${error instanceof Error ? error.message : String(error)}`,
+          },
+        ],
+        isError: true,
+      };
     }
 
     return executeHandler({
