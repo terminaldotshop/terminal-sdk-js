@@ -60,7 +60,7 @@ $ yarn link @terminaldotshop/sdk
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global @terminaldotshop/sdk
+$ pnpm link --global @terminaldotshop/sdk
 ```
 
 ## Running tests
