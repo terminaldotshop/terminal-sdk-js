@@ -25,7 +25,7 @@ export const newMcpServer = async ({
   new McpServer(
     {
       name: 'terminaldotshop_sdk_api',
-      version: '1.23.3',
+      version: '2.0.0',
     },
     {
       instructions: await getInstructions({ stainlessApiKey, customInstructionsPath }),
