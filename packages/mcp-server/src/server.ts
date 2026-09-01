@@ -2,171 +2,162 @@
 
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { Endpoint, endpoints, HandlerFunction, query } from './tools';
-import {
-  CallToolRequestSchema,
-  ListToolsRequestSchema,
-  Implementation,
-  Tool,
-} from '@modelcontextprotocol/sdk/types.js';
+import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js';
 import { ClientOptions } from '@terminaldotshop/sdk';
 import Terminal from '@terminaldotshop/sdk';
-import {
-  applyCompatibilityTransformations,
-  ClientCapabilities,
-  defaultClientCapabilities,
-  knownClients,
-  parseEmbeddedJSON,
-} from './compat';
-import { dynamicTools } from './dynamic-tools';
 import { codeTool } from './code-tool';
 import docsSearchTool from './docs-search-tool';
+import { setLocalSearch } from './docs-search-tool';
+import { LocalDocsSearch } from './local-docs-search';
+import { getInstructions } from './instructions';
 import { McpOptions } from './options';
+import { blockedMethodsForCodeTool } from './methods';
+import { HandlerFunction, McpRequestContext, ToolCallResult, McpTool } from './types';
+import { readEnv } from './util';
 
-export { McpOptions } from './options';
-export { ClientType } from './compat';
-export { Filter } from './tools';
-export { ClientOptions } from '@terminaldotshop/sdk';
-export { endpoints } from './tools';
-
-export const newMcpServer = () =>
+export const newMcpServer = async ({
+  stainlessApiKey,
+  customInstructionsPath,
+}: {
+  stainlessApiKey?: string | undefined;
+  customInstructionsPath?: string | undefined;
+}) =>
   new McpServer(
     {
       name: 'terminaldotshop_sdk_api',
-      version: '1.23.3',
+      version: '2.0.0',
     },
-    { capabilities: { tools: {}, logging: {} } },
+    {
+      instructions: await getInstructions({ stainlessApiKey, customInstructionsPath }),
+      capabilities: { tools: {}, logging: {} },
+    },
   );
-
-// Create server instance
-export const server = newMcpServer();
 
 /**
  * Initializes the provided MCP Server with the given tools and handlers.
  * If not provided, the default client, tools and handlers will be used.
  */
-export function initMcpServer(params: {
+export async function initMcpServer(params: {
   server: Server | McpServer;
   clientOptions?: ClientOptions;
   mcpOptions?: McpOptions;
+  stainlessApiKey?: string | undefined;
+  upstreamClientEnvs?: Record<string, string> | undefined;
+  mcpSessionId?: string | undefined;
+  mcpClientInfo?: { name: string; version: string } | undefined;
 }) {
   const server = params.server instanceof McpServer ? params.server.server : params.server;
-  const mcpOptions = params.mcpOptions ?? {};
 
-  let providedEndpoints: Endpoint[] | null = null;
-  let endpointMap: Record<string, Endpoint> | null = null;
+  if (params.mcpOptions?.docsSearchMode === 'local') {
+    const docsDir = params.mcpOptions?.docsDir;
+    const localSearch = await LocalDocsSearch.create(docsDir ? { docsDir } : undefined);
+    setLocalSearch(localSearch);
+  }
 
-  const initTools = async (implementation?: Implementation) => {
-    if (implementation && (!mcpOptions.client || mcpOptions.client === 'infer')) {
-      mcpOptions.client =
-        implementation.name.toLowerCase().includes('claude') ? 'claude'
-        : implementation.name.toLowerCase().includes('cursor') ? 'cursor'
-        : undefined;
-      mcpOptions.capabilities = {
-        ...(mcpOptions.client && knownClients[mcpOptions.client]),
-        ...mcpOptions.capabilities,
-      };
+  let _client: Terminal | undefined;
+  let _clientError: Error | undefined;
+  let _logLevel: 'debug' | 'info' | 'warn' | 'error' | 'off' | undefined;
+
+  const getClient = (): Terminal => {
+    if (_clientError) throw _clientError;
+    if (!_client) {
+      try {
+        _client = new Terminal({
+          ...{
+            appId: readEnv('TERMINAL_APP_ID'),
+            environment: (readEnv('TERMINAL_ENVIRONMENT') || undefined) as any,
+          },
+
+          ...params.clientOptions,
+          defaultHeaders: {
+            ...params.clientOptions?.defaultHeaders,
+            'X-Stainless-MCP': 'true',
+          },
+        });
+      } catch (e) {
+        _clientError = e instanceof Error ? e : new Error(String(e));
+        throw _clientError;
+      }
     }
-    providedEndpoints ??= await selectTools(endpoints, mcpOptions);
-    endpointMap ??= Object.fromEntries(providedEndpoints.map((endpoint) => [endpoint.tool.name, endpoint]));
+    return _client;
   };
 
-  const client = new Terminal({
-    ...{
-      appId: readEnv('TERMINAL_APP_ID'),
-      environment: (readEnv('TERMINAL_ENVIRONMENT') || undefined) as any,
-    },
-
-    ...params.clientOptions,
-    defaultHeaders: {
-      ...params.clientOptions?.defaultHeaders,
-      'X-Stainless-MCP': 'true',
-    },
-  });
+  const providedTools = selectTools(params.mcpOptions);
+  const toolMap = Object.fromEntries(providedTools.map((mcpTool) => [mcpTool.tool.name, mcpTool]));
 
   server.setRequestHandler(ListToolsRequestSchema, async () => {
-    if (providedEndpoints === null) {
-      await initTools(server.getClientVersion());
-    }
     return {
-      tools: providedEndpoints!.map((endpoint) => endpoint.tool),
+      tools: providedTools.map((mcpTool) => mcpTool.tool),
     };
   });
 
   server.setRequestHandler(CallToolRequestSchema, async (request) => {
-    if (endpointMap === null) {
-      await initTools(server.getClientVersion());
-    }
     const { name, arguments: args } = request.params;
-    const endpoint = endpointMap![name];
-    if (!endpoint) {
+    const mcpTool = toolMap[name];
+    if (!mcpTool) {
       throw new Error(`Unknown tool: ${name}`);
     }
 
-    return executeHandler(endpoint.tool, endpoint.handler, client, args, mcpOptions.capabilities);
+    let client: Terminal;
+    try {
+      client = getClient();
+    } catch (error) {
+      return {
+        content: [
+          {
+            type: 'text' as const,
+            text: `Failed to initialize client: ${error instanceof Error ? error.message : String(error)}`,
+          },
+        ],
+        isError: true,
+      };
+    }
+
+    return executeHandler({
+      handler: mcpTool.handler,
+      reqContext: {
+        client,
+        stainlessApiKey: params.stainlessApiKey ?? params.mcpOptions?.stainlessApiKey,
+        upstreamClientEnvs: params.upstreamClientEnvs,
+        mcpSessionId: params.mcpSessionId,
+        mcpClientInfo: params.mcpClientInfo,
+      },
+      args,
+    });
   });
 }
 
 /**
  * Selects the tools to include in the MCP Server based on the provided options.
  */
-export async function selectTools(endpoints: Endpoint[], options?: McpOptions): Promise<Endpoint[]> {
-  const filteredEndpoints = query(options?.filters ?? [], endpoints);
+export function selectTools(options?: McpOptions): McpTool[] {
+  const includedTools = [];
 
-  let includedTools = filteredEndpoints.slice();
-
-  if (includedTools.length > 0) {
-    if (options?.includeDynamicTools) {
-      includedTools = dynamicTools(includedTools);
-    }
-  } else {
-    if (options?.includeAllTools) {
-      includedTools = endpoints.slice();
-    } else if (options?.includeDynamicTools) {
-      includedTools = dynamicTools(endpoints);
-    } else if (options?.includeCodeTools) {
-      includedTools = [await codeTool()];
-    } else {
-      includedTools = endpoints.slice();
-    }
+  if (options?.includeCodeTool ?? true) {
+    includedTools.push(
+      codeTool({
+        blockedMethods: blockedMethodsForCodeTool(options),
+        codeExecutionMode: options?.codeExecutionMode ?? 'stainless-sandbox',
+      }),
+    );
   }
   if (options?.includeDocsTools ?? true) {
     includedTools.push(docsSearchTool);
   }
-  const capabilities = { ...defaultClientCapabilities, ...options?.capabilities };
-  return applyCompatibilityTransformations(includedTools, capabilities);
+  return includedTools;
 }
 
 /**
  * Runs the provided handler with the given client and arguments.
  */
-export async function executeHandler(
-  tool: Tool,
-  handler: HandlerFunction,
-  client: Terminal,
-  args: Record<string, unknown> | undefined,
-  compatibilityOptions?: Partial<ClientCapabilities>,
-) {
-  const options = { ...defaultClientCapabilities, ...compatibilityOptions };
-  if (!options.validJson && args) {
-    args = parseEmbeddedJSON(args, tool.inputSchema);
-  }
-  return await handler(client, args || {});
+export async function executeHandler({
+  handler,
+  reqContext,
+  args,
+}: {
+  handler: HandlerFunction;
+  reqContext: McpRequestContext;
+  args: Record<string, unknown> | undefined;
+}): Promise<ToolCallResult> {
+  return await handler({ reqContext, args: args || {} });
 }
-
-export const readEnv = (env: string): string | undefined => {
-  if (typeof (globalThis as any).process !== 'undefined') {
-    return (globalThis as any).process.env?.[env]?.trim();
-  } else if (typeof (globalThis as any).Deno !== 'undefined') {
-    return (globalThis as any).Deno.env?.get?.(env)?.trim();
-  }
-  return;
-};
-
-export const readEnvOrError = (env: string): string => {
-  let envValue = readEnv(env);
-  if (envValue === undefined) {
-    throw new Error(`Environment variable ${env} is not set`);
-  }
-  return envValue;
-};

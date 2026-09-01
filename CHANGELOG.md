@@ -1,5 +1,102 @@
 # Changelog
 
+## 2.0.0 (2026-09-01)
+
+Full Changelog: [v1.23.3...v2.0.0](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.23.3...v2.0.0)
+
+### ⚠ BREAKING CHANGES
+
+* **mcp:** remove deprecated tool schemes
+* **mcp:** **Migration:** To migrate, simply modify the command used to invoke the MCP server. Currently, the only supported tool scheme is code mode. Now, starting the server with just `node /path/to/mcp/server` or `npx package-name` will invoke code tools: changing your command to one of these is likely all you will need to do.
+
+### Features
+
+* **mcp:** add initial server instructions ([b96652d](https://github.com/terminaldotshop/terminal-sdk-js/commit/b96652dbf4c2eec91d892d60b69c10b54962a87d))
+* **stlc:** configurable CI runner and private-production-repo support in workflow templates ([f7d218e](https://github.com/terminaldotshop/terminal-sdk-js/commit/f7d218e1533e90d165da01e74945646ffc2cc847))
+
+
+### Bug Fixes
+
+* **docs:** fix mcp installation instructions for remote servers ([8cecce3](https://github.com/terminaldotshop/terminal-sdk-js/commit/8cecce3b325c7b0d8fbd20cda460ff107533a41d))
+* **mcp:** allow falling back for required env variables ([b888cc9](https://github.com/terminaldotshop/terminal-sdk-js/commit/b888cc952b7e0865bdf401752c8ba327eecf52d1))
+* **mcp:** correct code tool api output types ([c5a472c](https://github.com/terminaldotshop/terminal-sdk-js/commit/c5a472cc85a47e4afe53910e6ccd467342fcf7a2))
+* **mcp:** do not fallback on baseUrl if environment env variable is set ([7792449](https://github.com/terminaldotshop/terminal-sdk-js/commit/77924498ba33a38e0b992ea0078003cbf281707c))
+* **mcp:** fix env parsing ([ebe7a45](https://github.com/terminaldotshop/terminal-sdk-js/commit/ebe7a45e3964df017c52f38cb63e1dc34e7f9c95))
+* **mcp:** fix options parsing ([0a9e105](https://github.com/terminaldotshop/terminal-sdk-js/commit/0a9e105898fbd8c32c34095e3234cce245f1ac6c))
+* **mcp:** update code tool prompt ([2e1e61e](https://github.com/terminaldotshop/terminal-sdk-js/commit/2e1e61ece50cd764ee27a6ca46b47a2c0100fed3))
+
+
+### Chores
+
+* break long lines in snippets into multiline ([099799b](https://github.com/terminaldotshop/terminal-sdk-js/commit/099799b21ab5cc1b533a6476f812cf5483997a77))
+* **ci:** upgrade `actions/github-script` ([b03af58](https://github.com/terminaldotshop/terminal-sdk-js/commit/b03af58254291c035a8ac4f61d36ddccc6e37416))
+* **client:** do not parse responses with empty content-length ([2dc2d76](https://github.com/terminaldotshop/terminal-sdk-js/commit/2dc2d769f3d56f0441856c0ce5a827d0a03f8b6e))
+* **internal:** add health check to MCP server when running in HTTP mode ([129191b](https://github.com/terminaldotshop/terminal-sdk-js/commit/129191bc5ed5da1b54b3c8835b4ff665befbdc7f))
+* **internal:** allow basic filtering of methods allowed for MCP code mode ([e3a8bca](https://github.com/terminaldotshop/terminal-sdk-js/commit/e3a8bcaaba4ea91e8c620edd974b4ed1036bca7d))
+* **internal:** allow the mock server port to be set with STAINLESS_MOCK_PORT ([07cda62](https://github.com/terminaldotshop/terminal-sdk-js/commit/07cda629e88284f95b0404c7251115babd421331))
+* **internal:** always generate MCP server dockerfiles and upgrade associated dependencies ([2dc70ea](https://github.com/terminaldotshop/terminal-sdk-js/commit/2dc70ead067c4fee20fc1cfd3015f60420140f72))
+* **internal:** codegen related update ([dc37573](https://github.com/terminaldotshop/terminal-sdk-js/commit/dc375736d3b8f1297ba8f1acfe46f8e322eaa43c))
+* **internal:** codegen related update ([6e79ecc](https://github.com/terminaldotshop/terminal-sdk-js/commit/6e79ecc4d5f9022dd9828bd67358bfbbeebacf9a))
+* **internal:** codegen related update ([e502202](https://github.com/terminaldotshop/terminal-sdk-js/commit/e502202ec31eaa5f734f1cd7eb3964f58656fde6))
+* **internal:** codegen related update ([8c14305](https://github.com/terminaldotshop/terminal-sdk-js/commit/8c14305d458cce50921e335205ad127e1314a38c))
+* **internal:** codegen related update ([82b9213](https://github.com/terminaldotshop/terminal-sdk-js/commit/82b9213e59513bcbeb8aaf46844add588433532e))
+* **internal:** codegen related update ([870e83c](https://github.com/terminaldotshop/terminal-sdk-js/commit/870e83c0c7c42df353c90caef6040f64c42edb91))
+* **internal:** codegen related update ([85a9a3a](https://github.com/terminaldotshop/terminal-sdk-js/commit/85a9a3a576b33869b912afbd734cb9437384d730))
+* **internal:** codegen related update ([e603cd5](https://github.com/terminaldotshop/terminal-sdk-js/commit/e603cd5efbb1a1477ad9372a295b58c1cf4f134c))
+* **internal:** codegen related update ([49932e4](https://github.com/terminaldotshop/terminal-sdk-js/commit/49932e435ba4c67a3ac590b12d891dd233538550))
+* **internal:** codegen related update ([4c84fbf](https://github.com/terminaldotshop/terminal-sdk-js/commit/4c84fbf08bfed4d38db3b64af04d5771cf3d56c7))
+* **internal:** codegen related update ([6036e13](https://github.com/terminaldotshop/terminal-sdk-js/commit/6036e135f8ff4e6be9fe9b0c289e6491cbf246ea))
+* **internal:** codegen related update ([d12215b](https://github.com/terminaldotshop/terminal-sdk-js/commit/d12215ba5523eec9286793b93107906c6808e556))
+* **internal:** codegen related update ([159c7ea](https://github.com/terminaldotshop/terminal-sdk-js/commit/159c7ea239d01d1059feb5605729398b35ae6ec3))
+* **internal:** codegen related update ([44f48a8](https://github.com/terminaldotshop/terminal-sdk-js/commit/44f48a8d53e53fb5cd50cd621b127d38cc754ec0))
+* **internal:** codegen related update ([c597dec](https://github.com/terminaldotshop/terminal-sdk-js/commit/c597dec88e0d9b9131b574be5239ba6c79beaa4e))
+* **internal:** codegen related update ([3beb9cc](https://github.com/terminaldotshop/terminal-sdk-js/commit/3beb9cce8340009141a7052d4113a0f6996f1e32))
+* **internal:** codegen related update ([40d19e2](https://github.com/terminaldotshop/terminal-sdk-js/commit/40d19e28d6485781e0b8b669dd715b599f8ae7af))
+* **internal:** codegen related update ([e89c6b6](https://github.com/terminaldotshop/terminal-sdk-js/commit/e89c6b6b8fc7c84bea2c36ae867e94d7d58883d9))
+* **internal:** codegen related update ([1fde448](https://github.com/terminaldotshop/terminal-sdk-js/commit/1fde448c0286456f47dcff87c4bb99ba21df49d5))
+* **internal:** codegen related update ([dc9e9d7](https://github.com/terminaldotshop/terminal-sdk-js/commit/dc9e9d7022ed8404d16a07a038663d6b95528644))
+* **internal:** codegen related update ([35ac52b](https://github.com/terminaldotshop/terminal-sdk-js/commit/35ac52bd3763bed0bf9118b8890ac07a5ce91b12))
+* **internal:** codegen related update ([6d2422b](https://github.com/terminaldotshop/terminal-sdk-js/commit/6d2422bcf850b3a5c72cd39a5f9a8e1e3ca0ac0d))
+* **internal:** codegen related update ([9cb63d6](https://github.com/terminaldotshop/terminal-sdk-js/commit/9cb63d6555493f41855a7e1b599bcba0387b05d0))
+* **internal:** codegen related update ([b2811ca](https://github.com/terminaldotshop/terminal-sdk-js/commit/b2811ca3328037eb6388f909ceb34cfb4826dac6))
+* **internal:** codegen related update ([5a66289](https://github.com/terminaldotshop/terminal-sdk-js/commit/5a6628969cc39d8b778d37f2868ba11da711d987))
+* **internal:** codegen related update ([6aedf0f](https://github.com/terminaldotshop/terminal-sdk-js/commit/6aedf0f794fa8479da896ab9942ce5949e96c3c9))
+* **internal:** codegen related update ([0a08718](https://github.com/terminaldotshop/terminal-sdk-js/commit/0a08718bdd0f14c6f1432f8a9293c68b60b1fa6d))
+* **internal:** codegen related update ([2add106](https://github.com/terminaldotshop/terminal-sdk-js/commit/2add1064aa181efc8f3ca1f25cd3472fcce5f694))
+* **internal:** codegen related update ([625f4c5](https://github.com/terminaldotshop/terminal-sdk-js/commit/625f4c5e13f121aa342f36fc4e473ac811f7dff7))
+* **internal:** codegen related update ([eda5110](https://github.com/terminaldotshop/terminal-sdk-js/commit/eda5110fb4e91163ca85fa2df3587642ab721bb9))
+* **internal:** codegen related update ([ea5101a](https://github.com/terminaldotshop/terminal-sdk-js/commit/ea5101ab45a7ee486064e239dec340196738fa02))
+* **internal:** codegen related update ([3ee84b3](https://github.com/terminaldotshop/terminal-sdk-js/commit/3ee84b31d0f2cc544f0eb45f9af987274670539e))
+* **internal:** codegen related update ([b299c03](https://github.com/terminaldotshop/terminal-sdk-js/commit/b299c03aaf6c4130dce10a94199eac0dbf112d81))
+* **internal:** codegen related update ([21f2996](https://github.com/terminaldotshop/terminal-sdk-js/commit/21f29963d2fca76194778d18920157283fe029a2))
+* **internal:** codegen related update ([4a5dbae](https://github.com/terminaldotshop/terminal-sdk-js/commit/4a5dbae4c10c16ca599da22b443503f777a4c8e2))
+* **internal:** codegen related update ([bf53a63](https://github.com/terminaldotshop/terminal-sdk-js/commit/bf53a63149c63350986a883415cb445ac014a241))
+* **internal:** codegen related update ([1646399](https://github.com/terminaldotshop/terminal-sdk-js/commit/1646399e98bb37e9395b9971bc4505ebbf8b558f))
+* **internal:** codegen related update ([ee47b3e](https://github.com/terminaldotshop/terminal-sdk-js/commit/ee47b3eca182c92ba081f2bc945bd3bf2e593b43))
+* **internal:** codegen related update ([8cd3436](https://github.com/terminaldotshop/terminal-sdk-js/commit/8cd3436d4ba8128785279099dea654381d0467b4))
+* **internal:** codegen related update ([6ae8b7b](https://github.com/terminaldotshop/terminal-sdk-js/commit/6ae8b7be27a7608f0f849a5c19ec284b4305a58f))
+* **internal:** codegen related update ([4f3fe9b](https://github.com/terminaldotshop/terminal-sdk-js/commit/4f3fe9bfe20dc90db0831719fff939d5270c2165))
+* **internal:** codegen related update ([269f193](https://github.com/terminaldotshop/terminal-sdk-js/commit/269f19325d624b7feb616870e4431f1d71545efb))
+* **internal:** fix MCP Dockerfiles so they can be built without buildkit ([0e8d62c](https://github.com/terminaldotshop/terminal-sdk-js/commit/0e8d62c1da19718dac2fa50087412c51366a348b))
+* **internal:** fix MCP Dockerfiles so they can be built without buildkit ([b672e2a](https://github.com/terminaldotshop/terminal-sdk-js/commit/b672e2a90757aefde001c8b70a50208e1491d147))
+* **internal:** improve layout of generated MCP server files ([5dd32ae](https://github.com/terminaldotshop/terminal-sdk-js/commit/5dd32ae856044cc43e8872b7600d8f5b37b7a817))
+* **internal:** refactor flag parsing for MCP servers and add debug flag ([4fc206d](https://github.com/terminaldotshop/terminal-sdk-js/commit/4fc206dc0f534f2498b2686d33ad7fb396e1a97e))
+* **internal:** support oauth authorization code flow for MCP servers ([bd8e9ed](https://github.com/terminaldotshop/terminal-sdk-js/commit/bd8e9ed33a1e32240e71138919c60cab01fff730))
+* **internal:** update `actions/checkout` version ([2959753](https://github.com/terminaldotshop/terminal-sdk-js/commit/29597532d6c3b14c92c81f12ea608c3e1e744bfe))
+* **internal:** upgrade babel, qs, js-yaml ([b2e7cb8](https://github.com/terminaldotshop/terminal-sdk-js/commit/b2e7cb8d598a6292d123de3553497b2116d284cb))
+* **internal:** use x-stainless-mcp-client-envs header for MCP remote code tool calls ([ef6ce54](https://github.com/terminaldotshop/terminal-sdk-js/commit/ef6ce54edf2b7aab493c0a66d536ec7cdf4202a3))
+* **mcp:** add intent param to execute tool ([71cd9c9](https://github.com/terminaldotshop/terminal-sdk-js/commit/71cd9c9941eb87fb4e79bd354d7122f34096a186))
+* **mcp:** forward STAINLESS_API_KEY to docs search endpoint ([b03a4af](https://github.com/terminaldotshop/terminal-sdk-js/commit/b03a4af1fac17556937201ccdc5d42645b29cb7a))
+* **mcp:** pass intent param to execute handler ([c972807](https://github.com/terminaldotshop/terminal-sdk-js/commit/c9728073078a0e36ba9a8890c829b14404a11aa6))
+* **mcp:** remove deprecated tool schemes ([c8d468d](https://github.com/terminaldotshop/terminal-sdk-js/commit/c8d468df1a52f25d867b94006277a4d19331aba4))
+* **mcp:** up tsconfig lib version to es2022 ([6dc632a](https://github.com/terminaldotshop/terminal-sdk-js/commit/6dc632adb76fe7b477838a32f6e089871a915ac8))
+* **mcp:** upgrade dependencies ([73b8d6b](https://github.com/terminaldotshop/terminal-sdk-js/commit/73b8d6b3eb87a656acc4a461bdee3ef0fe9e83c7))
+
+
+### Documentation
+
+* prominently feature MCP server setup in root SDK readmes ([51611e9](https://github.com/terminaldotshop/terminal-sdk-js/commit/51611e9ffd84190a281e61045fbbe49f1047e5da))
+
 ## 1.23.3 (2025-12-18)
 
 Full Changelog: [v1.23.2...v1.23.3](https://github.com/terminaldotshop/terminal-sdk-js/compare/v1.23.2...v1.23.3)

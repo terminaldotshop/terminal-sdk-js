@@ -4,6 +4,11 @@ set -e
 
 cd "$(dirname "$0")/.."
 
+if [ "$1" == "--install" ]; then
+  npm exec --package=@stdy/cli@0.22.1 -- steady --version
+  exit 0
+fi
+
 if [[ -n "$1" && "$1" != '--'* ]]; then
   URL="$1"
   shift
@@ -19,23 +24,36 @@ fi
 
 echo "==> Starting mock server with URL ${URL}"
 
-# Run prism mock on the given spec
-if [ "$1" == "--daemon" ]; then
-  npm exec --package=@stainless-api/prism-cli@5.15.0 -- prism mock "$URL" &> .prism.log &
+# Run steady mock on the given spec
+MOCK_PORT="${STAINLESS_MOCK_PORT:-4010}"
 
-  # Wait for server to come online
+if [ "$1" == "--daemon" ]; then
+  # Pre-install the package so the download doesn't eat into the startup timeout
+  npm exec --package=@stdy/cli@0.22.1 -- steady --version
+
+  npm exec --package=@stdy/cli@0.22.1 -- steady --host 127.0.0.1 -p "$MOCK_PORT" --validator-query-array-format=comma --validator-form-array-format=comma --validator-query-object-format=brackets --validator-form-object-format=brackets "$URL" &> .stdy.log &
+
+  # Wait for server to come online via health endpoint (max 30s)
   echo -n "Waiting for server"
-  while ! grep -q "✖  fatal\|Prism is listening" ".prism.log" ; do
+  attempts=0
+  while ! curl --silent --fail "http://127.0.0.1:$MOCK_PORT/_x-steady/health" >/dev/null 2>&1; do
+    if ! kill -0 $! 2>/dev/null; then
+      echo
+      cat .stdy.log
+      exit 1
+    fi
+    attempts=$((attempts + 1))
+    if [ "$attempts" -ge 300 ]; then
+      echo
+      echo "Timed out waiting for Steady server to start"
+      cat .stdy.log
+      exit 1
+    fi
     echo -n "."
     sleep 0.1
   done
 
-  if grep -q "✖  fatal" ".prism.log"; then
-    cat .prism.log
-    exit 1
-  fi
-
   echo
 else
-  npm exec --package=@stainless-api/prism-cli@5.15.0 -- prism mock "$URL"
+  npm exec --package=@stdy/cli@0.22.1 -- steady --host 127.0.0.1 -p "$MOCK_PORT" --validator-query-array-format=comma --validator-form-array-format=comma --validator-query-object-format=brackets --validator-form-object-format=brackets "$URL"
 fi
